@@ -1,0 +1,380 @@
+{
+  "produit-eclipse-noire": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Éclipse Noire : datte enrobée de chocolat noir",
+    "group": "produit",
+    "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACQAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JZwDCgCHhwLEi+ZUAAP7QGGlUaRvsKTTZMtt5LtgwqN74nVLe9e7NA+MuNLlMgAA="
+  },
+  "coupe-eclipse-noire": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Éclipse Noire en coupe : la garniture au cœur de la datte",
+    "group": "coupe",
+    "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JZQC/OCHiAcLyNbvUJUAA/tAYZwqhBT+qDGWrykZ39kT2AtTMA9S45J0vdOhAAAA="
+  },
+  "scene-eclipse-noire": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Éclipse Noire entourée de ses ingrédients",
+    "group": "scene",
+    "blur": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoQAAsAA4BaJZwC7AEDUY16QAD+0ff2dMFRShIHaTRcsCLeXQw7kWyagJibG4AqpyCI78cf8nnr4AAA"
+  },
+  "produit-or-de-marrakech": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Or de Marrakech : datte enrobée de chocolat lait",
+    "group": "produit",
+    "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZQCo9CF5I+8B51KTv10WzA4AAP60oy8dO1dsX1wZMoZgdm5atqPBzXkedNhtBc1eekgds+IMdi4iuorgT4KUOKIwAA=="
+  },
+  "coupe-or-de-marrakech": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Or de Marrakech en coupe : la garniture au cœur de la datte",
+    "group": "coupe",
+    "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JQBYdhC8kmqz9DCwFUzoAAP60oy8dO1dsb1kohqU/oELKpTSxlvnBBCHVtYvc4K7xFrjw8JZqAZuYjVw1q7GOvxwliA1TAAA="
+  },
+  "scene-or-de-marrakech": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Or de Marrakech entourée de ses ingrédients",
+    "group": "scene",
+    "blur": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoQAAsAA4BaJYwCdAEUhk5mVqgA/uhE1fXhNuoFXnGDsQrJk7D4geb4yKisoCxfcjHFx6AA"
+  },
+  "produit-minuit-a-kyoto": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Minuit à Kyoto : datte enrobée de chocolat blanc",
+    "group": "produit",
+    "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZQC06CFU9R7/Yim1k1zG0AD+1wslDbkE+FaAZKeSuab5W+JfzMStjoMhMIw/Lx3PFFEc/q27rUFtL1+r+gAA"
+  },
+  "coupe-minuit-a-kyoto": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Minuit à Kyoto en coupe : la garniture au cœur de la datte",
+    "group": "coupe",
+    "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQBACdASoQABQAPu1iqU2ppaQiMAgBMB2JQBOgBCqfRmZ+Eht9whbrAAD+1wslDbktMu46q0hZtahq8dm8Yo8O5kCG+9uEwP1GfCSUA9ljhTLv91qwUp+igAA="
+  },
+  "scene-minuit-a-kyoto": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Minuit à Kyoto entourée de ses ingrédients",
+    "group": "scene",
+    "blur": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoQAAsAA4BaJQBOgB4L1OWfvgAA/psEJg7wOWza3fKhrxsrZ+Wb159p7/jcSGNZNd18SIF9K1b4caABAAA="
+  },
+  "hero": {
+    "w": 3200,
+    "h": 1800,
+    "alt": "Datte Or de Marrakech ouverte révélant sa crème de pistache, devant un coffret TAMBRÉ",
+    "group": "hero",
+    "blur": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoQAAkAA4BaJQBOgCHh2Nl3hAAA/vSHqmnNROy9f9LhKapXqryAsJFmSDFkDf58CgL2gAAA"
+  },
+  "produit-velours-persan": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Velours Persan : datte enrobée de chocolat lait",
+    "group": "produit",
+    "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZQCdACP6s9yjnY3/+J+elAAA/uhCfbxfnsbiax1OiT6s3lK+8jc085P3F8Oktv7Zi2r3x3/1xiW2ckERlpUQ0lcQ7A4KPsqPlFDQximXgAAA"
+  },
+  "coupe-velours-persan": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Velours Persan en coupe : la garniture au cœur de la datte",
+    "group": "coupe",
+    "blur": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCdAYrw7WbqGYwD7bPBmgAA/uhCbUZp0M7RwjZaF5KJ6P9TnQLSuoIGN+smVjSaB9PD53COywpA3bQjJFtW2EMXVy03uQ/P80a3E2x94LCotAA="
+  },
+  "scene-velours-persan": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Velours Persan entourée de ses ingrédients",
+    "group": "scene",
+    "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAQCdASoQAAsAA4BaJQBOgBdHB55AAP7t1lCV6JmvbAdZDJtugOcSI+9bLPetNs3fY82C9uLYOOUOj3ZmcTjGCnQq06P5OqL6QAAA"
+  },
+  "produit-cafe-imperial": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Café Impérial : datte enrobée de chocolat noir",
+    "group": "produit",
+    "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZwC06CIKDogpF3myagAA/tjpTNfERPuHy21QCIpmtfPmXHgabbAWHwIAAA=="
+  },
+  "coupe-cafe-imperial": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Café Impérial en coupe : la garniture au cœur de la datte",
+    "group": "coupe",
+    "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCdMoADTqUZOQi5EcPpAAD+2OkCoVhk1fWqgaWVIaW5GONtfTGi1eGcRVwrR9yyeKBgAAA="
+  },
+  "scene-cafe-imperial": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Café Impérial entourée de ses ingrédients",
+    "group": "scene",
+    "blur": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAQCdASoQAAsAA4BaJZQCdAEQNgZf2aAA/u6PERTzPZLeDmzS4aSmVIY/T7s2wAA="
+  },
+  "produit-rouge-desir": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Rouge Désir : datte enrobée de chocolat noir",
+    "group": "produit",
+    "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZQCsACPq1rpAl7kHJ0tlCuQA/uhCbizJpLWSGVPHf1msSmINeGh5mwKQGUqkgbVIAJR/z5Z3uu46XF3qlf+35xvrBFuxSNiTKj4dH4QRDgAA"
+  },
+  "coupe-rouge-desir": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Rouge Désir en coupe : la garniture au cœur de la datte",
+    "group": "coupe",
+    "blur": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JYgC06CPq1ucCEz1z05IkLoaAAP7oQm4syaMrqDBSc7l4dVzjSowSibNfdn5BmLteLY43iyKFJBqvqU+y0irrc87PeHtCE7oNEzw5Q0uppuxzQssz4Cg8PAA="
+  },
+  "scene-rouge-desir": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Rouge Désir entourée de ses ingrédients",
+    "group": "scene",
+    "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQAgCdASoQAAsAA4BaJYwCdAYtLNNFoSAAAP7tZVAau9UDFc9w6cyE/MXnLqdyIJ7OxGVNKmyBo+0812X0JMKNvec61sJxugrrRneTGMAAAA=="
+  },
+  "produit-ebene-sale": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Ébène Salé : datte enrobée de chocolat noir",
+    "group": "produit",
+    "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JaQC/7CHhxz5ngNNkfxILMAD+0BhnCqIT7ppNuiSwVE8HgC6YE7QU2AAAAA=="
+  },
+  "coupe-ebene-sale": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Ébène Salé en coupe : la garniture au cœur de la datte",
+    "group": "coupe",
+    "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JQBdgBDw+WOYMFOLcBAWAAP7QGGcKoOImV6cvbdFso30DNFT/9DCW55cTxNhS/P7w5I5XuC/VpcGtvanAAA=="
+  },
+  "scene-ebene-sale": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Ébène Salé entourée de ses ingrédients",
+    "group": "scene",
+    "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAQCdASoQAAsAA4BaJZQCdAECpG8GIAD+rT7vtk8BodFY6qTlF1t23SfcaNvdOo1wOVhJ5pou0PCDMe57QzdvhNIAAA=="
+  },
+  "produit-ile-secrete": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Île Secrète : datte enrobée de chocolat blond",
+    "group": "produit",
+    "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JQBOmUI7gBTMLLv/527JtEAD+1wrFI5y4NCvWUc5a3oRf2OyNltkgEzq5fjR9DdduXr/J0B6oMPbHZ9BxaM7S9R475QAA"
+  },
+  "coupe-ile-secrete": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Île Secrète en coupe : la garniture au cœur de la datte",
+    "group": "coupe",
+    "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JQBdgBH+dqD/NexASdPtfV2QAAP7XCy28S8Zebe5ZwaGjvKioCP28yydG9xR3kM2J0oUJ0jtMzvRaGhhuU3aZy2YjYOoimzAAAA=="
+  },
+  "scene-ile-secrete": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Île Secrète entourée de ses ingrédients",
+    "group": "scene",
+    "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAQCdASoQAAsAA4BaJQBOgA8OOMQAAP7XcGcioywjjzPBJqasHN9z1jFNGnTECLHPjhsbtZNZRZeMGQ9Zz3u8XCaCwt8QAAA="
+  },
+  "produit-ambre-fume": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Ambre Fumé : datte enrobée de chocolat lait",
+    "group": "produit",
+    "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JZQCdMoADTqGw+i14yJcAAP7Y11SCpwbnUPkTCJSnHggbkLTmACW75dfgBN+4tJ5AAA=="
+  },
+  "coupe-ambre-fume": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Ambre Fumé en coupe : la garniture au cœur de la datte",
+    "group": "coupe",
+    "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JYgCdMoADTqTB+1YqR7DxiZYA/tjXVIKnBmvYldZhdTvLcU8/f+MTKh7FA3n0D0tjJc5E6HZFveSMeBaggDD9AAA="
+  },
+  "scene-ambre-fume": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Ambre Fumé entourée de ses ingrédients",
+    "group": "scene",
+    "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAQAgCdASoQAAsAA4BaJYwCdAEQ5WlHnpAAAP7suYSWtYXhYgo9uOZFKBK7DdLn7Q/dn+bapaHyfjpEG2VgtRM17ScoAA=="
+  },
+  "produit-rose-de-nuit": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Rose de Nuit : datte enrobée de chocolat blanc",
+    "group": "produit",
+    "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZwC2yCG/qIHnXp5VJudAAP60jbfI4ycjEXs2IylAcxyYpX3W8++du5HK3pXZX3y86zXtqitK7/mQ1TuuIAAA"
+  },
+  "coupe-rose-de-nuit": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Rose de Nuit en coupe : la garniture au cœur de la datte",
+    "group": "coupe",
+    "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZQC06CG/9uR4l6bcu/UAAP60gQxoAH5oUTpmWQZa/6t/iH1l54Wlcx85fd+sY4a2V0eH6x/hYfutVkbvg0WeYKAAAA=="
+  },
+  "scene-rose-de-nuit": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Rose de Nuit entourée de ses ingrédients",
+    "group": "scene",
+    "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADwAQCdASoQAAsAA4BaJZQCdAEPSqkYqAAA/t67Pmfojs4Sr3YjUflCi401hP2NVr6uzggA"
+  },
+  "macro-1": {
+    "w": 1600,
+    "h": 1600,
+    "alt": "Peau de la Medjool et enrobage, en très gros plan",
+    "group": "macro",
+    "blur": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAADQAQCdASoQABAAA4BaJZwC7AEPECIPYAD+7zy1JaR+DEN664HNLQAA"
+  },
+  "macro-2": {
+    "w": 1600,
+    "h": 1600,
+    "alt": "Poudre de matcha sur chocolat blanc",
+    "group": "macro",
+    "blur": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoQABAAA4BaJQBdgCPwEXmCgQAA/tfXXQO5JMqmcyHz3TNpjkB+FdkL+G8tgr1qUZa0ZJwXJHBr/AAA"
+  },
+  "macro-3": {
+    "w": 1600,
+    "h": 1600,
+    "alt": "Coupe : crème de pistache et fils de kadaïf",
+    "group": "macro",
+    "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQAgCdASoQABAAA4BaJagCdAENy6VolSvgAP61yNyISdwKsnBhvWz2xcuIqtttb+iBBPrUztB/qCkQHjW1XykCV9yeOowURwtGkskAVrl2uYQe1hml6NU6xHcoAA=="
+  },
+  "macro-4": {
+    "w": 1600,
+    "h": 1600,
+    "alt": "Filet de framboise sur chocolat noir",
+    "group": "macro",
+    "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwAgCdASoQABAAA4BaJYwCdAEf1U/bY4kLgAD+7lAmp8hVJBgkCrjlqWxtfeitqdXdrxOl9BlpeXq0QAGJqXwaCA6hJxud49uWw7kohZ6IwAAA"
+  },
+  "macro-5": {
+    "w": 1600,
+    "h": 1600,
+    "alt": "Coupe : praliné noisette et espresso",
+    "group": "macro",
+    "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAwAgCdASoQABAAA4BaJZgCdAEO6UMljH4WgAD+8Mc9y6AJnkhxmoKbUg7Q7TjxDXcf5b+a62mlXSeBp9XdaVYR9GEBYdnU49kJq+ZS3xC4AA=="
+  },
+  "macro-6": {
+    "w": 1600,
+    "h": 1600,
+    "alt": "Fils de safran et amande sur chocolat au lait",
+    "group": "macro",
+    "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAwAgCdASoQABAAA4BaJQBOgCPsozH7e7iYAAD+7lAlehCiO9zMuuLMTffPjiWCM6mRbBhdwADwI64f4oo+eKedu1joQ7nlkNV/QvwJlK3AAA=="
+  },
+  "coffret-1": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Coffret Signature ouvert, douze dattes dans leurs calages",
+    "group": "coffret",
+    "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwAgCdASoQAAsAA4BaJZQCdAEefxUKz5DEAAD+wdsAETZgF6yF5pT7QpXplCzKIb+VqTV2L/Xv8jNrU4KWHuhg6upRArqc6utaOu1/roeOcSAA"
+  },
+  "coffret-2": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Coffret Prestige de vingt-quatre pièces",
+    "group": "coffret",
+    "blur": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAQCdASoQAAsAA4BaJZQCdAERH86w0AAA/uwR9ifb7+sAY80PvZfVcnyBdU6wAAA="
+  },
+  "coffret-3": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Coffret Découverte ivoire, six pièces",
+    "group": "coffret",
+    "blur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAAAwAgCdASoQAAsAA4BaJZQCdAEN5cNLm8oqwAD+78KCiM46x8HTDsXj72YTLM0iXgwW1rEgAAA="
+  },
+  "coffret-4": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Coffret Édition Limitée numéroté",
+    "group": "coffret",
+    "blur": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAABwAQCdASoQAAsAA4BaJZ1efAGIAAD+8Fybd9nY3yPjqqYJ3RpYlN/IzV5eAAAA"
+  },
+  "packaging-1": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Couvercle chocolat, monogramme en relief et logotype bronze",
+    "group": "packaging",
+    "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQBACdASoQABQAPu1krU6ppaSiMAgBMB2JZQC7ACHu1r7Xu+IEbpaiAAD+xRjqZxhgZjUfQEYo18pF79SP0cTl1qqgV4sAX6hrDTJLEwn1p7AAAAA="
+  },
+  "packaging-2": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Trois coffrets empilés : chocolat, ivoire et vert",
+    "group": "packaging",
+    "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZwCuHCPtwSoDK3LNY9LQ3QAA/uhCToFdEAuo7FWrNaAl49zQyIquG7ViZKR8fg8bzYo+xozLkmuBa7Xk+36lGh9yYc4GI9tie0vEkAA="
+  },
+  "packaging-3": {
+    "w": 1600,
+    "h": 2000,
+    "alt": "Carte de dégustation et ruban bronze",
+    "group": "packaging",
+    "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JZwC7ACGIlgP1L9GKgAD+x+NU89N/hHEMg7qOLY7uIEvJu2bsOYdJW4N7RvVdJ/QqZgtxMhdzxdPGAIqMAA=="
+  },
+  "lifestyle-1": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Un espresso et quelques dattes Café Impérial",
+    "group": "lifestyle",
+    "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoQAAsAA4BaJYwCdAENW3wW9CAA/u4hIo/xEFO6TJH0uLCmuRRyWmd7ceqwc2ba56j/vJjHFYwt6S/aVdVIIAAA"
+  },
+  "lifestyle-2": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Un coffret prêt à offrir, ruban et carte",
+    "group": "lifestyle",
+    "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoQAAsAA4BaJYwCdAEQzW1vvMwAAP7qqiml8CpefjrHiHz5RrnuqPxghduvqVL9c53ZUkRMyiEd6R1Ir5VVQ1F2eYTPbvAA"
+  },
+  "lifestyle-3": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Plat de dattes à partager au centre de la table",
+    "group": "lifestyle",
+    "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAQCdASoQAAsAA4BaJZQCdAEfw4y0wAD+4Yuv3RQyxhSFnw+zMtJ0g4Rpnh+CxEkxgVh+IuqzlcvXH4t98NzHx2NYffEAAAA="
+  },
+  "pro-1": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Coffrets empilés pour un cadeau d'entreprise, carte personnalisable",
+    "group": "pro",
+    "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQAgCdASoQAAsAA4BaJZQCdAEN8pdwPjgAAP7uH46FrqryM5+/5Q89riPT5e/zDkyM4zkQPcROeb5hTlxyFSMbolbB7IseDn4zvYiiKcjLQAAA"
+  },
+  "pro-2": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Table de réception avec un mini-coffret à chaque couvert",
+    "group": "pro",
+    "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAABwAgCdASoQAAsAA4BaJYwCdAYrnvsXwH7atlMAAP7wfAiu8DASFU9ZeRCoXSYzNm2QkNH2BGEF/gLW9DwUEWUk6AgaJgsB6u3YylsDzP84xVu3vyXjgAAA"
+  },
+  "couche-datte": {
+    "w": 2000,
+    "h": 1100,
+    "alt": "La datte Medjool, ouverte",
+    "group": "macro",
+    "blur": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4WAoAAAAQAAAADwAACAAAQUxQSIwAAAANcFNt27I872+4TO6TO1m8AwHIADkgBA04bIwOk7vL939IiYhIgiyCkyLh/SLh+SYNk0IZn1VL90Wnw94aNVb14G/05Gb1jRSqgXMGAoeY1zZZBU8FEgBSX6JGFSUQIw5wEuXezCO3YkkOAIRTuxu2vfoNf9ahY8f5aOAP2eX7e9nun16i3uoOegRFAVZQOCA8AAAA8AEAnQEqEAAJAAOAWiWQAnQBH3HM9iNgAP7282PSA8Z9XkryGZ1Zn7G6nXLpl3hsEk6QmbN7W1jNwAAA"
+  },
+  "couche-garniture": {
+    "w": 2000,
+    "h": 1100,
+    "alt": "La garniture : crème de pistache et kadaïf",
+    "group": "macro",
+    "blur": "data:image/webp;base64,UklGRgwBAABXRUJQVlA4WAoAAAAQAAAADwAACAAAQUxQSJEAAAAAAAAAAgMGCQoKCgoKBwQCAQABAgcKBwUMExQQBwoLBQIBAggIFUt/n7C1qYtBEQwFAQcJPcX9//////7/8UMNCQIIFsf//f39///+/9U6EQkCCROK7fj6+PLevIU5HRMHAQcPFzdWYV1PQzMkIRcMBgEECRIXGyAkJSQhHBQNCAMBAgQIDBATFBMRDwwKBwQCAFZQOCBUAAAAEAIAnQEqEAAJAAOAWiUAAfHJ3RUoYcNIAAD+9dNHTsVQF+UXaOKXiLY9anFd79mFb1qtIh0G7WViSZvBEGxFQ9dGZVdYsmJH/KA6qhyCTjhtwAAA"
+  },
+  "couche-chocolat": {
+    "w": 2000,
+    "h": 1100,
+    "alt": "La coque de chocolat",
+    "group": "macro",
+    "blur": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4WAoAAAAQAAAADwAACAAAQUxQSIoAAAANcFpt27I87//9gjd3iNqoZLcNmIcViESibuFUqrv7hw4REUkkC1xQqyQ8Tlf2uDH5boyGTXqZrut+ffZSvfIF/GltEV+xh3wMryeBgBcPJEr6NO4yw4+eYIJEeL0IeOHFpH3NfazmDC8ABHoNyiEbr1fiIaPC97Nh6+R3sRNvNUfHF6kMJp9bLyhWUDggQAAAAPABAJ0BKhAACQADgFolAE6AHq+oC67N0AD+818aPJAuknpLXpDOYK9Nbl7ynSGb/fk/biToklBQmbK+yukgAAA="
+  },
+  "couche-finition": {
+    "w": 2000,
+    "h": 1100,
+    "alt": "La finition : kadaïf doré et éclats de pistache",
+    "group": "macro",
+    "blur": "data:image/webp;base64,UklGRvQAAABXRUJQVlA4WAoAAAAQAAAADwAACAAAQUxQSGEAAAABcCPZtmnt/e63bZuRQ9t2/jPOP/IQImICAJAEQFDCq0RAo1EJmxHvpdptOK0Gn9eU5sU/WBe03srkEuvkASI6LZbHh8zhHGsUBABFa+bTW1XCZVMSr0oBAATwDiQIkPgrAFZQOCBsAAAAMAIAnQEqEAAJAAOAWiWwAnQGK04v4+P9IAAA/kDbfrT5IZZ8VBfy3wK8tTzBVhxqxUXhypHBvJGx+by55jL7+RRKwEm9Cg/AN/8d2K36smBj75Dz3acXRVs8Cd0H5XH2HPyS03UYqTKQMMAA"
+  },
+  "coffret-ferme": {
+    "w": 2400,
+    "h": 1600,
+    "alt": "Coffret Signature fermé, monogramme en relief et ruban bronze",
+    "group": "coffret",
+    "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoQAAsAA4BaJZQCdAENz5HxF6AA/vTn2Vn/cFltiHUcCx11rIE4h6wd3kOs48tYxB4LwWzu+X2s7+P2YYVUW2Hsr0d12AAA"
+  }
+}
