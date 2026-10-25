@@ -5,7 +5,6 @@ import { PDFDocument, rgb, setCharacterSpacing, type PDFFont, type PDFPage, type
 import fontkit from "@pdf-lib/fontkit";
 import type { schema } from "@/db";
 import { readSettings } from "./settings";
-import { LOGOTYPE, MONO_GROOVE, MONO_TRAVERSE, PIT_PATH } from "./brand-paths";
 import { segmentShort } from "./segments";
 
 type Quote = typeof schema.quoteRequests.$inferSelect;
@@ -31,6 +30,8 @@ const C = {
 };
 
 const fontFile = (name: string) => fs.readFileSync(path.join(process.cwd(), "src/assets/fonts", name));
+// Logo officiel détouré (npm run logo) : version complète pour la première page, lockup pour les suivantes.
+const logoFile = (name: string) => fs.readFileSync(path.join(process.cwd(), "src/assets/brand", name));
 
 const isPlaceholder = (v: string | undefined | null) => !v || /^\s*\[.*\]\s*$/.test(v);
 /** Valeur légale lisible : les valeurs entre crochets deviennent « à compléter ». */
@@ -141,57 +142,6 @@ class Writer {
 
 const charsets = new WeakMap<PDFFont, Set<number>>();
 
-/** Transforme un chemin SVG absolu (M/L/C/Z) : translate, rotate (degrés), scale. */
-function transformPath(d: string, tx: number, ty: number, rotDeg: number, s: number) {
-  const r = (rotDeg * Math.PI) / 180;
-  const cos = Math.cos(r), sin = Math.sin(r);
-  const tokens = d.match(/[MLCZ]|-?\d*\.?\d+(?:e-?\d+)?/gi) ?? [];
-  const out: string[] = [];
-  const nums: number[] = [];
-  const flush = () => {
-    for (let i = 0; i + 1 < nums.length; i += 2) {
-      const x = nums[i] * s, y = nums[i + 1] * s;
-      out.push(`${(x * cos - y * sin + tx).toFixed(2)} ${(x * sin + y * cos + ty).toFixed(2)}`);
-    }
-    nums.length = 0;
-  };
-  for (const t of tokens) {
-    if (/^[MLCZ]$/i.test(t)) {
-      flush();
-      out.push(t);
-    } else nums.push(Number(t));
-  }
-  flush();
-  return out.join(" ");
-}
-
-function parseTransform(t: string) {
-  const tr = /translate\(([-\d.]+)[ ,]+([-\d.]+)\)/.exec(t);
-  const ro = /rotate\(([-\d.]+)\)/.exec(t);
-  const sc = /scale\(([-\d.]+)\)/.exec(t);
-  return { tx: tr ? +tr[1] : 0, ty: tr ? +tr[2] : 0, rot: ro ? +ro[1] : 0, s: sc ? +sc[1] : 1 };
-}
-
-/** Monogramme (noyau) : la rainure en T est « évidée » en blanc. */
-function drawMonogram(p: PDFPage, x: number, yTop: number, height: number, color: RGB) {
-  const scale = height / 160;
-  p.drawSvgPath(PIT_PATH, { x, y: yTop, scale, color });
-  p.drawSvgPath(MONO_TRAVERSE, { x, y: yTop, scale, color: C.white });
-  p.drawSvgPath(MONO_GROOVE, { x, y: yTop, scale, color: C.white });
-}
-
-/** Logotype vectoriel TAMBRÉ (accent compris). Retourne la largeur dessinée. */
-function drawLogotype(p: PDFPage, x: number, yTop: number, width: number, color: RGB) {
-  const [vx, vy, vw] = LOGOTYPE.viewBox.split(" ").map(Number);
-  const scale = width / vw;
-  const ox = x - vx * scale;
-  const oy = yTop + vy * scale; // vy négatif : l'accent dépasse au-dessus des capitales
-  p.drawSvgPath(LOGOTYPE.d, { x: ox, y: oy, scale, color });
-  const t = parseTransform(LOGOTYPE.accent);
-  p.drawSvgPath(transformPath(LOGOTYPE.accentD, t.tx, t.ty, t.rot, t.s), { x: ox, y: oy, scale, color });
-  return width;
-}
-
 // ---------------------------------------------------------------------------
 // Rendu
 // ---------------------------------------------------------------------------
@@ -207,20 +157,23 @@ export async function renderQuotePdf(quote: typeof schema.quoteRequests.$inferSe
     semibold: await doc.embedFont(fontFile("Manrope-SemiBold.ttf"), { subset: true }),
   };
   for (const font of Object.values(f)) charsets.set(font, new Set(font.getCharacterSet()));
+  const logo = await doc.embedPng(logoFile("logo-pdf.png"));
+  const lockup = await doc.embedPng(logoFile("lockup-pdf.png"));
 
   const title = kind === "demande" ? "Récapitulatif de votre demande de devis" : "Proposition commerciale";
-  doc.setTitle(`${kind === "demande" ? "Demande de devis" : "Proposition"} ${quote.reference} · TAMBRÉ`);
-  doc.setAuthor("TAMBRÉ");
+  doc.setTitle(`${kind === "demande" ? "Demande de devis" : "Proposition"} ${quote.reference} · MAISON TAMRĀN`);
+  doc.setAuthor("MAISON TAMRĀN");
   doc.setSubject(title);
   doc.setLanguage("fr-FR");
-  doc.setCreator("TAMBRÉ");
-  doc.setProducer("TAMBRÉ");
+  doc.setCreator("MAISON TAMRĀN");
+  doc.setProducer("MAISON TAMRĀN");
   doc.setCreationDate(new Date());
 
   const w = new Writer(doc, f, (wr) => {
     if (wr.pages.length > 1) {
       // en-tête réduit sur les pages suivantes
-      drawLogotype(wr.page, M, H - 40, 70, C.ink);
+      const lh = 24;
+      wr.page.drawImage(lockup, { x: M, y: H - 32 - lh, width: (lockup.width / lockup.height) * lh, height: lh });
       wr.text(`${quote.reference}`, W - M, H - 47, f.regular, 8.5, C.muted, { align: "right" });
       wr.rule(H - 58);
       wr.y = H - 84;
@@ -229,9 +182,10 @@ export async function renderQuotePdf(quote: typeof schema.quoteRequests.$inferSe
 
   // --- En-tête ---------------------------------------------------------------
   const p = w.page;
-  drawMonogram(p, M, H - 46, 42, C.ink);
-  drawLogotype(p, M + 38, H - 56, 116, C.ink);
-  w.text("La datte, réinventée en haute gourmandise.", M + 38, H - 92, f.italic, 9.5, C.soft);
+  const lh = 66;
+  const lw = (logo.width / logo.height) * lh;
+  p.drawImage(logo, { x: M - 4, y: H - 38 - lh, width: lw, height: lh });
+  w.text("L'art de sublimer la datte.", M + lw + 10, H - 92, f.italic, 9.5, C.soft);
 
   const dateLabel = kind === "proposition" ? dateFmt.format(quote.updatedAt) : dateFmt.format(quote.createdAt);
   w.text(kind === "demande" ? "Demande de devis" : "Proposition", W - M, H - 58, f.display, 17, C.ink, { align: "right" });
@@ -268,7 +222,7 @@ export async function renderQuotePdf(quote: typeof schema.quoteRequests.$inferSe
     return y;
   };
   const emitter = [
-    { t: isPlaceholder(legal.companyName) ? "TAMBRÉ (raison sociale à compléter)" : `${legal.companyName} (TAMBRÉ)`, font: f.semibold },
+    { t: isPlaceholder(legal.companyName) ? "MAISON TAMRĀN (raison sociale à compléter)" : `${legal.companyName} (MAISON TAMRĀN)`, font: f.semibold },
     { t: legalValue(legal.address, "Adresse"), color: isPlaceholder(legal.address) ? C.muted : C.ink },
     { t: `SIRET : ${lv(legal.siret)}`, color: isPlaceholder(legal.siret) ? C.muted : C.ink },
     { t: settings.contactEmail },

@@ -1,7 +1,6 @@
-// Moteur d'illustration « nature morte » en SVG pour les visuels concept TAMBRÉ.
+// Moteur d'illustration « nature morte » en SVG pour les visuels concept (en attente des photos du pipeline d'images).
 // Les images produites sont des CONCEPTS illustrés, en attendant les vraies photographies.
 import type { Recipe, Topping } from "../../src/data/recipes";
-import { PIT_PATH, MONO_GROOVE, MONO_TRAVERSE, LOGOTYPE } from "../../src/lib/brand-paths";
 
 export type RNG = () => number;
 export function rng(seed: number): RNG {
@@ -628,16 +627,14 @@ export interface BoxOpts {
   seed?: number;
 }
 
-export function monogramMark(color: string, h: number, x: number, y: number, opacity = 1) {
-  const s = h / 160;
-  const id = `mm${Math.round(x)}_${Math.round(y)}_${Math.round(h)}`;
-  return `<defs><mask id="${id}" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="160"><rect width="100" height="160" fill="#fff"/><path d="${MONO_TRAVERSE}" fill="#000"/><path d="${MONO_GROOVE}" fill="#000"/></mask></defs><g transform="translate(${f(x - 50 * s)} ${f(y - 80 * s)}) scale(${f(s)})" opacity="${opacity}"><path d="${PIT_PATH}" fill="${color}" mask="url(#${id})"/></g>`;
+// Les visuels concept ne portent plus aucune marque : l'ancien monogramme et l'ancien logotype ont été retirés,
+// et l'on ne redessine pas le logo officiel (les coffrets réels seront photographiés).
+export function monogramMark(_color: string, _h: number, _x: number, _y: number, _opacity = 1) {
+  return "";
 }
 
-export function logotypeMark(color: string, width: number, x: number, y: number, opacity = 1) {
-  const [vx, vy, vw, vh] = LOGOTYPE.viewBox.split(" ").map(Number);
-  const s = width / vw;
-  return `<g transform="translate(${f(x - width / 2 - vx * s)} ${f(y - (vh * s) / 2 - vy * s)}) scale(${f(s)})" fill="${color}" opacity="${opacity}"><path d="${LOGOTYPE.d}"/><path transform="${LOGOTYPE.accent}" d="${LOGOTYPE.accentD}"/></g>`;
+export function logotypeMark(_color: string, _width: number, _x: number, _y: number, _opacity = 1) {
+  return "";
 }
 
 /** Coffret ouvert vu de dessus avec dattes dans leurs calages */

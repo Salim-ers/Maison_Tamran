@@ -21,8 +21,8 @@ const nextConfig: NextConfig = {
   },
   // Polices embarquées dans les PDF (devis) : à inclure dans les fonctions serverless
   outputFileTracingIncludes: {
-    "/admin/devis/[id]/pdf": ["./src/assets/fonts/**"],
-    "/api/devis/[reference]/pdf": ["./src/assets/fonts/**"],
+    "/admin/devis/[id]/pdf": ["./src/assets/fonts/**", "./src/assets/brand/**"],
+    "/api/devis/[reference]/pdf": ["./src/assets/fonts/**", "./src/assets/brand/**"],
   },
   images: {
     formats: ["image/avif", "image/webp"],

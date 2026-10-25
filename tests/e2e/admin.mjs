@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
 const base = process.env.BASE_URL ?? "http://localhost:3000", out = process.argv[2] ?? "admin";
-const adminEmail = process.env.ADMIN_EMAIL ?? "admin@tambre.local", adminPassword = process.env.ADMIN_PASSWORD ?? "Tambre-admin-2026";
+const adminEmail = process.env.ADMIN_EMAIL ?? "admin@maison-tamran.local", adminPassword = process.env.ADMIN_PASSWORD ?? "MaisonTamran-admin-2026";
 const b = await puppeteer.launch({ headless: true, defaultViewport: { width: 1440, height: 900 } });
 const p = await b.newPage();
 const errs = [];

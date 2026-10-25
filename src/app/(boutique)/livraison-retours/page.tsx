@@ -9,7 +9,7 @@ import { livraisonContenu } from "@/content/registry/legal";
 
 export const metadata: Metadata = {
   title: "Livraison et retours",
-  description: "Tarifs de livraison TAMBRÉ en France et en Europe, conditions d'expédition, colis abîmé et droit de rétractation pour les denrées périssables.",
+  description: "Tarifs de livraison MAISON TAMRĀN en France et en Europe, conditions d'expédition, colis abîmé et droit de rétractation pour les denrées périssables.",
   alternates: { canonical: "/livraison-retours" },
 };
 

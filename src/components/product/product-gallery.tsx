@@ -40,7 +40,7 @@ export function ProductGallery({ images, name }: { images: ImageRef[]; name: str
             />
           </motion.div>
         </AnimatePresence>
-        {cur.concept && <ConceptBadge className="left-3 top-3" />}
+        {cur.concept && <ConceptBadge className="left-3 top-3" ai={cur.ai} />}
       </div>
       {images.length > 1 && (
         <div className="mt-3 grid grid-cols-4 gap-3" role="tablist" aria-label={`Vues de ${name}`}>

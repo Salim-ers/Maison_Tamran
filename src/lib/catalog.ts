@@ -3,6 +3,7 @@ import { cacheLife, cacheTag } from "next/cache";
 import { asc, eq } from "drizzle-orm";
 import { db, schema } from "@/db";
 import { storeMode } from "./env";
+import { withPhoto } from "./photos";
 import { readSettings } from "./settings";
 
 export type ProductRow = typeof schema.products.$inferSelect;
@@ -39,6 +40,7 @@ export async function getCatalog(): Promise<{ products: CatalogProduct[]; collec
       .filter((p) => p.status !== "archived" && p.status !== "draft")
       .map((p) => ({
         ...p,
+        images: p.images.map(withPhoto),
         collectionSlug: byId.get(p.collectionId ?? "")?.slug ?? "",
         collectionName: byId.get(p.collectionId ?? "")?.name ?? "",
         purchasable: isPurchasableStatus(p.status),
@@ -59,7 +61,7 @@ export async function getBoxes(): Promise<(BoxRow & { purchasable: boolean })[]>
   const rows = await db.select().from(schema.boxes).orderBy(asc(schema.boxes.sortOrder));
   return rows
     .filter((b) => b.status !== "archived" && b.status !== "draft")
-    .map((b) => ({ ...b, purchasable: !b.quoteOnly && b.priceCents != null && isPurchasableStatus(b.status) }));
+    .map((b) => ({ ...b, images: b.images.map(withPhoto), purchasable: !b.quoteOnly && b.priceCents != null && isPurchasableStatus(b.status) }));
 }
 
 export async function getSettings() {

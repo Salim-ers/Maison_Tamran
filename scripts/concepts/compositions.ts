@@ -282,7 +282,7 @@ function layer(kind: "datte" | "garniture" | "chocolat" | "finition") {
 }
 
 export function slots(): Slot[] {
-  const list: Slot[] = [{ id: "hero", group: "hero", w: 3200, h: 1800, alt: "Datte Or de Marrakech ouverte révélant sa crème de pistache, devant un coffret TAMBRÉ", build: hero }];
+  const list: Slot[] = [{ id: "hero", group: "hero", w: 3200, h: 1800, alt: "Datte Or de Marrakech ouverte révélant sa crème de pistache, devant un coffret chocolat", build: hero }];
   for (const rec of RECIPES) {
     list.push({ id: `produit-${rec.slug}`, group: "produit", w: 1600, h: 2000, alt: `${rec.name} : datte enrobée de ${rec.chocolate === "noir" ? "chocolat noir" : `chocolat ${rec.chocolate}`}`, build: () => productMain(rec) });
     list.push({ id: `coupe-${rec.slug}`, group: "coupe", w: 1600, h: 2000, alt: `${rec.name} en coupe : la garniture au cœur de la datte`, build: () => productCut(rec) });
@@ -292,8 +292,8 @@ export function slots(): Slot[] {
   for (let i = 0; i < 6; i++) list.push({ id: `macro-${i + 1}`, group: "macro", w: 1600, h: 1600, alt: macroAlts[i], build: () => macro(i) });
   const coffretAlts = ["Coffret Signature ouvert, douze dattes dans leurs calages", "Coffret Prestige de vingt-quatre pièces", "Coffret Découverte ivoire, six pièces", "Coffret Édition Limitée numéroté"];
   for (let i = 0; i < 4; i++) list.push({ id: `coffret-${i + 1}`, group: "coffret", w: 2400, h: 1600, alt: coffretAlts[i], build: () => coffretScene(i) });
-  list.push({ id: "coffret-ferme", group: "coffret", w: 2400, h: 1600, alt: "Coffret Signature fermé, monogramme en relief et ruban bronze", build: coffretClosed });
-  const packAlts = ["Couvercle chocolat, monogramme en relief et logotype bronze", "Trois coffrets empilés : chocolat, ivoire et vert", "Carte de dégustation et ruban bronze"];
+  list.push({ id: "coffret-ferme", group: "coffret", w: 2400, h: 1600, alt: "Coffret Signature fermé, ruban bronze", build: coffretClosed });
+  const packAlts = ["Couvercle de coffret chocolat", "Trois coffrets empilés : chocolat, ivoire et vert", "Carte de dégustation et ruban bronze"];
   for (let i = 0; i < 3; i++) list.push({ id: `packaging-${i + 1}`, group: "packaging", w: 1600, h: 2000, alt: packAlts[i], build: () => packaging(i) });
   const lifeAlts = ["Un espresso et quelques dattes Café Impérial", "Un coffret prêt à offrir, ruban et carte", "Plat de dattes à partager au centre de la table"];
   for (let i = 0; i < 3; i++) list.push({ id: `lifestyle-${i + 1}`, group: "lifestyle", w: 2400, h: 1600, alt: lifeAlts[i], build: () => lifestyle(i) });

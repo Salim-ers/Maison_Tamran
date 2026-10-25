@@ -1,8 +1,8 @@
-# TAMBRÉ — Maison de dattes gastronomiques
+# MAISON TAMRĀN — Dattes gastronomiques
 
-Site e-commerce complet de **TAMBRÉ** : identité de marque, boutique, configurateur de coffrets, paiement Stripe, espace client, espace professionnel (devis B2B) et back-office.
+Site e-commerce complet de **MAISON TAMRĀN** : identité de marque, boutique, configurateur de coffrets, paiement Stripe, espace client, espace professionnel (devis B2B) et back-office.
 
-> « La datte, réinventée en haute gourmandise. »
+> « L'art de sublimer la datte. »
 
 ## État du projet : ce qui est réel, ce qui est provisoire
 

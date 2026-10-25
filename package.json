@@ -1,5 +1,5 @@
 {
-  "name": "tambre",
+  "name": "maison-tamran",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,9 +12,13 @@
     "db:migrate": "drizzle-kit migrate",
     "db:seed": "tsx scripts/seed.mts",
     "db:setup": "npm run db:migrate && npm run db:seed",
-    "brand": "node scripts/brand.mjs",
+    "logo": "tsx scripts/logo.mts",
     "concepts": "tsx scripts/concepts/build.mts",
     "prompts": "tsx scripts/prompts.mts",
+    "images:generate": "tsx scripts/images/generate.mts",
+    "images:review": "tsx scripts/images/review.mts",
+    "images:approve": "tsx scripts/images/approve.mts",
+    "images:status": "tsx scripts/images/status.mts",
     "test:smoke": "node scripts/smoke.mjs",
     "test:e2e": "node tests/e2e/flow.mjs && node tests/e2e/account.mjs && node tests/e2e/admin.mjs"
   },

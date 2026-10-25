@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   TAMBRÉ — design system
+   MAISON TAMRĀN — design system
    Couleurs de marque, échelle typographique, rythmes et primitives d'interface.
    ========================================================================== */
 
@@ -21,8 +21,8 @@
   --color-danger: #9b2c2c;
   --color-success: #3f5b3a;
 
-  --font-display: var(--font-bodoni), "Bodoni Moda", Didot, "Times New Roman", serif;
-  --font-sans: var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bodoni-ext), var(--font-bodoni), "Bodoni Moda", Didot, "Times New Roman", serif;
+  --font-sans: var(--font-manrope-ext), var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
 
   --ease-luxe: cubic-bezier(0.22, 0.8, 0.12, 1);
   --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);

@@ -1,4 +1,4 @@
-# Conventions de développement TAMBRÉ
+# Conventions de développement MAISON TAMRĀN
 
 Ce document décrit les règles du projet : architecture, design system, rédaction. À lire avant toute contribution.
 

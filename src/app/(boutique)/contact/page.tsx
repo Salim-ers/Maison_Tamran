@@ -7,7 +7,7 @@ import { concept, Media } from "@/components/ui/media";
 
 export const metadata: Metadata = {
   title: "Nous écrire",
-  description: "Une question sur une commande, un cadeau, un allergène ou un projet professionnel ? Écrivez à la maison TAMBRÉ.",
+  description: "Une question sur une commande, un cadeau, un allergène ou un projet professionnel ? Écrivez à MAISON TAMRĀN.",
   alternates: { canonical: "/contact" },
 };
 

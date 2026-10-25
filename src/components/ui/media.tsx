@@ -2,18 +2,19 @@ import Image, { type ImageProps } from "next/image";
 import { clsx } from "clsx";
 import type { ImageRef } from "@/db/schema";
 import manifest from "@/data/concepts-manifest.json";
+import { withPhoto } from "@/lib/photos";
 
 type Manifest = Record<string, { w: number; h: number; alt: string; group: string; blur: string }>;
 const M = manifest as Manifest;
 
-/** Récupère un visuel concept par identifiant d'emplacement (ex. "lifestyle-1"). */
+/** Visuel d'un emplacement (ex. "lifestyle-1") : la photo validée si elle existe, sinon le visuel concept. */
 export function concept(id: string): ImageRef {
   const m = M[id];
-  return { url: `/images/concepts/${id}.webp`, alt: m?.alt ?? "", role: "extra", concept: true, w: m?.w, h: m?.h, blur: m?.blur };
+  return withPhoto({ url: `/images/concepts/${id}.webp`, alt: m?.alt ?? "", role: "extra", concept: true, w: m?.w, h: m?.h, blur: m?.blur });
 }
 
-/** Pastille discrète signalant un visuel illustré (et non une photographie du produit réel). */
-export function ConceptBadge({ className, tone = "light" }: { className?: string; tone?: "light" | "dark" }) {
+/** Pastille discrète signalant un visuel illustré ou une image conceptuelle IA (et non une photographie du produit réel). */
+export function ConceptBadge({ className, tone = "light", ai = false }: { className?: string; tone?: "light" | "dark"; ai?: boolean }) {
   return (
     <span
       className={clsx(
@@ -22,7 +23,7 @@ export function ConceptBadge({ className, tone = "light" }: { className?: string
         className ?? "bottom-3 right-3"
       )}
     >
-      Visuel concept
+      {ai ? "Image conceptuelle · IA" : "Visuel concept"}
     </span>
   );
 }
@@ -36,7 +37,8 @@ type MediaProps = Omit<ImageProps, "src" | "alt" | "placeholder" | "blurDataURL"
 };
 
 /** Image optimisée (next/image) avec flou de chargement et mention « Visuel concept » si nécessaire. */
-export function Media({ image, alt, badge = true, badgeClassName, wrapperClassName, className, fill, ...rest }: MediaProps) {
+export function Media({ image: source, alt, badge = true, badgeClassName, wrapperClassName, className, fill, ...rest }: MediaProps) {
+  const image = withPhoto(source);
   if (!image) return <div className={clsx("bg-taupe/30", wrapperClassName)} aria-hidden />;
   const img = (
     <Image
@@ -53,7 +55,7 @@ export function Media({ image, alt, badge = true, badgeClassName, wrapperClassNa
   return (
     <div className={wrapperClassName ?? "relative"}>
       {img}
-      {badge && image.concept && <ConceptBadge className={badgeClassName} tone={badge === "dark" ? "dark" : "light"} />}
+      {badge && image.concept && <ConceptBadge className={badgeClassName} tone={badge === "dark" ? "dark" : "light"} ai={image.ai} />}
     </div>
   );
 }

@@ -23,5 +23,5 @@ export async function unsubscribeNewsletter(_: UnsubscribeState, form: FormData)
     .set({ unsubscribedAt: new Date(), confirmToken: null })
     .where(and(eq(schema.newsletterSubscribers.email, parsed.data.email), isNull(schema.newsletterSubscribers.unsubscribedAt)));
   // Même réponse que l'adresse soit inscrite ou non : on ne révèle pas la liste des abonnés.
-  return { status: "ok", message: `C'est fait : l'adresse ${parsed.data.email} ne recevra plus la lettre de TAMBRÉ. Si elle n'était pas inscrite, aucune action n'était nécessaire.` };
+  return { status: "ok", message: `C'est fait : l'adresse ${parsed.data.email} ne recevra plus la lettre de MAISON TAMRĀN. Si elle n'était pas inscrite, aucune action n'était nécessaire.` };
 }

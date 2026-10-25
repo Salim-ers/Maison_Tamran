@@ -34,7 +34,7 @@ export default async function NewsletterPage({ searchParams }: { searchParams: S
         intro="Inscriptions en double opt-in : seuls les abonnés ayant confirmé leur adresse peuvent recevoir la lettre."
         actions={<a href="/admin/newsletter/export" className={btnPrimary} download>Exporter les confirmés (CSV)</a>}
       />
-      <Notice className="mb-6">L&apos;export contient l&apos;email, la date et le texte du consentement : conservez-le comme preuve du consentement et ne l&apos;utilisez que pour la lettre TAMBRÉ.</Notice>
+      <Notice className="mb-6">L&apos;export contient l&apos;email, la date et le texte du consentement : conservez-le comme preuve du consentement et ne l&apos;utilisez que pour la lettre de MAISON TAMRĀN.</Notice>
       <FilterTabs label="Filtrer les abonnés" current={f} items={Object.entries(FILTERS).map(([k, v], i) => ({ value: k, label: v.label, href: `/admin/newsletter?statut=${k}`, count: counts[i][0]?.n ?? 0 }))} />
       <DataTable
         rows={rows}

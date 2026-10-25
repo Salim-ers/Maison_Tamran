@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   title: "Questions fréquentes",
-  description: "Commandes et paiement, livraison, conservation et allergènes, coffrets et cadeaux, offre professionnelle : les réponses aux questions courantes sur TAMBRÉ.",
+  description: "Commandes et paiement, livraison, conservation et allergènes, coffrets et cadeaux, offre professionnelle : les réponses aux questions courantes sur MAISON TAMRĀN.",
   alternates: { canonical: "/faq" },
 };
 

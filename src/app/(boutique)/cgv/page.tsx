@@ -6,7 +6,7 @@ import { LegalPage, LegalValue } from "@/components/legal/legal";
 
 export const metadata: Metadata = {
   title: "Conditions générales de vente",
-  description: "Conditions générales de vente de la boutique en ligne TAMBRÉ : commande, prix, paiement, livraison, rétractation, garanties, médiation.",
+  description: "Conditions générales de vente de la boutique en ligne MAISON TAMRĀN : commande, prix, paiement, livraison, rétractation, garanties, médiation.",
   alternates: { canonical: "/cgv" },
 };
 
@@ -30,7 +30,7 @@ export default async function CgvPage() {
   const { legal, contactEmail } = await getSettings();
   const demo = storeMode() === "demo";
   return (
-    <LegalPage title="Conditions générales de vente" href="/cgv" toc={TOC} intro={<p>Ces conditions s&apos;appliquent aux commandes passées sur la boutique en ligne TAMBRÉ par des consommateurs. Les ventes aux professionnels font l&apos;objet d&apos;une proposition dédiée.</p>}>
+    <LegalPage title="Conditions générales de vente" href="/cgv" toc={TOC} intro={<p>Ces conditions s&apos;appliquent aux commandes passées sur la boutique en ligne MAISON TAMRĀN par des consommateurs. Les ventes aux professionnels font l&apos;objet d&apos;une proposition dédiée.</p>}>
       <h2 id="objet">1. Objet et champ d&apos;application</h2>
       <p>
         Les présentes conditions générales de vente (CGV) régissent les ventes de produits conclues sur le site entre le vendeur désigné à l&apos;article 2 et toute personne physique agissant à des fins non professionnelles (le « client »). Toute commande vaut acceptation des CGV en vigueur au jour de la commande, que le client reconnaît avoir lues avant de valider.

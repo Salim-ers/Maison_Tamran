@@ -4,7 +4,7 @@ import postgres from "postgres";
 import * as schema from "./schema";
 
 declare global {
-  var __tambreSql: ReturnType<typeof postgres> | undefined;
+  var __maisonTamranSql: ReturnType<typeof postgres> | undefined;
 }
 
 function connect() {
@@ -17,13 +17,13 @@ function connect() {
 
   // Un seul pool par processus (évite l'épuisement des connexions en développement et en serverless).
   const sql =
-    globalThis.__tambreSql ??
+    globalThis.__maisonTamranSql ??
     postgres(url, {
       max: Number(process.env.DATABASE_POOL_MAX ?? 5),
       prepare: process.env.DATABASE_PREPARE !== "false", // false pour les poolers en mode transaction
       idle_timeout: 20,
     });
-  if (process.env.NODE_ENV !== "production") globalThis.__tambreSql = sql;
+  if (process.env.NODE_ENV !== "production") globalThis.__maisonTamranSql = sql;
 
   return drizzle(sql, { schema });
 }

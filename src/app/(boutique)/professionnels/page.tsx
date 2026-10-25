@@ -8,7 +8,7 @@ import { proOffre, proOuverture, proRevendeurs } from "@/content/registry/profes
 
 export const metadata: Metadata = {
   title: "Professionnels",
-  description: "Coffrets TAMBRÉ personnalisés pour les entreprises, mariages et événements, hôtels, coffee shops et épiceries fines. Demandez un devis.",
+  description: "Coffrets MAISON TAMRĀN personnalisés pour les entreprises, mariages et événements, hôtels, coffee shops et épiceries fines. Demandez un devis.",
   alternates: { canonical: "/professionnels" },
 };
 

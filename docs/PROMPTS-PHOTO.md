@@ -1,533 +1,597 @@
-# Prompts photo TAMBRÉ
+# Prompts photo MAISON TAMRĀN
 
-Ce document liste 54 prompts, un par emplacement visuel du site. Chaque emplacement est actuellement occupé par un **visuel concept illustré** (`public/images/concepts/<id>.webp`), signalé « Visuel concept » à l'écran.
+Ce document liste 61 prises de vue, une par emplacement d'image du site, dans l'ordre de priorité de génération. Il est produit par `npm run prompts` à partir de `scripts/images/shots.ts` (source unique, également utilisée par le pipeline de génération).
 
-Pour remplacer un concept par une vraie photographie (shooting ou génération d'image validée) :
+## Pipeline (Cloudflare Workers AI)
 
-1. Produisez l'image au ratio indiqué (la taille donnée est la cible).
-2. Téléversez-la dans Admin › Produits (ou Coffrets) sur l'image du même rôle, et décochez « visuel concept » ; ou remplacez le fichier dans `public/images/` en conservant le cadrage.
-3. Pour les visuels d'accueil et d'ambiance (hero, lifestyle, pro, coffret-ferme, couches), remplacez le fichier correspondant et mettez à jour `src/data/concepts-manifest.json` si les dimensions changent.
+1. `npm run images:generate -- <emplacement>` (ou `group:hero`, `recipe:<slug>`, `--missing`) : génère un candidat dans `.images-staging/` (hors dépôt). Le script s'arrête avant de dépasser l'allocation gratuite quotidienne.
+2. `npm run images:review` : planche d'aperçu locale pour comparer les candidats.
+3. `npm run images:approve -- <emplacement> [fichier]` : optimise l'image (WebP), la publie dans `public/images/<dossier>/` et l'enregistre dans `src/data/photo-manifest.json`. Le site l'affiche aussitôt à la place du visuel concept.
+4. `npm run images:approve -- --revoke <emplacement>` : retire une photo. `npm run images:status` : état et quota du jour.
 
-**Rappel** : n'utilisez jamais de photo de concurrent, et faites valider tout visuel généré par IA avant publication (fidélité à la recette réelle).
+**Nature des images** : ce sont des images conceptuelles générées par IA, signalées « Image conceptuelle · IA » à l'écran et dans `src/data/photo-provenance.json`. Elles ne représentent pas des produits réellement fabriqués : à remplacer par un shooting avant la commercialisation. Ne jamais utiliser la photo d'un concurrent.
 
-**Négatif commun** : 3D render, CGI, plastic look, cartoon, illustration, oversaturated, harsh flash, clutter, palm trees, crowns, arabesque ornaments, gold glitter, watermark, text, extra objects, deformed dates, melted chocolate puddles.
+## hero
 
-## Accueil
+### `hero` — Hero d'accueil
 
-### `hero`
-
-- Usage : Ouverture plein écran (le texte occupe le tiers gauche : garder cette zone sombre et calme)
-- Format : 16:9, 3840×2160
+- Usage : Ouverture plein écran de l'accueil (texte sur le tiers gauche : zone sombre et calme)
+- Format : 1920×1088 · dossier `public/images/hero/` · priorité 1
 
 ```text
-A gourmet Medjool date stuffed with pistachio and orange-blossom cream and kadaif, sliced lengthwise to reveal its green heart, the two halves resting on a deep chocolate-brown surface, a closed rigid chocolate-brown gift box with a subtle embossed monogram and bronze foil wordmark softly out of focus in the background right, warm rim light, left third of the frame left in deep shadow for text. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+A spectacular premium Medjool date enrobed in milk chocolate, cut in half to reveal a generous bright green pistachio and orange-blossom heart with golden kadaif threads, the two halves resting on a deep cocoa-brown surface, a few pistachio crumbs, dramatic contrast of warm light and deep shadows, the subject placed in the right half of the frame, the left third of the frame in deep calm cocoa shadow. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-## Produit : Éclipse Noire
+### `hero-portrait` — Hero d'accueil (mobile)
 
-### `produit-eclipse-noire`
+- Usage : Hero plein écran sur mobile (texte en bas : zone sombre)
+- Format : 1088×1920 · dossier `public/images/hero/` · priorité 1
+
+```text
+Vertical composition: a premium Medjool date enrobed in milk chocolate, cut in half revealing a generous bright green pistachio heart with golden kadaif threads, placed in the upper half of the frame on a deep cocoa-brown surface, the lower third in deep calm cocoa shadow, warm dramatic light. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `collection-hero` — Hero de la page Créations
+
+- Usage : Panoramique de plusieurs créations (page /creations)
+- Format : 1920×1088 · dossier `public/images/collections/` · priorité 1
+
+```text
+Panoramic view of a row of ten different gourmet stuffed Medjool dates enrobed in dark, milk, white and blond chocolate, each with a different delicate topping (pistachio, black sesame, matcha, coffee bean, raspberry, rose petals, coconut, pecan, saffron, buckwheat), two of them cut in half showing colourful fillings, arranged on a long cream travertine slab against a deep cocoa background, warm side light. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+## produit
+
+### `produit-eclipse-noire` — Éclipse Noire — visuel principal
 
 - Usage : Visuel principal (cartes, fiche produit)
-- Format : 4:5, 2400×3000
+- Format : 1024×1280 · dossier `public/images/products/` · priorité 2
 
 ```text
-A single Medjool date three-quarters enrobed in dark chocolate, the uncoated tip showing the natural wrinkled date skin, topped with a scattering of black sesame seeds and fine yuzu zest, placed diagonally on dark slate stone surface, a second identical piece softly blurred in the background. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Three-quarter view of a single gourmet Medjool date fully enrobed in glossy dark chocolate, a delicate line of toasted black sesame seeds and a few fine threads of bright yellow yuzu zest on top, placed on a deep cocoa-black slate surface against a near-black background, low-key cinematic side light from the right drawing a thin highlight along the chocolate, a second identical piece softly out of focus behind it. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `coupe-eclipse-noire`
-
-- Usage : Vue en coupe (survol des cartes, galerie) — même cadrage que le visuel principal
-- Format : 4:5, 2400×3000
-
-```text
-The same dark chocolate-coated Medjool date cut cleanly in half lengthwise, the two halves showing a thin dark chocolate shell, the amber translucent date flesh and a charcoal-black toasted black sesame praline with a glossy golden yuzu gel core, on dark slate stone surface, crumbs of the topping around. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-### `scene-eclipse-noire`
-
-- Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
-- Format : 3:2, 3600×2400
-
-```text
-Overhead flat lay: one whole dark chocolate-coated stuffed Medjool date and one halved piece revealing a charcoal-black toasted black sesame praline with a glossy golden yuzu gel core, surrounded with restraint by a small ceramic bowl of black sesame seeds, halved fresh yuzu, a broken piece of dark chocolate, on dark slate stone surface, generous negative space. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-## Produit : Velours Persan
-
-### `produit-velours-persan`
+### `produit-velours-persan` — Velours Persan — visuel principal
 
 - Usage : Visuel principal (cartes, fiche produit)
-- Format : 4:5, 2400×3000
+- Format : 1024×1280 · dossier `public/images/products/` · priorité 2
 
 ```text
-A single Medjool date three-quarters enrobed in milk chocolate, the uncoated tip showing the natural wrinkled date skin, topped with a few saffron threads and slivered white almonds, placed diagonally on warm ivory linen paper background (#F7F3EC), a second identical piece softly blurred in the background. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Three-quarter view of a single gourmet Medjool date enrobed in satin milk chocolate, decorated with a few deep red saffron threads and slivered white almonds, placed on a warm ivory silk cloth with soft folds, soft golden morning light from the left, a second identical piece softly out of focus behind it. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `coupe-velours-persan`
-
-- Usage : Vue en coupe (survol des cartes, galerie) — même cadrage que le visuel principal
-- Format : 4:5, 2400×3000
-
-```text
-The same milk chocolate-coated Medjool date cut cleanly in half lengthwise, the two halves showing a thin milk chocolate shell, the amber translucent date flesh and an ivory white-almond cream infused with saffron threads around a soft apricot centre, on warm ivory linen paper background (#F7F3EC), crumbs of the topping around. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-### `scene-velours-persan`
-
-- Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
-- Format : 3:2, 3600×2400
-
-```text
-Overhead flat lay: one whole milk chocolate-coated stuffed Medjool date and one halved piece revealing an ivory white-almond cream infused with saffron threads around a soft apricot centre, surrounded with restraint by saffron threads in a tiny dish, white almonds, dried apricots, on warm ivory linen paper background (#F7F3EC), generous negative space. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-## Produit : Minuit à Kyoto
-
-### `produit-minuit-a-kyoto`
+### `produit-minuit-a-kyoto` — Minuit à Kyoto — visuel principal
 
 - Usage : Visuel principal (cartes, fiche produit)
-- Format : 4:5, 2400×3000
+- Format : 1024×1280 · dossier `public/images/products/` · priorité 2
 
 ```text
-A single Medjool date three-quarters enrobed in white chocolate, the uncoated tip showing the natural wrinkled date skin, topped with a light dusting of matcha and fine yuzu zest, placed diagonally on pale honed limestone surface, a second identical piece softly blurred in the background. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Three-quarter view of a single gourmet Medjool date enrobed in ivory white chocolate, lightly dusted with vivid green matcha powder, a curl of yuzu zest, placed on a pale grey honed stone surface with a dark charcoal background, cool soft diffused daylight, quiet Japanese minimalism, a second identical piece softly out of focus behind it. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `coupe-minuit-a-kyoto`
-
-- Usage : Vue en coupe (survol des cartes, galerie) — même cadrage que le visuel principal
-- Format : 4:5, 2400×3000
-
-```text
-The same white chocolate-coated Medjool date cut cleanly in half lengthwise, the two halves showing a thin white chocolate shell, the amber translucent date flesh and a vivid matcha ganache with a bright yuzu heart, on pale honed limestone surface, crumbs of the topping around. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-### `scene-minuit-a-kyoto`
-
-- Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
-- Format : 3:2, 3600×2400
-
-```text
-Overhead flat lay: one whole white chocolate-coated stuffed Medjool date and one halved piece revealing a vivid matcha ganache with a bright yuzu heart, surrounded with restraint by a dark ceramic bowl of matcha powder with a bamboo whisk, halved yuzu, on pale honed limestone surface, generous negative space. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-## Produit : Or de Marrakech
-
-### `produit-or-de-marrakech`
+### `produit-or-de-marrakech` — Or de Marrakech — visuel principal
 
 - Usage : Visuel principal (cartes, fiche produit)
-- Format : 4:5, 2400×3000
+- Format : 1024×1280 · dossier `public/images/products/` · priorité 2
 
 ```text
-A single Medjool date three-quarters enrobed in milk chocolate, the uncoated tip showing the natural wrinkled date skin, topped with golden kadaif threads and chopped pistachio, placed diagonally on white Carrara marble with soft grey veining, a second identical piece softly blurred in the background. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Three-quarter view of a single gourmet Medjool date enrobed in milk chocolate, topped with crisp golden kadaif threads and bright green crushed pistachio, placed on a cream travertine stone surface with natural pores, warm natural light coming from the left, golden highlights, a second identical piece softly out of focus behind it. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `coupe-or-de-marrakech`
-
-- Usage : Vue en coupe (survol des cartes, galerie) — même cadrage que le visuel principal
-- Format : 4:5, 2400×3000
-
-```text
-The same milk chocolate-coated Medjool date cut cleanly in half lengthwise, the two halves showing a thin milk chocolate shell, the amber translucent date flesh and a green pistachio and orange-blossom cream studded with crisp golden kadaif threads, on white Carrara marble with soft grey veining, crumbs of the topping around. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-### `scene-or-de-marrakech`
-
-- Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
-- Format : 3:2, 3600×2400
-
-```text
-Overhead flat lay: one whole milk chocolate-coated stuffed Medjool date and one halved piece revealing a green pistachio and orange-blossom cream studded with crisp golden kadaif threads, surrounded with restraint by orange blossoms, a bowl of shelled pistachios, a nest of golden kadaif, on white Carrara marble with soft grey veining, generous negative space. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-## Produit : Café Impérial
-
-### `produit-cafe-imperial`
+### `produit-cafe-imperial` — Café Impérial — visuel principal
 
 - Usage : Visuel principal (cartes, fiche produit)
-- Format : 4:5, 2400×3000
+- Format : 1024×1280 · dossier `public/images/products/` · priorité 2
 
 ```text
-A single Medjool date three-quarters enrobed in dark chocolate, the uncoated tip showing the natural wrinkled date skin, topped with a whole coffee bean and crushed green cardamom, placed diagonally on deep chocolate-brown matte surface (#251C1A), a second identical piece softly blurred in the background. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Three-quarter view of a single gourmet Medjool date enrobed in dark chocolate, a single roasted coffee bean and crushed green cardamom on top, placed on a rich espresso-brown background and dark walnut wood surface, warm low light, glowing highlights on the chocolate, a second identical piece softly out of focus behind it. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `coupe-cafe-imperial`
-
-- Usage : Vue en coupe (survol des cartes, galerie) — même cadrage que le visuel principal
-- Format : 4:5, 2400×3000
-
-```text
-The same dark chocolate-coated Medjool date cut cleanly in half lengthwise, the two halves showing a thin dark chocolate shell, the amber translucent date flesh and a hazelnut praline infused with espresso and green cardamom, on deep chocolate-brown matte surface (#251C1A), crumbs of the topping around. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-### `scene-cafe-imperial`
-
-- Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
-- Format : 3:2, 3600×2400
-
-```text
-Overhead flat lay: one whole dark chocolate-coated stuffed Medjool date and one halved piece revealing a hazelnut praline infused with espresso and green cardamom, surrounded with restraint by roasted coffee beans, green cardamom pods, whole hazelnuts, on deep chocolate-brown matte surface (#251C1A), generous negative space. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-## Produit : Rouge Désir
-
-### `produit-rouge-desir`
+### `produit-rouge-desir` — Rouge Désir — visuel principal
 
 - Usage : Visuel principal (cartes, fiche produit)
-- Format : 4:5, 2400×3000
+- Format : 1024×1280 · dossier `public/images/products/` · priorité 2
 
 ```text
-A single Medjool date three-quarters enrobed in dark chocolate, the uncoated tip showing the natural wrinkled date skin, topped with a fine raspberry drizzle, freeze-dried raspberry pieces and dried hibiscus petals, placed diagonally on warm ivory linen paper background (#F7F3EC), a second identical piece softly blurred in the background. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Three-quarter view of a single gourmet Medjool date enrobed in dark chocolate, a fine glossy raspberry drizzle, freeze-dried raspberry pieces and dried hibiscus petals, placed on a warm ivory plaster background and ivory stone surface, bright soft light with a vibrant yet natural colour palette, a second identical piece softly out of focus behind it. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `coupe-rouge-desir`
+## coupe
 
-- Usage : Vue en coupe (survol des cartes, galerie) — même cadrage que le visuel principal
-- Format : 4:5, 2400×3000
+### `coupe-eclipse-noire` — Éclipse Noire — vue en coupe
+
+- Usage : Vue en coupe (survol des cartes, galerie de la fiche)
+- Format : 1024×1280 · dossier `public/images/products/cutaway/` · priorité 3
 
 ```text
-The same dark chocolate-coated Medjool date cut cleanly in half lengthwise, the two halves showing a thin dark chocolate shell, the amber translucent date flesh and a glossy tart raspberry and hibiscus confit, on warm ivory linen paper background (#F7F3EC), crumbs of the topping around. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Macro close-up of a gourmet Medjool date fully enrobed in glossy dark chocolate, a delicate line of toasted black sesame seeds and a few fine threads of bright yellow yuzu zest on top, cut cleanly in half lengthwise, the two halves facing the camera revealing the precise layers: a thin crisp dark chocolate shell, a layer of glossy amber-brown date flesh, and a creamy charcoal-black toasted black sesame praline heart, lightly marbled with a glossy golden yuzu gel. A whole piece beside it. On a deep cocoa-black slate surface against a near-black background, low-key cinematic side light from the right drawing a thin highlight along the chocolate, a few crumbs of the topping. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `scene-rouge-desir`
+### `coupe-velours-persan` — Velours Persan — vue en coupe
+
+- Usage : Vue en coupe (survol des cartes, galerie de la fiche)
+- Format : 1024×1280 · dossier `public/images/products/cutaway/` · priorité 3
+
+```text
+Macro close-up of a gourmet Medjool date enrobed in satin milk chocolate, decorated with a few deep red saffron threads and slivered white almonds, cut cleanly in half lengthwise, the two halves facing the camera revealing the precise layers: a thin crisp milk chocolate shell, a layer of glossy amber-brown date flesh, and a smooth ivory white-almond cream infused with saffron, golden-tinted, around a soft glossy apricot centre. A whole piece beside it. On a warm ivory silk cloth with soft folds, soft golden morning light from the left, a few crumbs of the topping. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `coupe-minuit-a-kyoto` — Minuit à Kyoto — vue en coupe
+
+- Usage : Vue en coupe (survol des cartes, galerie de la fiche)
+- Format : 1024×1280 · dossier `public/images/products/cutaway/` · priorité 3
+
+```text
+Macro close-up of a gourmet Medjool date enrobed in ivory white chocolate, lightly dusted with vivid green matcha powder, a curl of yuzu zest, cut cleanly in half lengthwise, the two halves facing the camera revealing the precise layers: a thin crisp ivory white chocolate shell, a layer of glossy amber-brown date flesh, and a vivid jade-green matcha ganache with a bright translucent yellow yuzu heart. A whole piece beside it. On a pale grey honed stone surface with a dark charcoal background, cool soft diffused daylight, quiet Japanese minimalism, a few crumbs of the topping. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `coupe-or-de-marrakech` — Or de Marrakech — vue en coupe
+
+- Usage : Vue en coupe (survol des cartes, galerie de la fiche)
+- Format : 1024×1280 · dossier `public/images/products/cutaway/` · priorité 3
+
+```text
+Macro close-up of a gourmet Medjool date enrobed in milk chocolate, topped with crisp golden kadaif threads and bright green crushed pistachio, cut cleanly in half lengthwise, the two halves facing the camera revealing the precise layers: a thin crisp milk chocolate shell, a layer of glossy amber-brown date flesh, and a generous bright green pistachio and orange-blossom cream studded with fine crisp golden kadaif threads. A whole piece beside it. On a cream travertine stone surface with natural pores, warm natural light coming from the left, golden highlights, a few crumbs of the topping. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `coupe-cafe-imperial` — Café Impérial — vue en coupe
+
+- Usage : Vue en coupe (survol des cartes, galerie de la fiche)
+- Format : 1024×1280 · dossier `public/images/products/cutaway/` · priorité 3
+
+```text
+Macro close-up of a gourmet Medjool date enrobed in dark chocolate, a single roasted coffee bean and crushed green cardamom on top, cut cleanly in half lengthwise, the two halves facing the camera revealing the precise layers: a thin crisp dark chocolate shell, a layer of glossy amber-brown date flesh, and an intense smooth hazelnut praline infused with espresso, flecked with ground coffee and green cardamom. A whole piece beside it. On a rich espresso-brown background and dark walnut wood surface, warm low light, glowing highlights on the chocolate, a few crumbs of the topping. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `coupe-rouge-desir` — Rouge Désir — vue en coupe
+
+- Usage : Vue en coupe (survol des cartes, galerie de la fiche)
+- Format : 1024×1280 · dossier `public/images/products/cutaway/` · priorité 3
+
+```text
+Macro close-up of a gourmet Medjool date enrobed in dark chocolate, a fine glossy raspberry drizzle, freeze-dried raspberry pieces and dried hibiscus petals, cut cleanly in half lengthwise, the two halves facing the camera revealing the precise layers: a thin crisp dark chocolate shell, a layer of glossy amber-brown date flesh, and a glossy ruby-red tart raspberry and hibiscus confit. A whole piece beside it. On a warm ivory plaster background and ivory stone surface, bright soft light with a vibrant yet natural colour palette, a few crumbs of the topping. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+## coffret
+
+### `coffret-1` — Coffret Signature ouvert (12)
+
+- Usage : Coffrets (page Coffrets, accueil)
+- Format : 1536×1024 · dossier `public/images/boxes/` · priorité 4
+
+```text
+Top view of an open rigid deep chocolate-brown gift box holding twelve assorted gourmet chocolate-enrobed stuffed Medjool dates, each in its own cavity with different toppings (pistachio, black sesame, matcha, coffee bean, raspberry, saffron), the lid placed beside it, ivory tissue paper, cream travertine surface. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `coffret-ferme` — Coffret fermé
+
+- Usage : Coffrets (page Coffrets, accueil)
+- Format : 1536×1024 · dossier `public/images/boxes/` · priorité 4
+
+```text
+A closed rigid deep chocolate-brown gift box tied with a thin satin bronze ribbon, three-quarter view on cream travertine, soft warm side light. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `coffret-2` — Coffret Prestige ouvert (24)
+
+- Usage : Coffrets (page Coffrets, accueil)
+- Format : 1536×1024 · dossier `public/images/boxes/` · priorité 4
+
+```text
+A large open rigid deep chocolate-brown gift box with two rows of twenty-four assorted gourmet chocolate-enrobed stuffed dates with varied toppings, the lid leaning at an angle, on a dark cocoa surface, low warm light. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `coffret-3` — Coffret Découverte ouvert (6)
+
+- Usage : Coffrets (page Coffrets, accueil)
+- Format : 1536×1024 · dossier `public/images/boxes/` · priorité 4
+
+```text
+An open small ivory rigid gift box holding six assorted gourmet chocolate-enrobed stuffed Medjool dates, the lid beside it, a few pistachio crumbs, pale limestone surface, bright soft daylight. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `coffret-4` — Coffret Édition limitée
+
+- Usage : Coffrets (page Coffrets, accueil)
+- Format : 1536×1024 · dossier `public/images/boxes/` · priorité 4
+
+```text
+An open rigid gift box in a deep desaturated olive green with a bronze ribbon, holding twelve seasonal chocolate-enrobed stuffed dates with coconut, pecan, buckwheat and rose toppings, on dark slate. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `packaging-1` — Couvercle de coffret
+
+- Usage : Packaging (coffrets, connexion)
+- Format : 1024×1280 · dossier `public/images/boxes/` · priorité 4
+
+```text
+Top view of a closed rigid deep chocolate-brown gift box lid on oatmeal linen, soft side light revealing the fine paper texture. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `packaging-2` — Trois coffrets empilés
+
+- Usage : Packaging (coffrets, connexion)
+- Format : 1024×1280 · dossier `public/images/boxes/` · priorité 4
+
+```text
+Three stacked rigid gift boxes in deep chocolate brown, ivory and olive green, three-quarter view, soft side light, cream background. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `packaging-3` — Carte de dégustation
+
+- Usage : Packaging (coffrets, connexion)
+- Format : 1024×1280 · dossier `public/images/boxes/` · priorité 4
+
+```text
+A blank cream letterpress tasting card next to a satin bronze ribbon and two chocolate-enrobed stuffed dates on white marble. The card is completely blank. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `pro-1` — Coffrets entreprise
+
+- Usage : Cadeaux d'entreprise
+- Format : 1536×1024 · dossier `public/images/boxes/` · priorité 4
+
+```text
+Corporate gifting: neat stacks of rigid gift boxes in deep chocolate brown and ivory with bronze ribbons, one open box showing twelve chocolate-enrobed stuffed dates, pale limestone surface, clean bright studio light. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+## scene
+
+### `scene-eclipse-noire` — Éclipse Noire — mise en scène
 
 - Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
-- Format : 3:2, 3600×2400
+- Format : 1536×1024 · dossier `public/images/products/scenes/` · priorité 5
 
 ```text
-Overhead flat lay: one whole dark chocolate-coated stuffed Medjool date and one halved piece revealing a glossy tart raspberry and hibiscus confit, surrounded with restraint by fresh raspberries, dried hibiscus flowers, dark chocolate shards, on warm ivory linen paper background (#F7F3EC), generous negative space. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Elegant still life seen from a high angle: one whole gourmet Medjool date fully enrobed in glossy dark chocolate, a delicate line of toasted black sesame seeds and a few fine threads of bright yellow yuzu zest on top and one halved piece revealing a creamy charcoal-black toasted black sesame praline heart, lightly marbled with a glossy golden yuzu gel, surrounded with restraint by a small matte black ceramic bowl of toasted black sesame seeds, half a fresh yuzu, a few shards of dark chocolate, on a deep cocoa-black slate surface against a near-black background, low-key cinematic side light from the right drawing a thin highlight along the chocolate, generous negative space. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-## Produit : Ébène Salé
+### `scene-velours-persan` — Velours Persan — mise en scène
 
-### `produit-ebene-sale`
+- Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
+- Format : 1536×1024 · dossier `public/images/products/scenes/` · priorité 5
+
+```text
+Elegant still life seen from a high angle: one whole gourmet Medjool date enrobed in satin milk chocolate, decorated with a few deep red saffron threads and slivered white almonds and one halved piece revealing a smooth ivory white-almond cream infused with saffron, golden-tinted, around a soft glossy apricot centre, surrounded with restraint by a tiny brass dish of saffron threads, whole blanched almonds, a few plump dried apricots, on a warm ivory silk cloth with soft folds, soft golden morning light from the left, generous negative space. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `scene-minuit-a-kyoto` — Minuit à Kyoto — mise en scène
+
+- Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
+- Format : 1536×1024 · dossier `public/images/products/scenes/` · priorité 5
+
+```text
+Elegant still life seen from a high angle: one whole gourmet Medjool date enrobed in ivory white chocolate, lightly dusted with vivid green matcha powder, a curl of yuzu zest and one halved piece revealing a vivid jade-green matcha ganache with a bright translucent yellow yuzu heart, surrounded with restraint by a dark ceramic bowl of matcha powder with a bamboo whisk, half a fresh yuzu, on a pale grey honed stone surface with a dark charcoal background, cool soft diffused daylight, quiet Japanese minimalism, generous negative space. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `scene-or-de-marrakech` — Or de Marrakech — mise en scène
+
+- Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
+- Format : 1536×1024 · dossier `public/images/products/scenes/` · priorité 5
+
+```text
+Elegant still life seen from a high angle: one whole gourmet Medjool date enrobed in milk chocolate, topped with crisp golden kadaif threads and bright green crushed pistachio and one halved piece revealing a generous bright green pistachio and orange-blossom cream studded with fine crisp golden kadaif threads, surrounded with restraint by a small bowl of shelled green pistachios, a nest of golden kadaif, a sprig of white orange blossoms, on a cream travertine stone surface with natural pores, warm natural light coming from the left, golden highlights, generous negative space. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `scene-cafe-imperial` — Café Impérial — mise en scène
+
+- Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
+- Format : 1536×1024 · dossier `public/images/products/scenes/` · priorité 5
+
+```text
+Elegant still life seen from a high angle: one whole gourmet Medjool date enrobed in dark chocolate, a single roasted coffee bean and crushed green cardamom on top and one halved piece revealing an intense smooth hazelnut praline infused with espresso, flecked with ground coffee and green cardamom, surrounded with restraint by a few roasted coffee beans, whole toasted hazelnuts, green cardamom pods, on a rich espresso-brown background and dark walnut wood surface, warm low light, glowing highlights on the chocolate, generous negative space. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `scene-rouge-desir` — Rouge Désir — mise en scène
+
+- Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
+- Format : 1536×1024 · dossier `public/images/products/scenes/` · priorité 5
+
+```text
+Elegant still life seen from a high angle: one whole gourmet Medjool date enrobed in dark chocolate, a fine glossy raspberry drizzle, freeze-dried raspberry pieces and dried hibiscus petals and one halved piece revealing a glossy ruby-red tart raspberry and hibiscus confit, surrounded with restraint by fresh raspberries, dried deep-red hibiscus flowers, dark chocolate shards, on a warm ivory plaster background and ivory stone surface, bright soft light with a vibrant yet natural colour palette, generous negative space. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+## produit
+
+### `produit-ebene-sale` — Ébène Salé — visuel principal
 
 - Usage : Visuel principal (cartes, fiche produit)
-- Format : 4:5, 2400×3000
+- Format : 1024×1280 · dossier `public/images/products/` · priorité 5
 
 ```text
-A single Medjool date three-quarters enrobed in dark chocolate, the uncoated tip showing the natural wrinkled date skin, topped with toasted buckwheat groats and flaky sea salt, placed diagonally on dark slate stone surface, a second identical piece softly blurred in the background. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Three-quarter view of a single gourmet Medjool date enrobed in dark chocolate, sprinkled with toasted buckwheat groats and a few flakes of sea salt, placed on a dark grey slate surface, moody side light from the left, deep contrast, a second identical piece softly out of focus behind it. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `coupe-ebene-sale`
+## coupe
 
-- Usage : Vue en coupe (survol des cartes, galerie) — même cadrage que le visuel principal
-- Format : 4:5, 2400×3000
+### `coupe-ebene-sale` — Ébène Salé — vue en coupe
+
+- Usage : Vue en coupe (survol des cartes, galerie de la fiche)
+- Format : 1024×1280 · dossier `public/images/products/cutaway/` · priorité 5
 
 ```text
-The same dark chocolate-coated Medjool date cut cleanly in half lengthwise, the two halves showing a thin dark chocolate shell, the amber translucent date flesh and a toasted buckwheat praline bound with white-miso caramel, on dark slate stone surface, crumbs of the topping around. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Macro close-up of a gourmet Medjool date enrobed in dark chocolate, sprinkled with toasted buckwheat groats and a few flakes of sea salt, cut cleanly in half lengthwise, the two halves facing the camera revealing the precise layers: a thin crisp dark chocolate shell, a layer of glossy amber-brown date flesh, and a crunchy toasted buckwheat praline bound with a glossy amber white-miso caramel. A whole piece beside it. On a dark grey slate surface, moody side light from the left, deep contrast, a few crumbs of the topping. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `scene-ebene-sale`
+## produit
 
-- Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
-- Format : 3:2, 3600×2400
-
-```text
-Overhead flat lay: one whole dark chocolate-coated stuffed Medjool date and one halved piece revealing a toasted buckwheat praline bound with white-miso caramel, surrounded with restraint by a bowl of toasted buckwheat, a small pot of caramel, white miso paste, on dark slate stone surface, generous negative space. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-## Produit : Île Secrète
-
-### `produit-ile-secrete`
+### `produit-ile-secrete` — Île Secrète — visuel principal
 
 - Usage : Visuel principal (cartes, fiche produit)
-- Format : 4:5, 2400×3000
+- Format : 1024×1280 · dossier `public/images/products/` · priorité 5
 
 ```text
-A single Medjool date three-quarters enrobed in blond caramelised chocolate, the uncoated tip showing the natural wrinkled date skin, topped with toasted coconut flakes, placed diagonally on natural oatmeal linen tablecloth, a second identical piece softly blurred in the background. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Three-quarter view of a single gourmet Medjool date enrobed in golden blond caramelised chocolate, topped with toasted coconut flakes, placed on a natural oatmeal linen tablecloth, luminous warm tropical daylight with soft palm-leaf shadows, a second identical piece softly out of focus behind it. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `coupe-ile-secrete`
+## coupe
 
-- Usage : Vue en coupe (survol des cartes, galerie) — même cadrage que le visuel principal
-- Format : 4:5, 2400×3000
+### `coupe-ile-secrete` — Île Secrète — vue en coupe
+
+- Usage : Vue en coupe (survol des cartes, galerie de la fiche)
+- Format : 1024×1280 · dossier `public/images/products/cutaway/` · priorité 5
 
 ```text
-The same blond caramelised chocolate-coated Medjool date cut cleanly in half lengthwise, the two halves showing a thin blond caramelised chocolate shell, the amber translucent date flesh and a pale green pandan cream with toasted coconut, on natural oatmeal linen tablecloth, crumbs of the topping around. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Macro close-up of a gourmet Medjool date enrobed in golden blond caramelised chocolate, topped with toasted coconut flakes, cut cleanly in half lengthwise, the two halves facing the camera revealing the precise layers: a thin crisp golden blond caramelised chocolate shell, a layer of glossy amber-brown date flesh, and a pale green pandan cream folded with golden toasted coconut. A whole piece beside it. On a natural oatmeal linen tablecloth, luminous warm tropical daylight with soft palm-leaf shadows, a few crumbs of the topping. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `scene-ile-secrete`
+## produit
 
-- Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
-- Format : 3:2, 3600×2400
-
-```text
-Overhead flat lay: one whole blond caramelised chocolate-coated stuffed Medjool date and one halved piece revealing a pale green pandan cream with toasted coconut, surrounded with restraint by fresh pandan leaves, toasted coconut flakes in a coconut shell bowl, on natural oatmeal linen tablecloth, generous negative space. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-## Produit : Ambre Fumé
-
-### `produit-ambre-fume`
+### `produit-ambre-fume` — Ambre Fumé — visuel principal
 
 - Usage : Visuel principal (cartes, fiche produit)
-- Format : 4:5, 2400×3000
+- Format : 1024×1280 · dossier `public/images/products/` · priorité 5
 
 ```text
-A single Medjool date three-quarters enrobed in milk chocolate, the uncoated tip showing the natural wrinkled date skin, topped with half a pecan and smoked salt flakes, placed diagonally on deep chocolate-brown matte surface (#251C1A), a second identical piece softly blurred in the background. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Three-quarter view of a single gourmet Medjool date enrobed in milk chocolate, half a glossy pecan and a few smoked salt flakes on top, placed on a deep chocolate-brown matte surface, warm amber light with a faint wisp of smoke in the background, a second identical piece softly out of focus behind it. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `coupe-ambre-fume`
+## coupe
 
-- Usage : Vue en coupe (survol des cartes, galerie) — même cadrage que le visuel principal
-- Format : 4:5, 2400×3000
+### `coupe-ambre-fume` — Ambre Fumé — vue en coupe
+
+- Usage : Vue en coupe (survol des cartes, galerie de la fiche)
+- Format : 1024×1280 · dossier `public/images/products/cutaway/` · priorité 5
 
 ```text
-The same milk chocolate-coated Medjool date cut cleanly in half lengthwise, the two halves showing a thin milk chocolate shell, the amber translucent date flesh and a maple caramel with roasted pecan pieces and smoked salt, on deep chocolate-brown matte surface (#251C1A), crumbs of the topping around. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Macro close-up of a gourmet Medjool date enrobed in milk chocolate, half a glossy pecan and a few smoked salt flakes on top, cut cleanly in half lengthwise, the two halves facing the camera revealing the precise layers: a thin crisp milk chocolate shell, a layer of glossy amber-brown date flesh, and an amber maple caramel with roasted pecan pieces. A whole piece beside it. On a deep chocolate-brown matte surface, warm amber light with a faint wisp of smoke in the background, a few crumbs of the topping. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `scene-ambre-fume`
+## produit
 
-- Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
-- Format : 3:2, 3600×2400
-
-```text
-Overhead flat lay: one whole milk chocolate-coated stuffed Medjool date and one halved piece revealing a maple caramel with roasted pecan pieces and smoked salt, surrounded with restraint by pecans, a small glass jug of amber maple syrup, smoked salt, on deep chocolate-brown matte surface (#251C1A), generous negative space. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-## Produit : Rose de Nuit
-
-### `produit-rose-de-nuit`
+### `produit-rose-de-nuit` — Rose de Nuit — visuel principal
 
 - Usage : Visuel principal (cartes, fiche produit)
-- Format : 4:5, 2400×3000
+- Format : 1024×1280 · dossier `public/images/products/` · priorité 5
 
 ```text
-A single Medjool date three-quarters enrobed in white chocolate, the uncoated tip showing the natural wrinkled date skin, topped with crushed dried rose petals and a raspberry drizzle, placed diagonally on white Carrara marble with soft grey veining, a second identical piece softly blurred in the background. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Three-quarter view of a single gourmet Medjool date enrobed in ivory white chocolate with a faint blush-pink marbling, crushed dried rose petals and a raspberry drizzle, placed on a white Carrara marble surface with soft grey veining, soft romantic diffused light, delicate pink tones, a second identical piece softly out of focus behind it. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `coupe-rose-de-nuit`
+## coupe
 
-- Usage : Vue en coupe (survol des cartes, galerie) — même cadrage que le visuel principal
-- Format : 4:5, 2400×3000
+### `coupe-rose-de-nuit` — Rose de Nuit — vue en coupe
+
+- Usage : Vue en coupe (survol des cartes, galerie de la fiche)
+- Format : 1024×1280 · dossier `public/images/products/cutaway/` · priorité 5
 
 ```text
-The same white chocolate-coated Medjool date cut cleanly in half lengthwise, the two halves showing a thin white chocolate shell, the amber translucent date flesh and a pale pink lychee and rose ganache around a raspberry heart, on white Carrara marble with soft grey veining, crumbs of the topping around. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Macro close-up of a gourmet Medjool date enrobed in ivory white chocolate with a faint blush-pink marbling, crushed dried rose petals and a raspberry drizzle, cut cleanly in half lengthwise, the two halves facing the camera revealing the precise layers: a thin crisp ivory white chocolate shell, a layer of glossy amber-brown date flesh, and a pale pink lychee and rose ganache around a bright raspberry heart. A whole piece beside it. On a white Carrara marble surface with soft grey veining, soft romantic diffused light, delicate pink tones, a few crumbs of the topping. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `scene-rose-de-nuit`
+## scene
+
+### `scene-ebene-sale` — Ébène Salé — mise en scène
 
 - Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
-- Format : 3:2, 3600×2400
+- Format : 1536×1024 · dossier `public/images/products/scenes/` · priorité 6
 
 ```text
-Overhead flat lay: one whole white chocolate-coated stuffed Medjool date and one halved piece revealing a pale pink lychee and rose ganache around a raspberry heart, surrounded with restraint by fresh lychees, rose petals, fresh raspberries, on white Carrara marble with soft grey veining, generous negative space. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Elegant still life seen from a high angle: one whole gourmet Medjool date enrobed in dark chocolate, sprinkled with toasted buckwheat groats and a few flakes of sea salt and one halved piece revealing a crunchy toasted buckwheat praline bound with a glossy amber white-miso caramel, surrounded with restraint by a small bowl of toasted buckwheat groats, a little pot of amber caramel, flaky sea salt, on a dark grey slate surface, moody side light from the left, deep contrast, generous negative space. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-## Textures
+### `scene-ile-secrete` — Île Secrète — mise en scène
 
-### `macro-1`
+- Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
+- Format : 1536×1024 · dossier `public/images/products/scenes/` · priorité 6
+
+```text
+Elegant still life seen from a high angle: one whole gourmet Medjool date enrobed in golden blond caramelised chocolate, topped with toasted coconut flakes and one halved piece revealing a pale green pandan cream folded with golden toasted coconut, surrounded with restraint by fresh pandan leaves, toasted coconut flakes in a half coconut shell bowl, on a natural oatmeal linen tablecloth, luminous warm tropical daylight with soft palm-leaf shadows, generous negative space. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `scene-ambre-fume` — Ambre Fumé — mise en scène
+
+- Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
+- Format : 1536×1024 · dossier `public/images/products/scenes/` · priorité 6
+
+```text
+Elegant still life seen from a high angle: one whole gourmet Medjool date enrobed in milk chocolate, half a glossy pecan and a few smoked salt flakes on top and one halved piece revealing an amber maple caramel with roasted pecan pieces, surrounded with restraint by whole pecans, a small glass jug of amber maple syrup, smoked salt flakes, on a deep chocolate-brown matte surface, warm amber light with a faint wisp of smoke in the background, generous negative space. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+### `scene-rose-de-nuit` — Rose de Nuit — mise en scène
+
+- Usage : Mise en scène avec les ingrédients (galerie, éditions éphémères)
+- Format : 1536×1024 · dossier `public/images/products/scenes/` · priorité 6
+
+```text
+Elegant still life seen from a high angle: one whole gourmet Medjool date enrobed in ivory white chocolate with a faint blush-pink marbling, crushed dried rose petals and a raspberry drizzle and one halved piece revealing a pale pink lychee and rose ganache around a bright raspberry heart, surrounded with restraint by fresh peeled lychees, pale pink rose petals, fresh raspberries, on a white Carrara marble surface with soft grey veining, soft romantic diffused light, delicate pink tones, generous negative space. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
+```
+
+## coffret
+
+### `pro-2` — Mariage — mignardises
+
+- Usage : Mariages et événements
+- Format : 1536×1024 · dossier `public/images/lifestyle/` · priorité 6
+
+```text
+Elegant wedding reception table seen from above: cream porcelain plates, at each setting a tiny ivory box holding two chocolate-enrobed stuffed dates with a bronze ribbon, white linen tablecloth, white flowers, soft daylight. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic editorial photography for a luxury gourmet brand, natural light, true-to-life colours, refined composition, shallow depth of field. No text, no logo, no brand names, no people's faces.
+```
+
+## texture
+
+### `macro-1` — Texture 1
 
 - Usage : Gros plan de texture (accueil, savoir-faire)
-- Format : 1:1, 3000×3000
+- Format : 1024×1024 · dossier `public/images/ingredients/` · priorité 6
 
 ```text
-Extreme macro of the boundary between glossy dark chocolate coating and the wrinkled skin of a Medjool date, black sesame seeds catching the light. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Extreme macro of the boundary between glossy dark chocolate and the natural wrinkled skin of a Medjool date, black sesame seeds catching the light. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `macro-2`
+### `macro-2` — Texture 2
 
 - Usage : Gros plan de texture (accueil, savoir-faire)
-- Format : 1:1, 3000×3000
+- Format : 1024×1024 · dossier `public/images/ingredients/` · priorité 6
 
 ```text
-Extreme macro of matcha powder dusted over smooth white chocolate, fine yuzu zest curls. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Extreme macro of vivid green matcha powder dusted over smooth ivory white chocolate with fine yuzu zest curls. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `macro-3`
+### `macro-3` — Texture 3
 
 - Usage : Gros plan de texture (accueil, savoir-faire)
-- Format : 1:1, 3000×3000
+- Format : 1024×1024 · dossier `public/images/ingredients/` · priorité 6
 
 ```text
-Extreme macro cross-section: pistachio cream with golden kadaif threads inside a date, thin milk chocolate shell. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Extreme macro cross-section of bright green pistachio cream with golden kadaif threads inside a date under a thin milk chocolate shell. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `macro-4`
+### `macro-4` — Texture 4
 
 - Usage : Gros plan de texture (accueil, savoir-faire)
-- Format : 1:1, 3000×3000
+- Format : 1024×1024 · dossier `public/images/ingredients/` · priorité 6
 
 ```text
-Extreme macro of a thin glossy raspberry drizzle over dark chocolate with dried hibiscus fragments. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Extreme macro of a thin glossy raspberry drizzle over dark chocolate with dried hibiscus fragments. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `macro-5`
+### `macro-5` — Texture 5
 
 - Usage : Gros plan de texture (accueil, savoir-faire)
-- Format : 1:1, 3000×3000
+- Format : 1024×1024 · dossier `public/images/ingredients/` · priorité 6
 
 ```text
-Extreme macro cross-section of hazelnut praline with espresso specks inside a dark-chocolate-coated date. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Extreme macro cross-section of hazelnut praline with espresso specks inside a dark-chocolate-enrobed date. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `macro-6`
+### `macro-6` — Texture 6
 
 - Usage : Gros plan de texture (accueil, savoir-faire)
-- Format : 1:1, 3000×3000
+- Format : 1024×1024 · dossier `public/images/ingredients/` · priorité 6
 
 ```text
-Extreme macro of saffron threads and slivered almonds resting on satin milk chocolate. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Extreme macro of red saffron threads and slivered almonds resting on satin milk chocolate. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-## Coffrets
+## univers
 
-### `coffret-1`
+### `datte-naturelle` — La datte naturelle
 
-- Usage : Mises en scène des coffrets
-- Format : 3:2, 3600×2400
+- Usage : Univers de marque (accueil, Maison, Professionnels)
+- Format : 1024×1280 · dossier `public/images/lifestyle/` · priorité 6
 
 ```text
-Rigid chocolate-brown gift box of 12 stuffed dates, open, viewed from above, each date in its individual cavity, tissue paper, matching lid beside it with embossed monogram and bronze foil wordmark, a small cream tasting card, ivory background. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+A single fresh natural Medjool date, plump with glossy wrinkled mahogany skin, resting on a piece of dry palm frond on cream travertine, warm side light, macro still life. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic editorial photography for a luxury gourmet brand, natural light, true-to-life colours, refined composition, shallow depth of field. No text, no logo, no brand names, no people's faces.
 ```
 
-### `coffret-ferme`
+### `origines-1` — Oasis au coucher du soleil
 
-- Usage : Mises en scène des coffrets
-- Format : 3:2, 3600×2400
+- Usage : Univers de marque (accueil, Maison, Professionnels)
+- Format : 1920×1088 · dossier `public/images/lifestyle/` · priorité 6
 
 ```text
-The same 12-piece chocolate-brown box, closed, same framing and position as the open version, thin bronze ribbon, embossed monogram on the lid, bronze foil wordmark, ivory background. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+A peaceful date palm grove in a desert oasis at golden hour, tall date palms with heavy hanging clusters of ripening dates, warm haze, cinematic wide landscape, no buildings, no people. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic editorial photography for a luxury gourmet brand, natural light, true-to-life colours, refined composition, shallow depth of field. No text, no logo, no brand names, no people's faces.
 ```
 
-### `coffret-2`
+### `origines-2` — Régimes de dattes
 
-- Usage : Mises en scène des coffrets
-- Format : 3:2, 3600×2400
+- Usage : Univers de marque (accueil, Maison, Professionnels)
+- Format : 1536×1024 · dossier `public/images/lifestyle/` · priorité 6
 
 ```text
-Large 24-piece box open from above on a dark chocolate surface, dates of ten different finishes in two-tone rows, lid leaning at an angle, low warm light. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Close-up of heavy clusters of ripe amber-brown Medjool dates hanging under green date palm fronds, warm backlight through the leaves, cinematic. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic editorial photography for a luxury gourmet brand, natural light, true-to-life colours, refined composition, shallow depth of field. No text, no logo, no brand names, no people's faces.
 ```
 
-### `coffret-3`
+### `lifestyle-1` — Café et dattes
 
-- Usage : Mises en scène des coffrets
-- Format : 3:2, 3600×2400
+- Usage : Univers de marque (accueil, Maison, Professionnels)
+- Format : 1536×1024 · dossier `public/images/lifestyle/` · priorité 6
 
 ```text
-Ivory rigid 6-piece box open on pale limestone, lid beside it with tone-on-tone embossing and bronze foil, a few pistachio crumbs. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Overhead: an espresso in a cream porcelain cup on its saucer beside a small dark plate with three chocolate-enrobed stuffed dates, coffee beans scattered, limestone table, morning light. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic editorial photography for a luxury gourmet brand, natural light, true-to-life colours, refined composition, shallow depth of field. No text, no logo, no brand names, no people's faces.
 ```
 
-### `coffret-4`
+### `lifestyle-cafe-2` — Café à la cardamome
 
-- Usage : Mises en scène des coffrets
-- Format : 3:2, 3600×2400
+- Usage : Univers de marque (accueil, Maison, Professionnels)
+- Format : 1536×1024 · dossier `public/images/lifestyle/` · priorité 6
 
 ```text
-Limited edition box in desaturated olive green with bronze ribbon and a numbered bronze foil label, open with 12 dates of the seasonal collection, dark slate surface. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+A brass dallah pot pouring golden cardamom coffee into small handleless cups, a plate of chocolate-enrobed stuffed dates beside them, dark wood table, warm low light. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic editorial photography for a luxury gourmet brand, natural light, true-to-life colours, refined composition, shallow depth of field. No text, no logo, no brand names, no people's faces.
 ```
 
-## Packaging
+### `lifestyle-2` — L'art d'offrir
 
-### `packaging-1`
-
-- Usage : Visuels packaging (coffrets, connexion)
-- Format : 4:5, 2400×3000
+- Usage : Univers de marque (accueil, Maison, Professionnels)
+- Format : 1536×1024 · dossier `public/images/lifestyle/` · priorité 6
 
 ```text
-Top view of a closed chocolate-brown rigid box lid, blind-embossed date-pit monogram and bronze hot-foil wordmark, fine bronze border, on oatmeal linen. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+A closed plain chocolate-brown gift box tied with a bronze ribbon and a blank handwritten-style card with no visible writing, oatmeal linen, soft daylight. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic editorial photography for a luxury gourmet brand, natural light, true-to-life colours, refined composition, shallow depth of field. No text, no logo, no brand names, no people's faces.
 ```
 
-### `packaging-2`
+### `lifestyle-3` — Art de recevoir
 
-- Usage : Visuels packaging (coffrets, connexion)
-- Format : 4:5, 2400×3000
+- Usage : Univers de marque (accueil, Maison, Professionnels)
+- Format : 1536×1024 · dossier `public/images/lifestyle/` · priorité 6
 
 ```text
-Three stacked rigid boxes (chocolate, ivory, olive green), three-quarter view, bronze foil wordmark on each, soft side light. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Art of hosting: a large cream ceramic platter with a ring of assorted chocolate-enrobed stuffed dates, two glasses of mint tea, an olive branch, marble table, overhead view. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic editorial photography for a luxury gourmet brand, natural light, true-to-life colours, refined composition, shallow depth of field. No text, no logo, no brand names, no people's faces.
 ```
 
-### `packaging-3`
+### `recevoir-2` — Table du soir
 
-- Usage : Visuels packaging (coffrets, connexion)
-- Format : 4:5, 2400×3000
+- Usage : Univers de marque (accueil, Maison, Professionnels)
+- Format : 1536×1024 · dossier `public/images/lifestyle/` · priorité 6
 
 ```text
-Cream letterpress tasting card with a small bronze monogram next to a satin bronze ribbon and two stuffed dates on white marble. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+An elegant evening table: an open chocolate-brown box of assorted stuffed dates, candlelight, crystal glasses, dark linen tablecloth, warm intimate light. The rigid gift boxes are plain and unbranded, with no lettering and no logo, matte finish and fine bronze edges. Ultra-realistic editorial photography for a luxury gourmet brand, natural light, true-to-life colours, refined composition, shallow depth of field. No text, no logo, no brand names, no people's faces.
 ```
 
-## Art de vivre
+## couche
 
-### `lifestyle-1`
+### `couche-datte` — Vue éclatée — datte
 
-- Usage : Lifestyle (accueil, Maison)
-- Format : 3:2, 3600×2400
+- Usage : Animation « Au cœur de la création » (même cadrage pour les 4 couches)
+- Format : 1536×1024 · dossier `public/images/ingredients/` · priorité 6
 
 ```text
-Overhead: an espresso in a cream porcelain cup on its saucer beside a small dark plate with three chocolate-coated stuffed dates, coffee beans scattered, limestone table, morning light. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Centered product shot of a single opened and pitted natural Medjool date, slit along its length, isolated on a seamless warm cream background, same scale and angle as a product series, soft even studio light. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `lifestyle-2`
+### `couche-garniture` — Vue éclatée — garniture
 
-- Usage : Lifestyle (accueil, Maison)
-- Format : 3:2, 3600×2400
+- Usage : Animation « Au cœur de la création » (même cadrage pour les 4 couches)
+- Format : 1536×1024 · dossier `public/images/ingredients/` · priorité 6
 
 ```text
-A closed gift box tied with a bronze ribbon, a handwritten card, oatmeal linen, soft daylight, nobody in frame. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Centered product shot of a quenelle of bright green pistachio cream with golden kadaif threads shaped to fit inside a date, isolated on a seamless warm cream background, same scale and angle as a product series, soft even studio light. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-### `lifestyle-3`
+### `couche-chocolat` — Vue éclatée — chocolat
 
-- Usage : Lifestyle (accueil, Maison)
-- Format : 3:2, 3600×2400
+- Usage : Animation « Au cœur de la création » (même cadrage pour les 4 couches)
+- Format : 1536×1024 · dossier `public/images/ingredients/` · priorité 6
 
 ```text
-Art of hosting: a large cream ceramic platter with a ring of assorted stuffed dates, two glasses of mint tea, an olive branch, marble table, overhead. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Centered product shot of a Medjool date fully enrobed in glossy milk chocolate, whole, isolated on a seamless warm cream background, same scale and angle as a product series, soft even studio light. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```
 
-## Professionnels
+### `couche-finition` — Vue éclatée — finition
 
-### `pro-1`
-
-- Usage : Offres entreprises et événements
-- Format : 3:2, 3600×2400
+- Usage : Animation « Au cœur de la création » (même cadrage pour les 4 couches)
+- Format : 1536×1024 · dossier `public/images/ingredients/` · priorité 6
 
 ```text
-Corporate gifting: stacks of rigid boxes in chocolate and ivory with bronze foil, a blank card placeholder where a client logo would go, pale limestone, clean studio light. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-### `pro-2`
-
-- Usage : Offres entreprises et événements
-- Format : 3:2, 3600×2400
-
-```text
-Wedding reception table from above: cream plates, a mini 2-piece box with bronze ribbon at each setting, linen tablecloth, place cards. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-## Vue éclatée
-
-### `couche-datte`
-
-- Usage : Couche de l'animation « expérience sensorielle » (fond transparent, même cadrage pour les 4 couches)
-- Format : 20:11, 4000×2200
-
-```text
-Isolated on a transparent or pure white background for cut-out, a single opened and pitted Medjool date, slit along its length, same scale, angle and position as the other layers of the series. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-### `couche-garniture`
-
-- Usage : Couche de l'animation « expérience sensorielle » (fond transparent, même cadrage pour les 4 couches)
-- Format : 20:11, 4000×2200
-
-```text
-Isolated on a transparent or pure white background for cut-out, a quenelle of pistachio cream with golden kadaif threads shaped to fit inside a date, same scale, angle and position as the other layers of the series. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-### `couche-chocolat`
-
-- Usage : Couche de l'animation « expérience sensorielle » (fond transparent, même cadrage pour les 4 couches)
-- Format : 20:11, 4000×2200
-
-```text
-Isolated on a transparent or pure white background for cut-out, an empty thin milk chocolate shell shaped like a date, same scale, angle and position as the other layers of the series. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
-```
-
-### `couche-finition`
-
-- Usage : Couche de l'animation « expérience sensorielle » (fond transparent, même cadrage pour les 4 couches)
-- Format : 20:11, 4000×2200
-
-```text
-Isolated on a transparent or pure white background for cut-out, only the topping: golden kadaif threads and chopped pistachio, floating, same scale, angle and position as the other layers of the series. hyperrealistic editorial food photography, luxury haute chocolaterie aesthetic, real Medjool date with natural wrinkled mahogany skin, soft diffused cinematic studio light from top left, subtle realistic reflections on tempered chocolate, delicate soft shadows, minimalist premium composition, shallow depth of field, 100mm macro lens, f/4, natural colours, no text, no logo except when specified, no hands.
+Centered product shot of a Medjool date enrobed in milk chocolate topped with golden kadaif threads and crushed pistachio, isolated on a seamless warm cream background, same scale and angle as a product series, soft even studio light. Ultra-realistic luxury food photography for the advertising campaign of a Parisian haute chocolaterie. Shot on a medium format camera with a 100mm macro lens, shallow depth of field, crisp focus on the subject. Real Medjool date with natural fine wrinkles and a soft satin sheen, realistic tempered chocolate, true-to-life appetizing colours, delicate natural shadows, refined minimalist composition. No text, no logo, no packaging, no hands, no people.
 ```

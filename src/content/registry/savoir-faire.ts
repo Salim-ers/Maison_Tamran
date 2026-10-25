@@ -11,7 +11,7 @@ export const savoirFaireIntro = {
   ],
   defaults: {
     title: "Le savoir-faire",
-    lead: "Six étapes séparent une Medjool d'une création TAMBRÉ. Voici le parcours d'une pièce, de la sélection du fruit à la fermeture du coffret.",
+    lead: "Six étapes séparent une Medjool d'une création MAISON TAMRĀN. Voici le parcours d'une pièce, de la sélection du fruit à la fermeture du coffret.",
     provisional: "Ce parcours décrit nos intentions de fabrication. Le procédé détaillé (lieux, équipements, durées, conditions de conservation) sera précisé et confirmé lorsque la production sera établie.",
   },
 } satisfies ContentEntry;

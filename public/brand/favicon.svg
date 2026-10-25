@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<rect width="64" height="64" rx="14" fill="#251C1A"/>
-<defs><mask id="fv" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="160"><rect width="100" height="160" fill="#fff"/><path d="M29.5 47.35 L70.5 47.35 L71.7 55 L28.3 55 Z" fill="#000"/><path d="M42 54.99 L58 54.99 C58 92.99000000000001 55.6 110 50 126 C44.4 110 42 92.99000000000001 42 54.99 Z" fill="#000"/></mask></defs>
-<g transform="translate(17.5 6) scale(0.325)"><path d="M50 5 C66 7 78.5 33 79.5 68 C80.5 106 70 141 53 153.5 C51.2 154.8 48.8 154.8 47 153.5 C30 141 19.5 106 20.5 68 C21.5 33 34 7 50 5 Z" fill="#F7F3EC" mask="url(#fv)"/></g>
-</svg>

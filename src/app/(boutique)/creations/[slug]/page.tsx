@@ -82,7 +82,7 @@ async function ProductView({ params }: { params: Promise<{ slug: string }> }) {
     name: p.name,
     description: `${p.tagline} ${p.story}`,
     image: p.images.map((i) => `${base}${i.url}`),
-    brand: { "@type": "Brand", name: "TAMBRÉ" },
+    brand: { "@type": "Brand", name: "MAISON TAMRĀN" },
     sku: p.slug,
     category: "Dattes fourrées enrobées de chocolat",
   };

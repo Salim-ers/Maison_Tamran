@@ -1,4 +1,4 @@
-// Catalogue de référence TAMBRÉ — source unique pour le seed et le générateur de visuels concept.
+// Catalogue de référence MAISON TAMRĀN — source unique pour le seed et le générateur de visuels concept.
 // Toutes les recettes sont des PROTOTYPES CRÉATIFS : compositions, allergènes, poids et prix
 // sont provisoires et doivent être validés (fiche technique, étiquetage) avant toute mise en vente réelle.
 

@@ -5,7 +5,7 @@ import { LegalPage, LegalValue } from "@/components/legal/legal";
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
-  description: "Comment TAMBRÉ traite vos données personnelles : finalités, bases légales, durées de conservation, sous-traitants, vos droits.",
+  description: "Comment MAISON TAMRĀN traite vos données personnelles : finalités, bases légales, durées de conservation, sous-traitants, vos droits.",
   alternates: { canonical: "/confidentialite" },
 };
 
@@ -25,7 +25,7 @@ const TREATMENTS = [
   ["Commande", "Identité, email, téléphone, adresses de livraison et de facturation, contenu de la commande, note de préparation", "Traiter, livrer et suivre la commande, service client, facturation", "Exécution du contrat ; obligation légale (comptabilité)"],
   ["Paiement", "Données de paiement saisies sur la page Stripe (le site n'y a pas accès)", "Encaisser le paiement, prévenir la fraude", "Exécution du contrat"],
   ["Compte client", "Email, mot de passe chiffré, nom, téléphone, adresses, historique de commandes", "Gérer votre espace client et la connexion", "Exécution du contrat (conditions d'utilisation du compte)"],
-  ["Lettre d'information", "Email, date et texte du consentement", "Vous adresser la lettre de TAMBRÉ", "Consentement, retirable à tout moment"],
+  ["Lettre d'information", "Email, date et texte du consentement", "Vous adresser la lettre de MAISON TAMRĀN", "Consentement, retirable à tout moment"],
   ["Demande de devis", "Société, contact, email, téléphone, n° de TVA, projet, fichier du logo", "Étudier votre demande et établir une proposition", "Mesures précontractuelles ; intérêt légitime (prospection B2B)"],
   ["Contact", "Nom, email, sujet, n° de commande, message", "Répondre à votre message", "Intérêt légitime ; mesures précontractuelles"],
   ["Mesure d'audience", "Identifiant aléatoire (haché), pages vues, étapes du parcours d'achat", "Comprendre l'usage du site, de façon interne et agrégée", "Consentement (cookie de mesure d'audience)"],
@@ -48,7 +48,7 @@ export default async function ConfidentialitePage() {
     <LegalPage title="Politique de confidentialité" href="/confidentialite" toc={TOC} intro={<p>Cette politique explique quelles données personnelles nous traitons, pourquoi, combien de temps, et comment exercer vos droits au titre du Règlement général sur la protection des données (RGPD) et de la loi Informatique et Libertés.</p>}>
       <h2 id="responsable">Responsable de traitement</h2>
       <p>
-        Le responsable de traitement est <LegalValue value={legal.companyName} fallback="Raison sociale" />, <LegalValue value={legal.address} fallback="Adresse du siège" />, exploitant la marque TAMBRÉ. Pour toute question relative à vos données : <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+        Le responsable de traitement est <LegalValue value={legal.companyName} fallback="Raison sociale" />, <LegalValue value={legal.address} fallback="Adresse du siège" />, exploitant la marque MAISON TAMRĀN. Pour toute question relative à vos données : <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
       </p>
 
       <h2 id="traitements">Données, finalités et bases légales</h2>
@@ -76,7 +76,7 @@ export default async function ConfidentialitePage() {
       </table>
 
       <h2 id="destinataires">Destinataires et sous-traitants</h2>
-      <p>Vos données sont accessibles aux seules personnes habilitées de TAMBRÉ et aux prestataires suivants, dans la limite de leur mission :</p>
+      <p>Vos données sont accessibles aux seules personnes habilitées de MAISON TAMRĀN et aux prestataires suivants, dans la limite de leur mission :</p>
       <ul>
         <li><strong>Stripe</strong> : paiement en ligne et prévention de la fraude.</li>
         <li><strong>Vercel</strong> : hébergement du site (<LegalValue value={legal.host} fallback="Hébergeur" />).</li>

@@ -11,7 +11,7 @@ export const maisonOuverture = {
   ],
   defaults: {
     title: "Notre Maison",
-    lead: "TAMBRÉ est une nouvelle maison française. Elle part d'un fruit, la datte Medjool, et lui applique l'exigence de la haute chocolaterie : le choix de la matière, la justesse des accords, le soin de l'objet que l'on offre.",
+    lead: "MAISON TAMRĀN est une nouvelle maison française. Elle part d'un fruit, la datte Medjool, et lui applique l'exigence de la haute chocolaterie : le choix de la matière, la justesse des accords, le soin de l'objet que l'on offre.",
     quote: "Nous voulions qu'une datte se déguste comme un bonbon de chocolat : lentement, et en sachant ce que l'on goûte.",
   },
 } satisfies ContentEntry;
@@ -36,7 +36,7 @@ export const maisonManifeste = {
     accordTitle: "L'accord",
     accordBody: "Chaque création réunit trois éléments : le fruit, un cœur, un chocolat. Nous cherchons le point où ils se répondent en une seule bouchée. Un agrume qui réveille le caramel du fruit, une torréfaction qui prolonge le cacao, un trait de sel qui allonge la finale.",
     objetTitle: "L'objet que l'on offre",
-    objetBody: "Une datte TAMBRÉ se donne autant qu'elle se goûte. Le coffret, ses calages, la carte qui raconte chaque recette : l'écrin fait partie de la création. Il annonce la manière de déguster avant même la première bouchée.",
+    objetBody: "Une datte MAISON TAMRĀN se donne autant qu'elle se goûte. Le coffret, ses calages, la carte qui raconte chaque recette : l'écrin fait partie de la création. Il annonce la manière de déguster avant même la première bouchée.",
   },
 } satisfies ContentEntry;
 
@@ -79,8 +79,8 @@ export const maisonHistoire = {
   ],
   defaults: {
     title: "Une histoire qui commence",
-    body: "TAMBRÉ en est à ses débuts. Les visages, les lieux et les rencontres qui feront cette maison trouveront leur place ici, le jour où ils pourront être racontés tels qu'ils sont. D'ici là, nous préférons vous montrer ce que nous cherchons plutôt que d'inventer d'où nous venons.",
-    signature: "La datte, réinventée en haute gourmandise.",
+    body: "MAISON TAMRĀN en est à ses débuts. Les visages, les lieux et les rencontres qui feront cette maison trouveront leur place ici, le jour où ils pourront être racontés tels qu'ils sont. D'ici là, nous préférons vous montrer ce que nous cherchons plutôt que d'inventer d'où nous venons.",
+    signature: "L'art de sublimer la datte.",
   },
 } satisfies ContentEntry;
 

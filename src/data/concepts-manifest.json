@@ -65,9 +65,9 @@
   "hero": {
     "w": 3200,
     "h": 1800,
-    "alt": "Datte Or de Marrakech ouverte révélant sa crème de pistache, devant un coffret TAMBRÉ",
+    "alt": "Datte Or de Marrakech ouverte révélant sa crème de pistache, devant un coffret chocolat",
     "group": "hero",
-    "blur": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoQAAkAA4BaJQBOgCHh2Nl3hAAA/vSHqmnNROy9f9LhKapXqryAsJFmSDFkDf58CgL2gAAA"
+    "blur": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAACwAQCdASoQAAkAA4BaJQBOgCG/rPXAAP70h6pqeLEBr72/6XCU1SvVBUX3pXZlcn/uBed4G+74AAAA"
   },
   "produit-velours-persan": {
     "w": 1600,
@@ -263,21 +263,21 @@
     "h": 1600,
     "alt": "Coffret Signature ouvert, douze dattes dans leurs calages",
     "group": "coffret",
-    "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwAgCdASoQAAsAA4BaJZQCdAEefxUKz5DEAAD+wdsAETZgF6yF5pT7QpXplCzKIb+VqTV2L/Xv8jNrU4KWHuhg6upRArqc6utaOu1/roeOcSAA"
+    "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAwAgCdASoQAAsAA4BaJZQCdAEefxUKz5DEAAD+wH/Zbw8OqyWor3EOlelnSOUXxzS1MHR1t3zMQswazOAzB68hlwYD1qMXMqQb9Ztx6/wCFzQAQAA="
   },
   "coffret-2": {
     "w": 2400,
     "h": 1600,
     "alt": "Coffret Prestige de vingt-quatre pièces",
     "group": "coffret",
-    "blur": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADwAQCdASoQAAsAA4BaJZQCdAERH86w0AAA/uwR9ifb7+sAY80PvZfVcnyBdU6wAAA="
+    "blur": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoQAAsAA4BaJZQCdAERH+NuQAD+7BH2J9vv6jel6XZnrLIDHCnZTKqAAAA="
   },
   "coffret-3": {
     "w": 2400,
     "h": 1600,
     "alt": "Coffret Découverte ivoire, six pièces",
     "group": "coffret",
-    "blur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAAAwAgCdASoQAAsAA4BaJZQCdAEN5cNLm8oqwAD+78KCiM46x8HTDsXj72YTLM0iXgwW1rEgAAA="
+    "blur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAAAQAgCdASoQAAsAA4BaJZQCdAEN5gadpKugAP7vwoKIzjszRiQvQ+V65Wha7VXOpG1ej+tgAAA="
   },
   "coffret-4": {
     "w": 2400,
@@ -289,23 +289,23 @@
   "packaging-1": {
     "w": 1600,
     "h": 2000,
-    "alt": "Couvercle chocolat, monogramme en relief et logotype bronze",
+    "alt": "Couvercle de coffret chocolat",
     "group": "packaging",
-    "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQBACdASoQABQAPu1krU6ppaSiMAgBMB2JZQC7ACHu1r7Xu+IEbpaiAAD+xRjqZxhgZjUfQEYo18pF79SP0cTl1qqgV4sAX6hrDTJLEwn1p7AAAAA="
+    "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAwCdASoQABQAPu1orU6ppiSiMAgBMB2JZQC7ACHu1r7RYMmGhsAA/sUY6mcYYGY1H0BGKNfKRe/Uj9HE5daqoFeLAF+oaw0ySxMJ7ZOAAA=="
   },
   "packaging-2": {
     "w": 1600,
     "h": 2000,
     "alt": "Trois coffrets empilés : chocolat, ivoire et vert",
     "group": "packaging",
-    "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZwCuHCPtwSoDK3LNY9LQ3QAA/uhCToFdEAuo7FWrNaAl49zQyIquG7ViZKR8fg8bzYo+xozLkmuBa7Xk+36lGh9yYc4GI9tie0vEkAA="
+    "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwAwCdASoQABQAPu1kqU2ppaOiMAgBMB2JZwCzgCPtwSnwp/4sqTKIAP7oQk6BXRAL5UyPTCqzUkPj9jFyLNi1Gzsh9ZPqxZebFH2NGOQqqW+MnTwxkNbQHxGtlmLP7wSw+qMAAAA="
   },
   "packaging-3": {
     "w": 1600,
     "h": 2000,
     "alt": "Carte de dégustation et ruban bronze",
     "group": "packaging",
-    "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JZwC7ACGIlgP1L9GKgAD+x+NU89N/hHEMg7qOLY7uIEvJu2bsOYdJW4N7RvVdJ/QqZgtxMhdzxdPGAIqMAA=="
+    "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZwC7ACGnubEZmkZHOTAA/sfjVPPTgB/W0pdjpjUdfq26zuD8e2zlwfwCvyaRPoVMwW4mQu54unjAEVGAAA=="
   },
   "lifestyle-1": {
     "w": 2400,
@@ -319,7 +319,7 @@
     "h": 1600,
     "alt": "Un coffret prêt à offrir, ruban et carte",
     "group": "lifestyle",
-    "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoQAAsAA4BaJYwCdAEQzW1vvMwAAP7qqiml8CpefjrHiHz5RrnuqPxghduvqVL9c53ZUkRMyiEd6R1Ir5VVQ1F2eYTPbvAA"
+    "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQAgCdASoQAAsAA4BaJYwCdAEQzXXdy9gAAP7qqiml8CpefjrHiHz5RrnuqPdekKk26QEbfqQNKEePvMPEspirLv/dlU+1Lh6UoGcuAAA="
   },
   "lifestyle-3": {
     "w": 2400,
@@ -333,14 +333,14 @@
     "h": 1600,
     "alt": "Coffrets empilés pour un cadeau d'entreprise, carte personnalisable",
     "group": "pro",
-    "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQAgCdASoQAAsAA4BaJZQCdAEN8pdwPjgAAP7uH46FrqryM5+/5Q89riPT5e/zDkyM4zkQPcROeb5hTlxyFSMbolbB7IseDn4zvYiiKcjLQAAA"
+    "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQAgCdASoQAAsAA4BaJZQCdAEN8pdyXowAAP7uH46FrqryM5+/5Q89riPT7Yb3TVWEZyZcwPkee6MD7tTprMKDiZV6+RJXCMjF7QL+SOXcAAAA"
   },
   "pro-2": {
     "w": 2400,
     "h": 1600,
     "alt": "Table de réception avec un mini-coffret à chaque couvert",
     "group": "pro",
-    "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAABwAgCdASoQAAsAA4BaJYwCdAYrnvsXwH7atlMAAP7wfAiu8DASFU9ZeRCoXSYzNm2QkNH2BGEF/gLW9DwUEWUk6AgaJgsB6u3YylsDzP84xVu3vyXjgAAA"
+    "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAwAgCdASoQAAsAA4BaJYwCdAYqXvfPJtVHwAD+8HwIrvAvarRVS3RXe0Q6rdnfsfB5iH5a/Sm2qG+UxLG8izKodJftLIhsuw5xodxx/gOIYZF1hMAAAA=="
   },
   "couche-datte": {
     "w": 2000,
@@ -373,8 +373,8 @@
   "coffret-ferme": {
     "w": 2400,
     "h": 1600,
-    "alt": "Coffret Signature fermé, monogramme en relief et ruban bronze",
+    "alt": "Coffret Signature fermé, ruban bronze",
     "group": "coffret",
-    "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoQAAsAA4BaJZQCdAENz5HxF6AA/vTn2Vn/cFltiHUcCx11rIE4h6wd3kOs48tYxB4LwWzu+X2s7+P2YYVUW2Hsr0d12AAA"
+    "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoQAAsAA4BaJZQCdAENz5HxF6AA/vTn2Vn/cFltiHUcCx11rIE4h6wd3kOs48tY6AalW+UTnbewDfx3txgu1NqcWy5qRQAA"
   }
 }

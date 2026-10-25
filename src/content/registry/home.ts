@@ -29,8 +29,8 @@ export const homeMaison = {
   ],
   defaults: {
     title: "Une maison née d'un fruit",
-    body: "TAMBRÉ part d'une conviction simple : la datte Medjool mérite le même soin qu'un grand cacao ou qu'un grand cru. Nous la traitons comme une matière de pâtisserie, avec ses accords, sa saisonnalité, ses éditions rares. Chaque recette naît d'un voyage, d'un souvenir ou d'une rencontre de saveurs, puis se resserre jusqu'à tenir en une bouchée.",
-    signature: "La datte, réinventée en haute gourmandise.",
+    body: "MAISON TAMRĀN part d'une conviction simple : la datte Medjool mérite le même soin qu'un grand cacao ou qu'un grand cru. Nous la traitons comme une matière de pâtisserie, avec ses accords, sa saisonnalité, ses éditions rares. Chaque recette naît d'un voyage, d'un souvenir ou d'une rencontre de saveurs, puis se resserre jusqu'à tenir en une bouchée.",
+    signature: "L'art de sublimer la datte.",
   },
 } satisfies ContentEntry;
 

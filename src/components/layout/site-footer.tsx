@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Logotype, Monogram } from "@/components/brand";
+import { BrandLogo } from "@/components/brand";
 import { getSettings } from "@/lib/catalog";
 import { storeMode } from "@/lib/env";
 import { IconInstagram, IconLinkedin, IconPinterest } from "./icons";
@@ -52,9 +52,8 @@ export async function SiteFooter() {
     <footer className="on-dark relative overflow-hidden">
       <div className="container-luxe grid gap-14 pb-10 pt-24 lg:grid-cols-[1.2fr_2fr]">
         <div className="max-w-sm">
-          <Monogram className="h-16 w-auto text-bronze-light" title={null} />
-          <Logotype className="mt-8 h-6 w-auto" title="TAMBRÉ" />
-          <p className="mt-6 font-display text-xl italic text-taupe">La datte, réinventée en haute gourmandise.</p>
+          <BrandLogo variant="logo" tone="light" height={176} className="h-40 lg:h-44" />
+          <p className="mt-6 font-display text-xl italic text-taupe">L&apos;art de sublimer la datte.</p>
           <p className="mt-6 t-small text-taupe">
             Une question sur une commande, un cadeau, une allergie&nbsp;?{" "}
             <a className="link-draw text-ivory" href={`mailto:${settings.contactEmail}`}>{settings.contactEmail}</a>
@@ -91,7 +90,7 @@ export async function SiteFooter() {
       </div>
 
       <div className="container-luxe flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-line-light py-6 t-micro text-taupe">
-        <span>© {settings.legal.companyName && !settings.legal.companyName.startsWith("[") ? settings.legal.companyName : "TAMBRÉ"}</span>
+        <span>© {settings.legal.companyName && !settings.legal.companyName.startsWith("[") ? settings.legal.companyName : "MAISON TAMRĀN"}</span>
         <Link href="/mentions-legales" className="hover:text-ivory">Mentions légales</Link>
         <Link href="/cgv" className="hover:text-ivory">Conditions générales de vente</Link>
         <Link href="/confidentialite" className="hover:text-ivory">Confidentialité</Link>

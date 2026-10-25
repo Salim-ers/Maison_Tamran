@@ -39,7 +39,7 @@ export function CoffretsShowcase({ closed, open, boxes }: { closed: ImageRef; op
           >
             <Image src={closed.url} alt={closed.alt} fill sizes="(min-width: 1024px) 58vw, 100vw" quality={85} className="object-cover" />
           </motion.div>
-          <ConceptBadge tone="dark" className="bottom-3 left-3" />
+          <ConceptBadge tone="dark" className="bottom-3 left-3" ai={open.ai} />
           <button
             onClick={() => setManual((m) => !(m ?? (reduce ? false : scrollYProgress.get() > 0.5)))}
             className="absolute bottom-3 right-3 bg-chocolate/75 px-3 py-2 text-[0.8rem] text-ivory backdrop-blur-md"

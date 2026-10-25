@@ -15,7 +15,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ referenc
   return new Response(Buffer.from(pdf), {
     headers: {
       "Content-Type": "application/pdf",
-      "Content-Disposition": `inline; filename="TAMBRE-${quote.reference}.pdf"`,
+      "Content-Disposition": `inline; filename="maison-tamran-${quote.reference}.pdf"`,
       "Cache-Control": "private, no-store",
       "X-Robots-Tag": "noindex",
     },

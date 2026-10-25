@@ -10,7 +10,7 @@ export const proOuverture = {
     { name: "cta", label: "Bouton principal", type: "text" },
   ],
   defaults: {
-    title: "Une pièce TAMBRÉ, à vos couleurs",
+    title: "Une pièce MAISON TAMRĀN, à vos couleurs",
     lead: "Coffrets personnalisés pour vos clients et vos équipes, mignardises pour une réception, une création d'exception à servir avec le café. Décrivez votre projet : nous revenons vers vous avec une proposition chiffrée.",
     cta: "Demander un devis",
   },
@@ -53,7 +53,7 @@ export const proRevendeurs = {
     { name: "body", label: "Texte", type: "textarea" },
   ],
   defaults: {
-    title: "Servir ou vendre TAMBRÉ",
+    title: "Servir ou vendre MAISON TAMRĀN",
     body: "Coffee shops, salons de thé, hôtels, épiceries fines et boutiques cadeaux : un espace professionnel de réassort, avec commande en ligne et conditions dédiées, est en préparation. Il n'est pas encore ouvert. En attendant, décrivez-nous votre établissement : nous étudions chaque demande de partenariat individuellement.",
   },
 } satisfies ContentEntry;
@@ -69,7 +69,7 @@ export const proCadeaux = {
   ],
   defaults: {
     title: "Cadeaux d'entreprise",
-    lead: "Un coffret TAMBRÉ dit merci sans forcer le trait. Personnalisé à votre logo, accompagné de votre message, il se remet en main propre ou part directement chez chacun de vos destinataires.",
+    lead: "Un coffret MAISON TAMRĀN dit merci sans forcer le trait. Personnalisé à votre logo, accompagné de votre message, il se remet en main propre ou part directement chez chacun de vos destinataires.",
     usages:
       "Fin d'année : le coffret de vœux, pour vos clients, partenaires et collaborateurs.\nRemerciements : après un contrat signé, une recommandation, un projet mené ensemble.\nSéminaires et conventions : une attention posée à chaque place, ou remise au départ.\nAccueil : le premier jour d'un nouveau collaborateur, la visite d'un client important.",
   },
@@ -86,7 +86,7 @@ export const proMariages = {
   ],
   defaults: {
     title: "Mariages et événements",
-    lead: "Une datte TAMBRÉ à chaque couvert, un plateau pour accompagner le café, un souvenir que l'on emporte. Nous accordons les créations, les couleurs et les formats à votre réception.",
+    lead: "Une datte MAISON TAMRĀN à chaque couvert, un plateau pour accompagner le café, un souvenir que l'on emporte. Nous accordons les créations, les couleurs et les formats à votre réception.",
     usages:
       "Cadeau d'invité : un mini-coffret de deux ou trois pièces, posé à chaque place.\nTable des desserts : un plateau de créations assorties, servies avec le café.\nCérémonies et fêtes familiales : une attention pour une naissance, un anniversaire, une célébration.\nÉvénements professionnels : lancements, inaugurations, cocktails et soirées privées.",
   },

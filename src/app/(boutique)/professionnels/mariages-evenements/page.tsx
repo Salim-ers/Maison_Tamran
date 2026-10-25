@@ -5,7 +5,7 @@ import { proMariages } from "@/content/registry/professionnels";
 
 export const metadata: Metadata = {
   title: "Mariages et événements",
-  description: "Mini-coffrets TAMBRÉ pour vos invités, plateaux de dattes gastronomiques pour la table des desserts, couleurs accordées à votre réception. Demandez un devis.",
+  description: "Mini-coffrets MAISON TAMRĀN pour vos invités, plateaux de dattes gastronomiques pour la table des desserts, couleurs accordées à votre réception. Demandez un devis.",
   alternates: { canonical: "/professionnels/mariages-evenements" },
 };
 

@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "TAMBRÉ, maison de dattes gastronomiques",
-    short_name: "TAMBRÉ",
+    name: "MAISON TAMRĀN, dattes gastronomiques",
+    short_name: "MAISON TAMRĀN",
     start_url: "/",
     display: "standalone",
     background_color: "#F7F3EC",

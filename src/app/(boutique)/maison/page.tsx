@@ -4,12 +4,12 @@ import { getContent } from "@/lib/catalog";
 import { Breadcrumbs } from "@/components/layout/page-intro";
 import { concept, Media } from "@/components/ui/media";
 import { RevealImage } from "@/components/motion/reveal";
-import { Monogram } from "@/components/brand";
+import { BrandLogo } from "@/components/brand";
 import { maisonHistoire, maisonManifeste, maisonOuverture, maisonValeurs } from "@/content/registry/maison";
 
 export const metadata: Metadata = {
   title: "Notre Maison",
-  description: "TAMBRÉ, maison française de dattes gastronomiques : la Medjool travaillée comme une matière de haute pâtisserie, des accords précis et des coffrets pensés pour offrir.",
+  description: "MAISON TAMRĀN, dattes gastronomiques françaises : la Medjool travaillée comme une matière de haute pâtisserie, des accords précis et des coffrets pensés pour offrir.",
   alternates: { canonical: "/maison" },
 };
 
@@ -130,7 +130,7 @@ export default async function MaisonPage() {
 
       {/* Histoire à écrire */}
       <section className="on-dark relative overflow-hidden section-pad" aria-labelledby="histoire-title">
-        <Monogram className="pointer-events-none absolute -right-16 top-1/2 h-[130%] w-auto -translate-y-1/2 text-chocolate-2 max-lg:hidden" title={null} />
+        <BrandLogo variant="mark" tone="light" height={733} alt="" className="pointer-events-none absolute -right-16 top-1/2 h-[115%] -translate-y-1/2 opacity-[0.08] max-lg:hidden" />
         <div className="container-luxe relative grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <h2 id="histoire-title" className="t-display-l">{h.title}</h2>

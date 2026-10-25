@@ -6,7 +6,7 @@ import { LegalPage, LegalValue } from "@/components/legal/legal";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
-  description: "Mentions légales du site TAMBRÉ : éditeur, directeur de la publication, hébergeur, propriété intellectuelle.",
+  description: "Mentions légales du site MAISON TAMRĀN : éditeur, directeur de la publication, hébergeur, propriété intellectuelle.",
   alternates: { canonical: "/mentions-legales" },
 };
 
@@ -37,7 +37,7 @@ export default async function MentionsLegalesPage() {
           <tr><th scope="row">Email</th><td><a href={`mailto:${contactEmail}`}>{contactEmail}</a></td></tr>
         </tbody>
       </table>
-      <p>TAMBRÉ est la marque commerciale exploitée par l&apos;éditeur.</p>
+      <p>MAISON TAMRĀN est la marque commerciale exploitée par l&apos;éditeur.</p>
 
       <h2 id="publication">Directeur de la publication</h2>
       <p><LegalValue value={legal.director} fallback="Directeur de la publication" /></p>

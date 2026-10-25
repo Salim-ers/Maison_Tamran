@@ -8,7 +8,7 @@ import { CatalogBrowser } from "@/components/product/catalog-browser";
 
 export const metadata: Metadata = {
   title: "Toutes les créations",
-  description: "Les dattes gastronomiques TAMBRÉ : collection Signature et éditions éphémères, filtrées par saveur, chocolat et allergènes.",
+  description: "Les dattes gastronomiques MAISON TAMRĀN : collection Signature et éditions éphémères, filtrées par saveur, chocolat et allergènes.",
   alternates: { canonical: "/creations" },
 };
 

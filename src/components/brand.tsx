@@ -1,29 +1,44 @@
-import { useId } from "react";
-import { LOGOTYPE, MONO_GROOVE, MONO_TRAVERSE, PIT_PATH } from "@/lib/brand-paths";
+import Image from "next/image";
+import { clsx } from "clsx";
+import dims from "@/data/logo-dimensions.json";
 
-/** Monogramme TAMBRÉ : un noyau de datte dont la rainure dessine le T. */
-export function Monogram({ className, title = "TAMBRÉ" }: { className?: string; title?: string | null }) {
-  const id = useId().replace(/:/g, "");
-  return (
-    <svg viewBox="0 0 100 160" className={className} role={title ? "img" : undefined} aria-hidden={title ? undefined : true} aria-label={title ?? undefined}>
-      <defs>
-        <mask id={`m${id}`} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="160">
-          <rect width="100" height="160" fill="#fff" />
-          <path d={MONO_TRAVERSE} fill="#000" />
-          <path d={MONO_GROOVE} fill="#000" />
-        </mask>
-      </defs>
-      <path d={PIT_PATH} fill="currentColor" mask={`url(#m${id})`} />
-    </svg>
-  );
-}
+type Variant = "logo" | "lockup" | "mark";
+type Dims = Record<string, { w: number; h: number }>;
 
-/** Logotype vectorisé (Bodoni Moda, approches ajustées, accent en forme de noyau). */
-export function Logotype({ className, title = "TAMBRÉ" }: { className?: string; title?: string | null }) {
+/**
+ * Logo officiel MAISON TAMRĀN (fichier fourni, détouré par `npm run logo`) : le T de TAMRĀN est un dattier.
+ * - logo : version complète avec la signature DATTES GASTRONOMIQUES
+ * - lockup : MAISON TAMRĀN sans la signature (en-tête)
+ * - mark : le dattier-T seul (petits formats, motifs)
+ * `tone="light"` : déclinaison ivoire pour fonds sombres. `height` : hauteur d'affichage nominale (px) pour le srcset.
+ */
+export function BrandLogo({
+  variant = "lockup",
+  tone = "dark",
+  height,
+  alt = "MAISON TAMRĀN",
+  className,
+  preload,
+}: {
+  variant?: Variant;
+  tone?: "dark" | "light";
+  height: number;
+  alt?: string;
+  className?: string;
+  preload?: boolean;
+}) {
+  const name = `maison-tamran-${variant}${tone === "light" ? "-ivory" : ""}`;
+  const d = (dims as Dims)[name];
   return (
-    <svg viewBox={LOGOTYPE.viewBox} className={className} role={title ? "img" : undefined} aria-hidden={title ? undefined : true} aria-label={title ?? undefined} fill="currentColor">
-      <path d={LOGOTYPE.d} />
-      <path transform={LOGOTYPE.accent} d={LOGOTYPE.accentD} />
-    </svg>
+    <Image
+      src={`/brand/${name}.png`}
+      alt={alt}
+      width={Math.round((d.w * height) / d.h)}
+      height={height}
+      quality={85}
+      preload={preload}
+      className={clsx("w-auto select-none", className)}
+      draggable={false}
+    />
   );
 }

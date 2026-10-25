@@ -8,7 +8,7 @@ import { STATUS_LABELS } from "@/lib/email";
 import { PageIntro } from "@/components/layout/page-intro";
 import { OrderRecap } from "@/components/cart/order-recap";
 import { AutoRefresh } from "@/components/cart/auto-refresh";
-import { Monogram } from "@/components/brand";
+import { BrandLogo } from "@/components/brand";
 
 export const metadata: Metadata = { title: "Confirmation de commande", robots: { index: false } };
 
@@ -61,7 +61,7 @@ async function Confirmation({ searchParams }: { searchParams: Promise<Record<str
   return (
     <div>
       <div className="flex flex-col items-start gap-6 border-b hairline pb-12">
-        <Monogram className="h-14 w-auto text-bronze" title={null} />
+        <BrandLogo variant="mark" height={72} alt="" className="h-[4.5rem]" />
         <p className="t-display-m max-w-[20ch]">Merci, votre commande est confirmée.</p>
         <p className="max-w-[58ch] text-ink-soft">
           Commande <strong className="font-semibold text-ink">{order.number}</strong>. Un email récapitulatif vient d&apos;être envoyé à {order.email}.

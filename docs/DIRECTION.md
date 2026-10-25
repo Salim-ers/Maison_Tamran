@@ -1,4 +1,4 @@
-# TAMBRÉ — Direction artistique, design system et architecture
+# MAISON TAMRĀN — Direction artistique, design system et architecture
 
 ## 1. Direction artistique
 
@@ -13,8 +13,8 @@
 ## 2. Identité
 
 - **Monogramme** : un noyau de datte légèrement asymétrique dans lequel le T est gravé en négatif. La traverse est un filet fin (un empattement Bodoni), le fût reprend la rainure naturelle du noyau. Version épaissie pour le favicon.
-- **Logotype** : TAMBRÉ en Bodoni Moda (taille optique 28, graisse 500, pour garder les déliés à petite taille), interlettrage ouvert, approches corrigées à l'œil (TA resserré), accent de l'É redessiné en petit noyau incliné.
-- **Signature** : « Maison de dattes gastronomiques », Bodoni italique.
+- **Logotype** : MAISON TAMRĀN en Bodoni Moda (taille optique 28, graisse 500, pour garder les déliés à petite taille), interlettrage ouvert, approches corrigées à l'œil (TA resserré), accent de l'É redessiné en petit noyau incliné.
+- **Signature** : « DATTES GASTRONOMIQUES », Bodoni italique.
 - **Fichiers** : `brand/` (SVG vectorisés, polices non requises) et `public/brand/`. Déclinaisons : principal vertical (ivoire, chocolat, noir, blanc), horizontal compact, monogramme (chocolat, ivoire, bronze, noir, blanc), favicon, couvercle de coffret (marquage à chaud bronze). Régénérer : `npm run brand`.
 - **Packaging** : boîte rigide chocolat (ou ivoire, ou vert olive pour l'édition limitée), monogramme gaufré ton sur ton, logotype en marquage à chaud bronze, filet bronze intérieur, calages individuels, papier de soie, carte de dégustation.
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-import { Monogram } from "@/components/brand";
+import { BrandLogo } from "@/components/brand";
 import { ConceptBadge } from "@/components/ui/media";
 import type { ImageRef } from "@/db/schema";
 
@@ -45,7 +45,7 @@ export function Hero({ image, title, subtitle, ctaPrimary, ctaSecondary }: { ima
             transition={{ duration: 2.2, delay: 1.2, ease: [0.45, 0, 0.2, 1] }}
           />
         )}
-        {image.concept && <ConceptBadge tone="dark" className="bottom-6 right-6 max-md:bottom-auto max-md:top-[calc(var(--header-h)+var(--banner-h)+1rem)]" />}
+        {image.concept && <ConceptBadge tone="dark" ai={image.ai} className="bottom-6 right-6 max-md:bottom-auto max-md:top-[calc(var(--header-h)+var(--banner-h)+1rem)]" />}
       </motion.div>
 
       <motion.div style={{ y: textY }} className="container-luxe relative flex flex-1 flex-col justify-end pb-[clamp(3rem,9vh,7rem)] pt-[calc(var(--header-h)+var(--banner-h)+3rem)] max-md:pt-[52svh]">
@@ -56,14 +56,14 @@ export function Hero({ image, title, subtitle, ctaPrimary, ctaSecondary }: { ima
           className="mb-8 flex items-center gap-4 text-bronze-light"
           aria-hidden
         >
-          <Monogram className="h-10 w-auto" title={null} />
+          <BrandLogo variant="logo" tone="light" height={112} alt="" preload className="h-24 md:h-28" />
           <motion.span
             initial={reduce ? false : { letterSpacing: "0.4em", opacity: 0 }}
             animate={{ letterSpacing: "0.02em", opacity: 1 }}
             transition={{ duration: 1.4 * d, delay: 0.2 * d, ease: EASE }}
             className="block font-display text-lg italic"
           >
-            Maison de dattes gastronomiques
+            L&apos;art de sublimer la datte.
           </motion.span>
         </motion.div>
 

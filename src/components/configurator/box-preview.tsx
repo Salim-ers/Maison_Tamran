@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { clsx } from "clsx";
-import { Monogram } from "@/components/brand";
+import { BrandLogo } from "@/components/brand";
 
 export interface FlavorSwatch {
   slug: string;
@@ -71,7 +71,7 @@ export function BoxPreview({ pieces, slots, flavors, onRemoveAt, className, dark
           );
         })}
       </div>
-      <Monogram className="pointer-events-none absolute -bottom-[1px] left-1/2 h-[7%] w-auto -translate-x-1/2 translate-y-1/2 text-bronze-light" title={null} />
+      <BrandLogo variant="mark" tone="light" height={48} alt="" className="pointer-events-none absolute -bottom-[1px] left-1/2 h-[9%] -translate-x-1/2 translate-y-1/2" />
     </div>
   );
 }

@@ -16,7 +16,7 @@ import { fullName } from "@/components/admin/format";
 export const instant = false;
 
 export const metadata: Metadata = {
-  title: { default: "Administration", template: "%s · Administration TAMBRÉ" },
+  title: { default: "Administration", template: "%s · Administration MAISON TAMRĀN" },
   robots: { index: false, follow: false },
 };
 
@@ -64,7 +64,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
 
   const brand = (
     <Link href="/admin" className="flex items-baseline gap-2">
-      <span className="font-display text-xl tracking-[0.2em]">TAMBRÉ</span>
+      <span className="font-display text-xl tracking-[0.2em]">MAISON TAMRĀN</span>
       <span className="text-xs text-ink-soft">Administration</span>
     </Link>
   );

@@ -5,7 +5,7 @@ import { proCadeaux } from "@/content/registry/professionnels";
 
 export const metadata: Metadata = {
   title: "Cadeaux d'entreprise",
-  description: "Coffrets TAMBRÉ personnalisés à votre logo pour vos clients, partenaires et collaborateurs : fin d'année, remerciements, séminaires. Demandez un devis.",
+  description: "Coffrets MAISON TAMRĀN personnalisés à votre logo pour vos clients, partenaires et collaborateurs : fin d'année, remerciements, séminaires. Demandez un devis.",
   alternates: { canonical: "/professionnels/cadeaux-entreprise" },
 };
 

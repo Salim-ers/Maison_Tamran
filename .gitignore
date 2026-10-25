@@ -47,3 +47,6 @@ next-env.d.ts
 
 # fichiers téléversés en développement
 /public/uploads
+
+# visuels générés par IA en attente de validation (npm run images:review)
+/.images-staging/

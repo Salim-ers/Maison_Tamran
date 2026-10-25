@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Logotype, Monogram } from "@/components/brand";
+import { BrandLogo } from "@/components/brand";
 
 export const metadata: Metadata = {
   title: "Page introuvable",
@@ -10,11 +10,10 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <main className="on-dark grain relative isolate flex min-h-dvh flex-col overflow-hidden">
-      <Monogram className="pointer-events-none absolute -right-[12vw] top-1/2 -z-10 h-[150vh] w-auto -translate-y-1/2 text-chocolate-2 max-md:-right-[40vw] max-md:opacity-70" title={null} />
+      <BrandLogo variant="mark" tone="light" height={733} alt="" className="pointer-events-none absolute -right-[12vw] top-1/2 -z-10 h-[120vh] -translate-y-1/2 opacity-[0.07] max-md:-right-[40vw]" />
       <header className="container-luxe flex h-[var(--header-h)] items-center">
-        <Link href="/" aria-label="TAMBRÉ, accueil" className="flex items-center gap-3">
-          <Monogram className="h-8 w-auto text-ivory" title={null} />
-          <Logotype className="h-[1.05rem] w-auto" title={null} />
+        <Link href="/" aria-label="MAISON TAMRĀN, accueil" className="flex items-center gap-3">
+          <BrandLogo variant="lockup" tone="light" height={56} alt="" className="h-14" />
         </Link>
       </header>
       <div className="container-luxe flex flex-1 flex-col justify-center py-16">
@@ -29,7 +28,7 @@ export default function NotFound() {
           <Link href="/contact" className="btn btn-outline-light">Nous écrire</Link>
         </nav>
       </div>
-      <footer className="container-luxe py-8 font-display text-lg italic text-taupe">La datte, réinventée en haute gourmandise.</footer>
+      <footer className="container-luxe py-8 font-display text-lg italic text-taupe">L&apos;art de sublimer la datte.</footer>
     </main>
   );
 }

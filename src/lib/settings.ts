@@ -16,7 +16,7 @@ export async function readSettings(): Promise<SiteSettings> {
   return {
     giftWrapCents: Number(map.giftWrapCents ?? 350),
     giftWrapLabel: String(map.giftWrapLabel ?? "Papier de soie, ruban bronze et carte manuscrite"),
-    contactEmail: String(map.contactEmail ?? "bonjour@tambre.example"),
+    contactEmail: String(map.contactEmail ?? "bonjour@maison-tamran.example"),
     legal: (map.legal ?? {}) as Record<string, string>,
     social: (map.social ?? {}) as Record<string, string>,
   };

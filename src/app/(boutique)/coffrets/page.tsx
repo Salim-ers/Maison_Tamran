@@ -9,7 +9,7 @@ import { AddFixedBox } from "@/components/product/add-fixed-box";
 
 export const metadata: Metadata = {
   title: "Les coffrets",
-  description: "Coffrets TAMBRÉ de 6, 12 et 24 dattes gastronomiques, édition limitée et coffrets personnalisés pour les entreprises.",
+  description: "Coffrets MAISON TAMRĀN de 6, 12 et 24 dattes gastronomiques, édition limitée et coffrets personnalisés pour les entreprises.",
   alternates: { canonical: "/coffrets" },
 };
 

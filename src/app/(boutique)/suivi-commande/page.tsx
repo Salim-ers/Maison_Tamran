@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageIntro } from "@/components/layout/page-intro";
 import { TrackForm } from "@/components/account/forms";
 
-export const metadata: Metadata = { title: "Suivre une commande", description: "Retrouvez l'état de votre commande TAMBRÉ avec son numéro et votre email.", alternates: { canonical: "/suivi-commande" } };
+export const metadata: Metadata = { title: "Suivre une commande", description: "Retrouvez l'état de votre commande MAISON TAMRĀN avec son numéro et votre email.", alternates: { canonical: "/suivi-commande" } };
 
 export default function SuiviPage() {
   return (

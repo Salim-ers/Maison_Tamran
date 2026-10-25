@@ -27,8 +27,8 @@ async function confirm(email: string, token: string): Promise<Result> {
 }
 
 const MESSAGES: Record<Result, { title: string; body: string }> = {
-  ok: { title: "Inscription confirmée", body: "Merci. Vous recevrez la lettre de TAMBRÉ : les nouvelles recettes, les éditions éphémères avant leur mise en ligne et les dates à retenir pour offrir. Vous pourrez vous désinscrire à tout moment depuis chaque email." },
-  already: { title: "Adresse déjà confirmée", body: "Votre inscription à la lettre de TAMBRÉ est déjà active. Vous n'avez rien d'autre à faire." },
+  ok: { title: "Inscription confirmée", body: "Merci. Vous recevrez la lettre de MAISON TAMRĀN : les nouvelles recettes, les éditions éphémères avant leur mise en ligne et les dates à retenir pour offrir. Vous pourrez vous désinscrire à tout moment depuis chaque email." },
+  already: { title: "Adresse déjà confirmée", body: "Votre inscription à la lettre de MAISON TAMRĀN est déjà active. Vous n'avez rien d'autre à faire." },
   invalid: { title: "Ce lien n'est plus valide", body: "Le lien de confirmation est incomplet, a déjà servi ou a été remplacé par un lien plus récent. Inscrivez-vous de nouveau depuis le pied de l'accueil : un nouvel email vous sera envoyé." },
 };
 
@@ -51,7 +51,7 @@ async function Outcome({ searchParams }: { searchParams: Promise<Record<string, 
 export default function NewsletterConfirmationPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   return (
     <>
-      <PageIntro title="La lettre de TAMBRÉ" crumbs={[{ href: "/newsletter/confirmation", label: "Confirmation d'inscription" }]} />
+      <PageIntro title="La lettre de MAISON TAMRĀN" crumbs={[{ href: "/newsletter/confirmation", label: "Confirmation d'inscription" }]} />
       <div className="container-luxe pb-[var(--section)]">
         <Suspense fallback={<p className="t-lead text-ink-soft" role="status">Vérification de votre lien…</p>}>
           <Outcome searchParams={searchParams} />

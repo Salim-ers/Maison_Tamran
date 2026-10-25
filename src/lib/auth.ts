@@ -135,6 +135,6 @@ export async function purgeExpiredSessions() {
 let dummy: Promise<string> | null = null;
 /** Hash factice pour comparer en temps constant quand le compte n'existe pas. */
 export function dummyHash() {
-  dummy ??= bcrypt.hash("tambre-dummy-password", 12);
+  dummy ??= bcrypt.hash("maison-tamran-dummy-password", 12);
   return dummy;
 }

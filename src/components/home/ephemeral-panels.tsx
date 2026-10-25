@@ -53,7 +53,7 @@ export function EphemeralPanels({ items, intro }: { items: EphemeralItem[]; intr
                     <Image src={it.image.url} alt={it.image.alt} fill sizes="(min-width: 1024px) 55vw, 100vw" quality={75} className={clsx("object-cover transition-[filter,transform] duration-[1.2s]", on ? "scale-100 grayscale-0" : "scale-110 grayscale-[.6] brightness-[.55]")} />
                   )}
                   <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(28,27,20,.92)_0%,rgba(28,27,20,.2)_55%,transparent_100%)]" />
-                  {on && it.image?.concept && <ConceptBadge tone="dark" className="right-3 top-3" />}
+                  {on && it.image?.concept && <ConceptBadge tone="dark" className="right-3 top-3" ai={it.image.ai} />}
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-6 max-lg:relative max-lg:bg-[#26251d] max-lg:p-5">
                   <p className={clsx("t-micro text-taupe", !on && "lg:hidden")}>Édition éphémère N° {it.edition}</p>

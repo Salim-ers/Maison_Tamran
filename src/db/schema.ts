@@ -94,6 +94,7 @@ export interface ImageRef {
   alt: string;
   role: "main" | "cut" | "scene" | "macro" | "extra";
   concept?: boolean; // visuel concept (illustration), pas une photographie du produit réel
+  ai?: boolean; // image conceptuelle générée par IA (pipeline d'images), résolue à l'affichage
   w?: number;
   h?: number;
   blur?: string;

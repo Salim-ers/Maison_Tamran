@@ -46,7 +46,7 @@ export default async function HomePage() {
             <RevealLines lines={["L'art de", "la dégustation"]} className="t-display-l" />
             <FadeIn delay={0.2}>
               <p className="mt-8 max-w-[42ch] t-lead text-ink-soft">
-                Une datte TAMBRÉ se goûte en trois temps. On la prend entre deux doigts, on la regarde, puis on la croque franchement : c&apos;est en une seule bouchée que l&apos;accord se révèle.
+                Une datte MAISON TAMRĀN se goûte en trois temps. On la prend entre deux doigts, on la regarde, puis on la croque franchement : c&apos;est en une seule bouchée que l&apos;accord se révèle.
               </p>
             </FadeIn>
           </div>
@@ -80,7 +80,7 @@ export default async function HomePage() {
       {/* 6. Composez votre sélection */}
       <ComposeTeaser flavors={products.filter((p) => p.purchasable).map(toSwatch)} />
 
-      {/* 7. La Maison TAMBRÉ */}
+      {/* 7. MAISON TAMRĀN */}
       <section className="section-pad overflow-hidden" aria-labelledby="maison-title">
         <div className="container-luxe grid items-center gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
@@ -114,7 +114,7 @@ export default async function HomePage() {
           <div className="grid gap-8 lg:grid-cols-2 lg:items-end">
             <RevealLines lines={["Professionnels", "et événements"]} className="t-display-l" />
             <p className="max-w-[46ch] text-ink-soft lg:justify-self-end">
-              Coffrets aux couleurs d&apos;une entreprise, mignardises pour un mariage, une pièce TAMBRÉ servie avec le café : décrivez votre projet, nous revenons vers vous avec une proposition chiffrée.
+              Coffrets aux couleurs d&apos;une entreprise, mignardises pour un mariage, une pièce MAISON TAMRĀN servie avec le café : décrivez votre projet, nous revenons vers vous avec une proposition chiffrée.
             </p>
           </div>
           <div className="mt-14 grid gap-10 md:grid-cols-3">

@@ -1,4 +1,4 @@
-// Données initiales TAMBRÉ (catalogue de démonstration).
+// Données initiales MAISON TAMRĀN (catalogue de démonstration).
 // Usage : npm run db:seed        (idempotent : met à jour sans dupliquer)
 // Variables : DATABASE_URL, ADMIN_EMAIL, ADMIN_PASSWORD (optionnelle : générée sinon)
 import { config } from "dotenv";
@@ -143,7 +143,7 @@ async function main() {
   const settings: Record<string, unknown> = {
     giftWrapCents: 350,
     giftWrapLabel: "Papier de soie, ruban bronze et carte manuscrite",
-    contactEmail: process.env.CONTACT_EMAIL ?? "bonjour@tambre.example",
+    contactEmail: process.env.CONTACT_EMAIL ?? "bonjour@maison-tamran.example",
     legal: {
       companyName: "[Raison sociale à compléter]",
       legalForm: "[Forme juridique et capital à compléter]",
@@ -163,7 +163,7 @@ async function main() {
   }
 
   // --- Administrateur
-  const email = (process.env.ADMIN_EMAIL ?? "admin@tambre.local").toLowerCase();
+  const email = (process.env.ADMIN_EMAIL ?? "admin@maison-tamran.local").toLowerCase();
   const [existing] = await db.select().from(schema.users).where(eq(schema.users.email, email)).limit(1);
   if (!existing) {
     const password = process.env.ADMIN_PASSWORD ?? randomBytes(9).toString("base64url");

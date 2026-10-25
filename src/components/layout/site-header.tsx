@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { clsx } from "clsx";
-import { Logotype, Monogram } from "@/components/brand";
+import { BrandLogo } from "@/components/brand";
 import { useCart } from "@/components/cart/cart-context";
 import { IconBag, IconSearch, IconUser } from "./icons";
 
@@ -66,6 +66,8 @@ export function SiteHeader() {
   }, [menu]);
 
   const transparent = darkTop && !scrolled && !menu;
+  // sur l'accueil, le hero présente déjà le logo : celui de l'en-tête apparaît au défilement
+  const logoHidden = path === "/" && transparent;
   const count = cart?.itemCount ?? 0;
 
   return (
@@ -102,9 +104,10 @@ export function SiteHeader() {
             {menu ? "Fermer" : "Menu"}
           </button>
 
-          <Link href="/" aria-label="TAMBRÉ, accueil" className="flex items-center gap-3">
-            <Monogram className="h-8 w-auto" title={null} />
-            <Logotype className="hidden h-[1.05rem] w-auto xs:block" title={null} />
+          <Link href="/" aria-label="MAISON TAMRĀN, accueil" className={clsx("relative block transition-opacity duration-700", logoHidden && "pointer-events-none opacity-0")} tabIndex={logoHidden ? -1 : undefined}>
+            {/* deux tons superposés : fondu entre la version ivoire (en-tête transparent, menu) et la version cacao */}
+            <BrandLogo variant="lockup" height={64} alt="" preload className={clsx("h-12 transition-[opacity,height] duration-500 ease-[var(--ease-luxe)] lg:h-16", scrolled && "lg:h-12", (transparent || menu) && "opacity-0")} />
+            <BrandLogo variant="lockup" tone="light" height={64} alt="" className={clsx("absolute inset-0 h-full transition-opacity duration-500 ease-[var(--ease-luxe)]", !(transparent || menu) && "opacity-0")} />
           </Link>
 
           <div className="flex items-center justify-end gap-6">

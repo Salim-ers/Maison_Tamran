@@ -45,9 +45,9 @@ export async function subscribeNewsletter(_: NewsletterState, form: FormData): P
   const url = `${siteUrl()}/newsletter/confirmation?email=${encodeURIComponent(email)}&t=${token}`;
   await sendEmail({
     to: email,
-    subject: "Confirmez votre inscription à la lettre TAMBRÉ",
+    subject: "Confirmez votre inscription à la lettre de MAISON TAMRĀN",
     template: "newsletter_confirm",
-    html: simpleEmail("Une dernière étape", ["Pour recevoir la lettre de TAMBRÉ, confirmez votre adresse en cliquant sur le bouton ci-dessous.", "Si vous n'êtes pas à l'origine de cette demande, ignorez simplement cet email."], { label: "Confirmer mon inscription", url }),
+    html: simpleEmail("Une dernière étape", ["Pour recevoir la lettre de MAISON TAMRĀN, confirmez votre adresse en cliquant sur le bouton ci-dessous.", "Si vous n'êtes pas à l'origine de cette demande, ignorez simplement cet email."], { label: "Confirmer mon inscription", url }),
   });
   return { status: "ok", message: `Merci. Un email de confirmation vient d'être envoyé à ${email} : cliquez sur le lien pour finaliser l'inscription.`, email };
 }

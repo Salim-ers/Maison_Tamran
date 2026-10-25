@@ -5,7 +5,7 @@ import { CookieSettingsLink } from "@/components/consent/cookie-settings-link";
 
 export const metadata: Metadata = {
   title: "Cookies",
-  description: "Les cookies utilisés sur le site TAMBRÉ, leur finalité, leur durée et la manière de gérer vos préférences.",
+  description: "Les cookies utilisés sur le site MAISON TAMRĀN, leur finalité, leur durée et la manière de gérer vos préférences.",
   alternates: { canonical: "/cookies" },
 };
 

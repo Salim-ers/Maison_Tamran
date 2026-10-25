@@ -8,7 +8,7 @@ import { QuoteForm, type QuoteOption } from "@/components/pro/quote-form";
 
 export const metadata: Metadata = {
   title: "Demande de devis",
-  description: "Décrivez votre projet de coffrets TAMBRÉ personnalisés : entreprise, mariage, événement, hôtel, coffee shop ou épicerie fine. Proposition chiffrée par email.",
+  description: "Décrivez votre projet de coffrets MAISON TAMRĀN personnalisés : entreprise, mariage, événement, hôtel, coffee shop ou épicerie fine. Proposition chiffrée par email.",
   alternates: { canonical: "/professionnels/devis" },
 };
 

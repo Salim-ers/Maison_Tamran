@@ -8,7 +8,7 @@ import { savoirFaireEtapes, savoirFaireIntro } from "@/content/registry/savoir-f
 
 export const metadata: Metadata = {
   title: "Le savoir-faire",
-  description: "Le parcours d'une création TAMBRÉ : sélection des dattes Medjool, ouverture et dénoyautage, garniture, enrobage de chocolat, finition et mise en coffret.",
+  description: "Le parcours d'une création MAISON TAMRĀN : sélection des dattes Medjool, ouverture et dénoyautage, garniture, enrobage de chocolat, finition et mise en coffret.",
   alternates: { canonical: "/savoir-faire" },
 };
 

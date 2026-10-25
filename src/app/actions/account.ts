@@ -72,7 +72,7 @@ export async function register(_: FormState, form: FormData): Promise<FormState>
   await attachCartToUser(user.id);
   await sendEmail({
     to: user.email,
-    subject: "Bienvenue chez TAMBRÉ",
+    subject: "Bienvenue chez MAISON TAMRĀN",
     template: "welcome",
     html: simpleEmail(`Bienvenue, ${user.firstName}`, ["Votre compte est créé. Vous y retrouverez vos commandes, leur suivi et vos adresses de livraison."], { label: "Mon compte", url: `${siteUrl()}/compte` }),
   });

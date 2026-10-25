@@ -27,7 +27,7 @@ export async function sendEmail({ to, subject, template, html, replyTo }: SendAr
         method: "POST",
         headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
         body: JSON.stringify({
-          from: process.env.EMAIL_FROM ?? "TAMBRÉ <onboarding@resend.dev>",
+          from: process.env.EMAIL_FROM ?? "MAISON TAMRĀN <onboarding@resend.dev>",
           to: [to],
           subject: finalSubject,
           html,
@@ -61,11 +61,11 @@ export function layout(title: string, body: string) {
   return `<!doctype html><html lang="fr"><body style="margin:0;background:#F7F3EC;font-family:Helvetica,Arial,sans-serif;color:#251C1A">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:40px 16px">
 <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;background:#FFFCF7">
-<tr><td style="padding:36px 40px 8px;text-align:center;font-family:Georgia,serif;font-size:26px;letter-spacing:.32em">TAMBRÉ</td></tr>
+<tr><td style="padding:32px 40px 4px;text-align:center"><a href="${siteUrl()}"><img src="${siteUrl()}/brand/maison-tamran-logo-email.png" width="180" alt="MAISON TAMRĀN" style="display:inline-block;width:180px;max-width:60%;height:auto;border:0;font-family:Georgia,serif;font-size:22px;letter-spacing:.2em;color:#321F18"></a></td></tr>
 ${demo ? `<tr><td style="padding:8px 40px"><p style="margin:0;padding:10px 12px;background:#F1E4D8;font-size:13px;line-height:1.5">Boutique de démonstration : aucun paiement n'a été encaissé et aucune commande ne sera expédiée.</p></td></tr>` : ""}
 <tr><td style="padding:24px 40px 8px"><h1 style="margin:0;font-family:Georgia,serif;font-weight:normal;font-size:24px;line-height:1.3">${esc(title)}</h1></td></tr>
 <tr><td style="padding:8px 40px 36px;font-size:15px;line-height:1.65">${body}</td></tr>
-<tr><td style="padding:20px 40px;border-top:1px solid #E6DED2;font-size:12px;color:#7A6A5E">TAMBRÉ, maison de dattes gastronomiques · <a href="${siteUrl()}" style="color:#A87455">${siteUrl().replace(/^https?:\/\//, "")}</a></td></tr>
+<tr><td style="padding:20px 40px;border-top:1px solid #E6DED2;font-size:12px;color:#7A6A5E">MAISON TAMRĀN, dattes gastronomiques · <a href="${siteUrl()}" style="color:#A87455">${siteUrl().replace(/^https?:\/\//, "")}</a></td></tr>
 </table></td></tr></table></body></html>`;
 }
 
