@@ -12,7 +12,7 @@ export interface FruitStep {
   key: string;
   title: string;
   text: string;
-  image: (ImageRef & { credit?: string }) | null;
+  image: (ImageRef & { credit?: string; focus?: string }) | null;
 }
 
 /** Image d'une étape : elle se dévoile par le bas (comme une feuille qu'on soulève) quand vient son tour. */
@@ -34,6 +34,7 @@ function StepImage({ step, index, count, progress }: { step: FruitStep; index: n
           placeholder={step.image.blur ? "blur" : "empty"}
           blurDataURL={step.image.blur}
           className="object-cover"
+          style={{ objectPosition: step.image.focus }}
         />
       </motion.div>
       {step.image.credit && <span className="absolute bottom-2 right-3 t-micro text-ivory/70 [text-shadow:0_1px_2px_rgba(0,0,0,.6)]">{step.image.credit}</span>}
@@ -98,7 +99,7 @@ export function FruitStory({ steps }: { steps: FruitStep[] }) {
               <li key={s.key}>
                 {s.image && (
                   <div className="relative aspect-[4/5] overflow-hidden">
-                    <Image src={s.image.url} alt={s.image.alt} fill sizes="(min-width: 1024px) 30vw, 100vw" className="object-cover" />
+                    <Image src={s.image.url} alt={s.image.alt} fill sizes="(min-width: 1024px) 30vw, 100vw" className="object-cover" style={{ objectPosition: s.image.focus }} />
                   </div>
                 )}
                 <p className="mt-5 t-numeral text-lg text-bronze">{String(i + 1).padStart(2, "0")}</p>

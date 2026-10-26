@@ -6,7 +6,7 @@ import type { AmbianceImage } from "@/lib/ambiance";
 function Photo({ image, sizes, className }: { image: AmbianceImage; sizes: string; className?: string }) {
   return (
     <>
-      <Image src={image.url} alt={image.alt} fill sizes={sizes} quality={75} placeholder={image.blur ? "blur" : "empty"} blurDataURL={image.blur} className={className ?? "object-cover"} />
+      <Image src={image.url} alt={image.alt} fill sizes={sizes} quality={75} placeholder={image.blur ? "blur" : "empty"} blurDataURL={image.blur} className={className ?? "object-cover"} style={{ objectPosition: image.focus }} />
       <span className="absolute bottom-2 left-3 t-micro text-ivory/75 [text-shadow:0_1px_2px_rgba(0,0,0,.6)]">{image.credit}</span>
     </>
   );

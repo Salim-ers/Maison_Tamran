@@ -27,7 +27,8 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     qualities: [75, 85],
-    deviceSizes: [420, 640, 828, 1080, 1280, 1600, 1920, 2560],
+    // jusqu'à 3840 (4K) : écrans 4K et Retina en pleine largeur ; une image plus petite n'est jamais agrandie
+    deviceSizes: [420, 640, 828, 1080, 1280, 1600, 1920, 2560, 3200, 3840],
     remotePatterns: [{ protocol: "https", hostname: "*.public.blob.vercel-storage.com" }],
   },
   async headers() {
