@@ -11,7 +11,8 @@ import Image from "next/image";
 import { ambiance } from "@/lib/ambiance";
 import { FadeIn } from "@/components/motion/reveal";
 import { Breadcrumbs, Provisional } from "@/components/layout/page-intro";
-import { ProductGallery } from "@/components/product/product-gallery";
+import { ProductGallery, type StagePhoto } from "@/components/product/product-gallery";
+import { CREATION_STAGE, INGREDIENT_LABEL, INGREDIENT_PHOTO } from "@/lib/creation-visuals";
 import { BuyBox } from "@/components/product/buy-box";
 import { ProductCard } from "@/components/product/product-card";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -52,15 +53,6 @@ function Detail({ title, children, open = false }: { title: string; children: Re
 
 const pending = <span className="italic">À confirmer</span>;
 
-// ingrédient de recette → photographie d'ambiance correspondante (npm run stock)
-const INGREDIENT_PHOTO: Partial<Record<Ingredient, string>> = {
-  pistache: "pistache", safran: "safran", amande: "amande", cardamome: "cardamome", noisette: "noisette",
-  framboise: "framboise", rose: "rose", cafe: "cafe-grains", coco: "coco", matcha: "matcha",
-};
-const INGREDIENT_LABEL: Partial<Record<Ingredient, string>> = {
-  pistache: "Pistache", safran: "Safran", amande: "Amande blanche", cardamome: "Cardamome verte", noisette: "Noisette",
-  framboise: "Framboise", rose: "Rose", cafe: "Café espresso", coco: "Noix de coco", matcha: "Matcha",
-};
 
 function ProductSkeleton() {
   return (
@@ -90,8 +82,14 @@ async function ProductView({ params }: { params: Promise<{ slug: string }> }) {
   const ingredientTiles = (recipe?.ingredients ?? []).flatMap((ing: Ingredient) => {
     const key = INGREDIENT_PHOTO[ing];
     const image = key ? ambiance(key) : null;
-    return image ? [{ key, label: INGREDIENT_LABEL[ing] ?? ing, image }] : [];
+    return key && image ? [{ key, label: INGREDIENT_LABEL[ing] ?? ing, image }] : [];
   });
+  // scène de la galerie : l'ingrédient vedette d'abord, puis les autres ingrédients photographiés
+  const lead = ambiance(CREATION_STAGE[p.slug] ?? "medjool-macro");
+  const stages: StagePhoto[] = [
+    ...(lead && !ingredientTiles.some((t) => t.key === CREATION_STAGE[p.slug]) ? [{ key: "scene", label: "La matière", url: lead.url, alt: lead.alt, credit: lead.credit, blur: lead.blur }] : []),
+    ...[...ingredientTiles].sort((a, b) => (a.key === CREATION_STAGE[p.slug] ? -1 : b.key === CREATION_STAGE[p.slug] ? 1 : 0)).map((t) => ({ key: t.key, label: t.label, url: t.image.url, alt: t.image.alt, credit: t.image.credit, blur: t.image.blur })),
+  ];
   const prices = p.variants.map((v) => v.priceCents);
   const inStock = p.variants.some((v) => v.stock > 0);
   const base = siteUrl();
@@ -129,7 +127,7 @@ async function ProductView({ params }: { params: Promise<{ slug: string }> }) {
       </div>
 
       <div className="container-luxe mt-8 grid gap-12 pb-[var(--section)] lg:grid-cols-[1.05fr_1fr] lg:gap-20">
-        <ProductGallery images={p.images} name={p.name} />
+        <ProductGallery images={p.images} name={p.name} stages={stages} />
 
         <div className="lg:pt-6">
           <p className="flex flex-wrap items-center gap-x-4 gap-y-2 t-small text-ink-soft">

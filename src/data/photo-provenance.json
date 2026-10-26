@@ -3,297 +3,297 @@
     "status": "approved",
     "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Format 12 pièces uniquement.",
     "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), photographie de référence du coffret Signature",
-    "file": "public/images/coffrets/coffret-signature-12.webp",
+    "file": "public/images/coffrets/coffret-signature-12-4794a62b.webp",
     "width": 1448,
     "height": 1086,
-    "approvedAt": "2026-10-26T16:54:57.428Z"
+    "approvedAt": "2026-10-26T22:38:39.015Z"
   },
   "coupe-ambre-fume": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/ambre-fume/ambre-fume-coeur.webp",
-    "width": 1824,
-    "height": 2084,
-    "approvedAt": "2026-10-26T16:54:54.458Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/ambre-fume/ambre-fume-coeur-a06f559a.webp",
+    "width": 231,
+    "height": 248,
+    "approvedAt": "2026-10-26T22:38:37.828Z"
   },
   "coupe-cafe-imperial": {
     "status": "approved",
     "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Recadrage de la photographie de référence.",
     "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), photographie de référence",
-    "file": "public/images/creations/cafe-imperial/cafe-imperial-coeur.webp",
+    "file": "public/images/creations/cafe-imperial/cafe-imperial-coeur-ddafd946.webp",
     "width": 600,
     "height": 750,
-    "approvedAt": "2026-10-26T16:54:56.957Z"
+    "approvedAt": "2026-10-26T22:38:38.507Z"
   },
   "coupe-ebene-sale": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/ebene-sale/ebene-sale-coeur.webp",
-    "width": 1824,
-    "height": 2000,
-    "approvedAt": "2026-10-26T16:54:51.272Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/ebene-sale/ebene-sale-coeur-11762039.webp",
+    "width": 232,
+    "height": 248,
+    "approvedAt": "2026-10-26T22:38:37.542Z"
   },
   "coupe-eclipse-noire": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/eclipse-noire/eclipse-noire-coeur.webp",
-    "width": 1800,
-    "height": 2084,
-    "approvedAt": "2026-10-26T16:54:43.266Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/eclipse-noire/eclipse-noire-coeur-b4d3b853.webp",
+    "width": 230,
+    "height": 248,
+    "approvedAt": "2026-10-26T22:38:36.874Z"
   },
   "coupe-ile-secrete": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/ile-secrete/ile-secrete-coeur.webp",
-    "width": 1820,
-    "height": 2092,
-    "approvedAt": "2026-10-26T16:54:52.819Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/ile-secrete/ile-secrete-coeur-783334c0.webp",
+    "width": 232,
+    "height": 248,
+    "approvedAt": "2026-10-26T22:38:37.690Z"
   },
   "coupe-minuit-a-kyoto": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/minuit-a-kyoto/minuit-a-kyoto-coeur.webp",
-    "width": 1824,
-    "height": 2088,
-    "approvedAt": "2026-10-26T16:54:46.432Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/minuit-a-kyoto/minuit-a-kyoto-coeur-71864095.webp",
+    "width": 232,
+    "height": 248,
+    "approvedAt": "2026-10-26T22:38:37.128Z"
   },
   "coupe-or-de-marrakech": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/or-de-marrakech/or-de-marrakech-coeur.webp",
-    "width": 1808,
-    "height": 2084,
-    "approvedAt": "2026-10-26T16:54:48.082Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/or-de-marrakech/or-de-marrakech-coeur-23767485.webp",
+    "width": 231,
+    "height": 248,
+    "approvedAt": "2026-10-26T22:38:37.256Z"
   },
   "coupe-rose-de-nuit": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/rose-de-nuit/rose-de-nuit-coeur.webp",
-    "width": 1808,
-    "height": 2088,
-    "approvedAt": "2026-10-26T16:54:56.010Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/rose-de-nuit/rose-de-nuit-coeur-d39352b7.webp",
+    "width": 230,
+    "height": 248,
+    "approvedAt": "2026-10-26T22:38:37.971Z"
   },
   "coupe-rouge-desir": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/rouge-desir/rouge-desir-coeur.webp",
-    "width": 1804,
-    "height": 2084,
-    "approvedAt": "2026-10-26T16:54:49.639Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/rouge-desir/rouge-desir-coeur-a377c2cf.webp",
+    "width": 230,
+    "height": 248,
+    "approvedAt": "2026-10-26T22:38:37.393Z"
   },
   "coupe-velours-persan": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/velours-persan/velours-persan-coeur.webp",
-    "width": 1824,
-    "height": 2084,
-    "approvedAt": "2026-10-26T16:54:44.733Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/velours-persan/velours-persan-coeur-2b9cef99.webp",
+    "width": 232,
+    "height": 248,
+    "approvedAt": "2026-10-26T22:38:36.997Z"
   },
   "hero": {
     "status": "approved",
     "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Format 12 pièces uniquement.",
     "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), photographie de référence du coffret Signature",
-    "file": "public/images/coffrets/coffret-signature-12-hero.webp",
+    "file": "public/images/coffrets/coffret-signature-12-hero-4794a62b.webp",
     "width": 1448,
     "height": 1086,
-    "approvedAt": "2026-10-26T16:54:57.784Z"
+    "approvedAt": "2026-10-26T22:38:39.379Z"
   },
   "hero-portrait": {
     "status": "approved",
     "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Recadrage vertical, format 12 pièces uniquement.",
     "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), photographie de référence du coffret Signature",
-    "file": "public/images/coffrets/coffret-signature-12-portrait.webp",
+    "file": "public/images/coffrets/coffret-signature-12-portrait-ce815fd4.webp",
     "width": 869,
     "height": 1086,
-    "approvedAt": "2026-10-26T16:54:57.989Z"
+    "approvedAt": "2026-10-26T22:38:39.605Z"
   },
   "produit-ambre-fume": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/ambre-fume/ambre-fume-vue.webp",
-    "width": 1556,
-    "height": 1844,
-    "approvedAt": "2026-10-26T16:54:53.808Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/ambre-fume/ambre-fume-vue-f63df170.webp",
+    "width": 412,
+    "height": 495,
+    "approvedAt": "2026-10-26T22:38:37.791Z"
   },
   "produit-cafe-imperial": {
     "status": "approved",
     "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Photographie de référence fournie.",
     "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), photographie de référence",
-    "file": "public/images/creations/cafe-imperial/cafe-imperial-vue.webp",
+    "file": "public/images/creations/cafe-imperial/cafe-imperial-vue-39477ffa.webp",
     "width": 1122,
     "height": 1402,
-    "approvedAt": "2026-10-26T16:54:56.831Z"
+    "approvedAt": "2026-10-26T22:38:38.369Z"
   },
   "produit-ebene-sale": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/ebene-sale/ebene-sale-vue.webp",
-    "width": 1560,
-    "height": 1844,
-    "approvedAt": "2026-10-26T16:54:50.642Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/ebene-sale/ebene-sale-vue-5c8330c9.webp",
+    "width": 415,
+    "height": 495,
+    "approvedAt": "2026-10-26T22:38:37.502Z"
   },
   "produit-eclipse-noire": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/eclipse-noire/eclipse-noire-vue.webp",
-    "width": 1532,
-    "height": 1832,
-    "approvedAt": "2026-10-26T16:54:42.651Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/eclipse-noire/eclipse-noire-vue-8a1b683a.webp",
+    "width": 410,
+    "height": 495,
+    "approvedAt": "2026-10-26T22:38:36.842Z"
   },
   "produit-ile-secrete": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/ile-secrete/ile-secrete-vue.webp",
-    "width": 1552,
-    "height": 1848,
-    "approvedAt": "2026-10-26T16:54:52.211Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/ile-secrete/ile-secrete-vue-70079a61.webp",
+    "width": 415,
+    "height": 495,
+    "approvedAt": "2026-10-26T22:38:37.652Z"
   },
   "produit-minuit-a-kyoto": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/minuit-a-kyoto/minuit-a-kyoto-vue.webp",
-    "width": 1560,
-    "height": 1848,
-    "approvedAt": "2026-10-26T16:54:45.811Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/minuit-a-kyoto/minuit-a-kyoto-vue-be29f07c.webp",
+    "width": 415,
+    "height": 495,
+    "approvedAt": "2026-10-26T22:38:37.095Z"
   },
   "produit-or-de-marrakech": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/or-de-marrakech/or-de-marrakech-vue.webp",
-    "width": 1536,
-    "height": 1836,
-    "approvedAt": "2026-10-26T16:54:47.383Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/or-de-marrakech/or-de-marrakech-vue-64c6519d.webp",
+    "width": 412,
+    "height": 495,
+    "approvedAt": "2026-10-26T22:38:37.225Z"
   },
   "produit-rose-de-nuit": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/rose-de-nuit/rose-de-nuit-vue.webp",
-    "width": 1544,
-    "height": 1848,
-    "approvedAt": "2026-10-26T16:54:55.408Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/rose-de-nuit/rose-de-nuit-vue-34804bd6.webp",
+    "width": 410,
+    "height": 495,
+    "approvedAt": "2026-10-26T22:38:37.934Z"
   },
   "produit-rouge-desir": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/rouge-desir/rouge-desir-vue.webp",
-    "width": 1536,
-    "height": 1848,
-    "approvedAt": "2026-10-26T16:54:49.021Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/rouge-desir/rouge-desir-vue-feca26b2.webp",
+    "width": 410,
+    "height": 495,
+    "approvedAt": "2026-10-26T22:38:37.355Z"
   },
   "produit-velours-persan": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/velours-persan/velours-persan-vue.webp",
-    "width": 1552,
-    "height": 1848,
-    "approvedAt": "2026-10-26T16:54:44.141Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/velours-persan/velours-persan-vue-2ee96480.webp",
+    "width": 415,
+    "height": 495,
+    "approvedAt": "2026-10-26T22:38:36.965Z"
   },
   "scene-ambre-fume": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/ambre-fume/ambre-fume-entier.webp",
-    "width": 1344,
-    "height": 1728,
-    "approvedAt": "2026-10-26T16:54:54.860Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/ambre-fume/ambre-fume-entier-e0dd5b95.webp",
+    "width": 247,
+    "height": 218,
+    "approvedAt": "2026-10-26T22:38:37.865Z"
   },
   "scene-cafe-imperial": {
     "status": "approved",
     "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Recadrage de la photographie de référence.",
     "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), photographie de référence",
-    "file": "public/images/creations/cafe-imperial/cafe-imperial-entier.webp",
+    "file": "public/images/creations/cafe-imperial/cafe-imperial-entier-50d8072c.webp",
     "width": 640,
     "height": 800,
-    "approvedAt": "2026-10-26T16:54:57.094Z"
+    "approvedAt": "2026-10-26T22:38:38.651Z"
   },
   "scene-ebene-sale": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/ebene-sale/ebene-sale-entier.webp",
-    "width": 1352,
-    "height": 1728,
-    "approvedAt": "2026-10-26T16:54:51.672Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/ebene-sale/ebene-sale-entier-958ace3d.webp",
+    "width": 249,
+    "height": 218,
+    "approvedAt": "2026-10-26T22:38:37.582Z"
   },
   "scene-eclipse-noire": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/eclipse-noire/eclipse-noire-entier.webp",
-    "width": 1324,
-    "height": 1720,
-    "approvedAt": "2026-10-26T16:54:43.656Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/eclipse-noire/eclipse-noire-entier-a92d8bce.webp",
+    "width": 246,
+    "height": 218,
+    "approvedAt": "2026-10-26T22:38:36.901Z"
   },
   "scene-ile-secrete": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/ile-secrete/ile-secrete-entier.webp",
-    "width": 1348,
-    "height": 1728,
-    "approvedAt": "2026-10-26T16:54:53.246Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/ile-secrete/ile-secrete-entier-fcf5f6ba.webp",
+    "width": 249,
+    "height": 218,
+    "approvedAt": "2026-10-26T22:38:37.724Z"
   },
   "scene-minuit-a-kyoto": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/minuit-a-kyoto/minuit-a-kyoto-entier.webp",
-    "width": 1356,
-    "height": 1728,
-    "approvedAt": "2026-10-26T16:54:46.850Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/minuit-a-kyoto/minuit-a-kyoto-entier-8479bee2.webp",
+    "width": 249,
+    "height": 218,
+    "approvedAt": "2026-10-26T22:38:37.155Z"
   },
   "scene-or-de-marrakech": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/or-de-marrakech/or-de-marrakech-entier.webp",
-    "width": 1336,
-    "height": 1728,
-    "approvedAt": "2026-10-26T16:54:48.494Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/or-de-marrakech/or-de-marrakech-entier-77a28d5b.webp",
+    "width": 247,
+    "height": 218,
+    "approvedAt": "2026-10-26T22:38:37.285Z"
   },
   "scene-rose-de-nuit": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/rose-de-nuit/rose-de-nuit-entier.webp",
-    "width": 1304,
-    "height": 1828,
-    "approvedAt": "2026-10-26T16:54:56.453Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/rose-de-nuit/rose-de-nuit-entier-7bbc3d64.webp",
+    "width": 246,
+    "height": 218,
+    "approvedAt": "2026-10-26T22:38:38.011Z"
   },
   "scene-rouge-desir": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/rouge-desir/rouge-desir-entier.webp",
-    "width": 1324,
-    "height": 1724,
-    "approvedAt": "2026-10-26T16:54:50.077Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/rouge-desir/rouge-desir-entier-ca216e55.webp",
+    "width": 246,
+    "height": 218,
+    "approvedAt": "2026-10-26T22:38:37.430Z"
   },
   "scene-velours-persan": {
     "status": "approved",
-    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
-    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
-    "file": "public/images/creations/velours-persan/velours-persan-entier.webp",
-    "width": 1348,
-    "height": 1724,
-    "approvedAt": "2026-10-26T16:54:45.249Z"
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), planche APERCU_10_RECETTES.jpg",
+    "file": "public/images/creations/velours-persan/velours-persan-entier-8c47bc6e.webp",
+    "width": 249,
+    "height": 218,
+    "approvedAt": "2026-10-26T22:38:37.024Z"
   }
 }

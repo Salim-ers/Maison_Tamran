@@ -1,14 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { clsx } from "clsx";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useReducedMotion } from "@/components/motion/reduced-motion";
 import { useCart } from "@/components/cart/cart-context";
 import { QtyStepper } from "@/components/ui/qty-stepper";
 import { euros } from "@/lib/money";
 import { BoxPreview, type FlavorSwatch } from "./box-preview";
+import { FLIGHT_S, useFlights } from "./fly";
 import type { ImageRef } from "@/db/schema";
 
 export interface ConfBox {
@@ -63,6 +64,11 @@ export function Configurator({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [filter, setFilter] = useState<"all" | "signature" | "ephemere">("all");
+  // la datte choisie rejoint visuellement son alvéole
+  const { launch, layer } = useFlights(reduce);
+  const boxRef = useRef<HTMLDivElement>(null);
+  const lastSource = useRef<Element | null>(null);
+  const [incoming, setIncoming] = useState<Set<number>>(() => new Set());
 
   if (!box) return <p className="py-20 text-center">Aucun coffret n&apos;est disponible pour le moment.</p>;
 
@@ -84,8 +90,16 @@ export function Configurator({
       const i = s.lastIndexOf(slug);
       return i < 0 ? s : [...s.slice(0, i), ...s.slice(i + 1)];
     });
+  const fly = (slug: string, index: number) => {
+    const f = flavorMap.get(slug);
+    const to = boxRef.current?.querySelector(`[data-slot="${index}"]`);
+    if (!f || !launch(f, lastSource.current, to)) return;
+    setIncoming((s) => new Set(s).add(index));
+    window.setTimeout(() => setIncoming((s) => { const n = new Set(s); n.delete(index); return n; }), FLIGHT_S * 1000 + 80);
+  };
   const setCount = (slug: string, n: number) => {
     const cur = counts[slug] ?? 0;
+    if (n === cur + 1 && slots.length < box.pieces) fly(slug, slots.length);
     if (n > cur) for (let i = cur; i < n; i++) inc(slug);
     else for (let i = n; i < cur; i++) dec(slug);
   };
@@ -158,8 +172,13 @@ export function Configurator({
               const stockLeft = available(f);
               const disabled = !f.purchasable;
               return (
-                <li key={f.slug} className={clsx("grid grid-cols-[4rem_1fr_auto] items-center gap-4 py-4", disabled && "opacity-50")}>
-                  <div className="relative aspect-square overflow-hidden bg-taupe/30">
+                <li
+                  key={f.slug}
+                  className={clsx("grid grid-cols-[4rem_1fr_auto] items-center gap-4 py-4", disabled && "opacity-50")}
+                  onPointerDownCapture={(e) => (lastSource.current = e.currentTarget.querySelector("[data-thumb]"))}
+                  onKeyDownCapture={(e) => (lastSource.current = e.currentTarget.querySelector("[data-thumb]"))}
+                >
+                  <div data-thumb className="relative aspect-square overflow-hidden bg-taupe/30">
                     {f.image && <Image src={f.image.url} alt="" fill sizes="64px" quality={75} className="object-cover" />}
                   </div>
                   <div className="min-w-0">
@@ -218,9 +237,12 @@ export function Configurator({
 
       {/* Aperçu et récapitulatif */}
       <aside className="lg:sticky lg:top-[calc(var(--header-h)+var(--banner-h)+1.5rem)] lg:self-start" aria-label="Aperçu du coffret">
-        <motion.div key={box.id} initial={reduce ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <BoxPreview pieces={box.pieces} slots={slots} flavors={flavorMap} onRemoveAt={(i) => setSlots((s) => s.filter((_, j) => j !== i))} />
-        </motion.div>
+        <div className="[perspective:1200px]" ref={boxRef}>
+          <motion.div key={box.id} initial={reduce ? false : { opacity: 0, y: 24, rotateX: 18, scale: 0.94 }} animate={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }} transition={{ duration: 0.8, ease: [0.22, 0.8, 0.12, 1] }}>
+            <BoxPreview pieces={box.pieces} slots={slots} flavors={flavorMap} onRemoveAt={(i) => setSlots((s) => s.filter((_, j) => j !== i))} incoming={incoming} landDelay={FLIGHT_S} />
+          </motion.div>
+        </div>
+        {layer}
         <div className="mt-6 flex items-center justify-between gap-4">
           <p className="t-small" aria-live="polite">
             {left === 0 ? <span className="text-success">Votre coffret est complet.</span> : <>Il reste <strong className="font-semibold">{left}</strong> place{left > 1 ? "s" : ""} sur {box.pieces}.</>}
@@ -252,7 +274,13 @@ export function Configurator({
         </dl>
         <div className="mt-5 flex items-center justify-between gap-4">
           <QtyStepper value={quantity} min={1} max={Math.max(1, Math.min(10, box.stock))} onChange={setQuantity} label="Nombre de coffrets" />
-          <p className="font-display text-3xl tabular-nums">{euros(total)}</p>
+          <p className="relative overflow-hidden font-display text-3xl tabular-nums" aria-live="polite">
+            <AnimatePresence mode="popLayout" initial={false}>
+              <motion.span key={total} className="block" initial={reduce ? false : { y: "100%", opacity: 0 }} animate={{ y: "0%", opacity: 1 }} exit={reduce ? { opacity: 0 } : { y: "-100%", opacity: 0 }} transition={{ duration: 0.45, ease: [0.22, 0.8, 0.12, 1] }}>
+                {euros(total)}
+              </motion.span>
+            </AnimatePresence>
+          </p>
         </div>
         <button type="button" onClick={submit} disabled={busy || !box.purchasable} aria-disabled={left > 0} className={clsx("btn btn-primary mt-6 w-full", left > 0 && "opacity-60")}>
           {busy ? "Ajout…" : "Ajouter le coffret au panier"}

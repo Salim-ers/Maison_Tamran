@@ -16,7 +16,7 @@ Site e-commerce complet de **MAISON TAMRĀN** : identité de marque, boutique, c
 | Compte client, adresses, suivi de commande | Fonctionnel |
 | Devis B2B, export PDF | Fonctionnel |
 | Back-office | Fonctionnel (produits, coffrets, stock, commandes, clients, devis, promos, livraison, contenu, témoignages, emails, newsletter, réglages) |
-| Visuels | **Visuels conceptuels** du pack photo Maison Tamrān pour les dix créations et le coffret Signature (signalés « Visuel conceptuel » à l'écran) ; photographies d'ambiance libres de droits (Unsplash, licences dans `ASSET_LICENSES.md`). Pas encore de photo réelle des coffrets 6 et 24 pièces ni de l'édition limitée : schémas de format légendés à la place |
+| Visuels | **Visuels conceptuels** du pack photo Maison Tamrān (signalés « Visuel conceptuel ») : les dix créations n'existent qu'en vignettes de ≈ 414 × 496 px et sont présentées en petit format net ; Café Impérial et le coffret Signature ont une photo de référence détaillée. Photographies d'ambiance et ingrédients détourés libres de droits (Unsplash, licences dans `ASSET_LICENSES.md`). Coffrets 6 et 24 pièces : schémas de format légendés. Détail : `IMAGE_AUDIT.md` |
 | Mentions légales, CGV, données réglementaires (poids, DDM, origine, valeurs nutritionnelles) | **À compléter** : champs vides signalés « à confirmer », modifiables dans le back-office |
 
 Rien n'est inventé : aucune histoire de fondateur, aucun label, aucun avis client, aucune promesse de délai.
@@ -46,8 +46,9 @@ Le compte administrateur est créé avec `ADMIN_EMAIL` / `ADMIN_PASSWORD` (un mo
 | `npm run db:migrate` | Applique les migrations |
 | `npm run db:seed` | Données initiales (idempotent) |
 | `npm run logo` | Déclinaisons du logo officiel (détourage, version ivoire, dattier seul, favicons) depuis `brand/source/maison-tamran-logo-original.png` |
-| `npm run pack-photos` | Intègre le pack photo (`brand/source/pack-photos/`) : recadre la zone nette, optimise en WebP, branche les images dans le catalogue (`src/data/photo-manifest.json`) |
-| `npm run stock` | Photographies d'ambiance Unsplash (`brand/source/stock/stock.json` → `public/images/ambiance/`), originaux retéléchargés si absents |
+| `npm run pack-photos` | Intègre le pack photo (`brand/source/pack-photos/`) : les dix créations depuis la planche `APERCU_10_RECETTES.jpg`, à leur définition réelle (≈ 414 × 496 px, aucun agrandissement), Café Impérial et le coffret depuis leurs photos de référence (`src/data/photo-manifest.json`) |
+| `npm run stock` | Photographies d'ambiance Unsplash en 4K (`brand/source/stock/stock.json` → `public/images/ambiance/`), originaux retéléchargés si absents ; les sources marquées `"use": "cutout"` servent seulement au détourage |
+| `npm run scene-assets` | Éléments détourés des grandes scènes (`public/images/scene/`, `src/data/scene-manifest.json`) : coffret ouvert, ingrédients sur fond blanc, palmeraie sans ciel, palme de premier plan |
 | `npm run images:generate` / `images:review` / `images:approve` / `images:status` | Pipeline de visuels IA (Cloudflare Workers AI), voir `docs/PROMPTS-PHOTO.md` |
 | `npm run concepts` | Régénère les visuels concept illustrés de repli (`public/images/concepts/`) |
 | `npm run prompts` | Régénère le catalogue de prompts photo |
@@ -92,7 +93,7 @@ Tableau de bord (chiffre d'affaires hors démonstration, alertes de stock, devis
 - [ ] Pour chaque recette : composition définitive, allergènes et traces, poids net, conservation, DDM, origine, valeurs nutritionnelles, puis case « informations réglementaires validées » et statut **available**.
 - [ ] Prix des coffrets, étuis et emballage cadeau confirmés ; stock réel saisi (Admin › Stock).
 - [ ] Tarifs de livraison contractualisés (décocher « provisoire »), pays desservis.
-- [ ] Photographies réelles des créations et des coffrets 6, 12 et 24 pièces à la place des visuels conceptuels (le pack actuel est fait de vignettes agrandies, pas de photos natives haute définition).
+- [ ] Photographies réelles des créations et des coffrets (liste, cadrages et définitions cibles dans `IMAGE_AUDIT.md`, section « Assets à produire »).
 - [ ] Codes promotionnels de démonstration supprimés ou désactivés (`BIENVENUE10`, `LIVRAISON`).
 - [ ] Stripe en clé live, webhook actif, Resend configuré, `NEXT_PUBLIC_SITE_URL` sur le domaine final.
 - [ ] Liens réseaux sociaux renseignés.
@@ -108,7 +109,17 @@ Tableau de bord (chiffre d'affaires hors démonstration, alertes de stock, devis
 
 ## Expérience et animations
 
-- **Accueil** : hero du coffret Signature (entrée en CSS, visible sans JavaScript), puis séquences au défilement natif (sans détournement du scroll) : « Tout commence par un fruit », anatomie d'une datte (zoom et repères), collection Signature, art d'offrir, ingrédients, éditions éphémères, la Maison, composer son coffret, professionnels.
+- **Accueil** (défilement natif, sans détournement du scroll) :
+  1. ouverture en scène autour du coffret Signature détouré (lumière, masque, arc, ingrédients, réaction au pointeur) ;
+  2. l'oasis : travelling à trois plans (ciel, palmeraie, palme de premier plan), lumière dorée, arc qui s'ouvre sur les dattes ;
+  3. la métamorphose : palmier → datte (masque en forme de datte) → cœur (la datte se fend) → chocolat (vague) → les dix créations dans leurs niches ;
+  4. le cœur de la datte : rapprochement borné de la coupe, repères et lumière qui isole chair, cœur, enrobage ;
+  5. les Signatures à deux échelles (grande photo d'ingrédient, tirage net de la création) ;
+  6. l'explosion des saveurs : ingrédients détourés qui s'écartent en profondeur autour d'une datte ;
+  7. l'art d'offrir : le coffret s'ouvre comme deux portes, puis les trois formats se remplissent ;
+  8. composer son coffret : la datte choisie rejoint son alvéole (même animation dans le configurateur) ;
+  9. éditions éphémères (atmosphère de nuit), l'univers de la maison, professionnels.
+- **Netteté** : aucune image n'est affichée au-delà de ×1,5 sa définition réelle (plafonds par densité d'écran : `.native-cap`, `.hero-coffret`, `.gift-frame`…). Méthode et mesures : `IMAGE_AUDIT.md`.
 - **Bibliothèque** : Motion (déjà présente) pour toutes les animations ; aucune bibliothèque supplémentaire.
 - **Accessibilité** : `prefers-reduced-motion` respecté partout (Motion configuré en `reducedMotion="user"`, séquences remplacées par des versions statiques, animations CSS coupées). Aucun contenu ne dépend d'une animation pour être visible.
 

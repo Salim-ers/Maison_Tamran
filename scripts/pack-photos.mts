@@ -1,11 +1,14 @@
 // Intègre le pack photographique Maison Tamrān (brand/source/pack-photos) dans le site.
 //
-// Le pack livre des fichiers 3840×2160 qui sont des vignettes (~326×390) agrandies numériquement et
-// posées au centre d'un fond flou étendu. On ne publie que la partie nette (détectée automatiquement),
-// à sa définition réelle, sans prétendre à de la 4K native. Café Impérial et le coffret Signature
-// proviennent de photographies de référence détaillées : on les utilise en priorité.
+// Les fichiers « 3840×2160 » du pack sont des vignettes agrandies numériquement (voir le README du pack et
+// IMAGE_AUDIT.md) : on ne les utilise plus. Les dix créations sont publiées depuis la planche
+// APERCU_10_RECETTES.jpg, chaque case à sa définition réelle (≈ 414 × 496 px), sans aucun agrandissement :
+// elles ne doivent être affichées qu'en petit format. Café Impérial et le coffret Signature proviennent de
+// photographies de référence détaillées (1122 × 1402 et 1448 × 1086).
+// Noms de fichiers avec empreinte du contenu : une image remplacée change d'adresse (aucun cache ne sert l'ancienne).
 //
 // Usage : npm run pack-photos  →  public/images/creations/, public/images/coffrets/, src/data/photo-manifest.json
+import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import sharp, { type Sharp } from "sharp";
@@ -55,11 +58,15 @@ async function sharpRegion(file: string): Promise<Region> {
 const manifest = readJson<Record<string, ManifestEntry & { badge?: string; alt?: string }>>(MANIFEST, {});
 const provenance = readJson<Record<string, ProvenanceEntry | Record<string, unknown>>>(PROVENANCE, {});
 
-async function publish(id: string, input: Sharp, url: string, alt: string, source: string, note: string) {
+const published = new Set<string>();
+
+async function publish(id: string, input: Sharp, base: string, alt: string, source: string, note: string) {
+  const buf = await input.webp({ quality: 88, effort: 6, smartSubsample: true }).toBuffer();
+  const url = base.replace(/\.webp$/, `-${createHash("sha1").update(buf).digest("hex").slice(0, 8)}.webp`);
   const out = path.join(PUBLIC, url);
   fs.mkdirSync(path.dirname(out), { recursive: true });
-  const buf = await input.webp({ quality: 84, effort: 6, smartSubsample: true }).toBuffer();
   fs.writeFileSync(out, buf);
+  published.add(out);
   const m = await sharp(buf).metadata();
   const blur = await sharp(buf).resize(16).webp({ quality: 40 }).toBuffer();
   manifest[id] = { url, w: m.width!, h: m.height!, blur: `data:image/webp;base64,${blur.toString("base64")}`, badge: BADGE, alt };
@@ -78,22 +85,37 @@ async function publish(id: string, input: Sharp, url: string, alt: string, sourc
 const PACK_SOURCE = "Pack photographique Maison Tamrān (brand/source/pack-photos)";
 const UPSCALE = "Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition.";
 
-// --- Les dix créations -------------------------------------------------------------------
+// --- Les dix créations : cases de la planche, à leur définition réelle -------------------------
+const SHEET = path.join(PACK, "APERCU_10_RECETTES.jpg");
+const SHEET_COLS = [[42, 456], [528, 947], [1016, 1435], [1505, 1921], [1994, 2408]];
+const SHEET_ROWS = [[117, 616], [738, 1237]];
+const SHEET_ORDER = ["eclipse-noire", "velours-persan", "minuit-a-kyoto", "or-de-marrakech", "cafe-imperial", "rouge-desir", "ebene-sale", "ile-secrete", "ambre-fume", "rose-de-nuit"];
+const SHEET_NOTE = "Case de la planche des dix créations, à sa définition réelle (≈ 414 × 496 px), sans agrandissement : à afficher en petit format.";
+
+function cell(slug: string): Region {
+  const i = SHEET_ORDER.indexOf(slug);
+  if (i < 0) throw new Error(`Création absente de la planche : ${slug}`);
+  const [x0, x1] = SHEET_COLS[i % 5];
+  const [y0, y1] = SHEET_ROWS[Math.floor(i / 5)];
+  return { left: x0 + 2, top: y0 + 2, width: x1 - x0 - 4, height: y1 - y0 - 4 };
+}
+/** Sous-cadre d'une case, en fractions (même composition sur toute la planche). */
+function sub(c: Region, f: { left: number; top: number; width: number; height: number }): Region {
+  return { left: c.left + Math.round(c.width * f.left), top: c.top + Math.round(c.height * f.top), width: Math.round(c.width * f.width), height: Math.round(c.height * f.height) };
+}
+
 const VIEWS = [
-  { kind: "signature", slot: "produit", suffix: "vue", alt: (n: string) => `${n} : une datte entière et une datte coupée révélant sa garniture, sur une assiette dorée` },
-  { kind: "macro", slot: "coupe", suffix: "coeur", alt: (n: string) => `${n} en gros plan : le cœur de la datte coupée` },
-  { kind: "entier", slot: "scene", suffix: "entier", alt: (n: string) => `${n} : la datte entière et son décor` },
+  { slot: "produit", suffix: "vue", alt: (n: string) => `${n} : une datte entière et une datte coupée révélant sa garniture, sur une assiette dorée`, frame: null },
+  { slot: "coupe", suffix: "coeur", alt: (n: string) => `${n} : le cœur de la datte coupée`, frame: { left: 0.44, top: 0.42, width: 0.56, height: 0.5 } },
+  { slot: "scene", suffix: "entier", alt: (n: string) => `${n} : la datte entière`, frame: { left: 0.12, top: 0.26, width: 0.6, height: 0.44 } },
 ] as const;
 
 for (const r of RECIPES) {
-  const dir = path.join(PACK, r.collection === "signature" ? "signatures" : "ephemeres", r.slug);
+  if (r.slug === "cafe-imperial") continue; // traité depuis la photographie de référence ci-dessous
+  const c = cell(r.slug);
   for (const v of VIEWS) {
-    const id = `${v.slot}-${r.slug}`;
-    const url = `/images/creations/${r.slug}/${r.slug}-${v.suffix}.webp`;
-    if (r.slug === "cafe-imperial") continue; // traité depuis la photographie de référence ci-dessous
-    const file = path.join(dir, `${r.slug}-${v.kind}-3840x2160.webp`);
-    const region = await sharpRegion(file);
-    await publish(id, sharp(file).extract(region), url, v.alt(r.name), PACK_SOURCE, `${UPSCALE} Vue « ${v.kind} » du pack${v.kind === "signature" ? "" : " (recadrage de la même image)"}.`);
+    const region = v.frame ? sub(c, v.frame) : c;
+    await publish(`${v.slot}-${r.slug}`, sharp(SHEET).extract(region), `/images/creations/${r.slug}/${r.slug}-${v.suffix}.webp`, v.alt(r.name), `${PACK_SOURCE}, planche APERCU_10_RECETTES.jpg`, SHEET_NOTE);
   }
 }
 
@@ -116,6 +138,12 @@ for (const r of RECIPES) {
   await publish("hero", sharp(ref), "/images/coffrets/coffret-signature-12-hero.webp", alt, src, "Format 12 pièces uniquement.");
   // cadrage vertical pour mobile, centré sur le coffret
   await publish("hero-portrait", sharp(ref).extract({ left: 268, top: 0, width: 869, height: 1086 }), "/images/coffrets/coffret-signature-12-portrait.webp", alt, src, "Recadrage vertical, format 12 pièces uniquement.");
+}
+
+// anciennes versions (dont les agrandissements numériques) retirées
+for (const dir of ["images/creations", "images/coffrets"]) {
+  const walk = (d: string): string[] => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
+  for (const f of walk(path.join(PUBLIC, dir))) if (f.endsWith(".webp") && !published.has(f)) fs.unlinkSync(f);
 }
 
 writeJson(MANIFEST, manifest);

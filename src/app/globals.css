@@ -286,6 +286,188 @@
 .anim-sheen { animation: hero-sheen 1.8s var(--ease-silk) 0.9s both; }
 .anim-scroll-cue { animation: scroll-cue 2.4s var(--ease-silk) infinite; }
 
+/* ---------- Scène d'ouverture (coffret) ---------- */
+/* Titre : 90 à 120 px sur ordinateur, borné par la hauteur d'écran pour tenir sur les écrans bas */
+.hero-title {
+  font-size: clamp(3.1rem, min(7.4vw, 12.6vh), 7.5rem);
+  line-height: 0.93;
+  letter-spacing: -0.032em;
+}
+/* Or patiné sur le mot central, avec un reflet qui passe une fois */
+.text-gold-sheen {
+  padding-right: 0.08em;
+  background: linear-gradient(100deg, #c7a06a 0%, #c7a06a 35%, #f3dcae 50%, #c7a06a 65%, #b88452 100%);
+  background-size: 260% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hero-rise 1.25s var(--ease-luxe) both, gold-sheen 2.6s var(--ease-silk) 1.9s both;
+}
+@keyframes gold-sheen {
+  from { background-position: 100% 0; }
+  to { background-position: 0% 0; }
+}
+/* Coffret : taille plafonnée pour rester net (source détourée ≈ 1018 px : jamais plus de ×1,5 en pixels physiques) */
+.hero-coffret { width: min(46vw, 1000px, calc(100svh - 13rem)); }
+@media (min-resolution: 1.6dppx) {
+  .hero-coffret { width: min(46vw, 760px, calc(100svh - 13rem)); }
+}
+@media (max-width: 767px) {
+  .hero-coffret { width: min(86vw, 30rem, 50svh); }
+}
+.hero-arch { left: -4%; bottom: -7%; width: 108%; height: 128%; }
+
+@keyframes scene-shadows {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes scene-beam {
+  from { transform: translateX(-75%); opacity: 0; }
+  25% { opacity: 1; }
+  to { transform: translateX(75%); opacity: 0; }
+}
+@keyframes scene-reveal {
+  from { -webkit-mask-position: 0 0%; mask-position: 0 0%; transform: translateY(5%) scale(1.07); }
+  to { -webkit-mask-position: 0 100%; mask-position: 0 100%; transform: none; }
+}
+@keyframes scene-focus {
+  0%, 48% { transform: scale(1); }
+  100% { transform: scale(1.035); }
+}
+@keyframes scene-glow {
+  0%, 52% { opacity: 0; }
+  76% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+@keyframes scene-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes arch-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes prop-in {
+  from { opacity: 0; transform: translate3d(0, 22px, 0) scale(0.9); }
+  to { opacity: 1; transform: none; }
+}
+.anim-scene-shadows { animation: scene-shadows 1.5s var(--ease-out-soft) 0.1s both; }
+.anim-scene-beam { animation: scene-beam 1.9s var(--ease-silk) 0.15s both; }
+.anim-scene-reveal {
+  -webkit-mask-image: linear-gradient(to top, #000 33.3%, transparent 66.6%);
+  mask-image: linear-gradient(to top, #000 33.3%, transparent 66.6%);
+  -webkit-mask-size: 100% 300%;
+  mask-size: 100% 300%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  animation: scene-reveal 1.7s var(--ease-luxe) 0.45s both;
+}
+.anim-scene-focus { animation: scene-focus 2.9s var(--ease-silk) 0.2s both; }
+.anim-scene-glow { animation: scene-glow 3s var(--ease-silk) 0.2s both; }
+.anim-scene-fade { animation: scene-fade 1.3s var(--ease-luxe) both; }
+.anim-arch-draw { stroke-dasharray: 1; animation: arch-draw 2.2s var(--ease-silk) both; }
+.anim-prop-in { animation: prop-in 1.2s var(--ease-luxe) both; }
+
+/* ---------- Scène de l'oasis ---------- */
+/* cadre au format de la photo (3840×1951), toujours assez grand pour couvrir l'écran ; « translate » se compose
+   avec la transformation pilotée par Motion (échelle) */
+.oasis-frame {
+  width: max(100vw, calc(100svh * 1.968));
+  aspect-ratio: 3840 / 1951;
+  translate: -50% -50%;
+}
+/* sur écran portrait, le cadrage suit le grand palmier (28 % de la largeur de la photo) */
+@media (max-aspect-ratio: 1/1) {
+  .oasis-frame { translate: -28% -50%; }
+}
+.oasis-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6.6vw, 6.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.028em;
+}
+
+/* Titres des grandes scènes : 65 à 95 px sur ordinateur */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 5.9rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+}
+
+/* Tirage d'une création posé sur une grande photo : vignette de ≈ 412 px, jamais plus de ×1,5 en pixels physiques */
+.print-inset { width: min(19vw, 280px); }
+@media (max-width: 767px) {
+  .print-inset { width: min(44vw, 206px); }
+}
+.print-inset-sm { width: clamp(96px, 9vw, 150px); }
+/* Tirage à sa définition réelle : --nat = largeur native (px) ; jamais plus de ×1,5 en pixels physiques */
+.native-cap { width: min(78%, calc(var(--nat) * 1px)); }
+@media (min-resolution: 1.6dppx) {
+  .native-cap { width: min(78%, calc(var(--nat) * 0.75px)); }
+}
+@media (min-resolution: 2.6dppx) {
+  .native-cap { width: min(78%, calc(var(--nat) * 0.5px)); }
+}
+
+/* ---------- Le cœur de la datte ---------- */
+/* photo de référence 1122×1402, rapprochée jusqu'à ×1,2 : cadre plafonné pour ne jamais dépasser sa définition */
+.anatomy-frame { width: min(100%, 560px, 57svh); }
+@media (min-resolution: 1.6dppx) {
+  .anatomy-frame { width: min(100%, 460px, 57svh); }
+}
+@media (max-width: 1023px) {
+  .anatomy-frame { width: min(86vw, 36svh); }
+}
+
+/* ---------- L'art d'offrir ---------- */
+/* photographie de référence du coffret (1448 px), rapprochée jusqu'à ×1,18 : cadre plafonné selon la densité d'écran */
+.gift-frame { width: min(58vw, 1200px, calc((100svh - 13rem) * 1.333)); }
+@media (min-resolution: 1.6dppx) {
+  .gift-frame { width: min(58vw, 920px, calc((100svh - 13rem) * 1.333)); }
+}
+@media (max-width: 767px) {
+  .gift-frame { width: 92vw; }
+}
+
+/* ---------- Explosion des saveurs ---------- */
+/* plateau rond : la photographie de référence (1122 px) y est vue à ≈ 75 % de sa largeur, jamais agrandie au-delà de ×1,5 */
+.burst-plate { width: min(46vmin, 420px); aspect-ratio: 1; }
+@media (max-width: 767px) {
+  .burst-plate { width: min(62vw, 300px); }
+}
+.burst-rays {
+  background: repeating-conic-gradient(from 0deg, rgba(199, 160, 106, 0.1) 0deg 2.5deg, transparent 2.5deg 15deg);
+  -webkit-mask-image: radial-gradient(closest-side, #000 12%, transparent 62%);
+  mask-image: radial-gradient(closest-side, #000 12%, transparent 62%);
+  border-radius: 50%;
+}
+
+/* ---------- Métamorphose ---------- */
+.meta-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+}
+/* niches des dix créations : vignettes de ≈ 412 px affichées à 132 px au plus (×2 sur écran Retina = 264 px) */
+.meta-niches { width: min(46vw, 44rem); }
+@media (max-width: 767px) {
+  .meta-niches { width: min(92vw, 26rem); }
+}
+/* vague de chocolat : masque à bord ondulé, qui monte (position verticale) en glissant (position horizontale) */
+.mask-wave {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' preserveAspectRatio='none'><path d='M0 100 Q25 90 50 100 T100 100 T150 100 T200 100 V200 H0 Z' fill='black'/></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' preserveAspectRatio='none'><path d='M0 100 Q25 90 50 100 T100 100 T150 100 T200 100 V200 H0 Z' fill='black'/></svg>");
+  -webkit-mask-size: 200% 210%;
+  mask-size: 200% 210%;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  -webkit-mask-position: 0% 0%;
+  mask-position: 0% 0%;
+}
+
 /* défilement continu d'une frise (liste dupliquée) ; arrêté au survol et si l'utilisateur réduit les animations */
 @keyframes marquee {
   from { transform: translateX(0); }
@@ -300,6 +482,7 @@
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0s !important; /* sinon un élément reste dans son état initial (invisible) pendant le délai */
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;

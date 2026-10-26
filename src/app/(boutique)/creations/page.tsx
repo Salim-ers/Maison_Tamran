@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import Image from "next/image";
+import { ambiance } from "@/lib/ambiance";
 import Link from "next/link";
 import { getBoxes, getCatalog } from "@/lib/catalog";
 import { catalogLabels, toBrowsable } from "@/lib/present";
@@ -50,12 +51,23 @@ export default async function CreationsPage() {
               const list = byCollection(c.slug);
               const cover = list[0] ? main(list[0]) : null;
               const dark = c.slug === "ephemere";
+              // grande image : une photographie d'ingrédient haute définition ; la création y est posée en tirage, à sa taille nette
+              const stage = ambiance(dark ? "rose" : "pistache");
               return (
                 <FadeIn key={c.slug} delay={idx * 0.12} className={idx === 0 ? "lg:col-span-7" : "lg:col-span-5 lg:mt-24"}>
                   <article className={`group relative overflow-hidden ${dark ? "on-dark" : "bg-creme"}`}>
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      {cover && <Image src={cover.url} alt={cover.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" quality={75} className="object-cover transition-transform duration-[1.6s] ease-[var(--ease-luxe)] group-hover:scale-[1.04]" />}
+                      {stage && <Image src={stage.url} alt="" fill sizes="(min-width: 1024px) 50vw, 100vw" quality={75} className="object-cover transition-transform duration-[1.6s] ease-[var(--ease-luxe)] group-hover:scale-[1.04]" />}
+                      <span aria-hidden className="absolute inset-0 bg-[linear-gradient(90deg,transparent_40%,rgba(20,12,9,.35))]" />
+                      {cover && (
+                        <figure className="native-cap absolute bottom-[8%] right-[7%] max-w-[34%] -rotate-3 bg-cream p-[5px] shadow-[0_30px_50px_-20px_rgba(10,6,4,.85)] transition-transform duration-700 group-hover:-translate-y-1 group-hover:-rotate-1" style={{ ["--nat" as string]: cover.w ?? 412 }}>
+                          <span className="relative block aspect-[412/495] overflow-hidden">
+                            <Image src={cover.url} alt={cover.alt} fill sizes="220px" quality={85} className="object-cover" />
+                          </span>
+                        </figure>
+                      )}
                       {cover?.concept && <ConceptBadge tone="dark" label={cover.badge} className="right-3 top-3" />}
+                      {stage?.credit && <span className="absolute left-3 top-3 t-micro text-ivory/75 [text-shadow:0_1px_2px_rgba(0,0,0,.6)]">{stage.credit}</span>}
                       {/* les autres créations de la collection en vignettes */}
                       <ul className="absolute bottom-3 left-3 flex -space-x-3" aria-hidden>
                         {list.slice(1, 6).map((p) => (
@@ -92,7 +104,7 @@ export default async function CreationsPage() {
               <h2 id="catalogue-title" className="mt-4 t-display-m">Toutes les créations</h2>
             </div>
             <p className="max-w-[46ch] t-small text-ink-soft">
-              Dix accords, une seule matière : la datte Medjool, fourrée puis enrobée de chocolat. Les recettes sont en cours de développement et peuvent encore évoluer. Survolez une création pour voir son cœur.
+              Dix accords, une seule matière : la datte Medjool, fourrée puis enrobée de chocolat. Les recettes sont en cours de développement et peuvent encore évoluer. Survolez une création pour lire son accord.
             </p>
           </div>
           <Suspense fallback={<div className="h-96" aria-busy />}>

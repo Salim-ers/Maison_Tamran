@@ -68,8 +68,8 @@ export function SiteHeader() {
   }, [menu]);
 
   const transparent = darkTop && !scrolled && !menu;
-  // sur l'accueil, le hero présente déjà le logo : celui de l'en-tête apparaît au défilement
-  const logoHidden = path === "/" && transparent;
+  // le logo reste visible partout (le hero de l'accueil ne le répète plus)
+  const logoHidden = false;
   const count = cart?.itemCount ?? 0;
 
   return (
@@ -161,7 +161,12 @@ export function SiteHeader() {
             exit={{ clipPath: "inset(0 0 100% 0)" }}
             transition={{ duration: reduce ? 0 : 0.7, ease: [0.22, 0.8, 0.12, 1] }}
           >
-            <nav aria-label="Menu" className="container-luxe pb-16">
+            {/* arc marocain en filigrane */}
+            <svg aria-hidden className="pointer-events-none absolute -right-[18vw] bottom-0 h-[70%] w-[80vw] text-gold/15" viewBox="0 0 100 140" preserveAspectRatio="xMidYMax meet" fill="none">
+              <path d="M8 140 V74 A42 42 0 1 1 92 74 V140" stroke="currentColor" strokeWidth=".4" />
+              <path d="M14 140 V72 A36 36 0 1 1 86 72 V140" stroke="currentColor" strokeWidth=".25" />
+            </svg>
+            <nav aria-label="Menu" className="container-luxe relative pb-16">
               <ul className="space-y-1">
                 {MOBILE.map((l, i) => {
                   const current = path === l.href || (l.href !== "/creations" && path.startsWith(`${l.href}/`));

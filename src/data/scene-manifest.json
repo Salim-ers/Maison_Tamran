@@ -1,0 +1,197 @@
+{
+  "coffret-ouvert": {
+    "url": "/images/scene/coffret-ouvert-bd884616.webp",
+    "w": 1018,
+    "h": 1021,
+    "source": "Photographie de référence du coffret Signature (pack Maison Tamrān), détourée"
+  },
+  "oasis-paysage": {
+    "url": "/images/scene/oasis-paysage-3755bd62.webp",
+    "w": 3840,
+    "h": 1951,
+    "source": "Photo Halima Bouchouicha / Unsplash (palmeraie), ciel retiré",
+    "credit": "Photo Halima Bouchouicha / Unsplash"
+  },
+  "ing-pistache-1": {
+    "url": "/images/scene/ing-pistache-1-cf6793c5.webp",
+    "w": 302,
+    "h": 437,
+    "source": "Photo Tamanna Rumee / Unsplash, fond retiré",
+    "credit": "Photo Tamanna Rumee / Unsplash"
+  },
+  "ing-pistache-2": {
+    "url": "/images/scene/ing-pistache-2-ece3be19.webp",
+    "w": 352,
+    "h": 373,
+    "source": "Photo Tamanna Rumee / Unsplash, fond retiré",
+    "credit": "Photo Tamanna Rumee / Unsplash"
+  },
+  "ing-pistache-3": {
+    "url": "/images/scene/ing-pistache-3-1d95d3f9.webp",
+    "w": 430,
+    "h": 259,
+    "source": "Photo Tamanna Rumee / Unsplash, fond retiré",
+    "credit": "Photo Tamanna Rumee / Unsplash"
+  },
+  "ing-pistache-4": {
+    "url": "/images/scene/ing-pistache-4-1b1eee3f.webp",
+    "w": 422,
+    "h": 304,
+    "source": "Photo Tamanna Rumee / Unsplash, fond retiré",
+    "credit": "Photo Tamanna Rumee / Unsplash"
+  },
+  "ing-pistache-5": {
+    "url": "/images/scene/ing-pistache-5-819efa1f.webp",
+    "w": 277,
+    "h": 411,
+    "source": "Photo Tamanna Rumee / Unsplash, fond retiré",
+    "credit": "Photo Tamanna Rumee / Unsplash"
+  },
+  "ing-noisette-1": {
+    "url": "/images/scene/ing-noisette-1-8f85bb73.webp",
+    "w": 351,
+    "h": 749,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-noisette-2": {
+    "url": "/images/scene/ing-noisette-2-9ece9953.webp",
+    "w": 359,
+    "h": 529,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-noisette-3": {
+    "url": "/images/scene/ing-noisette-3-a04a1d3e.webp",
+    "w": 503,
+    "h": 394,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-noisette-4": {
+    "url": "/images/scene/ing-noisette-4-2560081f.webp",
+    "w": 522,
+    "h": 361,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-noisette-5": {
+    "url": "/images/scene/ing-noisette-5-908a9a0c.webp",
+    "w": 285,
+    "h": 294,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-noisette-tas": {
+    "url": "/images/scene/ing-noisette-tas-6308c183.webp",
+    "w": 900,
+    "h": 802,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-amande-1": {
+    "url": "/images/scene/ing-amande-1-bf068df7.webp",
+    "w": 332,
+    "h": 362,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-amande-2": {
+    "url": "/images/scene/ing-amande-2-9d67b823.webp",
+    "w": 251,
+    "h": 378,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-amande-tas": {
+    "url": "/images/scene/ing-amande-tas-7c31258e.webp",
+    "w": 900,
+    "h": 788,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-chocolat-1": {
+    "url": "/images/scene/ing-chocolat-1-7484e5f2.webp",
+    "w": 792,
+    "h": 506,
+    "source": "Photo Amy Vann / Unsplash, fond retiré",
+    "credit": "Photo Amy Vann / Unsplash"
+  },
+  "ing-chocolat-2": {
+    "url": "/images/scene/ing-chocolat-2-68b2f38e.webp",
+    "w": 707,
+    "h": 431,
+    "source": "Photo Amy Vann / Unsplash, fond retiré",
+    "credit": "Photo Amy Vann / Unsplash"
+  },
+  "ing-framboise-1": {
+    "url": "/images/scene/ing-framboise-1-cc01d18e.webp",
+    "w": 544,
+    "h": 506,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-framboise-2": {
+    "url": "/images/scene/ing-framboise-2-aee302a6.webp",
+    "w": 474,
+    "h": 471,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-framboise-tas": {
+    "url": "/images/scene/ing-framboise-tas-c4c67a2d.webp",
+    "w": 843,
+    "h": 900,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-cafe-1": {
+    "url": "/images/scene/ing-cafe-1-e56aaaa1.webp",
+    "w": 242,
+    "h": 193,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-cafe-2": {
+    "url": "/images/scene/ing-cafe-2-b1f28589.webp",
+    "w": 153,
+    "h": 146,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-cafe-3": {
+    "url": "/images/scene/ing-cafe-3-37d1355d.webp",
+    "w": 155,
+    "h": 140,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-cafe-4": {
+    "url": "/images/scene/ing-cafe-4-91cf2707.webp",
+    "w": 146,
+    "h": 142,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-cafe-5": {
+    "url": "/images/scene/ing-cafe-5-2507dbb9.webp",
+    "w": 146,
+    "h": 142,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "ing-cafe-tas": {
+    "url": "/images/scene/ing-cafe-tas-76f3378a.webp",
+    "w": 900,
+    "h": 847,
+    "source": "Photo Mockup Graphics / Unsplash, fond retiré",
+    "credit": "Photo Mockup Graphics / Unsplash"
+  },
+  "oasis-palme": {
+    "url": "/images/scene/oasis-palme-4979857e.webp",
+    "w": 2600,
+    "h": 1819,
+    "source": "Photo kz mozaffari / Unsplash (couronne de dattier), ciel retiré",
+    "credit": "Photo kz mozaffari / Unsplash"
+  }
+}

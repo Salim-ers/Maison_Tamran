@@ -153,5 +153,32 @@
     "alt": "Poudre de matcha dans une coupelle blanche sur fond rose pâle",
     "credit": "Photo Phuong Nguyen / Unsplash",
     "page": "https://unsplash.com/photos/green-powder-DgW9B48pRb4"
+  },
+  "medjool-macro": {
+    "url": "/images/ambiance/medjool-macro-1010184e.webp",
+    "w": 3840,
+    "h": 2880,
+    "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAABQAgCdASoQAAwAA4BaJZACdAYvhdZhYUGwoAAA/vfA+3mG7iGgWmLVylTQI9hfv2xllFcCwpMBwwS4nP7qUYRbsxeVpwlI+QcSnQ87fEqw/XkwgIPTS+xFOgweD6wAAAA=",
+    "alt": "Gros plan de dattes brunes, charnues et ridées, en lumière chaude",
+    "credit": "Photo engin akyurt / Unsplash",
+    "page": "https://unsplash.com/photos/pile-of-dark-brown-dates-kO5ENCZTxoM"
+  },
+  "palmeraie-maroc": {
+    "url": "/images/ambiance/palmeraie-maroc-9ecaf671.webp",
+    "w": 3840,
+    "h": 2560,
+    "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoQAAsAA4BaJZACdAEUoM3zhAAA/tSbEzD70O+7AAqRP7lqQuerHZybP33WIpMbybX1Fvf3gBlEYuV68jM6JcrREq2gAA==",
+    "alt": "Palmeraie de dattiers dense devant un village de terre et des montagnes, sous un ciel bleu",
+    "credit": "Photo Falco Negenman / Unsplash",
+    "page": "https://unsplash.com/photos/palm-trees-in-a-desert-landscape-with-buildings-ttOFPXjGFEA"
+  },
+  "riad-soleil": {
+    "url": "/images/ambiance/riad-soleil-ea84cff6.webp",
+    "w": 3840,
+    "h": 2560,
+    "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAwAgCdASoQAAsAA4BaJQBOgCBsfyAtGSSBAAD+3jVWABQLkAt/Ng2t1Hp7Yu4dW3FRG4iL6UZe1tUW/8Tw2h1O/CYpaU0XjBvs9CWbg07jsdFkPKIjlvmfgnmjpp5rPbq221AA",
+    "alt": "Cour ensoleillée aux arcades blanches et sol de zellige, fontaine au centre, ciel bleu",
+    "credit": "Photo Riccardo Monteleone / Unsplash",
+    "page": "https://unsplash.com/photos/courtyard-with-arches-and-a-central-fountain-ClAUVD_88NY"
   }
 }

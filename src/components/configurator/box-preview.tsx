@@ -30,7 +30,26 @@ export function DateThumb({ f, className }: { f: FlavorSwatch; className?: strin
  * Aperçu vu de dessus d'un coffret : une alvéole par pièce.
  * `slots` contient l'ordre de remplissage (slug par pièce).
  */
-export function BoxPreview({ pieces, slots, flavors, onRemoveAt, className, dark = false }: { pieces: number; slots: string[]; flavors: Map<string, FlavorSwatch>; onRemoveAt?: (index: number) => void; className?: string; dark?: boolean }) {
+export function BoxPreview({
+  pieces,
+  slots,
+  flavors,
+  onRemoveAt,
+  className,
+  dark = false,
+  incoming,
+  landDelay = 0,
+}: {
+  pieces: number;
+  slots: string[];
+  flavors: Map<string, FlavorSwatch>;
+  onRemoveAt?: (index: number) => void;
+  className?: string;
+  dark?: boolean;
+  /** alvéoles vers lesquelles une datte est en vol : elle n'y apparaît qu'à l'atterrissage */
+  incoming?: Set<number>;
+  landDelay?: number;
+}) {
   const reduce = useReducedMotion();
   const cols = pieces === 6 ? 3 : pieces === 12 ? 4 : 6;
   return (
@@ -41,16 +60,16 @@ export function BoxPreview({ pieces, slots, flavors, onRemoveAt, className, dark
           const slug = slots[i];
           const f = slug ? flavors.get(slug) : undefined;
           return (
-            <div key={i} className="relative aspect-[1.7/1] rounded-[45%] bg-[radial-gradient(ellipse_at_50%_45%,#140d0b_0%,#2a1f1b_75%)] shadow-[inset_0_2px_6px_rgba(0,0,0,.6)]">
+            <div key={i} data-slot={i} className="relative aspect-[1.7/1] rounded-[45%] bg-[radial-gradient(ellipse_at_50%_45%,#140d0b_0%,#2a1f1b_75%)] shadow-[inset_0_2px_6px_rgba(0,0,0,.6)]">
               <AnimatePresence>
                 {f && (
                   <motion.button
                     type="button"
                     key={`${slug}-${i}`}
-                    initial={reduce ? false : { scale: 1.25, opacity: 0, y: -26, rotate: -8 }}
+                    initial={reduce ? false : incoming?.has(i) ? { opacity: 0 } : { scale: 1.25, opacity: 0, y: -26, rotate: -8 }}
                     animate={{ scale: 1, opacity: 1, y: 0, rotate: 0 }}
                     exit={reduce ? { opacity: 0 } : { scale: 0.5, opacity: 0, y: -10 }}
-                    transition={{ type: "spring", stiffness: 380, damping: 24 }}
+                    transition={incoming?.has(i) ? { duration: 0.01, delay: landDelay } : { type: "spring", stiffness: 380, damping: 24 }}
                     onClick={onRemoveAt ? () => onRemoveAt(i) : undefined}
                     tabIndex={onRemoveAt ? 0 : -1}
                     disabled={!onRemoveAt}
@@ -58,6 +77,16 @@ export function BoxPreview({ pieces, slots, flavors, onRemoveAt, className, dark
                     aria-label={onRemoveAt ? `Retirer ${f.name} (place ${i + 1})` : f.name}
                   >
                     <DateThumb f={f} className="size-full shadow-[0_4px_10px_rgba(0,0,0,.55)] ring-1 ring-[#c7a06a]/30" />
+                    {/* confirmation : un anneau doré s'ouvre quand la datte se pose */}
+                    {!reduce && (
+                      <motion.span
+                        aria-hidden
+                        className="pointer-events-none absolute inset-0 rounded-[45%] ring-2 ring-[#e3c38c]"
+                        initial={{ opacity: 0, scale: 1 }}
+                        animate={{ opacity: [0.95, 0], scale: [1, 1.45] }}
+                        transition={{ duration: 0.7, ease: "easeOut", delay: incoming?.has(i) ? landDelay : 0.1 }}
+                      />
+                    )}
                   </motion.button>
                 )}
               </AnimatePresence>

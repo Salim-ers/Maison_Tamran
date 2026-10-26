@@ -16,13 +16,14 @@ export const metadata: Metadata = {
 /**
  * Visuels associés à chaque étape : « a:<clé> » = photographie d'ambiance (ingrédients, fruit),
  * sinon visuel conceptuel d'une création. Aucune image ne montre un atelier de la maison.
+ * Les visuels des créations (≈ 412 px) ne sont utilisés qu'en médaillon : le grand format revient aux photographies.
  */
 const VISUALS: { main: string; ratio: string; second?: string }[] = [
   { main: "a:dattier-regimes", ratio: "aspect-square" },
   { main: "a:dattes-naturelles", ratio: "aspect-[20/11]" },
-  { main: "coupe-or-de-marrakech", ratio: "aspect-[4/3]", second: "a:pistache" },
+  { main: "a:pistache", ratio: "aspect-[4/3]", second: "produit-or-de-marrakech" },
   { main: "a:chocolat", ratio: "aspect-[20/11]", second: "produit-eclipse-noire" },
-  { main: "produit-rose-de-nuit", ratio: "aspect-[4/3]", second: "a:rose" },
+  { main: "a:rose", ratio: "aspect-[4/3]", second: "produit-rose-de-nuit" },
   { main: "coffret-1", ratio: "aspect-[3/2]", second: "a:art-de-recevoir" },
 ];
 

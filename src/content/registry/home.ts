@@ -13,8 +13,8 @@ export const homeHero = {
   defaults: {
     title: "L'art de\nsublimer\nla datte.",
     subtitle: "La datte Medjool rencontre la gourmandise des grands chocolats. Découvrez nos créations et nos coffrets imaginés pour offrir une expérience singulière.",
-    ctaPrimary: "Découvrir les coffrets",
-    ctaSecondary: "Explorer les créations",
+    ctaPrimary: "Découvrir les créations",
+    ctaSecondary: "Composer mon coffret",
   },
 } satisfies ContentEntry;
 

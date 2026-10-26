@@ -23,7 +23,7 @@ export function RevealImage({ children, className, from = "bottom", parallax = 8
       viewport={{ once: true, margin: "-12% 0px" }}
       transition={{ duration: 1.4, ease: EASE }}
     >
-      <motion.div style={reduce ? undefined : { y, scale: 1 + parallax / 50 }} className="absolute inset-0">
+      <motion.div style={reduce ? { y: 0, scale: 1 } : { y, scale: 1 + parallax / 50 }} className="absolute inset-0">
         {children}
       </motion.div>
     </motion.div>

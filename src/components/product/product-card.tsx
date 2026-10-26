@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useRef, useState } from "react";
 import { clsx } from "clsx";
 import type { ImageRef } from "@/db/schema";
 import { euros } from "@/lib/money";
@@ -27,61 +26,42 @@ export interface CardProduct {
 }
 
 /**
- * Carte produit : au survol (ou au focus), la coupe se dévoile par un masque circulaire
- * qui part du pointeur. Sur écran tactile, un bouton explicite bascule entre les deux vues.
+ * Carte produit, en galerie : la création est présentée dans une niche en arc, sur un halo à la couleur de sa
+ * recette, à une taille où sa photographie reste nette. Au survol (ou au focus), la niche se soulève, un arc
+ * doré se dessine et l'accord apparaît.
  */
-export function ProductCard({ p, sizes = "(min-width: 1024px) 30vw, 80vw", tone = "light", className }: { p: CardProduct; sizes?: string; tone?: "light" | "dark"; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [inside, setInside] = useState(false);
-  const [hover, setHover] = useState(false);
-  const show = inside || hover;
-
-  const move = (e: React.PointerEvent) => {
-    if (e.pointerType !== "mouse" || !ref.current) return;
-    const r = ref.current.getBoundingClientRect();
-    ref.current.style.setProperty("--x", `${((e.clientX - r.left) / r.width) * 100}%`);
-    ref.current.style.setProperty("--y", `${((e.clientY - r.top) / r.height) * 100}%`);
-  };
-
+export function ProductCard({ p, tone = "light", className }: { p: CardProduct; sizes?: string; tone?: "light" | "dark"; className?: string }) {
+  const dark = tone === "dark";
   return (
-    <article
-      className={clsx("group relative", className)}
-      onPointerEnter={(e) => { if (e.pointerType === "mouse") { move(e); setHover(true); } }}
-      onPointerMove={move}
-      onPointerLeave={(e) => { if (e.pointerType === "mouse") setHover(false); }}
-      onFocus={() => setHover(true)}
-      onBlur={() => setHover(false)}
-    >
+    <article className={clsx("group relative", className)}>
       <div
-        ref={ref}
-        className="relative aspect-[4/5] overflow-hidden bg-taupe/30 [--x:50%] [--y:55%]"
+        className="relative aspect-[4/5] overflow-hidden"
+        style={{
+          background: `radial-gradient(ellipse 70% 55% at 50% 42%, color-mix(in srgb, ${p.accent} 30%, transparent), transparent 72%), ${dark ? "#2b1c16" : "#efe3d0"}`,
+        }}
       >
+        <span aria-hidden className={clsx("absolute inset-x-[10%] bottom-[9%] h-px", dark ? "bg-ivory/15" : "bg-chocolate/15")} />
         {p.main && (
-          <Image src={p.main.url} alt={p.main.alt} fill sizes={sizes} quality={75} placeholder={p.main.blur ? "blur" : "empty"} blurDataURL={p.main.blur} className="object-cover transition-transform duration-[1.4s] ease-[var(--ease-luxe)] group-hover:scale-[1.03]" />
-        )}
-        {p.cut && (
-          <div
-            className="absolute inset-0 transition-[clip-path] duration-[900ms] ease-[var(--ease-luxe)] motion-reduce:transition-none"
-            style={{ clipPath: show ? "circle(150% at var(--x) var(--y))" : "circle(0% at var(--x) var(--y))" }}
-            aria-hidden={!show}
-          >
-            <Image src={p.cut.url} alt={p.cut.alt} fill sizes={sizes} quality={75} className="object-cover" loading="lazy" />
+          <div className="absolute inset-0 grid place-items-center pb-[6%]">
+            <div className="native-cap relative transition-transform duration-700 ease-[var(--ease-luxe)] group-hover:-translate-y-2" style={{ ["--nat" as string]: p.main.w ?? 412 }}>
+              <span className="relative block overflow-hidden rounded-t-[50%_32%] shadow-[0_30px_50px_-24px_rgba(36,23,19,.65)]" style={{ aspectRatio: `${p.main.w ?? 412} / ${p.main.h ?? 495}` }}>
+                <Image src={p.main.url} alt={p.main.alt} fill sizes="(min-width: 1024px) 300px, 62vw" quality={85} placeholder={p.main.blur ? "blur" : "empty"} blurDataURL={p.main.blur} className="object-cover transition-transform duration-[1.4s] ease-[var(--ease-luxe)] group-hover:scale-[1.04]" />
+              </span>
+              {/* arc doré qui se dessine au survol */}
+              <svg aria-hidden className="pointer-events-none absolute -inset-[7%] h-[114%] w-[114%]" viewBox="0 0 100 120" preserveAspectRatio="none" fill="none">
+                <path d="M2 120 V42 A48 40 0 0 1 98 42 V120" pathLength={1} stroke="#c7a06a" strokeWidth="1.2" vectorEffect="non-scaling-stroke" className="[stroke-dasharray:1] [stroke-dashoffset:1] transition-[stroke-dashoffset] duration-[1.1s] ease-[var(--ease-luxe)] group-hover:[stroke-dashoffset:0] group-focus-within:[stroke-dashoffset:0]" />
+              </svg>
+            </div>
           </div>
         )}
-        {p.main?.concept && <ConceptBadge className="left-3 top-3" tone={tone === "dark" ? "dark" : "light"} label={p.main.badge} />}
-        {p.cut && (
-          <button
-            type="button"
-            onClick={() => setInside((v) => !v)}
-            aria-pressed={inside}
-            className={clsx(
-              "absolute bottom-3 right-3 z-[3] px-3 py-2 text-[0.78rem] backdrop-blur-md transition-colors lg:opacity-0 lg:group-hover:opacity-100 lg:focus-visible:opacity-100",
-              tone === "dark" ? "bg-chocolate/70 text-ivory" : "bg-cream/85 text-ink"
-            )}
-          >
-            {inside ? "Voir la création" : "Voir l'intérieur"}
-          </button>
-        )}
+        {p.main?.concept && <ConceptBadge className="left-3 top-3" tone={dark ? "dark" : "light"} label={p.main.badge} />}
+        {/* l'accord, révélé au survol (toujours visible sur écran tactile) */}
+        <div className={clsx("absolute inset-x-0 bottom-0 p-4 transition-[opacity,transform] duration-500 lg:translate-y-2 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100", dark ? "bg-[linear-gradient(0deg,rgba(20,12,9,.85),transparent)] text-ivory" : "bg-[linear-gradient(0deg,rgba(250,246,237,.95),transparent)] text-ink")}>
+          <p className="flex items-center justify-between gap-3 t-micro tracking-[0.14em]">
+            <span className="truncate">ACCORD · {p.chocolateLabel.toUpperCase()}</span>
+            <span aria-hidden className="max-lg:hidden">DÉCOUVRIR →</span>
+          </p>
+        </div>
       </div>
       <div className="mt-5 flex items-start justify-between gap-4">
         <div className="min-w-0">

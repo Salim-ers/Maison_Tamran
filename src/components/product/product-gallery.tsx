@@ -6,133 +6,134 @@ import { AnimatePresence, motion } from "motion/react";
 import { useReducedMotion } from "@/components/motion/reduced-motion";
 import { clsx } from "clsx";
 import type { ImageRef } from "@/db/schema";
-import { ConceptBadge } from "@/components/ui/media";
 
-const ROLE_LABEL: Record<string, string> = { main: "La création", cut: "Le cœur", scene: "La datte entière", macro: "Détail", extra: "Vue" };
+export type StagePhoto = { key: string; label: string; url: string; alt: string; credit?: string; blur?: string };
+
+type View =
+  | { kind: "print"; key: string; label: string; image: ImageRef; stage: StagePhoto | null }
+  | { kind: "photo"; key: string; label: string; photo: StagePhoto };
+
+const EASE = [0.22, 0.8, 0.12, 1] as const;
 
 /**
- * Galerie produit : la création, son cœur, la datte entière.
- * Changement de vue par balayage (sens du déplacement), flèches du clavier, glissement au doigt,
- * et loupe au survol sur ordinateur (cliquer pour l'activer).
+ * Galerie produit en scène. Les photographies des créations n'existent qu'en petite définition : elles sont
+ * présentées en tirage, à une taille où elles restent nettes (plafond selon la densité de l'écran), posées sur
+ * la grande photographie haute définition d'un ingrédient de la recette. Les autres vues sont ces ingrédients
+ * en plein cadre. Aucun zoom ne dépasse la définition réelle d'une image.
  */
-export function ProductGallery({ images, name }: { images: ImageRef[]; name: string }) {
-  const [[i, dir], setView] = useState<[number, number]>([0, 0]);
-  const [zoom, setZoom] = useState(false);
-  const [origin, setOrigin] = useState("50% 50%");
+export function ProductGallery({ images, name, stages }: { images: ImageRef[]; name: string; stages: StagePhoto[] }) {
   const reduce = useReducedMotion();
-  const frame = useRef<HTMLDivElement>(null);
-  const cur = images[i];
+  const main = images.find((i) => i.role === "main") ?? images[0];
+  const cut = images.find((i) => i.role === "cut");
+  const views: View[] = [];
+  if (main) views.push({ kind: "print", key: "creation", label: "La création", image: main, stage: stages[0] ?? null });
+  // le cœur en tirage seulement si sa définition le permet (photographie de référence)
+  if (cut && (cut.w ?? 0) >= 500) views.push({ kind: "print", key: "coeur", label: "Le cœur", image: cut, stage: stages[1] ?? stages[0] ?? null });
+  for (const s of stages) views.push({ kind: "photo", key: s.key, label: s.label, photo: s });
+
+  const [[i, dir], setView] = useState<[number, number]>([0, 0]);
+  const touch = useRef<number | null>(null);
+  const cur = views[i];
   if (!cur) return null;
   const go = (k: number) => {
-    const n = (k + images.length) % images.length;
+    const n = (k + views.length) % views.length;
     if (n !== i) setView([n, n > i ? 1 : -1]);
-    setZoom(false);
   };
 
   return (
     <div className="lg:sticky lg:top-[calc(var(--header-h)+var(--banner-h)+1.5rem)]">
       <div
-        ref={frame}
-        className={clsx("relative aspect-[4/5] touch-pan-y overflow-hidden bg-sand/40", zoom ? "cursor-zoom-out" : "lg:cursor-zoom-in")}
-        onPointerMove={(e) => {
-          if (!zoom || !frame.current) return;
-          const r = frame.current.getBoundingClientRect();
-          setOrigin(`${((e.clientX - r.left) / r.width) * 100}% ${((e.clientY - r.top) / r.height) * 100}%`);
-        }}
-        onClick={(e) => {
-          if (!window.matchMedia("(pointer: fine)").matches || !frame.current) return;
-          const r = frame.current.getBoundingClientRect();
-          setOrigin(`${((e.clientX - r.left) / r.width) * 100}% ${((e.clientY - r.top) / r.height) * 100}%`);
-          setZoom((z) => !z);
-        }}
+        className="relative aspect-[4/5] touch-pan-y overflow-hidden bg-chocolate"
         onKeyDown={(e) => {
           if (e.key === "ArrowRight") go(i + 1);
           if (e.key === "ArrowLeft") go(i - 1);
         }}
-        tabIndex={images.length > 1 ? 0 : -1}
+        onTouchStart={(e) => (touch.current = e.touches[0].clientX)}
+        onTouchEnd={(e) => {
+          if (touch.current === null) return;
+          const dx = e.changedTouches[0].clientX - touch.current;
+          if (Math.abs(dx) > 50) go(i + (dx < 0 ? 1 : -1));
+          touch.current = null;
+        }}
+        tabIndex={views.length > 1 ? 0 : -1}
         role="group"
         aria-roledescription="galerie"
-        aria-label={`${name} : ${ROLE_LABEL[cur.role] ?? "vue"} (${i + 1} sur ${images.length}). Flèches gauche et droite pour changer de vue.`}
+        aria-label={`${name} : ${cur.label} (${i + 1} sur ${views.length}). Flèches gauche et droite pour changer de vue.`}
       >
         <AnimatePresence initial={false} custom={dir}>
           <motion.div
-            key={cur.url}
+            key={cur.key}
             custom={dir}
             className="absolute inset-0"
-            drag={images.length > 1 && !zoom ? "x" : false}
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.18}
-            onDragEnd={(_, info) => {
-              if (info.offset.x < -60) go(i + 1);
-              else if (info.offset.x > 60) go(i - 1);
-            }}
             variants={{
-              enter: (d: number) => (reduce ? { opacity: 0 } : { clipPath: d >= 0 ? "inset(0% 0% 0% 100%)" : "inset(0% 100% 0% 0%)", scale: 1.06 }),
-              center: reduce ? { opacity: 1 } : { clipPath: "inset(0% 0% 0% 0%)", scale: 1 },
+              enter: (d: number) => (reduce ? { opacity: 0 } : { clipPath: d >= 0 ? "inset(0% 0% 0% 100%)" : "inset(0% 100% 0% 0%)" }),
+              center: reduce ? { opacity: 1 } : { clipPath: "inset(0% 0% 0% 0%)" },
               exit: { opacity: 1, zIndex: 0 },
             }}
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: reduce ? 0.2 : 0.95, ease: [0.22, 0.8, 0.12, 1] }}
+            transition={{ duration: reduce ? 0.2 : 0.95, ease: EASE }}
             style={{ zIndex: 1 }}
           >
-            <motion.div className="absolute inset-0" animate={{ scale: zoom ? 1.8 : 1 }} transition={{ duration: 0.6, ease: [0.22, 0.8, 0.12, 1] }} style={{ transformOrigin: origin }}>
-              <Image
-                src={cur.url}
-                alt={cur.alt}
-                fill
-                preload={i === 0}
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                quality={85}
-                placeholder={cur.blur ? "blur" : "empty"}
-                blurDataURL={cur.blur}
-                className="pointer-events-none select-none object-cover"
-                draggable={false}
-              />
-            </motion.div>
+            {cur.kind === "photo" ? (
+              <>
+                <motion.div className="absolute inset-0" initial={reduce ? false : { scale: 1.08 }} animate={{ scale: 1 }} transition={{ duration: 1.4, ease: EASE }}>
+                  <Image src={cur.photo.url} alt={cur.photo.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" quality={75} placeholder={cur.photo.blur ? "blur" : "empty"} blurDataURL={cur.photo.blur} className="object-cover" />
+                </motion.div>
+                <span className="absolute bottom-4 left-4 bg-ivory/90 px-3 py-1.5 t-micro tracking-[0.14em] text-ink">{cur.label.toUpperCase()}</span>
+                {cur.photo.credit && <span className="absolute bottom-4 right-4 t-micro text-ivory/75 [text-shadow:0_1px_2px_rgba(0,0,0,.6)]">{cur.photo.credit}</span>}
+              </>
+            ) : (
+              <>
+                {cur.stage && (
+                  <>
+                    <Image src={cur.stage.url} alt="" fill sizes="(min-width: 1024px) 50vw, 100vw" quality={75} className="object-cover" />
+                    <span aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(20,12,9,.2),rgba(20,12,9,.62))]" />
+                  </>
+                )}
+                <div className="absolute inset-0 grid place-items-center p-[8%]">
+                  <motion.figure
+                    className="native-cap bg-cream p-[6px] shadow-[0_40px_70px_-26px_rgba(10,6,4,.9)]"
+                    style={{ ["--nat" as string]: cur.image.w ?? 412 }}
+                    initial={reduce ? false : { y: 40, rotate: -7, opacity: 0 }}
+                    animate={{ y: 0, rotate: -2.5, opacity: 1 }}
+                    transition={{ duration: 0.9, ease: EASE, delay: reduce ? 0 : 0.2 }}
+                  >
+                    <span className="relative block overflow-hidden" style={{ aspectRatio: `${cur.image.w ?? 412} / ${cur.image.h ?? 495}` }}>
+                      <Image src={cur.image.url} alt={cur.image.alt} fill sizes="(min-width: 1024px) 26rem, 70vw" quality={85} preload={i === 0} className="object-cover" />
+                    </span>
+                    <figcaption className="px-1 pb-0.5 pt-2 text-center text-[0.62rem] tracking-[0.14em] text-ink-soft">VISUEL CONCEPTUEL</figcaption>
+                  </motion.figure>
+                </div>
+                {cur.stage?.credit && <span className="absolute bottom-4 right-4 t-micro text-ivory/70">Fond : {cur.stage.credit}</span>}
+              </>
+            )}
           </motion.div>
         </AnimatePresence>
-        {cur.concept && <ConceptBadge className="left-3 top-3" label={cur.badge} />}
-        <span className="pointer-events-none absolute bottom-3 left-3 z-[2] bg-cream/85 px-2.5 py-1.5 t-micro tracking-[0.12em] text-ink backdrop-blur-sm">
-          {(ROLE_LABEL[cur.role] ?? "Vue").toUpperCase()}
-        </span>
-        {images.length > 1 && (
-          <div className="absolute bottom-3 right-3 z-[2] flex gap-1">
-            {[
-              ["Vue précédente", -1, "←"],
-              ["Vue suivante", 1, "→"],
-            ].map(([label, d, sym]) => (
-              <button
-                key={label as string}
-                type="button"
-                aria-label={label as string}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  go(i + (d as number));
-                }}
-                className="grid size-9 place-items-center bg-cream/85 text-ink backdrop-blur-sm transition-colors hover:bg-chocolate hover:text-ivory"
-              >
+        {views.length > 1 && (
+          <div className="absolute right-3 top-3 z-[2] flex gap-1">
+            {(
+              [
+                ["Vue précédente", -1, "←"],
+                ["Vue suivante", 1, "→"],
+              ] as const
+            ).map(([label, d, sym]) => (
+              <button key={label} type="button" aria-label={label} onClick={() => go(i + d)} className="grid size-9 place-items-center bg-cream/85 text-ink backdrop-blur-sm transition-colors hover:bg-chocolate hover:text-ivory">
                 {sym}
               </button>
             ))}
           </div>
         )}
       </div>
-      {images.length > 1 && (
-        <div className="mt-3 grid grid-cols-3 gap-3" role="tablist" aria-label={`Vues de ${name}`}>
-          {images.map((im, k) => (
-            <button
-              key={im.url}
-              role="tab"
-              aria-selected={k === i}
-              onClick={() => go(k)}
-              className={clsx("group relative text-left outline-offset-2 transition-opacity", k === i ? "opacity-100" : "opacity-60 hover:opacity-100")}
-            >
-              <span className="relative block aspect-[4/3] overflow-hidden">
-                <Image src={im.url} alt="" fill sizes="15vw" quality={75} className="object-cover transition-transform duration-700 group-hover:scale-105" />
+      {views.length > 1 && (
+        <div className="no-scrollbar mt-3 flex gap-3 overflow-x-auto" role="tablist" aria-label={`Vues de ${name}`}>
+          {views.map((v, k) => (
+            <button key={v.key} role="tab" aria-selected={k === i} onClick={() => go(k)} className={clsx("group relative w-24 shrink-0 text-left outline-offset-2 transition-opacity", k === i ? "opacity-100" : "opacity-60 hover:opacity-100")}>
+              <span className="relative block aspect-square overflow-hidden bg-chocolate">
+                <Image src={v.kind === "photo" ? v.photo.url : v.image.url} alt="" fill sizes="96px" quality={75} className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </span>
-              <span className="mt-2 block t-micro text-ink-soft">{ROLE_LABEL[im.role] ?? "Vue"}</span>
+              <span className="mt-2 block truncate t-micro text-ink-soft">{v.label}</span>
               <span className={clsx("absolute inset-x-0 top-0 h-[2px] transition-colors", k === i ? "bg-chocolate" : "bg-transparent")} />
             </button>
           ))}

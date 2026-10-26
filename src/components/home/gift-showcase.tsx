@@ -2,46 +2,40 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "motion/react";
-import { useReducedMotion } from "@/components/motion/reduced-motion";
-import { useRef } from "react";
+import { animate, motion, useInView, useMotionTemplate, useMotionValue, useScroll, useTransform, type MotionValue } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 import { clsx } from "clsx";
+import { useReducedMotion } from "@/components/motion/reduced-motion";
+import { span } from "@/components/motion/scroll";
+import { BrandLogo } from "@/components/brand";
 import type { ImageRef } from "@/db/schema";
 import { euros } from "@/lib/money";
 import { ConceptBadge } from "@/components/ui/media";
-import { BrandLogo } from "@/components/brand";
 
-export interface GiftFormat {
-  slug: string;
-  name: string;
-  pieces: number | null;
-  priceCents: number | null;
-  description: string;
-  kind: string;
-}
+export type GiftFormat = { slug: string; name: string; pieces: number | null; priceCents: number | null; description: string; kind: string };
 
 /**
- * Schéma d'un format de coffret (vu de dessus) garni de vignettes photographiques des créations.
- * Ce n'est pas une photographie du coffret : il est légendé « Illustration du format ».
+ * Schéma vu de dessus d'un format de coffret (alvéoles). C'est une illustration du format, distincte de
+ * toute photographie de produit. `fill` (0 → 1) remplit les alvéoles une à une.
  */
-export function FormatDiagram({ pieces, thumbs, className, animate = true }: { pieces: number; thumbs: string[]; className?: string; animate?: boolean }) {
-  const reduce = useReducedMotion();
+export function FormatDiagram({ pieces, thumbs, className, fill }: { pieces: number; thumbs: string[]; className?: string; fill?: MotionValue<number> }) {
   const cols = pieces <= 6 ? 3 : pieces <= 12 ? 4 : 6;
+  // sans pilotage par le défilement : les alvéoles se remplissent une fois, à l'apparition du schéma
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-10% 0px" });
+  const reduce = useReducedMotion();
+  const own = useMotionValue(fill || reduce ? 1 : 0);
+  useEffect(() => {
+    if (fill || reduce || !inView) return;
+    const c = animate(own, 1, { duration: 1.4, ease: [0.22, 0.8, 0.12, 1] });
+    return () => c.stop();
+  }, [fill, reduce, inView, own]);
   return (
-    <div className={clsx("relative bg-chocolate p-[5%] shadow-[0_24px_50px_-28px_rgba(0,0,0,.8)]", className)}>
+    <div ref={ref} className={clsx("relative bg-chocolate p-[5%] shadow-[0_24px_50px_-28px_rgba(0,0,0,.8)]", className)}>
       <div className="pointer-events-none absolute inset-[2.5%] border border-gold/40" aria-hidden />
       <div className="grid gap-[3%]" style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}>
         {Array.from({ length: pieces }, (_, i) => (
-          <motion.span
-            key={i}
-            className="relative block aspect-[1.6/1] overflow-hidden rounded-[45%] bg-[#140d0b] shadow-[inset_0_2px_5px_rgba(0,0,0,.6)]"
-            initial={reduce || !animate ? false : { opacity: 0, scale: 0.6, y: -6 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10% 0px" }}
-            transition={{ type: "spring", stiffness: 300, damping: 22, delay: 0.25 + i * (pieces > 12 ? 0.025 : 0.05) }}
-          >
-            {thumbs.length > 0 && <Image src={thumbs[i % thumbs.length]} alt="" fill sizes="80px" quality={75} className="scale-[1.4] object-cover" />}
-          </motion.span>
+          <Slot key={i} i={i} pieces={pieces} thumb={thumbs.length ? thumbs[i % thumbs.length] : null} fill={fill ?? own} />
         ))}
       </div>
       <BrandLogo variant="mark" tone="light" height={40} alt="" className="pointer-events-none absolute bottom-0 left-1/2 h-[10%] -translate-x-1/2 translate-y-1/2" />
@@ -49,78 +43,159 @@ export function FormatDiagram({ pieces, thumbs, className, animate = true }: { p
   );
 }
 
-/** « Le plaisir d'offrir, autrement » : le coffret Signature se dévoile comme un couvercle qu'on soulève, puis les formats. */
-export function GiftShowcase({ coffret, formats, thumbs, ephemeralThumbs }: { coffret: ImageRef; formats: GiftFormat[]; thumbs: string[]; ephemeralThumbs: string[] }) {
-  const ref = useRef<HTMLDivElement>(null);
+function Slot({ i, pieces, thumb, fill }: { i: number; pieces: number; thumb: string | null; fill: MotionValue<number> }) {
+  const a = i / pieces;
+  const v = useTransform(fill, [a * 0.9, a * 0.9 + 0.12], [0, 1]);
+  const scale = useTransform(v, [0, 1], [0.55, 1]);
+  const y = useTransform(v, [0, 1], [-8, 0]);
+  return (
+    <span className="relative block aspect-[1.6/1] overflow-hidden rounded-[45%] bg-[#140d0b] shadow-[inset_0_2px_5px_rgba(0,0,0,.6)]">
+      {thumb && (
+        <motion.span style={{ opacity: v, scale, y }} className="absolute inset-[5%] block overflow-hidden rounded-[45%]">
+          <Image src={thumb} alt="" fill sizes="(min-width: 768px) 128px, 96px" quality={75} className="scale-[1.35] object-cover" />
+        </motion.span>
+      )}
+    </span>
+  );
+}
+
+function FormatCard({ f, i, p, thumbs }: { f: GiftFormat & { pieces: number }; i: number; p: MotionValue<number>; thumbs: string[] }) {
+  const a = 0.48 + i * 0.05;
+  const opacity = useTransform(p, span(a, a + 0.08), [0, 1]);
+  const y = useTransform(p, span(a, a + 0.1), ["60px", "0px"]);
+  const fill = useTransform(p, span(a + 0.04, a + 0.26), [0, 1]);
+  const real = f.kind === "signature";
+  return (
+    <motion.li style={{ opacity, y }} className="flex flex-col">
+      <FormatDiagram pieces={f.pieces} thumbs={thumbs} fill={fill} className="w-full" />
+      <p className="mt-5 t-micro tracking-[0.18em] text-gold/80 max-md:hidden">{real ? "FORMAT DU COFFRET PHOTOGRAPHIÉ" : "ILLUSTRATION DU FORMAT"}</p>
+      <p className="mt-1 font-display text-[1.7rem] leading-tight max-md:mt-3 max-md:text-[1.1rem]">{f.name.replace("Coffret ", "")}</p>
+      <p className="t-small text-ivory/65">
+        {f.pieces} pièces · {euros(f.priceCents)}
+      </p>
+    </motion.li>
+  );
+}
+
+/**
+ * L'art d'offrir : le coffret Signature prend vie au défilement.
+ * 1. il apparaît, comme deux portes qui s'ouvrent ; 2. le cadrage se rapproche des dattes, qu'une lumière
+ * parcourt (zoom borné : la photographie de référence n'est jamais agrandie au-delà de sa définition) ;
+ * 3. il s'efface sur la gauche et les trois formats arrivent, leurs alvéoles se remplissant une à une ;
+ * 4. relais vers le configurateur.
+ */
+export function GiftShowcase({ coffret, formats, thumbs }: { coffret: ImageRef; formats: GiftFormat[]; thumbs: string[] }) {
+  const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 85%", "center 55%"] });
-  const clip = useTransform(scrollYProgress, [0, 1], reduce ? ["inset(0% 0% 0% 0%)", "inset(0% 0% 0% 0%)"] : ["inset(46% 8% 46% 8%)", "inset(0% 0% 0% 0%)"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [reduce ? 1 : 1.18, 1]);
-  const glow = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
+  const { scrollYProgress: p } = useScroll({ target: ref, offset: ["start start", "end end"] });
+  const shown = formats
+    .flatMap((f) => (f.pieces && [6, 12, 24].includes(f.pieces) && f.kind !== "edition-limitee" ? [{ ...f, pieces: f.pieces }] : []))
+    .sort((a, b) => a.pieces - b.pieces);
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const on = () => setMobile(mq.matches);
+    on();
+    mq.addEventListener("change", on);
+    return () => mq.removeEventListener("change", on);
+  }, []);
+
+  // 1. les portes
+  const doors = useTransform(p, span(0, 0.16), [0, 1]);
+  const clip = useTransform(doors, (e) => {
+    const k = 1 - Math.pow(1 - e, 3);
+    return `inset(${(6 * (1 - k)).toFixed(2)}% ${(50 * (1 - k)).toFixed(2)}% ${(6 * (1 - k)).toFixed(2)}% ${(50 * (1 - k)).toFixed(2)}%)`;
+  });
+  // 2. rapprochement et lumière sur les dattes
+  const zoom = useTransform(p, span(0.16, 0.38, 0.44, 0.58), [1, 1.18, 1.18, 1]);
+  const lx = useTransform(p, span(0.2, 0.4), [22, 78]);
+  const light = useMotionTemplate`radial-gradient(ellipse 22% 30% at ${lx}% 70%, rgba(255,210,150,.42), transparent 70%)`;
+  const lightO = useTransform(p, span(0.18, 0.22, 0.38, 0.44), [0, 1, 1, 0]);
+  // 3. le coffret s'efface vers la gauche, les formats arrivent
+  const frameX = useTransform(p, span(0.44, 0.58), [mobile ? "0vw" : "13vw", mobile ? "0vw" : "-24vw"]);
+  const frameY = useTransform(p, span(0.44, 0.58), ["0vh", mobile ? "-26vh" : "0vh"]);
+  const frameS = useTransform(p, span(0.44, 0.58), [1, mobile ? 0.5 : 0.62]);
+  const frameO = useTransform(p, span(0.62, 0.7), [1, 0.35]);
+  const t1 = useTransform(p, span(0.02, 0.1, 0.38, 0.44), [0, 1, 1, 0]);
+  const t2 = useTransform(p, span(0.2, 0.26, 0.4, 0.46), [0, 1, 1, 0]);
+  const t3 = useTransform(p, span(0.5, 0.56), [0, 1]);
+  const cta = useTransform(p, span(0.8, 0.88), [0, 1]);
+  const ctaEvents = useTransform(cta, (v) => (v > 0.5 ? "auto" : "none"));
+
+  const photo = (
+    <div className="relative">
+      <Image src={coffret.url} alt={coffret.alt} width={coffret.w ?? 1448} height={coffret.h ?? 1086} sizes="(max-width: 767px) 92vw, 64vw" quality={85} className="block h-auto w-full" />
+      {coffret.concept && <ConceptBadge tone="dark" label={coffret.badge} className="bottom-3 right-3" />}
+    </div>
+  );
+
+  if (reduce) {
+    return (
+      <section className="on-dark section-pad" aria-labelledby="offrir-title">
+        <div className="container-luxe">
+          <p className="t-eyebrow text-gold">L&apos;art d&apos;offrir</p>
+          <h2 id="offrir-title" className="section-title mt-4 max-w-[12ch]">Le plaisir d&apos;offrir</h2>
+          <div className="gift-frame mt-12">{photo}</div>
+          <ul className="mt-14 grid gap-10 sm:grid-cols-3">
+            {shown.map((f) => (
+              <li key={f.slug}>
+                <FormatDiagram pieces={f.pieces} thumbs={thumbs} />
+                <p className="mt-4 font-display text-2xl">{f.name.replace("Coffret ", "")}</p>
+                <p className="t-small text-ivory/65">{f.pieces} pièces · {euros(f.priceCents)}</p>
+              </li>
+            ))}
+          </ul>
+          <Link href="/composer-mon-coffret" className="btn btn-gold mt-12">Composer mon coffret</Link>
+        </div>
+      </section>
+    );
+  }
 
   return (
-    <section className="on-dark relative overflow-hidden grain section-pad" aria-labelledby="offrir-title">
-      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[60%] bg-[radial-gradient(ellipse_at_50%_0%,rgba(169,116,68,.28),transparent_65%)]" />
-      <div className="container-luxe relative">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="t-eyebrow text-gold">L&apos;art d&apos;offrir</p>
-          <h2 id="offrir-title" className="mt-5 font-display text-[clamp(2.4rem,5.4vw,5.4rem)] leading-[1] tracking-[-0.02em]">
-            Le plaisir d&apos;offrir,
-            <br />
-            <em className="text-gold">autrement.</em>
-          </h2>
-          <p className="mx-auto mt-6 max-w-[48ch] text-taupe">
-            Des coffrets rigides, une datte par alvéole, un dattier en relief sur le couvercle : un écrin pensé pour être ouvert lentement.
-          </p>
-        </div>
+    <section ref={ref} className="relative h-[340vh] bg-[#140c09] text-ivory" aria-labelledby="offrir-title">
+      <div className="sticky top-0 h-[100svh] overflow-hidden">
+        <div aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_60%_55%_at_50%_45%,rgba(169,116,68,.3),transparent_70%)]" />
+        <div aria-hidden className="grain absolute inset-0" />
 
-        <div ref={ref} className="relative mx-auto mt-16 max-w-6xl">
-          <motion.div style={{ clipPath: clip }} className="relative aspect-[4/3] overflow-hidden md:aspect-[16/10]">
-            <motion.div style={{ scale }} className="absolute inset-0">
-              <Image src={coffret.url} alt={coffret.alt} fill sizes="(min-width: 1200px) 1150px, 100vw" quality={85} placeholder={coffret.blur ? "blur" : "empty"} blurDataURL={coffret.blur} className="object-cover object-[50%_55%]" />
+        {/* le coffret */}
+        <div className="absolute inset-0 flex items-center justify-center pt-[calc(var(--header-h)+var(--banner-h,0px))]">
+          <motion.div style={{ x: frameX, y: frameY, scale: frameS, opacity: frameO }} className="gift-frame relative">
+            <motion.div style={{ clipPath: clip }} className="relative overflow-hidden shadow-[0_50px_100px_-40px_rgba(0,0,0,.9)]">
+              <motion.div style={{ scale: zoom }} className="origin-[55%_70%]">
+                {photo}
+                <motion.div aria-hidden style={{ background: light, opacity: lightO }} className="pointer-events-none absolute inset-0 mix-blend-soft-light" />
+              </motion.div>
             </motion.div>
-            <motion.div style={{ opacity: glow }} aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_55%_40%,rgba(255,226,180,.18),transparent_60%)] mix-blend-screen" />
-            {coffret.concept && <ConceptBadge tone="dark" label={coffret.badge} className="right-3 top-3" />}
           </motion.div>
-          <p className="mt-4 flex justify-between gap-4 t-small text-taupe">
-            <span>Coffret Signature · 12 pièces</span>
-            <span className="max-sm:hidden">Couvercle ivoire, dattier en relief</span>
-          </p>
         </div>
 
-        <ul className="mt-20 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-          {formats.map((f, i) => (
-            <motion.li
-              key={f.slug}
-              className="group relative flex flex-col"
-              initial={reduce ? false : { opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-8% 0px" }}
-              transition={{ duration: 0.9, delay: i * 0.08, ease: [0.22, 0.8, 0.12, 1] }}
-            >
-              <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-chocolate-2 p-6 transition-transform duration-700 ease-[var(--ease-luxe)] group-hover:-translate-y-1">
-                {f.kind === "signature" ? (
-                  <Image src={coffret.url} alt="" fill sizes="(min-width: 1024px) 24vw, 50vw" quality={75} className="object-cover" />
-                ) : (
-                  <FormatDiagram pieces={f.pieces ?? 12} thumbs={f.kind === "edition-limitee" ? ephemeralThumbs : thumbs} className="w-[86%]" />
-                )}
-                <span className="absolute left-3 top-3 t-micro tracking-[0.14em] text-taupe">{f.kind === "signature" ? "VISUEL CONCEPTUEL" : "ILLUSTRATION DU FORMAT"}</span>
-              </div>
-              <div className="mt-5 flex items-baseline justify-between gap-4">
-                <h3 className="font-display text-2xl">
-                  <Link href={`/coffrets#${f.slug}`} className="after:absolute after:inset-0">{f.name}</Link>
-                </h3>
-                <span className="t-small tabular-nums text-gold">{f.priceCents != null ? euros(f.priceCents) : "Sur devis"}</span>
-              </div>
-              <p className="mt-1 t-micro uppercase tracking-[0.16em] text-taupe">{f.pieces ? `${f.pieces} pièces` : "Format sur mesure"}</p>
-              <p className="mt-3 t-small text-taupe">{f.description}</p>
-            </motion.li>
-          ))}
-        </ul>
+        {/* textes */}
+        <motion.div style={{ opacity: t1 }} className="container-luxe pointer-events-none absolute inset-x-0 top-[calc(var(--header-h)+var(--banner-h,0px)+3vh)]">
+          <p className="t-eyebrow text-gold">L&apos;art d&apos;offrir</p>
+          <h2 id="offrir-title" className="section-title mt-3 max-w-[11ch]">Le plaisir <em className="text-gold">d&apos;offrir</em></h2>
+        </motion.div>
+        <motion.div style={{ opacity: t2 }} className="container-luxe pointer-events-none absolute inset-x-0 bottom-[7vh]">
+          <p className="max-w-[21rem] text-lg text-ivory/85 max-md:max-w-none max-md:rounded-sm max-md:bg-[#140c09]/80 max-md:p-4">
+            Le coffret Signature : douze créations rangées une à une dans leurs caissettes, sous un couvercle frappé du dattier de la maison.
+          </p>
+        </motion.div>
 
-        <div className="mt-16 flex flex-col items-center gap-4 text-center">
-          <Link href="/composer-mon-coffret" className="btn btn-gold min-h-[3.75rem] px-10 text-base">Composer mon coffret</Link>
-          <Link href="/coffrets" className="t-small text-taupe link-draw">Tous les coffrets</Link>
+        {/* les formats */}
+        <div className="container-luxe absolute inset-x-0 bottom-[5vh] md:bottom-auto md:top-1/2 md:-translate-y-1/2 md:pl-[38vw]">
+          <motion.div style={{ opacity: t3 }}>
+            <p className="t-eyebrow text-gold">Trois formats</p>
+            <p className="mt-3 max-w-[28rem] font-display text-[clamp(1.5rem,3vw,2.8rem)] leading-tight">Six, douze ou vingt-quatre pièces, à composer vous-même.</p>
+          </motion.div>
+          <ul className="mt-8 grid grid-cols-3 gap-4 md:gap-8">
+            {shown.map((f, i) => (
+              <FormatCard key={f.slug} f={f} i={i} p={p} thumbs={thumbs} />
+            ))}
+          </ul>
+          <motion.p style={{ opacity: t3 }} className="mt-4 t-micro text-ivory/55 md:hidden">Schémas des formats : seul le coffret Signature (12 pièces) est photographié.</motion.p>
+          <motion.div style={{ opacity: cta, pointerEvents: ctaEvents }} className="mt-10 flex flex-wrap gap-3 max-md:mt-6">
+            <Link href="/composer-mon-coffret" className="btn btn-gold">Composer mon coffret</Link>
+            <Link href="/coffrets" className="btn btn-outline-light">Voir les coffrets</Link>
+          </motion.div>
         </div>
       </div>
     </section>

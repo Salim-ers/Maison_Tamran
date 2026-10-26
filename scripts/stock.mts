@@ -22,6 +22,8 @@ interface StockEntry {
   alt: string;
   width: number;
   height: number;
+  /** « cutout » : source de détourage seulement (npm run scene-assets), pas de photo d'ambiance publiée */
+  use?: "cutout";
 }
 
 // Définition publiée : 4K (3840 px sur le grand côté), sans jamais agrandir un original plus petit.
@@ -92,6 +94,7 @@ for (const e of list) {
     fs.writeFileSync(file, Buffer.from(await res.arrayBuffer()));
     console.log(`téléchargé : ${e.file}`);
   }
+  if (e.use === "cutout") continue;
   let img = await source(file, e.key);
   const crop = CROPS[e.key];
   if (crop) {
@@ -124,4 +127,4 @@ for (const e of list) {
 // versions précédentes retirées (le dossier ne contient que ce script produit)
 for (const f of fs.readdirSync(OUT_DIR)) if (f.endsWith(".webp") && !published.has(f)) fs.unlinkSync(path.join(OUT_DIR, f));
 fs.writeFileSync(MANIFEST, `${JSON.stringify(manifest, null, 2)}\n`);
-console.log(`${list.length} photos d'ambiance → src/data/ambiance-manifest.json`);
+console.log(`${Object.keys(manifest).length} photos d'ambiance → src/data/ambiance-manifest.json`);

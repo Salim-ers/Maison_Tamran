@@ -53,12 +53,36 @@ Toutes les photos externes proviennent d'[Unsplash](https://unsplash.com) et rel
 | cafe-grains | `brand/source/stock/cafe-grains__H80RH1Hhvu8.jpg` | [Indra Projects](https://unsplash.com/@indraprojects) | [H80RH1Hhvu8](https://unsplash.com/photos/roasted-coffee-beans-are-displayed-up-close-H80RH1Hhvu8) | Unsplash License | 5184 × 3456 | Accueil (ingrédients), fiche Café Impérial. | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
 | coco | `brand/source/stock/coco__nUApCUJ1M6k.jpg` | [Kateryna Hliznitsova](https://unsplash.com/@kate_gliz) | [nUApCUJ1M6k](https://unsplash.com/photos/a-couple-of-coconuts-that-are-on-a-table-nUApCUJ1M6k) | Unsplash License | 4016 × 6016 | Accueil (ingrédients), fiche Île Secrète. Bandeau de mur retiré au recadrage. | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
 | matcha | `brand/source/stock/matcha__DgW9B48pRb4.jpg` | [Phuong Nguyen](https://unsplash.com/@np254) | [DgW9B48pRb4](https://unsplash.com/photos/green-powder-DgW9B48pRb4) | Unsplash License | 4214 × 2750 | Accueil (ingrédients), fiche Minuit à Kyoto. | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| medjool-macro | `brand/source/stock/medjool-macro__kO5ENCZTxoM.jpg` | [engin akyurt](https://unsplash.com/@enginakyurt) | [kO5ENCZTxoM](https://unsplash.com/photos/pile-of-dark-brown-dates-kO5ENCZTxoM) | Unsplash License | 11648 × 8736 | Accueil (la métamorphose, « La datte »), éditions éphémères (Ambre Fumé), fiches produit sans photo d'ingrédient. | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| palmeraie-maroc | `brand/source/stock/palmeraie-maroc__ttOFPXjGFEA.jpg` | [Falco Negenman](https://unsplash.com/@f9lco) | [ttOFPXjGFEA](https://unsplash.com/photos/palm-trees-in-a-desert-landscape-with-buildings-ttOFPXjGFEA) | Unsplash License | 5977 × 3985 | Accueil (l'univers Maison Tamrān, vignette). | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| riad-soleil | `brand/source/stock/riad-soleil__ClAUVD_88NY.jpg` | [Riccardo Monteleone](https://unsplash.com/@rx_lion) | [ClAUVD_88NY](https://unsplash.com/photos/courtyard-with-arches-and-a-central-fountain-ClAUVD_88NY) | Unsplash License | 6000 × 4000 | Accueil (l'univers Maison Tamrān, grande image). | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+
+### Sources de détourage (éléments transparents, `npm run scene-assets`)
+
+Ces photos ne sont pas publiées telles quelles : le fond est retiré et chaque pièce devient un élément transparent (`public/images/scene/`). Elles sont déclarées avec `"use": "cutout"` dans `brand/source/stock/stock.json`. Pages consultées le 2026-10-26 : licence Unsplash gratuite, pas Unsplash+.
+
+| Clé | Photographe | Page source | Dimensions | Éléments produits | Usage |
+|---|---|---|---|---|---|
+| detourage-pistache | [Tamanna Rumee](https://unsplash.com/@tamanna_rumee) | [hHMF-zPm0jo](https://unsplash.com/photos/pistachios-scattered-on-a-white-background-hHMF-zPm0jo) | 5472 × 3648 | `ing-pistache-1` à `-5` | hero, explosion des saveurs |
+| detourage-noisette | [Mockup Graphics](https://unsplash.com/@mockupgraphics) | [nuaxGRQ9elM](https://unsplash.com/photos/brown-almond-nuts-on-white-surface-nuaxGRQ9elM) | 4815 × 3611 | `ing-noisette-1` à `-5`, `ing-noisette-tas` | hero, explosion des saveurs |
+| detourage-amande | [Mockup Graphics](https://unsplash.com/@mockupgraphics) | [hw8vOPAIZgk](https://unsplash.com/photos/brown-almond-nuts-on-white-background-hw8vOPAIZgk) | 4285 × 3213 | `ing-amande-1`, `-2`, `ing-amande-tas` | hero, explosion des saveurs |
+| detourage-chocolat | [Amy Vann](https://unsplash.com/@girl_behindthelens) | [aZkQgBfnFL0](https://unsplash.com/photos/four-pieces-of-chocolate-sitting-on-top-of-each-other-aZkQgBfnFL0) | 4000 × 6000 | `ing-chocolat-1`, `-2` | hero, explosion des saveurs |
+| detourage-framboise | [Mockup Graphics](https://unsplash.com/@mockupgraphics) | [TvPoJ6GWNmc](https://unsplash.com/photos/red-round-fruits-on-white-surface-TvPoJ6GWNmc) | 4741 × 4741 | `ing-framboise-1`, `-2`, `ing-framboise-tas` | explosion des saveurs |
+| detourage-cafe | [Mockup Graphics](https://unsplash.com/@mockupgraphics) | [m7ijvnNGaV0](https://unsplash.com/photos/brown-coffee-beans-on-white-surface-m7ijvnNGaV0) | 4499 × 4499 | `ing-cafe-1` à `-5`, `ing-cafe-tas` | explosion des saveurs |
+| palme-premier-plan | [kz mozaffari](https://unsplash.com/@fariiou) | [gH2lS064NT4](https://unsplash.com/photos/green-palm-tree-under-blue-sky-during-daytime-gH2lS064NT4) | 4288 × 2848 | `oasis-palme` (ciel retiré) | accueil, l'oasis (plan de premier plan) |
+
+La palmeraie (`palmeraie`) fournit aussi un plan sans ciel (`oasis-paysage`) pour l'effet de profondeur de l'oasis. Le coffret détouré (`coffret-ouvert`) vient de la photographie de référence du pack Maison Tamrān, pas d'une banque d'images.
+
+**Cherchées sans résultat satisfaisant** (photo nette sur fond uni, licence gratuite) : cardamome, safran, pétales de rose. Elles n'apparaissent donc pas dans l'explosion des saveurs.
 
 **Clé non pourvue** : `pecan` (noix de pécan). Aucune photo gratuite convenable n'a été trouvée. Les seules photos nettes étaient sous Unsplash+, les photos gratuites montraient des dattes fourrées (exclu) ou des noix dans leur brou abîmé.
 
 ## Points d'attention
 
 - **palmeraie** : deux petits déchets (un objet blanc sous un buisson à gauche, une bouteille plastique) sont visibles dans le sable au premier plan. Le recadrage publié (3840 px de large) les exclut. La photo a été prise à Taghit (Algérie) : ne pas la légender comme une palmeraie de la marque.
+- **palmeraie-maroc** : lieu indiqué « Maroc » seulement ; le village comporte des maisons modernes et une antenne. Ne pas la présenter comme une plantation de la marque.
+- **riad-soleil** : cour du palais de la Bahia (Marrakech), un monument public et non un riad. Ne pas la présenter comme un lieu de la marque.
+- **palme-premier-plan** : photographiée en Iran (province de Bushehr) ; utilisée seulement comme silhouette de premier plan, sans légende de lieu.
 - **riad-lumiere** : patio d'un riad présenté comme hôtel sur Unsplash, lieu non précisé. Ne pas le présenter comme un lieu de la marque. Un petit numéro de chambre en laiton sur la porte est effacé par `npm run stock` (retouche documentée dans le script).
 - **dattier-regimes** : dattes mûres (ambrées à brunes), variété non identifiée. Ne pas la légender comme de la Medjool ni comme une palmeraie de la marque.
 - **art-de-recevoir** : la photo a été prise dans un riad de Fès. Ne pas la présenter comme un lieu de la marque.

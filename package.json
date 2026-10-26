@@ -22,7 +22,8 @@
     "images:approve": "tsx scripts/images/approve.mts",
     "images:status": "tsx scripts/images/status.mts",
     "test:smoke": "node scripts/smoke.mjs",
-    "test:e2e": "node tests/e2e/flow.mjs && node tests/e2e/account.mjs && node tests/e2e/admin.mjs"
+    "test:e2e": "node tests/e2e/flow.mjs && node tests/e2e/account.mjs && node tests/e2e/admin.mjs",
+    "scene-assets": "tsx scripts/scene-assets.mts"
   },
   "dependencies": {
     "@fontsource-variable/bodoni-moda": "^5.3.0",

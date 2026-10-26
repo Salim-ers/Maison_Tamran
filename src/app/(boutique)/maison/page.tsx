@@ -39,7 +39,8 @@ export default async function MaisonPage() {
   const { products } = await getCatalog();
   // trois cœurs différents : l'accord se lit dans la coupe
   const hearts = ["or-de-marrakech", "rouge-desir", "minuit-a-kyoto"].map((slug) => products.find((x) => x.slug === slug)).flatMap((x) => {
-    const img = x?.images.find((i) => i.role === "cut");
+    // vue complète (≈ 412 px de large) : la coupe seule est trop petite pour ce format
+    const img = x?.images.find((i) => i.role === "main");
     return x && img ? [{ name: x.name, img }] : [];
   });
   const coffret = concept("coffret-1");
