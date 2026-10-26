@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PageIntro } from "@/components/layout/page-intro";
-import { concept, Media } from "@/components/ui/media";
+import { Media } from "@/components/ui/media";
+import { visual } from "@/lib/visual";
 
 export interface ProLandingProps {
   title: string;
@@ -48,7 +49,7 @@ export function ProLanding(p: ProLandingProps) {
 
       <div className="container-luxe">
         <div className="relative aspect-[16/9] overflow-hidden max-sm:aspect-[4/3]">
-          <Media image={concept(p.heroImage)} fill preload sizes="100vw" className="object-cover" wrapperClassName="absolute inset-0" />
+          <Media image={visual(p.heroImage)} fill preload sizes="100vw" className="object-cover" wrapperClassName="absolute inset-0" />
         </div>
       </div>
 
@@ -72,7 +73,7 @@ export function ProLanding(p: ProLandingProps) {
         <div className="container-luxe grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden">
-              <Media image={concept(p.sideImage)} fill sizes="(min-width: 1024px) 38vw, 100vw" className="object-cover" wrapperClassName="absolute inset-0" />
+              <Media image={visual(p.sideImage)} fill sizes="(min-width: 1024px) 38vw, 100vw" className="object-cover" wrapperClassName="absolute inset-0" />
             </div>
           </div>
           <div className="lg:col-span-6 lg:col-start-7">

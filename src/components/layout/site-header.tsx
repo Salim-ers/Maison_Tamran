@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion, useScroll } from "motion/react";
 import { clsx } from "clsx";
 import { BrandLogo } from "@/components/brand";
 import { useCart } from "@/components/cart/cart-context";
@@ -30,7 +30,7 @@ const MOBILE = [
 ];
 
 /** Pages dont le haut est sombre : l'en-tête y démarre transparent, texte ivoire. */
-const DARK_TOP = ["/", "/creations", "/collections/signature", "/collections/ephemere", "/maison", "/professionnels"];
+const DARK_TOP = ["/", "/creations", "/collections/signature", "/collections/ephemere", "/coffrets", "/maison", "/professionnels"];
 
 export function SiteHeader() {
   const path = usePathname();
@@ -40,6 +40,7 @@ export function SiteHeader() {
   const [hidden, setHidden] = useState(false);
   const [menu, setMenu] = useState(false);
   const lastY = useRef(0);
+  const { scrollYProgress } = useScroll();
   const darkTop = DARK_TOP.includes(path);
 
   useEffect(() => {
@@ -79,6 +80,9 @@ export function SiteHeader() {
           hidden && !reduce ? "-translate-y-[calc(100%+var(--banner-h,0px))]" : "translate-y-0"
         )}
       >
+        {!transparent && !menu && (
+          <motion.span aria-hidden style={{ scaleX: scrollYProgress }} className="pointer-events-none absolute inset-x-0 bottom-0 h-px origin-left bg-gold/70" />
+        )}
         <div className="container-luxe grid h-[var(--header-h)] grid-cols-[1fr_auto_1fr] items-center gap-4">
           <nav aria-label="Navigation principale" className="hidden lg:block">
             <ul className="flex gap-8 text-[0.9rem] tracking-[0.01em]">
@@ -158,12 +162,21 @@ export function SiteHeader() {
           >
             <nav aria-label="Menu" className="container-luxe pb-16">
               <ul className="space-y-1">
-                {MOBILE.map((l, i) => (
-                  <motion.li key={l.href} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: reduce ? 0 : 0.15 + i * 0.04, duration: 0.6, ease: [0.22, 0.8, 0.12, 1] }}>
-                    <Link href={l.href} className="block py-2 font-display text-[2rem] leading-tight">{l.label}</Link>
-                  </motion.li>
-                ))}
+                {MOBILE.map((l, i) => {
+                  const current = path === l.href || (l.href !== "/creations" && path.startsWith(`${l.href}/`));
+                  return (
+                    <motion.li key={l.href} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: reduce ? 0 : 0.15 + i * 0.04, duration: 0.6, ease: [0.22, 0.8, 0.12, 1] }}>
+                      <Link href={l.href} aria-current={current ? "page" : undefined} className={clsx("flex items-center gap-3 py-2 font-display text-[2rem] leading-tight transition-colors", current && "text-gold")}>
+                        {current && <span aria-hidden className="h-px w-6 bg-gold" />}
+                        {l.label}
+                      </Link>
+                    </motion.li>
+                  );
+                })}
               </ul>
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: reduce ? 0 : 0.5 }} className="mt-8">
+                <Link href="/composer-mon-coffret" className="btn btn-gold w-full">Composer mon coffret</Link>
+              </motion.div>
               <div className="mt-10 grid grid-cols-2 gap-3 border-t border-line-light pt-8 t-small">
                 <Link href="/recherche" className="flex items-center gap-2"><IconSearch className="size-4" />Rechercher</Link>
                 <Link href="/compte" className="flex items-center gap-2"><IconUser className="size-4" />Mon compte</Link>

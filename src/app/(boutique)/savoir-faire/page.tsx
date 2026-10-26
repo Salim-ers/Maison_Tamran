@@ -3,7 +3,8 @@ import Link from "next/link";
 import { clsx } from "clsx";
 import { getContent } from "@/lib/catalog";
 import { PageIntro, Provisional } from "@/components/layout/page-intro";
-import { concept, Media } from "@/components/ui/media";
+import { Media } from "@/components/ui/media";
+import { visual } from "@/lib/visual";
 import { savoirFaireEtapes, savoirFaireIntro } from "@/content/registry/savoir-faire";
 
 export const metadata: Metadata = {
@@ -12,14 +13,17 @@ export const metadata: Metadata = {
   alternates: { canonical: "/savoir-faire" },
 };
 
-/** Visuels associés à chaque étape (identifiants concept). */
+/**
+ * Visuels associés à chaque étape : « a:<clé> » = photographie d'ambiance (ingrédients, fruit),
+ * sinon visuel conceptuel d'une création. Aucune image ne montre un atelier de la maison.
+ */
 const VISUALS: { main: string; ratio: string; second?: string }[] = [
-  { main: "macro-1", ratio: "aspect-square" },
-  { main: "couche-datte", ratio: "aspect-[20/11]" },
-  { main: "couche-garniture", ratio: "aspect-[20/11]", second: "macro-3" },
-  { main: "couche-chocolat", ratio: "aspect-[20/11]", second: "macro-4" },
-  { main: "couche-finition", ratio: "aspect-[20/11]", second: "macro-6" },
-  { main: "coffret-1", ratio: "aspect-[3/2]", second: "packaging-3" },
+  { main: "a:dattier-regimes", ratio: "aspect-square" },
+  { main: "a:dattes-naturelles", ratio: "aspect-[20/11]" },
+  { main: "coupe-or-de-marrakech", ratio: "aspect-[4/3]", second: "a:pistache" },
+  { main: "a:chocolat", ratio: "aspect-[20/11]", second: "produit-eclipse-noire" },
+  { main: "produit-rose-de-nuit", ratio: "aspect-[4/3]", second: "a:rose" },
+  { main: "coffret-1", ratio: "aspect-[3/2]", second: "a:art-de-recevoir" },
 ];
 
 export default async function SavoirFairePage() {
@@ -63,11 +67,11 @@ export default async function SavoirFairePage() {
               <article className="container-luxe grid items-center gap-10 lg:grid-cols-12 lg:gap-8" aria-labelledby={`etape-${i + 1}-t`}>
                 <div className={clsx("relative lg:col-span-7", flip ? "lg:order-2 lg:col-start-6" : "lg:col-start-1")}>
                   <div className={clsx("relative overflow-hidden", s.ratio, i === 0 && "lg:w-[78%]")}>
-                    <Media image={concept(s.main)} fill sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" wrapperClassName="absolute inset-0" badge={last ? "dark" : true} badgeClassName={s.second && !flip ? "bottom-3 left-3" : "bottom-3 right-3"} />
+                    <Media image={visual(s.main)} fill sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" wrapperClassName="absolute inset-0" badge={last ? "dark" : true} badgeClassName={s.second && !flip ? "bottom-3 left-3" : "bottom-3 right-3"} />
                   </div>
                   {s.second && (
                     <div className={clsx("absolute -bottom-12 hidden aspect-square w-[30%] overflow-hidden border-8 md:block", flip ? "-left-6" : "-right-6", last ? "border-chocolate" : "border-ivory")}>
-                      <Media image={concept(s.second)} fill sizes="18vw" className="object-cover" wrapperClassName="absolute inset-0" badge={false} />
+                      <Media image={visual(s.second)} fill sizes="18vw" className="object-cover" wrapperClassName="absolute inset-0" badge={false} />
                     </div>
                   )}
                 </div>

@@ -12,7 +12,7 @@ export function AuthShell({ title, intro, children, crumb }: { title: string; in
         <div className="mt-10 w-full max-w-md">{children}</div>
       </div>
       <div className="relative hidden lg:block">
-        <Media image={concept("packaging-3")} fill sizes="50vw" className="object-cover" wrapperClassName="absolute inset-0" />
+        <Media image={concept("coffret-1")} fill sizes="50vw" className="object-cover" wrapperClassName="absolute inset-0" />
       </div>
     </div>
   );

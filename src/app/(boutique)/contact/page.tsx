@@ -3,7 +3,8 @@ import Link from "next/link";
 import { getSettings } from "@/lib/catalog";
 import { PageIntro } from "@/components/layout/page-intro";
 import { ContactForm } from "@/components/contact-form";
-import { concept, Media } from "@/components/ui/media";
+import { Media } from "@/components/ui/media";
+import { ambiance } from "@/lib/ambiance";
 
 export const metadata: Metadata = {
   title: "Nous écrire",
@@ -26,7 +27,7 @@ export default async function ContactPage() {
         </div>
         <aside className="lg:col-span-4 lg:col-start-9">
           <div className="relative aspect-[4/5] overflow-hidden">
-            <Media image={concept("lifestyle-2")} fill sizes="(min-width: 1024px) 30vw, 100vw" className="object-cover object-[30%_50%]" wrapperClassName="absolute inset-0" />
+            <Media image={ambiance("cafe-oriental")} fill sizes="(min-width: 1024px) 30vw, 100vw" className="object-cover" wrapperClassName="absolute inset-0" />
           </div>
           <dl className="mt-10 space-y-8">
             <div>

@@ -4,6 +4,7 @@ import { getContent } from "@/lib/catalog";
 import { getActivePriceTiers } from "@/lib/public-data";
 import { Breadcrumbs } from "@/components/layout/page-intro";
 import { concept, Media } from "@/components/ui/media";
+import { ambiance } from "@/lib/ambiance";
 import { proOffre, proOuverture, proRevendeurs } from "@/content/registry/professionnels";
 
 export const metadata: Metadata = {
@@ -61,10 +62,10 @@ export default async function ProfessionnelsPage() {
           </div>
           <div className="relative lg:col-span-6 lg:col-start-7 lg:mt-12">
             <div className="relative aspect-[3/2] overflow-hidden">
-              <Media image={concept("pro-1")} fill preload sizes="(min-width: 1024px) 48vw, 100vw" className="object-cover" wrapperClassName="absolute inset-0" badge="dark" />
+              <Media image={concept("coffret-1")} fill preload sizes="(min-width: 1024px) 48vw, 100vw" className="object-cover" wrapperClassName="absolute inset-0" badge="dark" />
             </div>
             <div className="absolute -bottom-10 -left-8 hidden aspect-[4/5] w-[32%] overflow-hidden border-8 border-chocolate lg:block">
-              <Media image={concept("packaging-3")} fill sizes="16vw" className="object-cover" wrapperClassName="absolute inset-0" badge={false} />
+              <Media image={ambiance("cafe-oriental")} fill sizes="16vw" className="object-cover" wrapperClassName="absolute inset-0" badge={false} />
             </div>
           </div>
         </div>
@@ -102,7 +103,7 @@ export default async function ProfessionnelsPage() {
           <div className="mt-16 grid gap-12 lg:grid-cols-12">
             <div className="relative lg:col-span-5">
               <div className="relative aspect-[4/5] overflow-hidden lg:sticky lg:top-[calc(var(--header-h)+var(--banner-h)+2rem)]">
-                <Media image={concept("packaging-2")} fill sizes="(min-width: 1024px) 38vw, 100vw" className="object-cover" wrapperClassName="absolute inset-0" />
+                <Media image={ambiance("riad-lumiere")} fill sizes="(min-width: 1024px) 38vw, 100vw" className="object-cover" wrapperClassName="absolute inset-0" />
               </div>
             </div>
             <dl className="grid content-start gap-x-10 gap-y-12 sm:grid-cols-2 lg:col-span-6 lg:col-start-7">
@@ -170,7 +171,7 @@ export default async function ProfessionnelsPage() {
       <section id="revendeurs" className="on-dark scroll-mt-16 section-pad" aria-labelledby="revendeurs-title">
         <div className="container-luxe grid items-center gap-12 lg:grid-cols-12">
           <div className="relative aspect-[3/2] overflow-hidden lg:col-span-6">
-            <Media image={concept("lifestyle-1")} fill sizes="(min-width: 1024px) 48vw, 100vw" className="object-cover" wrapperClassName="absolute inset-0" badge="dark" />
+            <Media image={ambiance("art-de-recevoir")} fill sizes="(min-width: 1024px) 48vw, 100vw" className="object-cover" wrapperClassName="absolute inset-0" badge="dark" />
           </div>
           <div className="lg:col-span-5 lg:col-start-8">
             <p className="inline-block border border-line-light px-3 py-1 t-small text-taupe">Fonctionnalité à venir</p>

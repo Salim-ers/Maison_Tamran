@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 import { and, eq, isNull } from "drizzle-orm";
 import { db, schema } from "@/db";
 import { isPurchasableStatus } from "./catalog";
+import { withPhoto } from "./photos";
 import { getSettingsFresh } from "./settings";
 import {
   evaluatePromo, priceLines, shippingOptions, totals, type LineInput, type PricingBox, type PricingProduct, type PricingVariant,
@@ -115,8 +116,13 @@ export async function computeCart(cartId: string | null, opts: { country?: strin
       };
       const composition = it.composition ?? {};
       inputs.push({ key: it.id, type: "box", box, composition, giftWrap: it.giftWrap, giftMessage: it.giftMessage, quantity: it.quantity });
+      // vignette : la photo du coffret si elle existe, sinon celle de la première création qu'il contient
+      const firstSlug = Object.entries(composition).find(([, q]) => q > 0)?.[0] ?? Object.keys(b.fixedComposition ?? {})[0];
+      const firstProduct = firstSlug ? productBySlug.get(firstSlug) : undefined;
+      const boxImage = withPhoto(b.images.find((i) => i.role === "main"));
+      const image = boxImage && !boxImage.url.startsWith("/images/concepts/") ? boxImage.url : withPhoto(firstProduct?.images.find((i) => i.role === "main"))?.url ?? boxImage?.url ?? null;
       meta[it.id] = {
-        id: it.id, type: "box", image: b.images.find((i) => i.role === "main")?.url ?? null, href: b.configurable ? `/composer-mon-coffret?format=${b.pieces}` : `/coffrets#${b.slug}`,
+        id: it.id, type: "box", image, href: b.configurable ? `/composer-mon-coffret?format=${b.pieces}` : `/coffrets#${b.slug}`,
         composition: Object.entries(composition).filter(([, q]) => q > 0).map(([slug, qty]) => ({ slug, qty, name: productBySlug.get(slug)?.name ?? slug, color: productBySlug.get(slug)?.palette.accent ?? "#A87455" })),
         giftWrap: it.giftWrap, giftMessage: it.giftMessage, pieces: b.pieces,
       };
@@ -127,7 +133,7 @@ export async function computeCart(cartId: string | null, opts: { country?: strin
       if (!p) continue;
       const variant: PricingVariant = { id: v.id, name: v.name, productSlug: p.slug, productName: p.name, pieces: v.pieces, priceCents: v.priceCents, stock: v.stock, purchasable: v.active && isPurchasableStatus(p.status) };
       inputs.push({ key: it.id, type: "variant", variant, quantity: it.quantity });
-      meta[it.id] = { id: it.id, type: "variant", image: p.images.find((i) => i.role === "main")?.url ?? null, href: `/creations/${p.slug}`, composition: null, giftWrap: false, giftMessage: null, pieces: v.pieces };
+      meta[it.id] = { id: it.id, type: "variant", image: withPhoto(p.images.find((i) => i.role === "main"))?.url ?? null, href: `/creations/${p.slug}`, composition: null, giftWrap: false, giftMessage: null, pieces: v.pieces };
     }
   }
   const priced = priceLines(inputs, ctx.productMap, ctx.settings.giftWrapCents);
