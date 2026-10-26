@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { clsx } from "clsx";
 import { getCatalog } from "@/lib/catalog";
 import { catalogLabels, toBrowsable } from "@/lib/present";
-import { PageIntro } from "@/components/layout/page-intro";
+import { CreationsHero } from "@/components/catalog/creations-hero";
 import { CatalogBrowser } from "@/components/product/catalog-browser";
-import { concept, Media } from "@/components/ui/media";
 
 export async function generateStaticParams() {
   return [{ slug: "signature" }, { slug: "ephemere" }];
@@ -39,26 +37,27 @@ async function CollectionView({ params }: { params: Promise<{ slug: string }> })
   const dark = c.ephemeral;
   return (
     <>
-      <PageIntro
-        tone={dark ? "dark" : "light"}
-        title={c.name}
+      <CreationsHero
+        title={c.name.replace("Collection ", "")}
+        subtitle={c.intro}
         crumbs={[{ href: "/creations", label: "Créations" }, { href: `/collections/${slug}`, label: c.name }]}
-        intro={<p>{c.intro}</p>}
-        className={clsx(dark && "relative overflow-hidden")}
+        items={list.map((p) => ({ slug: p.slug, name: p.name, pairing: p.pairing, image: p.images.find((i) => i.role === "main") ?? p.images[0] ?? null }))}
       >
-        {dark && (
-          <div className="mt-12 grid gap-6 md:grid-cols-[2fr_1fr]">
-            <div className="relative aspect-[3/2] overflow-hidden">
-              <Media image={concept("coffret-4")} fill sizes="(min-width: 768px) 60vw, 100vw" className="object-cover" wrapperClassName="absolute inset-0" badge="dark" />
-            </div>
-            <div className="flex flex-col justify-end gap-4 t-small text-taupe">
-              <p>Chaque édition éphémère est produite en série limitée. Sa disponibilité est annoncée au lancement, par la lettre de la Maison.</p>
-              <Link href="/coffrets#coffret-edition-limitee" className="btn btn-outline-light self-start">Le coffret Édition Limitée</Link>
-            </div>
-          </div>
-        )}
-      </PageIntro>
-      <section className={clsx("pb-[var(--section)]", dark && "pt-16")}>
+        <p className="mt-6 t-small text-taupe">
+          {dark
+            ? "Chaque édition éphémère est produite en série limitée. Sa disponibilité est annoncée au lancement, par la lettre de la Maison."
+            : `${list.length} créations permanentes, le cœur de la Maison.`}
+        </p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <a href="#catalogue" className="btn btn-gold">Voir les {list.length} créations</a>
+          {dark ? (
+            <Link href="/coffrets#coffret-edition-limitee" className="btn btn-outline-light">Le coffret Édition Limitée</Link>
+          ) : (
+            <Link href="/composer-mon-coffret" className="btn btn-outline-light">Composer un coffret</Link>
+          )}
+        </div>
+      </CreationsHero>
+      <section id="catalogue" className="scroll-mt-24 pb-[var(--section)] pt-16">
         <div className="container-luxe">
           <Suspense fallback={<div className="h-96" aria-busy />}>
             <CatalogBrowser products={list.map(toBrowsable)} labels={catalogLabels(collections)} lockCollection={slug} showSearch={false} />

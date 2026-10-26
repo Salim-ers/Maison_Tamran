@@ -5,7 +5,10 @@ import type { FlavorSwatch } from "@/components/configurator/box-preview";
 
 export function toCard(p: CatalogProduct): CardProduct {
   const prices = p.variants.map((v) => v.priceCents);
+  // ajout rapide : le format le moins cher disponible, seulement si la création est achetable
+  const quick = p.purchasable ? [...p.variants].filter((v) => v.stock > 0).sort((a, b) => a.priceCents - b.priceCents)[0] : undefined;
   return {
+    quick: quick ? { id: quick.id, label: quick.name, priceCents: quick.priceCents } : null,
     slug: p.slug,
     number: p.number,
     name: p.name,

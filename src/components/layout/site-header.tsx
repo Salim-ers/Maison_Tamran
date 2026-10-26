@@ -30,7 +30,7 @@ const MOBILE = [
 ];
 
 /** Pages dont le haut est sombre : l'en-tête y démarre transparent, texte ivoire. */
-const DARK_TOP = ["/", "/maison", "/professionnels", "/collections/ephemere"];
+const DARK_TOP = ["/", "/creations", "/collections/signature", "/collections/ephemere", "/maison", "/professionnels"];
 
 export function SiteHeader() {
   const path = usePathname();

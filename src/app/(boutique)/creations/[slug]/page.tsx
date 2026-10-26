@@ -6,7 +6,10 @@ import { getCatalog, getProduct } from "@/lib/catalog";
 import { siteUrl } from "@/lib/env";
 import { euros } from "@/lib/money";
 import { toCard, STATUS_PUBLIC } from "@/lib/present";
-import { ALLERGEN_LABELS, CHOCOLATE_LABELS, FLAVOR_LABELS, type ChocolateKind } from "@/data/recipes";
+import { ALLERGEN_LABELS, CHOCOLATE_LABELS, FLAVOR_LABELS, RECIPES, type ChocolateKind, type Ingredient } from "@/data/recipes";
+import Image from "next/image";
+import { ambiance } from "@/lib/ambiance";
+import { FadeIn } from "@/components/motion/reveal";
 import { Breadcrumbs, Provisional } from "@/components/layout/page-intro";
 import { ProductGallery } from "@/components/product/product-gallery";
 import { BuyBox } from "@/components/product/buy-box";
@@ -49,6 +52,16 @@ function Detail({ title, children, open = false }: { title: string; children: Re
 
 const pending = <span className="italic">À confirmer</span>;
 
+// ingrédient de recette → photographie d'ambiance correspondante (npm run stock)
+const INGREDIENT_PHOTO: Partial<Record<Ingredient, string>> = {
+  pistache: "pistache", safran: "safran", amande: "amande", cardamome: "cardamome", noisette: "noisette",
+  framboise: "framboise", rose: "rose", cafe: "cafe-grains", coco: "coco", matcha: "matcha",
+};
+const INGREDIENT_LABEL: Partial<Record<Ingredient, string>> = {
+  pistache: "Pistache", safran: "Safran", amande: "Amande blanche", cardamome: "Cardamome verte", noisette: "Noisette",
+  framboise: "Framboise", rose: "Rose", cafe: "Café espresso", coco: "Noix de coco", matcha: "Matcha",
+};
+
 function ProductSkeleton() {
   return (
     <div className="container-luxe grid gap-12 pb-[var(--section)] pt-[calc(var(--header-h)+var(--banner-h)+4rem)] lg:grid-cols-[1.05fr_1fr]" aria-busy>
@@ -72,6 +85,13 @@ async function ProductView({ params }: { params: Promise<{ slug: string }> }) {
   const p = products.find((x) => x.slug === slug);
   if (!p) notFound();
   const related = products.filter((x) => x.slug !== p.slug && x.collectionSlug === p.collectionSlug).slice(0, 3);
+  // ingrédients de la recette illustrés par les photographies d'ambiance disponibles
+  const recipe = RECIPES.find((r) => r.slug === p.slug);
+  const ingredientTiles = (recipe?.ingredients ?? []).flatMap((ing: Ingredient) => {
+    const key = INGREDIENT_PHOTO[ing];
+    const image = key ? ambiance(key) : null;
+    return image ? [{ key, label: INGREDIENT_LABEL[ing] ?? ing, image }] : [];
+  });
   const prices = p.variants.map((v) => v.priceCents);
   const inStock = p.variants.some((v) => v.stock > 0);
   const base = siteUrl();
@@ -100,8 +120,10 @@ async function ProductView({ params }: { params: Promise<{ slug: string }> }) {
   }
 
   return (
-    <article style={{ ["--accent" as string]: p.palette.accent }}>
+    <article className="relative overflow-hidden" style={{ ["--accent" as string]: p.palette.accent }}>
       <JsonLd data={jsonLd} />
+      {/* halo discret à la couleur de la recette */}
+      <div aria-hidden className="pointer-events-none absolute -left-[20%] top-0 -z-10 size-[80vw] rounded-full opacity-[0.12] blur-3xl" style={{ background: "var(--accent)" }} />
       <div className="container-luxe pt-[calc(var(--header-h)+var(--banner-h)+2rem)]">
         <Breadcrumbs items={[{ href: "/creations", label: "Créations" }, { href: `/collections/${p.collectionSlug}`, label: p.collectionName }, { href: `/creations/${p.slug}`, label: p.name }]} />
       </div>
@@ -128,6 +150,9 @@ async function ProductView({ params }: { params: Promise<{ slug: string }> }) {
               variants={p.variants.map((v) => ({ id: v.id, name: v.name, pieces: v.pieces, priceCents: v.priceCents, stock: v.stock }))}
               statusNote={p.status === "prototype" ? "Recette prototype : composition, poids et prix sont provisoires et seront confirmés avant la mise en vente." : null}
             />
+            <p className="mt-4 t-small text-ink-soft">
+              Expédition en France et dans six pays européens : tarifs et conditions dans <Link href="/livraison-retours" className="link-draw text-ink">Livraison et retours</Link>.
+            </p>
           </div>
 
           <div className="mt-10 max-w-[56ch]">
@@ -203,11 +228,37 @@ async function ProductView({ params }: { params: Promise<{ slug: string }> }) {
         </div>
       </div>
 
+      {ingredientTiles.length > 0 && (
+        <section className="on-dark py-[var(--section)]" aria-labelledby="ingredients-title">
+          <div className="container-luxe grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <p className="t-eyebrow text-gold">Les matières</p>
+              <h2 id="ingredients-title" className="mt-4 t-display-m">Au cœur de {p.name}</h2>
+              <p className="mt-6 max-w-[38ch] text-taupe">{p.pairing}</p>
+              <p className="mt-8 t-micro text-taupe">Photographies d&apos;ambiance (licence Unsplash) : elles illustrent les ingrédients, pas la création.</p>
+            </div>
+            <ul className={`grid gap-6 lg:col-span-8 ${ingredientTiles.length > 1 ? "sm:grid-cols-2" : ""} ${ingredientTiles.length > 2 ? "lg:grid-cols-3" : ""}`}>
+              {ingredientTiles.map((t, k) => (
+                <li key={t.key}>
+                  <FadeIn delay={k * 0.1}>
+                    <div className={`relative overflow-hidden ${ingredientTiles.length === 1 ? "aspect-[16/9]" : "aspect-[4/5]"}`}>
+                      <Image src={t.image.url} alt={t.image.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" quality={75} className="object-cover" />
+                      <span className="absolute bottom-2 right-3 text-[0.62rem] text-ivory/70">{t.image.credit}</span>
+                    </div>
+                    <p className="mt-4 font-display text-2xl">{t.label}</p>
+                  </FadeIn>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       {related.length > 0 && (
         <section className="border-t hairline bg-cream py-[var(--section)]" aria-labelledby="related-title">
           <div className="container-luxe">
             <div className="flex flex-wrap items-end justify-between gap-4">
-              <h2 id="related-title" className="t-display-m">Dans la même collection</h2>
+              <h2 id="related-title" className="t-display-m">À découvrir aussi</h2>
               <Link href={`/collections/${p.collectionSlug}`} className="link-draw t-small">Toute la collection</Link>
             </div>
             <ul className="mt-12 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">

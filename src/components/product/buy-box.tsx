@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { clsx } from "clsx";
-import { useCart } from "@/components/cart/cart-context";
+import { AddToCartButton } from "@/components/cart/add-button";
 import { QtyStepper } from "@/components/ui/qty-stepper";
 import { euros } from "@/lib/money";
 
@@ -16,10 +16,8 @@ interface V {
 }
 
 export function BuyBox({ slug, name, variants, purchasable, statusNote }: { slug: string; name: string; variants: V[]; purchasable: boolean; statusNote: string | null }) {
-  const { addVariant } = useCart();
   const [vid, setVid] = useState(variants[0]?.id ?? "");
   const [qty, setQty] = useState(1);
-  const [busy, setBusy] = useState(false);
   const v = variants.find((x) => x.id === vid);
   const out = !v || v.stock < 1;
   const max = Math.max(1, Math.min(20, v?.stock ?? 1));
@@ -53,17 +51,13 @@ export function BuyBox({ slug, name, variants, purchasable, statusNote }: { slug
       {purchasable ? (
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <QtyStepper value={qty} min={1} max={max} onChange={setQty} label="Quantité" disabled={out} />
-          <button
+          <AddToCartButton
+            variantId={vid}
+            quantity={qty}
+            disabled={out}
             className="btn btn-primary flex-1"
-            disabled={out || busy}
-            onClick={async () => {
-              setBusy(true);
-              await addVariant(vid, qty);
-              setBusy(false);
-            }}
-          >
-            {out ? "Épuisé" : busy ? "Ajout…" : `Ajouter au panier, ${euros((v?.priceCents ?? 0) * qty)}`}
-          </button>
+            label={out ? "Épuisé" : `Ajouter au panier, ${euros((v?.priceCents ?? 0) * qty)}`}
+          />
         </div>
       ) : (
         <p className="mt-6 t-small text-ink-soft" role="note">

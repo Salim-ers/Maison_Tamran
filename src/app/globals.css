@@ -284,6 +284,17 @@
 .anim-sheen { animation: hero-sheen 1.8s var(--ease-silk) 0.9s both; }
 .anim-scroll-cue { animation: scroll-cue 2.4s var(--ease-silk) infinite; }
 
+/* défilement continu d'une frise (liste dupliquée) ; arrêté au survol et si l'utilisateur réduit les animations */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.anim-marquee { animation: marquee var(--marquee-duration, 70s) linear infinite; }
+.anim-marquee:hover, .anim-marquee:focus-within { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .anim-marquee { animation: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

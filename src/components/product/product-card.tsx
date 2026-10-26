@@ -7,6 +7,7 @@ import { clsx } from "clsx";
 import type { ImageRef } from "@/db/schema";
 import { euros } from "@/lib/money";
 import { ConceptBadge } from "@/components/ui/media";
+import { AddToCartButton } from "@/components/cart/add-button";
 
 export interface CardProduct {
   slug: string;
@@ -21,6 +22,8 @@ export interface CardProduct {
   accent: string;
   status: string;
   limited: boolean;
+  /** format proposé à l'ajout rapide (absent si la création n'est pas achetable) */
+  quick?: { id: string; label: string; priceCents: number } | null;
 }
 
 /**
@@ -92,7 +95,21 @@ export function ProductCard({ p, sizes = "(min-width: 1024px) 30vw, 80vw", tone 
           </h3>
           <p className={clsx("mt-2 t-small max-w-[32ch]", tone === "dark" ? "text-taupe" : "text-ink-soft")}>{p.pairing}</p>
         </div>
-        {p.fromCents != null && <p className="shrink-0 pt-5 t-small tabular-nums">dès {euros(p.fromCents)}</p>}
+        <div className="flex shrink-0 flex-col items-end gap-3 pt-5">
+          {p.fromCents != null && <p className="t-small tabular-nums">dès {euros(p.fromCents)}</p>}
+          {p.quick && (
+            <AddToCartButton
+              variantId={p.quick.id}
+              compact
+              label={<span aria-hidden className="text-lg leading-none">+</span>}
+              ariaLabel={`Ajouter ${p.name} au panier (${p.quick.label}, ${euros(p.quick.priceCents)})`}
+              className={clsx(
+                "relative z-[2] grid size-10 place-items-center rounded-full border transition-colors",
+                tone === "dark" ? "border-line-light hover:bg-ivory hover:text-chocolate" : "border-line hover:bg-chocolate hover:text-ivory"
+              )}
+            />
+          )}
+        </div>
       </div>
     </article>
   );
