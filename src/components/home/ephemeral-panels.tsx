@@ -24,11 +24,14 @@ export interface EphemeralItem {
 export function EphemeralPanels({ items, intro }: { items: EphemeralItem[]; intro: string }) {
   const [active, setActive] = useState(0);
   return (
-    <section className="section-pad relative overflow-hidden bg-[#2F2E24] text-ivory" aria-labelledby="ephemere-title">
-      <div className="container-luxe">
+    <section className="section-pad relative overflow-hidden bg-chocolate text-ivory grain" aria-labelledby="ephemere-title">
+      {/* l'atmosphère prend la teinte de l'édition ouverte */}
+      <div aria-hidden className="pointer-events-none absolute -left-[15%] top-[20%] size-[65vw] rounded-full opacity-[0.22] blur-3xl transition-colors duration-[1.4s]" style={{ backgroundColor: items[active]?.accent }} />
+      <div className="container-luxe relative">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <h2 id="ephemere-title" className="t-display-l max-w-[12ch]">Éditions éphémères</h2>
+            <p className="t-eyebrow text-gold">Collection Éphémère</p>
+            <h2 id="ephemere-title" className="mt-4 t-display-l max-w-[12ch]">Éditions éphémères</h2>
             <p className="mt-5 max-w-[48ch] text-taupe">{intro}</p>
           </div>
           <Link href="/collections/ephemere" className="link-draw t-small">Toute la collection éphémère</Link>
@@ -52,10 +55,10 @@ export function EphemeralPanels({ items, intro }: { items: EphemeralItem[]; intr
                   {it.image && (
                     <Image src={it.image.url} alt={it.image.alt} fill sizes="(min-width: 1024px) 55vw, 100vw" quality={75} className={clsx("object-cover transition-[filter,transform] duration-[1.2s]", on ? "scale-100 grayscale-0" : "scale-110 grayscale-[.6] brightness-[.55]")} />
                   )}
-                  <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(28,27,20,.92)_0%,rgba(28,27,20,.2)_55%,transparent_100%)]" />
-                  {on && it.image?.concept && <ConceptBadge tone="dark" className="right-3 top-3" ai={it.image.ai} />}
+                  <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(36,23,19,.94)_0%,rgba(36,23,19,.25)_55%,transparent_100%)]" />
+                  {on && it.image?.concept && <ConceptBadge tone="dark" className="right-3 top-3" label={it.image.badge} />}
                 </div>
-                <div className="absolute inset-x-0 bottom-0 p-6 max-lg:relative max-lg:bg-[#26251d] max-lg:p-5">
+                <div className="absolute inset-x-0 bottom-0 p-6 max-lg:relative max-lg:bg-chocolate-2 max-lg:p-5">
                   <p className={clsx("t-micro text-taupe", !on && "lg:hidden")}>Édition éphémère N° {it.edition}</p>
                   <h3 className={clsx("mt-2 font-display leading-none transition-all duration-700", on ? "text-4xl" : "text-2xl lg:[writing-mode:vertical-rl] lg:rotate-180 lg:absolute lg:bottom-6 lg:left-6")}>
                     <Link href={`/creations/${it.slug}`} className="focus-visible:outline-none after:absolute after:inset-0">{it.name}</Link>

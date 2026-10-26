@@ -1,1 +1,266 @@
-{}
+{
+  "coffret-1": {
+    "url": "/images/coffrets/coffret-signature-12.webp",
+    "w": 1448,
+    "h": 1086,
+    "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAQAgCdASoQAAwAA4BaJQBOgMW0xOUtPzsgAP6+WtTleyCXcq3JXM3f4iqmixJxk5tVUzCNxu6Fm11/W3BAR34NGV+z6xZegesG93paP4oHdTqTNMS/tOa6U3MLFwyGIVZD6wAA",
+    "badge": "Visuel conceptuel",
+    "alt": "Coffret Signature ouvert : douze dattes fourrées dans leurs caissettes, couvercle ivoire orné d'un dattier, café et pistaches sur une table en pierre"
+  },
+  "coupe-ambre-fume": {
+    "url": "/images/creations/ambre-fume/ambre-fume-coeur.webp",
+    "w": 1824,
+    "h": 2084,
+    "blur": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABwBQCdASoQABIAPu1iqU2ppaOiMAgBMB2JZgCdMoMYNb/iYG6AG+CuIm45IVNZvNjzacOwAP7algq2fj6/J/OorJBhf+OtQh+KDzTTm8vnsGa8kVOTLu7aAmrWbnDTzyZDfwt4uTPe75Vw8jmGhJkXFnK9JD99CSHIqFjBiL9cbsYzSPDH1DOGUcIol4w9GZgAAA==",
+    "badge": "Visuel conceptuel",
+    "alt": "Ambre Fumé en gros plan : le cœur de la datte coupée"
+  },
+  "coupe-cafe-imperial": {
+    "url": "/images/creations/cafe-imperial/cafe-imperial-coeur.webp",
+    "w": 600,
+    "h": 750,
+    "blur": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZACdMoAC2YQBVui2Xb5ghAAA/umqPjt1z8jqRVfKutS2N+RlIGTFWCjHXxGVzPYBjbn6YxO1v+GzhN/dqQtyD8IdMl/ETGchWg0r7SfypD4Ubs5ivU7uB47VyCCcLR6Bdun3OGCz1eddNYkAAA==",
+    "badge": "Visuel conceptuel",
+    "alt": "Café Impérial en gros plan : le cœur de la datte coupée"
+  },
+  "coupe-ebene-sale": {
+    "url": "/images/creations/ebene-sale/ebene-sale-coeur.webp",
+    "w": 1824,
+    "h": 2000,
+    "blur": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwAwCdASoQABIAPu1iqU2ppaOiMAgBMB2JZgCw7BnpQSqiS8iYUpwAAP7QdHdrD5rQ+DQrutRC9n6nlqk1x51pm7mlTAUufhsURSA0bfg9o4heMbVW8WjXXEQRh7ceFaTT6FnyrDp7tzPhY/DgP0LOlkJ2ATYA",
+    "badge": "Visuel conceptuel",
+    "alt": "Ébène Salé en gros plan : le cœur de la datte coupée"
+  },
+  "coupe-eclipse-noire": {
+    "url": "/images/creations/eclipse-noire/eclipse-noire-coeur.webp",
+    "w": 1800,
+    "h": 2084,
+    "blur": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAQBACdASoQABMAPu1iqU2ppaOiMAgBMB2JQBWAZYAsXAb4Pgw94rcMAAD+6eMfPxzs2STPh1rkgvDnqfIwtYESODQN5YdHWOIDvASi/InFTnYcuYzDRN2XuuzKpOh9VnOpXTe6bSx2eYk6CVwEoBn/hQ1YzhgA",
+    "badge": "Visuel conceptuel",
+    "alt": "Éclipse Noire en gros plan : le cœur de la datte coupée"
+  },
+  "coupe-ile-secrete": {
+    "url": "/images/creations/ile-secrete/ile-secrete-coeur.webp",
+    "w": 1820,
+    "h": 2092,
+    "blur": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAABwBACdASoQABIAPu1iqU2ppaOiMAgBMB2JYgCdMoRwACZzOFRS+GpZlfl/oAD2QoJ3uckRNQqr08rA3fWmAGsg+Ilf4G0x4fXbXirk8XVoYVHL5MOy38vs1LQSM72DOAZUPUIs8Cjtgud/uaDE2Tm2VHWR/Av9QN6QceRnipoRC+YoN4IMErDMwlAAAA==",
+    "badge": "Visuel conceptuel",
+    "alt": "Île Secrète en gros plan : le cœur de la datte coupée"
+  },
+  "coupe-minuit-a-kyoto": {
+    "url": "/images/creations/minuit-a-kyoto/minuit-a-kyoto-coeur.webp",
+    "w": 1824,
+    "h": 2088,
+    "blur": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABQBACdASoQABIAPu1iqU2ppaOiMAgBMB2JagCxC8AC4wLUCEFKT4NB9GoAAP6jVj9LNeJSOINLaLkGYODNoLaj97qWJvoJdB/3G3VNZ4ABOMY85bkerlLyiV0feA/Hr83hXHrhglYAEXMeLUSchTXMg9B6NmhR5h6J8cWen5wQ0kPJwONchZz6yovKQAAA",
+    "badge": "Visuel conceptuel",
+    "alt": "Minuit à Kyoto en gros plan : le cœur de la datte coupée"
+  },
+  "coupe-or-de-marrakech": {
+    "url": "/images/creations/or-de-marrakech/or-de-marrakech-coeur.webp",
+    "w": 1808,
+    "h": 2084,
+    "blur": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABwBACdASoQABIAPu1iqU2ppaOiMAgBMB2JZACdMoR3ACG2bSP5LxCUoS9IQAD+wHlElWECO2uu0UyfKTVSA1I2Zwi2u9o9XdfeyoSqR/74YSjnoOhkuoixbrx1vHnh0wQOIP9WhAqgPpBtxuRVNMlqWnpS8c/fBcxOhBhJUUsBdPChzglnAAAA",
+    "badge": "Visuel conceptuel",
+    "alt": "Or de Marrakech en gros plan : le cœur de la datte coupée"
+  },
+  "coupe-rose-de-nuit": {
+    "url": "/images/creations/rose-de-nuit/rose-de-nuit-coeur.webp",
+    "w": 1808,
+    "h": 2088,
+    "blur": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAABQBACdASoQABIAPu1iqU2ppaOiMAgBMB2JaACdAYyezgrwqgrrI7wA0zuAAP4nh6+zObanz9zlry3Ihi1pClUVThk5uYLWssjzFCLzZhUjmpYFyA3PmLOqvmNDiOuKnmplumnBpTTVgsZ7BSkN7o7d2ulXoXwNjwWYaubq3pdsKABLPPHj06xgVa8bkLh1zfc/mIAA",
+    "badge": "Visuel conceptuel",
+    "alt": "Rose de Nuit en gros plan : le cœur de la datte coupée"
+  },
+  "coupe-rouge-desir": {
+    "url": "/images/creations/rouge-desir/rouge-desir-coeur.webp",
+    "w": 1804,
+    "h": 2084,
+    "blur": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQBACdASoQABIAPu1iqU2ppaOiMAgBMB2JZACdABuyxSx8w2rELcqVUAD+5fbwsyT45EI3CY4ePKMNQzrqIwT0ha11CQ4RuAg58iRs9vgXybbSnvlYSr655qor5NseVx2jIuNsG2P8L/4Y9wYqgAAA",
+    "badge": "Visuel conceptuel",
+    "alt": "Rouge Désir en gros plan : le cœur de la datte coupée"
+  },
+  "coupe-velours-persan": {
+    "url": "/images/creations/velours-persan/velours-persan-coeur.webp",
+    "w": 1824,
+    "h": 2084,
+    "blur": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAwBACdASoQABIAPu1iqU2ppaOiMAgBMB2JagCdL1yBfFgPQvrKebkK8IAA/kEYZmb1CXE4nK7oj5M4N72ip4AFDgzfpgLaGgElUYutH+iT+3tu3stSmtSMoe75dTtlE6qNRnQ1DXb/VIWiY/wGTAhDzl/YcNQ5oDijGvYLCDgJKQuQIAA=",
+    "badge": "Visuel conceptuel",
+    "alt": "Velours Persan en gros plan : le cœur de la datte coupée"
+  },
+  "hero": {
+    "url": "/images/coffrets/coffret-signature-12-hero.webp",
+    "w": 1448,
+    "h": 1086,
+    "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAQAgCdASoQAAwAA4BaJQBOgMW0xOUtPzsgAP6+WtTleyCXcq3JXM3f4iqmixJxk5tVUzCNxu6Fm11/W3BAR34NGV+z6xZegesG93paP4oHdTqTNMS/tOa6U3MLFwyGIVZD6wAA",
+    "badge": "Visuel conceptuel",
+    "alt": "Coffret Signature ouvert : douze dattes fourrées dans leurs caissettes, couvercle ivoire orné d'un dattier, café et pistaches sur une table en pierre"
+  },
+  "hero-portrait": {
+    "url": "/images/coffrets/coffret-signature-12-portrait.webp",
+    "w": 869,
+    "h": 1086,
+    "blur": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAABQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JYwAD5YovDNIm35yh/lvb3vIAAP7MSkztG4ZZAR9NtrJNBxVs8ck2SkOT629R/LZNBv9FNb4qIdeLPVFe/4sdWjGfXA1kWseYb5sv3J+l77LVunoPIyLYDhOia4XyQXhyo9JYtuONdW1P9bBLMPSAAAA=",
+    "badge": "Visuel conceptuel",
+    "alt": "Coffret Signature ouvert : douze dattes fourrées dans leurs caissettes, couvercle ivoire orné d'un dattier, café et pistaches sur une table en pierre"
+  },
+  "produit-ambre-fume": {
+    "url": "/images/creations/ambre-fume/ambre-fume-vue.webp",
+    "w": 1556,
+    "h": 1844,
+    "blur": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABwBACdASoQABMAPu1iqU2ppaOiMAgBMB2JbA295DlWHfAMjXFXkeq4mIwwAAD+7ER/mg99FeWbyGq36jy+1FvLf95mnAcLt1rA6rG2bOyYf/yFTIjzQQHoD5oDUwqlt5fI//XjtNq9cPq6kWfL/ITHGR1gZfFm0ioBZXT22yUwhwYLA3h/hZ7WpiWsaAAA",
+    "badge": "Visuel conceptuel",
+    "alt": "Ambre Fumé : une datte entière et une datte coupée révélant sa garniture, sur une assiette dorée"
+  },
+  "produit-cafe-imperial": {
+    "url": "/images/creations/cafe-imperial/cafe-imperial-vue.webp",
+    "w": 1122,
+    "h": 1402,
+    "blur": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JaACdMoAluBOSLvZh3niY6xFwAP7p4tFmdfLTChLOfjuIBg0L4ekYgANu3MPPTulqFE6jfYAbU307zdfSH9hYAvzn+M6Zh3OAafq0usk+fW+D47UGZlAWZ/R0yX5GhO7CgPDjfE7bqOkOgB1VAAAA",
+    "badge": "Visuel conceptuel",
+    "alt": "Café Impérial : une datte entière et une datte coupée révélant sa garniture, sur une assiette dorée"
+  },
+  "produit-ebene-sale": {
+    "url": "/images/creations/ebene-sale/ebene-sale-vue.webp",
+    "w": 1560,
+    "h": 1844,
+    "blur": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAwBACdASoQABMAPu1iqU2ppaOiMAgBMB2JagCdMoR3AB4kvlCe5ih8kAAA/u7e/I6lyOHFyego0POuHjNhrfIPwDgzDGakpDNRfmL6pd9UQVoizYUgazbxKpzx2vF5zTqUEk31GVdlN8uch5nzJ2l3zFOkqg/BgNAAAA==",
+    "badge": "Visuel conceptuel",
+    "alt": "Ébène Salé : une datte entière et une datte coupée révélant sa garniture, sur une assiette dorée"
+  },
+  "produit-eclipse-noire": {
+    "url": "/images/creations/eclipse-noire/eclipse-noire-vue.webp",
+    "w": 1532,
+    "h": 1832,
+    "blur": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAADwAwCdASoQABMAPu1iqU2ppaOiMAgBMB2JQBOgBA5xvzGCAZH7udYAAP7syKzjK11+S9cOpF37C9GsQRiUJeiglq31Ol4j8Pj6vhqtHMTdbVgdj3B/dgBlG4NBqqVd7sn4uXZcR6CYJMhf+NfXb/6xmukSn1pAAAA=",
+    "badge": "Visuel conceptuel",
+    "alt": "Éclipse Noire : une datte entière et une datte coupée révélant sa garniture, sur une assiette dorée"
+  },
+  "produit-ile-secrete": {
+    "url": "/images/creations/ile-secrete/ile-secrete-vue.webp",
+    "w": 1552,
+    "h": 1848,
+    "blur": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACwBACdASoQABMAPu1iqU2ppaOiMAgBMB2JYgCdMoRwAdDo+/lmZmHiQIy87guQAP7s2H9TdbocgAboO2baeG4cjHJXgRoUrXewuHPBtTRwsOi8lGybZhF7Up2mNPL0iAov6xkvEb7uDSkLFVq9i8FAJ5/ZLrrsSbvwZ3Os4Ze5FUNMK8VRCzC+K2ByAAAA",
+    "badge": "Visuel conceptuel",
+    "alt": "Île Secrète : une datte entière et une datte coupée révélant sa garniture, sur une assiette dorée"
+  },
+  "produit-minuit-a-kyoto": {
+    "url": "/images/creations/minuit-a-kyoto/minuit-a-kyoto-vue.webp",
+    "w": 1560,
+    "h": 1848,
+    "blur": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAACQBACdASoQABMAPu1iqU2ppaOiMAgBMB2JbACdMoR4GCUMVv2ZruMNp6otGAAA/uxEf5RaX+rB2wlnnO//sMWyDXLivcRCKAeWoQxR2bKZNke78VgJzn2hyD5KvHBoKfH3Mkf8nQz13U5zcOUcAQ6HXSjoP6wkEyyaRH0eI75P4xSWQm2aP4XnUAA=",
+    "badge": "Visuel conceptuel",
+    "alt": "Minuit à Kyoto : une datte entière et une datte coupée révélant sa garniture, sur une assiette dorée"
+  },
+  "produit-or-de-marrakech": {
+    "url": "/images/creations/or-de-marrakech/or-de-marrakech-vue.webp",
+    "w": 1536,
+    "h": 1836,
+    "blur": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABwBACdASoQABMAPu1iqU2ppaOiMAgBMB2JbACdMoRwBSAROYYTbVrp8rF9AAD+718kK6R22aNo0jZsTT2QLb+Yj3c9acsteFfN72B8xsGPoKthMviM5xvR0RVvJxXF0U2qQgvDxbPi8XZ3XOtiI/V5iyNP9wkpbfr1Z/e8Cu5LT9bCqgICTMj34/BeaAAA",
+    "badge": "Visuel conceptuel",
+    "alt": "Or de Marrakech : une datte entière et une datte coupée révélant sa garniture, sur une assiette dorée"
+  },
+  "produit-rose-de-nuit": {
+    "url": "/images/creations/rose-de-nuit/rose-de-nuit-vue.webp",
+    "w": 1544,
+    "h": 1848,
+    "blur": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABQBACdASoQABMAPu1iqU2ppaOiMAgBMB2JagCdL1AVhYx3cN1+XsWryoCAAP7u4I++zeB3BFryBzIgX1I+czaMCm+4CsKHek42wVD6ptM13pwbwwujPN6jP7hJ2DLseX1FVgUlKA9wuDzEH2M/DcZAn8vQ0E2PjgH3qxRs32/P1FJJ1xGZzQrMAjWMAAAA",
+    "badge": "Visuel conceptuel",
+    "alt": "Rose de Nuit : une datte entière et une datte coupée révélant sa garniture, sur une assiette dorée"
+  },
+  "produit-rouge-desir": {
+    "url": "/images/creations/rouge-desir/rouge-desir-vue.webp",
+    "w": 1536,
+    "h": 1848,
+    "blur": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAwBACdASoQABMAPu1iqU2ppaOiMAgBMB2JbACdMoR3ACRqZ/mrHo4BBAAA/uzYf6gJ9psrL8EClxpsQs+5WRGTEWAiBIzG9NB7mym4Q9UNS1SaBcml1HXsmsBiHOy5/MVXLIR4bzgMjVisJGuslT1dxAAAAA==",
+    "badge": "Visuel conceptuel",
+    "alt": "Rouge Désir : une datte entière et une datte coupée révélant sa garniture, sur une assiette dorée"
+  },
+  "produit-velours-persan": {
+    "url": "/images/creations/velours-persan/velours-persan-vue.webp",
+    "w": 1552,
+    "h": 1848,
+    "blur": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAQBACdASoQABMAPu1iqU2ppaOiMAgBMB2JbACdLwABo6rp1+t7SnQysAD+7ER/mg99FXzlLEHKxc8QWSZsjMdI3dBum9zSpgWtZLsS8wetzvIIYvgv8khIUYnV7pGNXGpzZOPRVMr3j58kLw+9tvvgHtU34K8mOGnntAtYnRVWAwt4c/uaFYUDFMAAAA==",
+    "badge": "Visuel conceptuel",
+    "alt": "Velours Persan : une datte entière et une datte coupée révélant sa garniture, sur une assiette dorée"
+  },
+  "scene-ambre-fume": {
+    "url": "/images/creations/ambre-fume/ambre-fume-entier.webp",
+    "w": 1344,
+    "h": 1728,
+    "blur": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAAAwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZgCdMoADZmJgQ84TuKzLcBAA/u9Mvw9iqP1kzjUfVjwK7q5/mpORQmdzvv2gujmUxhprOHIvfuh63+cpavUGV7+09LHotl9JutNQkNcEc7dHnvUyC9tCt3WmY4g2CTS0yi0Ztq6S6hvZsZidglBtxEVqgMJQzK6hUgAA",
+    "badge": "Visuel conceptuel",
+    "alt": "Ambre Fumé : la datte entière et son décor"
+  },
+  "scene-cafe-imperial": {
+    "url": "/images/creations/cafe-imperial/cafe-imperial-entier.webp",
+    "w": 640,
+    "h": 800,
+    "blur": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAABwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZACdMoKO2AsWDqF8wGHbUVZZiAD+71Byxh5SA4EttiG34mpTKPFLOdkV6uGSi2ZP5N4duZB9oiqXlXQZRxXTi8tLsdQDWKd5w/WJljCPslov7zxgd3J24CUc3FIkAj34hra/R+rRr01GlBKn2O9nvHfIrkEE1zEQRbU6q6TOfM8AAAA=",
+    "badge": "Visuel conceptuel",
+    "alt": "Café Impérial : la datte entière et son décor"
+  },
+  "scene-ebene-sale": {
+    "url": "/images/creations/ebene-sale/ebene-sale-entier.webp",
+    "w": 1352,
+    "h": 1728,
+    "blur": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYgCdLwABr6iRyunKADgA/u9TJWRLd09+GtT+PmxqtzN/7sdKQn09ajyxR7IRiXx3G7KmaZ7ARqEOI9Rw4MiuKTVsqMUBxhNB+QfkIaBDELG+PwnlUUXTbHlBiLv/vyZY1MAGZJGd/BegBCz9J8czJArIhNYAAAA=",
+    "badge": "Visuel conceptuel",
+    "alt": "Ébène Salé : la datte entière et son décor"
+  },
+  "scene-eclipse-noire": {
+    "url": "/images/creations/eclipse-noire/eclipse-noire-entier.webp",
+    "w": 1324,
+    "h": 1720,
+    "blur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JQBOmUBcAAaqLWrfRKtpYAP7vTMAeaHw2gxclT+218xoNrDVg/U6/aWmAHr5rAB2RM2swpMiWVBdVLdgQTzQ7RpqSUyR4zi99D9LMLS65vrzUbwEq8N1HwOqM8fR3ATHRqVwkExQAAA==",
+    "badge": "Visuel conceptuel",
+    "alt": "Éclipse Noire : la datte entière et son décor"
+  },
+  "scene-ile-secrete": {
+    "url": "/images/creations/ile-secrete/ile-secrete-entier.webp",
+    "w": 1348,
+    "h": 1728,
+    "blur": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAABwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JaACdMoR4ISAA5f6wl3zG2f+R3gD+71MC5UtOdoK64gGnSZUZWIHJvDDGp+kS22RvDYcxroMMhn6YOYg1LLlXOS5KoKYbJnJjEDYvXuTDFSAiDfGZQU0T/R6kIJWFlRzZmLJR3xZCDnwwRyxY2W5496eXteOIAAA=",
+    "badge": "Visuel conceptuel",
+    "alt": "Île Secrète : la datte entière et son décor"
+  },
+  "scene-minuit-a-kyoto": {
+    "url": "/images/creations/minuit-a-kyoto/minuit-a-kyoto-entier.webp",
+    "w": 1356,
+    "h": 1728,
+    "blur": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JagCdAYwId7fgcB6DCJ/sAP7vUtbNmc21LrrprBZBXhBKxkLRiimxUCegeamWZURkXTGiURMdITAikjOLDPawiF5JNG5RL9Us46Vnd6ZKQXY9wahKJu1ZwCebQCcqmnn3aeICXnau2GJNkfGQMhMr9QrhwmcAfdvNK2JgjQAAAA==",
+    "badge": "Visuel conceptuel",
+    "alt": "Minuit à Kyoto : la datte entière et son décor"
+  },
+  "scene-or-de-marrakech": {
+    "url": "/images/creations/or-de-marrakech/or-de-marrakech-entier.webp",
+    "w": 1336,
+    "h": 1728,
+    "blur": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAABwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JbACdMoR4GCsI8Iv9G4HSB+CBAAD+70zAH/UZPCYnquGIlOTzGF1SWkJ94Qf9lPeK5KJDW572atRu0HC1bIjuebe3KnOuceTXrYcXZT3scX4UlCRkXNIxk/kbN1UxRiUHQG/kF9Ytet1jSVjE/3+Wyzlw2d+7ktybAAAA",
+    "badge": "Visuel conceptuel",
+    "alt": "Or de Marrakech : la datte entière et son décor"
+  },
+  "scene-rose-de-nuit": {
+    "url": "/images/creations/rose-de-nuit/rose-de-nuit-entier.webp",
+    "w": 1304,
+    "h": 1828,
+    "blur": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABwBACdASoQABYAPu1iqU2ppaOiMAgBMB2JbACdACLY9XYs1npVG+EVRG4/rAD+70xS56ERe04tWfZ93yEpYfiYxe6ZfZIrAPr5I4txBwQLw+Z8UVGYb9aa37RWi1x1SwlNEWBdstIh9CjTPNnrURTMjsf/rvocsiyjy9FRm9SuneN2jM4opY6ZpaWku4wtnBn4ux+oO8nL62UcuxbKZYCku/rBigAA",
+    "badge": "Visuel conceptuel",
+    "alt": "Rose de Nuit : la datte entière et son décor"
+  },
+  "scene-rouge-desir": {
+    "url": "/images/creations/rouge-desir/rouge-desir-entier.webp",
+    "w": 1324,
+    "h": 1724,
+    "blur": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAABQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JaACdMoAlsxJvqCgESBJKizgAAP7vTFFpreNxs1rHkvi3ZI0aK2yMgGngZPb87bKk8DmLtC0ogwWcCeMb/APFLIfmUWlzkdVPIwWOYqvRPQMlahTWFVWwcsR6TMpFUdt6E1EjHlg1/jXPyMoYS4vkiYAAAA==",
+    "badge": "Visuel conceptuel",
+    "alt": "Rouge Désir : la datte entière et son décor"
+  },
+  "scene-velours-persan": {
+    "url": "/images/creations/velours-persan/velours-persan-entier.webp",
+    "w": 1348,
+    "h": 1724,
+    "blur": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAACQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZgCdMoRwACxN3TxXCDzbDcvc2dAA/u9MwBugN83y8MCOgWgSrJEtwpDmndm4Up7ZsZ1SeWMTon1Y8Cpu56Kp0Mt+PvAgagQIfJfnt21kgbGyApiXfvbKbfsmrg+NmA7eWIirh5RTz1e9m6QiZyT4mjdvLoleVK5LcmwAAAA=",
+    "badge": "Visuel conceptuel",
+    "alt": "Velours Persan : la datte entière et son décor"
+  }
+}

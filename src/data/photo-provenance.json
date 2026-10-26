@@ -1,1 +1,299 @@
-{}
+{
+  "coffret-1": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Format 12 pièces uniquement.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), photographie de référence du coffret Signature",
+    "file": "public/images/coffrets/coffret-signature-12.webp",
+    "width": 1448,
+    "height": 1086,
+    "approvedAt": "2026-10-26T16:54:57.428Z"
+  },
+  "coupe-ambre-fume": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/ambre-fume/ambre-fume-coeur.webp",
+    "width": 1824,
+    "height": 2084,
+    "approvedAt": "2026-10-26T16:54:54.458Z"
+  },
+  "coupe-cafe-imperial": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Recadrage de la photographie de référence.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), photographie de référence",
+    "file": "public/images/creations/cafe-imperial/cafe-imperial-coeur.webp",
+    "width": 600,
+    "height": 750,
+    "approvedAt": "2026-10-26T16:54:56.957Z"
+  },
+  "coupe-ebene-sale": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/ebene-sale/ebene-sale-coeur.webp",
+    "width": 1824,
+    "height": 2000,
+    "approvedAt": "2026-10-26T16:54:51.272Z"
+  },
+  "coupe-eclipse-noire": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/eclipse-noire/eclipse-noire-coeur.webp",
+    "width": 1800,
+    "height": 2084,
+    "approvedAt": "2026-10-26T16:54:43.266Z"
+  },
+  "coupe-ile-secrete": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/ile-secrete/ile-secrete-coeur.webp",
+    "width": 1820,
+    "height": 2092,
+    "approvedAt": "2026-10-26T16:54:52.819Z"
+  },
+  "coupe-minuit-a-kyoto": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/minuit-a-kyoto/minuit-a-kyoto-coeur.webp",
+    "width": 1824,
+    "height": 2088,
+    "approvedAt": "2026-10-26T16:54:46.432Z"
+  },
+  "coupe-or-de-marrakech": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/or-de-marrakech/or-de-marrakech-coeur.webp",
+    "width": 1808,
+    "height": 2084,
+    "approvedAt": "2026-10-26T16:54:48.082Z"
+  },
+  "coupe-rose-de-nuit": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/rose-de-nuit/rose-de-nuit-coeur.webp",
+    "width": 1808,
+    "height": 2088,
+    "approvedAt": "2026-10-26T16:54:56.010Z"
+  },
+  "coupe-rouge-desir": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/rouge-desir/rouge-desir-coeur.webp",
+    "width": 1804,
+    "height": 2084,
+    "approvedAt": "2026-10-26T16:54:49.639Z"
+  },
+  "coupe-velours-persan": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « macro » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/velours-persan/velours-persan-coeur.webp",
+    "width": 1824,
+    "height": 2084,
+    "approvedAt": "2026-10-26T16:54:44.733Z"
+  },
+  "hero": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Format 12 pièces uniquement.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), photographie de référence du coffret Signature",
+    "file": "public/images/coffrets/coffret-signature-12-hero.webp",
+    "width": 1448,
+    "height": 1086,
+    "approvedAt": "2026-10-26T16:54:57.784Z"
+  },
+  "hero-portrait": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Recadrage vertical, format 12 pièces uniquement.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), photographie de référence du coffret Signature",
+    "file": "public/images/coffrets/coffret-signature-12-portrait.webp",
+    "width": 869,
+    "height": 1086,
+    "approvedAt": "2026-10-26T16:54:57.989Z"
+  },
+  "produit-ambre-fume": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/ambre-fume/ambre-fume-vue.webp",
+    "width": 1556,
+    "height": 1844,
+    "approvedAt": "2026-10-26T16:54:53.808Z"
+  },
+  "produit-cafe-imperial": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Photographie de référence fournie.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), photographie de référence",
+    "file": "public/images/creations/cafe-imperial/cafe-imperial-vue.webp",
+    "width": 1122,
+    "height": 1402,
+    "approvedAt": "2026-10-26T16:54:56.831Z"
+  },
+  "produit-ebene-sale": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/ebene-sale/ebene-sale-vue.webp",
+    "width": 1560,
+    "height": 1844,
+    "approvedAt": "2026-10-26T16:54:50.642Z"
+  },
+  "produit-eclipse-noire": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/eclipse-noire/eclipse-noire-vue.webp",
+    "width": 1532,
+    "height": 1832,
+    "approvedAt": "2026-10-26T16:54:42.651Z"
+  },
+  "produit-ile-secrete": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/ile-secrete/ile-secrete-vue.webp",
+    "width": 1552,
+    "height": 1848,
+    "approvedAt": "2026-10-26T16:54:52.211Z"
+  },
+  "produit-minuit-a-kyoto": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/minuit-a-kyoto/minuit-a-kyoto-vue.webp",
+    "width": 1560,
+    "height": 1848,
+    "approvedAt": "2026-10-26T16:54:45.811Z"
+  },
+  "produit-or-de-marrakech": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/or-de-marrakech/or-de-marrakech-vue.webp",
+    "width": 1536,
+    "height": 1836,
+    "approvedAt": "2026-10-26T16:54:47.383Z"
+  },
+  "produit-rose-de-nuit": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/rose-de-nuit/rose-de-nuit-vue.webp",
+    "width": 1544,
+    "height": 1848,
+    "approvedAt": "2026-10-26T16:54:55.408Z"
+  },
+  "produit-rouge-desir": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/rouge-desir/rouge-desir-vue.webp",
+    "width": 1536,
+    "height": 1848,
+    "approvedAt": "2026-10-26T16:54:49.021Z"
+  },
+  "produit-velours-persan": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « signature » du pack.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/velours-persan/velours-persan-vue.webp",
+    "width": 1552,
+    "height": 1848,
+    "approvedAt": "2026-10-26T16:54:44.141Z"
+  },
+  "scene-ambre-fume": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/ambre-fume/ambre-fume-entier.webp",
+    "width": 1344,
+    "height": 1728,
+    "approvedAt": "2026-10-26T16:54:54.860Z"
+  },
+  "scene-cafe-imperial": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Recadrage de la photographie de référence.",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos), photographie de référence",
+    "file": "public/images/creations/cafe-imperial/cafe-imperial-entier.webp",
+    "width": 640,
+    "height": 800,
+    "approvedAt": "2026-10-26T16:54:57.094Z"
+  },
+  "scene-ebene-sale": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/ebene-sale/ebene-sale-entier.webp",
+    "width": 1352,
+    "height": 1728,
+    "approvedAt": "2026-10-26T16:54:51.672Z"
+  },
+  "scene-eclipse-noire": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/eclipse-noire/eclipse-noire-entier.webp",
+    "width": 1324,
+    "height": 1720,
+    "approvedAt": "2026-10-26T16:54:43.656Z"
+  },
+  "scene-ile-secrete": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/ile-secrete/ile-secrete-entier.webp",
+    "width": 1348,
+    "height": 1728,
+    "approvedAt": "2026-10-26T16:54:53.246Z"
+  },
+  "scene-minuit-a-kyoto": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/minuit-a-kyoto/minuit-a-kyoto-entier.webp",
+    "width": 1356,
+    "height": 1728,
+    "approvedAt": "2026-10-26T16:54:46.850Z"
+  },
+  "scene-or-de-marrakech": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/or-de-marrakech/or-de-marrakech-entier.webp",
+    "width": 1336,
+    "height": 1728,
+    "approvedAt": "2026-10-26T16:54:48.494Z"
+  },
+  "scene-rose-de-nuit": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/rose-de-nuit/rose-de-nuit-entier.webp",
+    "width": 1304,
+    "height": 1828,
+    "approvedAt": "2026-10-26T16:54:56.453Z"
+  },
+  "scene-rouge-desir": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/rouge-desir/rouge-desir-entier.webp",
+    "width": 1324,
+    "height": 1724,
+    "approvedAt": "2026-10-26T16:54:50.077Z"
+  },
+  "scene-velours-persan": {
+    "status": "approved",
+    "nature": "Visuel conceptuel — ne représente pas un produit réellement fabriqué. Agrandissement numérique d'une vignette de planche : pas une photographie native haute définition. Vue « entier » du pack (recadrage de la même image).",
+    "source": "Pack photographique Maison Tamrān (brand/source/pack-photos)",
+    "file": "public/images/creations/velours-persan/velours-persan-entier.webp",
+    "width": 1348,
+    "height": 1724,
+    "approvedAt": "2026-10-26T16:54:45.249Z"
+  }
+}

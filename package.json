@@ -13,6 +13,8 @@
     "db:seed": "tsx scripts/seed.mts",
     "db:setup": "npm run db:migrate && npm run db:seed",
     "logo": "tsx scripts/logo.mts",
+    "pack-photos": "tsx scripts/pack-photos.mts",
+    "stock": "tsx scripts/stock.mts",
     "concepts": "tsx scripts/concepts/build.mts",
     "prompts": "tsx scripts/prompts.mts",
     "images:generate": "tsx scripts/images/generate.mts",

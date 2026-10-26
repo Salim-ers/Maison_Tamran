@@ -1,0 +1,122 @@
+{
+  "quality_disclosure": "Sorties 3840x2160 par agrandissement de petites sources; NON 4K native. Macro et entier = recadrages de la planche source.",
+  "products": [
+    {
+      "name": "Éclipse Noire",
+      "slug": "eclipse-noire",
+      "collection": "signature",
+      "ingredients": "Sésame noir et yuzu",
+      "files": {
+        "signature": "public/images/maison-tamran/signatures/eclipse-noire/eclipse-noire-signature-3840x2160.webp",
+        "macro": "public/images/maison-tamran/signatures/eclipse-noire/eclipse-noire-macro-3840x2160.webp",
+        "entier": "public/images/maison-tamran/signatures/eclipse-noire/eclipse-noire-entier-3840x2160.webp"
+      }
+    },
+    {
+      "name": "Velours Persan",
+      "slug": "velours-persan",
+      "collection": "signature",
+      "ingredients": "Amande, abricot, safran",
+      "files": {
+        "signature": "public/images/maison-tamran/signatures/velours-persan/velours-persan-signature-3840x2160.webp",
+        "macro": "public/images/maison-tamran/signatures/velours-persan/velours-persan-macro-3840x2160.webp",
+        "entier": "public/images/maison-tamran/signatures/velours-persan/velours-persan-entier-3840x2160.webp"
+      }
+    },
+    {
+      "name": "Minuit à Kyoto",
+      "slug": "minuit-a-kyoto",
+      "collection": "signature",
+      "ingredients": "Matcha et yuzu",
+      "files": {
+        "signature": "public/images/maison-tamran/signatures/minuit-a-kyoto/minuit-a-kyoto-signature-3840x2160.webp",
+        "macro": "public/images/maison-tamran/signatures/minuit-a-kyoto/minuit-a-kyoto-macro-3840x2160.webp",
+        "entier": "public/images/maison-tamran/signatures/minuit-a-kyoto/minuit-a-kyoto-entier-3840x2160.webp"
+      }
+    },
+    {
+      "name": "Or de Marrakech",
+      "slug": "or-de-marrakech",
+      "collection": "signature",
+      "ingredients": "Pistache, fleur d’oranger, kadaïf",
+      "files": {
+        "signature": "public/images/maison-tamran/signatures/or-de-marrakech/or-de-marrakech-signature-3840x2160.webp",
+        "macro": "public/images/maison-tamran/signatures/or-de-marrakech/or-de-marrakech-macro-3840x2160.webp",
+        "entier": "public/images/maison-tamran/signatures/or-de-marrakech/or-de-marrakech-entier-3840x2160.webp"
+      }
+    },
+    {
+      "name": "Café Impérial",
+      "slug": "cafe-imperial",
+      "collection": "signature",
+      "ingredients": "Noisette, espresso, cardamome",
+      "files": {
+        "signature": "public/images/maison-tamran/signatures/cafe-imperial/cafe-imperial-signature-3840x2160.webp",
+        "macro": "public/images/maison-tamran/signatures/cafe-imperial/cafe-imperial-macro-3840x2160.webp",
+        "entier": "public/images/maison-tamran/signatures/cafe-imperial/cafe-imperial-entier-3840x2160.webp"
+      }
+    },
+    {
+      "name": "Rouge Désir",
+      "slug": "rouge-desir",
+      "collection": "signature",
+      "ingredients": "Framboise, hibiscus",
+      "files": {
+        "signature": "public/images/maison-tamran/signatures/rouge-desir/rouge-desir-signature-3840x2160.webp",
+        "macro": "public/images/maison-tamran/signatures/rouge-desir/rouge-desir-macro-3840x2160.webp",
+        "entier": "public/images/maison-tamran/signatures/rouge-desir/rouge-desir-entier-3840x2160.webp"
+      }
+    },
+    {
+      "name": "Ébène Salé",
+      "slug": "ebene-sale",
+      "collection": "ephemere",
+      "ingredients": "Sarrasin, miso, caramel",
+      "files": {
+        "signature": "public/images/maison-tamran/ephemeres/ebene-sale/ebene-sale-signature-3840x2160.webp",
+        "macro": "public/images/maison-tamran/ephemeres/ebene-sale/ebene-sale-macro-3840x2160.webp",
+        "entier": "public/images/maison-tamran/ephemeres/ebene-sale/ebene-sale-entier-3840x2160.webp"
+      }
+    },
+    {
+      "name": "Île Secrète",
+      "slug": "ile-secrete",
+      "collection": "ephemere",
+      "ingredients": "Pandan, noix de coco",
+      "files": {
+        "signature": "public/images/maison-tamran/ephemeres/ile-secrete/ile-secrete-signature-3840x2160.webp",
+        "macro": "public/images/maison-tamran/ephemeres/ile-secrete/ile-secrete-macro-3840x2160.webp",
+        "entier": "public/images/maison-tamran/ephemeres/ile-secrete/ile-secrete-entier-3840x2160.webp"
+      }
+    },
+    {
+      "name": "Ambre Fumé",
+      "slug": "ambre-fume",
+      "collection": "ephemere",
+      "ingredients": "Pécan, érable, sel fumé",
+      "files": {
+        "signature": "public/images/maison-tamran/ephemeres/ambre-fume/ambre-fume-signature-3840x2160.webp",
+        "macro": "public/images/maison-tamran/ephemeres/ambre-fume/ambre-fume-macro-3840x2160.webp",
+        "entier": "public/images/maison-tamran/ephemeres/ambre-fume/ambre-fume-entier-3840x2160.webp"
+      }
+    },
+    {
+      "name": "Rose de Nuit",
+      "slug": "rose-de-nuit",
+      "collection": "ephemere",
+      "ingredients": "Rose, litchi, framboise",
+      "files": {
+        "signature": "public/images/maison-tamran/ephemeres/rose-de-nuit/rose-de-nuit-signature-3840x2160.webp",
+        "macro": "public/images/maison-tamran/ephemeres/rose-de-nuit/rose-de-nuit-macro-3840x2160.webp",
+        "entier": "public/images/maison-tamran/ephemeres/rose-de-nuit/rose-de-nuit-entier-3840x2160.webp"
+      }
+    }
+  ],
+  "packaging": [
+    {
+      "name": "Signature 12 pièces ouvert",
+      "file": "public/images/maison-tamran/coffrets/coffret-signature-12-ouvert-3840x2160.webp",
+      "reference_photo_used": true
+    }
+  ]
+}

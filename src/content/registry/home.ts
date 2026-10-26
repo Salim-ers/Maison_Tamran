@@ -5,16 +5,16 @@ export const homeHero = {
   label: "Accueil : ouverture",
   page: "/",
   fields: [
-    { name: "title", label: "Accroche", type: "text" },
+    { name: "title", label: "Accroche (retours à la ligne conservés)", type: "textarea" },
     { name: "subtitle", label: "Sous-texte", type: "textarea" },
     { name: "ctaPrimary", label: "Bouton principal", type: "text" },
     { name: "ctaSecondary", label: "Bouton secondaire", type: "text" },
   ],
   defaults: {
-    title: "L'extraordinaire, au cœur d'une datte.",
-    subtitle: "Des créations singulières, où la douceur de la Medjool rencontre l'audace de la haute gourmandise.",
-    ctaPrimary: "Découvrir les créations",
-    ctaSecondary: "Composer mon coffret",
+    title: "L'art de\nsublimer\nla datte.",
+    subtitle: "La datte Medjool rencontre la gourmandise des grands chocolats. Découvrez nos créations et nos coffrets imaginés pour offrir une expérience singulière.",
+    ctaPrimary: "Découvrir les coffrets",
+    ctaSecondary: "Explorer les créations",
   },
 } satisfies ContentEntry;
 

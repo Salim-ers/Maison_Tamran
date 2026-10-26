@@ -33,11 +33,11 @@ export function RevealImage({ children, className, from = "bottom", parallax = 8
  * Titre révélé ligne par ligne (masque). L'observation se fait sur le titre entier : une ligne
  * décalée hors de son masque n'est jamais « visible » pour l'IntersectionObserver.
  */
-export function RevealLines({ lines, as = "h2", className, delay = 0 }: { lines: string[]; as?: "h1" | "h2" | "h3" | "p"; className?: string; delay?: number }) {
+export function RevealLines({ lines, as = "h2", className, delay = 0, id }: { lines: string[]; as?: "h1" | "h2" | "h3" | "p"; className?: string; delay?: number; id?: string }) {
   const reduce = useReducedMotion();
   const Tag = motion[as];
   return (
-    <Tag className={className} initial={reduce ? false : "hidden"} whileInView="show" viewport={{ once: true, margin: "-10% 0px" }}>
+    <Tag id={id} className={className} initial={reduce ? false : "hidden"} whileInView="show" viewport={{ once: true, margin: "-10% 0px" }}>
       {lines.map((l, i) => (
         <span key={i} className="block overflow-hidden pb-[0.06em]">
           <motion.span

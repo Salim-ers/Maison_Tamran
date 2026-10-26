@@ -1,0 +1,50 @@
+# Licences des visuels — MAISON TAMRĀN
+
+## Principe
+
+- **Visuels produits** : tous les visuels représentant les créations de la maison (dattes Medjool fourrées et enrobées, coffrets, gammes) proviennent exclusivement du pack photo Maison Tamrān (`brand/source/pack-photos/`). Ce sont des visuels conceptuels produits pour la marque, pas des photos de stock.
+- **Photos externes** : les photos de stock listées ci-dessous servent uniquement à l'**ambiance**, aux **ingrédients** et aux **paysages**. Elles ne doivent jamais être utilisées pour représenter un produit de la marque, ni être présentées comme l'atelier, la palmeraie, la plantation ou les lieux réels de Maison Tamrān.
+- Le détail technique de chaque photo (dimensions, description, texte alternatif, remarques) est dans `brand/source/stock/stock.json`.
+
+## Licence Unsplash (résumé)
+
+Toutes les photos externes proviennent d'[Unsplash](https://unsplash.com) et relèvent de la **licence Unsplash gratuite** ([texte officiel](https://unsplash.com/license)). Aucune photo « Unsplash+ » (offre payante) n'est utilisée.
+
+- **Usage libre et gratuit**, y compris **commercial** : téléchargement, copie, modification, diffusion.
+- **Attribution non obligatoire** : nous créditons tout de même chaque photographe ci-dessous, par courtoisie et pour la traçabilité.
+- **Interdits** :
+  - vendre une photo telle quelle, sans modification significative (impression, poster, etc.) ;
+  - compiler des photos Unsplash pour créer un service similaire ou concurrent.
+- La licence porte sur le droit d'auteur de la photo. Elle ne couvre pas les marques, personnes ou biens éventuellement visibles. C'est pourquoi les photos retenues ne montrent ni visage reconnaissable, ni logo, ni emballage de marque, ni texte.
+
+## Inventaire
+
+| Clé | Fichier | Photographe | Page source | Licence | Dimensions | Usage prévu | Vérification |
+|---|---|---|---|---|---|---|---|
+| palmeraie | `brand/source/stock/palmeraie__v9MYNk3HMeM.jpg` | [Halima Bouchouicha](https://unsplash.com/@halimaart) | [v9MYNk3HMeM](https://unsplash.com/photos/a-desert-with-palm-trees-and-a-blue-sky-v9MYNk3HMeM) | Unsplash License | 4608 × 3456 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| dattier-regimes | `brand/source/stock/dattier-regimes__c3GxJkt7tV0.jpg` | [Timur Gibadullin](https://unsplash.com/@gitim) | [c3GxJkt7tV0](https://unsplash.com/photos/bunches-of-ripe-orange-dates-on-a-palm-tree-c3GxJkt7tV0) | Unsplash License | 3220 × 2145 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| dattes-naturelles | `brand/source/stock/dattes-naturelles__Ae6qKztd0Xw.jpg` | [Masjid Pogung Dalangan](https://unsplash.com/@masjidmpd) | [Ae6qKztd0Xw](https://unsplash.com/photos/a-wooden-bowl-filled-with-dates-sitting-on-top-of-a-table-Ae6qKztd0Xw) | Unsplash License | 5665 × 3777 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| chocolat | `brand/source/stock/chocolat__BqJAbXk2Fuw.jpg` | [Mae Mu](https://unsplash.com/@picoftasty) | [BqJAbXk2Fuw](https://unsplash.com/photos/BqJAbXk2Fuw) | Unsplash License | 4560 × 3648 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| riad-lumiere | `brand/source/stock/riad-lumiere__4M0LMAbCnQE.jpg` | [SALAH PICTURES](https://unsplash.com/@lamfissek) | [4M0LMAbCnQE](https://unsplash.com/photos/a-large-wooden-door-sitting-inside-of-a-building-4M0LMAbCnQE) | Unsplash License | 2000 × 2500 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| cafe-oriental | `brand/source/stock/cafe-oriental__57BCZzL2t8E.jpg` | [Kier in Sight Archives](https://unsplash.com/@kierinsightarchives) | [57BCZzL2t8E](https://unsplash.com/photos/brass-teapot-with-smoke-on-black-background-57BCZzL2t8E) | Unsplash License | 4000 × 2500 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| art-de-recevoir | `brand/source/stock/art-de-recevoir__pbMf0vDIdO8.jpg` | [Martin Zangerl](https://unsplash.com/@zmart) | [pbMf0vDIdO8](https://unsplash.com/photos/gray-teapot-set-in-tray-place-on-brown-table-outdoors-pbMf0vDIdO8) | Unsplash License | 4592 × 3056 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| pistache | `brand/source/stock/pistache__Zo0TZax87Cc.jpg` | [Theo Crazzolara](https://unsplash.com/@theocrazzolara) | [Zo0TZax87Cc](https://unsplash.com/photos/a-pile-of-pistachio-nuts-sitting-on-top-of-a-table-Zo0TZax87Cc) | Unsplash License | 6000 × 4000 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| noisette | `brand/source/stock/noisette__SNQfkUNHWlA.jpg` | [360floralflaves](https://unsplash.com/@360floralflaves) | [SNQfkUNHWlA](https://unsplash.com/photos/a-pile-of-nuts-with-white-and-brown-seeds-SNQfkUNHWlA) | Unsplash License | 4160 × 6240 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| amande | `brand/source/stock/amande__RZ-AHtxLPUE.jpg` | [Daniela Paola Alchapar](https://unsplash.com/@paoalchapar) | [RZ-AHtxLPUE](https://unsplash.com/photos/a-pile-of-almonds-sitting-on-top-of-each-other-RZ-AHtxLPUE) | Unsplash License | 4592 × 3448 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| cardamome | `brand/source/stock/cardamome__dZIs-KaRdu8.jpg` | [Neil P-A](https://unsplash.com/@weareqed) | [dZIs-KaRdu8](https://unsplash.com/photos/a-pile-of-dried-cardamom-pods-on-a-dark-surface-dZIs-KaRdu8) | Unsplash License | 3872 × 2592 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| safran | `brand/source/stock/safran__wXl5Id9_6n0.jpg` | [marlik saffron](https://unsplash.com/@marliksaffron) | [wXl5Id9_6n0](https://unsplash.com/photos/wXl5Id9_6n0) | Unsplash License | 3794 × 2529 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| rose | `brand/source/stock/rose__FJM3wo0eCGY.jpg` | [Zulfugar Karimov](https://unsplash.com/@zulfugarkarimov) | [FJM3wo0eCGY](https://unsplash.com/photos/dried-rose-petals-in-a-pile-FJM3wo0eCGY) | Unsplash License | 6000 × 4000 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| framboise | `brand/source/stock/framboise__h-pMChQzbOM.jpg` | [Teo Do Rio](https://unsplash.com/@teofromrio) | [h-pMChQzbOM](https://unsplash.com/photos/red-raspberries-in-close-up-photography-h-pMChQzbOM) | Unsplash License | 6720 × 4480 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| cafe-grains | `brand/source/stock/cafe-grains__H80RH1Hhvu8.jpg` | [Indra Projects](https://unsplash.com/@indraprojects) | [H80RH1Hhvu8](https://unsplash.com/photos/roasted-coffee-beans-are-displayed-up-close-H80RH1Hhvu8) | Unsplash License | 5184 × 3456 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| coco | `brand/source/stock/coco__E95Lpkg-bgc.jpg` | [Irene Kredenets](https://unsplash.com/@ikredenets) | [E95Lpkg-bgc](https://unsplash.com/photos/coconuts-on-white-surface-E95Lpkg-bgc) | Unsplash License | 2675 × 3344 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+| matcha | `brand/source/stock/matcha__DgW9B48pRb4.jpg` | [Phuong Nguyen](https://unsplash.com/@np254) | [DgW9B48pRb4](https://unsplash.com/photos/green-powder-DgW9B48pRb4) | Unsplash License | 4214 × 2750 | à préciser | 2026-10-26 — page consultée : licence Unsplash gratuite, pas Unsplash+ |
+
+**Clé non pourvue** : `pecan` (noix de pécan). Aucune photo gratuite convenable n'a été trouvée. Les seules photos nettes étaient sous Unsplash+, les photos gratuites montraient des dattes fourrées (exclu) ou des noix dans leur brou abîmé.
+
+## Points d'attention
+
+- **palmeraie** : un petit déchet (plastique) est visible dans le sable au premier plan. Retoucher ou recadrer avant usage. La photo a été prise à Taghit (Algérie) : ne pas la légender comme une palmeraie de la marque.
+- **riad-lumiere** : c'est la photo la moins définie du lot (2500 px sur le grand côté). Elle convient à une carte ou une demi-largeur, mais elle est limite en plein écran sur grand moniteur.
+- **art-de-recevoir** : la photo a été prise dans un riad de Fès. Ne pas la présenter comme un lieu de la marque.
+- **matcha** : le fond rose pâle s'écarte de la palette. Prévoir un recadrage serré ou un étalonnage.
+- **safran** : la photo vient du compte d'un producteur de safran, mais aucune marque n'est visible sur ce cliché. L'étalonnage est très chaud et rosé.

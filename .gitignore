@@ -50,3 +50,6 @@ next-env.d.ts
 
 # visuels générés par IA en attente de validation (npm run images:review)
 /.images-staging/
+
+# originaux des photos d'ambiance (lourds, retéléchargeables par npm run stock)
+/brand/source/stock/*.jpg

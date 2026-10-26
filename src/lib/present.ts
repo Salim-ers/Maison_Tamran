@@ -22,7 +22,8 @@ export function toCard(p: CatalogProduct): CardProduct {
 }
 
 export function toSwatch(p: CatalogProduct): FlavorSwatch {
-  return { slug: p.slug, name: p.name, coat: p.palette.coat, coatLight: p.palette.coatLight, accent: p.palette.accent };
+  const thumb = p.images.find((i) => i.role === "cut") ?? p.images.find((i) => i.role === "main");
+  return { slug: p.slug, name: p.name, coat: p.palette.coat, coatLight: p.palette.coatLight, accent: p.palette.accent, thumb: thumb ? { url: thumb.url, blur: thumb.blur } : null };
 }
 
 export const STATUS_PUBLIC: Record<string, string> = {

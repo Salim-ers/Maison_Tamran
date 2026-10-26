@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { clsx } from "clsx";
 import { BrandLogo } from "@/components/brand";
@@ -10,25 +11,17 @@ export interface FlavorSwatch {
   coat: string;
   coatLight: string;
   accent: string;
+  /** photographie (gros plan du cœur) utilisée dans les alvéoles */
+  thumb?: { url: string; blur?: string } | null;
 }
 
-/** Datte stylisée (vectorielle, légère) pour l'aperçu du coffret. */
-export function DatePill({ f, className }: { f: FlavorSwatch; className?: string }) {
-  const id = `g-${f.slug}`;
+/** Une pièce dans son alvéole : la photographie de la recette, cadrée sur la datte. */
+export function DateThumb({ f, className }: { f: FlavorSwatch; className?: string }) {
+  if (!f.thumb) return <span className={clsx("block rounded-[45%]", className)} style={{ background: `radial-gradient(ellipse at 40% 35%, ${f.coatLight}, ${f.coat})` }} aria-hidden />;
   return (
-    <svg viewBox="0 0 120 64" className={className} aria-hidden>
-      <defs>
-        <linearGradient id={id} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor={f.coatLight} />
-          <stop offset=".55" stopColor={f.coat} />
-          <stop offset="1" stopColor={f.coat} stopOpacity=".85" />
-        </linearGradient>
-      </defs>
-      <path d="M6 33C5 17 26 7 56 6c30-1 54 8 58 25 3 15-20 26-56 27C24 59 7 49 6 33Z" fill={`url(#${id})`} />
-      <path d="M86 9c14 3 26 11 28 22 2 12-12 21-34 25 8-9 12-17 12-27 0-8-2-14-6-20Z" fill="#4A200D" opacity=".9" />
-      <path d="M22 20c14-7 40-9 58-6" stroke="#fff" strokeOpacity=".35" strokeWidth="3" fill="none" strokeLinecap="round" />
-      <path d="M20 30c12 4 26-6 38 0s24-4 30 0" stroke={f.accent} strokeWidth="2.2" fill="none" strokeLinecap="round" opacity=".9" />
-    </svg>
+    <span className={clsx("relative block overflow-hidden rounded-[45%]", className)} aria-hidden>
+      <Image src={f.thumb.url} alt="" fill sizes="120px" quality={75} className="scale-[1.35] object-cover" placeholder={f.thumb.blur ? "blur" : "empty"} blurDataURL={f.thumb.blur} />
+    </span>
   );
 }
 
@@ -40,7 +33,7 @@ export function BoxPreview({ pieces, slots, flavors, onRemoveAt, className, dark
   const reduce = useReducedMotion();
   const cols = pieces === 6 ? 3 : pieces === 12 ? 4 : 6;
   return (
-    <div className={clsx("relative p-[4%] shadow-[0_30px_60px_-30px_rgba(37,28,26,.6)]", dark ? "bg-[#2E231F]" : "bg-chocolate", className)}>
+    <div className={clsx("relative p-[4%] shadow-[0_30px_60px_-30px_rgba(36,23,19,.6)]", dark ? "bg-chocolate-2" : "bg-chocolate", className)}>
       <div className="pointer-events-none absolute inset-[2.2%] border border-bronze/50" aria-hidden />
       <div className="grid gap-[2.5%]" style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}>
         {Array.from({ length: pieces }, (_, i) => {
@@ -53,8 +46,8 @@ export function BoxPreview({ pieces, slots, flavors, onRemoveAt, className, dark
                   <motion.button
                     type="button"
                     key={`${slug}-${i}`}
-                    initial={reduce ? false : { scale: 0.4, opacity: 0, y: -18 }}
-                    animate={{ scale: 1, opacity: 1, y: 0 }}
+                    initial={reduce ? false : { scale: 1.25, opacity: 0, y: -26, rotate: -8 }}
+                    animate={{ scale: 1, opacity: 1, y: 0, rotate: 0 }}
                     exit={reduce ? { opacity: 0 } : { scale: 0.5, opacity: 0, y: -10 }}
                     transition={{ type: "spring", stiffness: 380, damping: 24 }}
                     onClick={onRemoveAt ? () => onRemoveAt(i) : undefined}
@@ -63,7 +56,7 @@ export function BoxPreview({ pieces, slots, flavors, onRemoveAt, className, dark
                     className="absolute inset-[6%] grid place-items-center disabled:cursor-default"
                     aria-label={onRemoveAt ? `Retirer ${f.name} (place ${i + 1})` : f.name}
                   >
-                    <DatePill f={f} className="h-full w-full drop-shadow-[0_3px_3px_rgba(0,0,0,.5)]" />
+                    <DateThumb f={f} className="size-full shadow-[0_4px_10px_rgba(0,0,0,.55)] ring-1 ring-[#c7a06a]/30" />
                   </motion.button>
                 )}
               </AnimatePresence>

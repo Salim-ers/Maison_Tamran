@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getBoxes, getCatalog, getSettings } from "@/lib/catalog";
 import { PageIntro } from "@/components/layout/page-intro";
+import { toSwatch } from "@/lib/present";
 import { Configurator, type ConfBox, type ConfFlavor } from "@/components/configurator/configurator";
 
 export const metadata: Metadata = {
@@ -53,6 +54,7 @@ export default async function ComposerPage({ searchParams }: PageProps<"/compose
     supplementCents: p.boxSupplementCents,
     purchasable: p.purchasable && p.stockPieces > 0,
     image: p.images.find((i) => i.role === "main") ?? null,
+    thumb: toSwatch(p).thumb,
   }));
   return (
     <>

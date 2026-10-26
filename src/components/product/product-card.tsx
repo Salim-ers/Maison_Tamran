@@ -65,7 +65,7 @@ export function ProductCard({ p, sizes = "(min-width: 1024px) 30vw, 80vw", tone 
             <Image src={p.cut.url} alt={p.cut.alt} fill sizes={sizes} quality={75} className="object-cover" loading="lazy" />
           </div>
         )}
-        {p.main?.concept && <ConceptBadge className="left-3 top-3" tone={tone === "dark" ? "dark" : "light"} ai={p.main.ai} />}
+        {p.main?.concept && <ConceptBadge className="left-3 top-3" tone={tone === "dark" ? "dark" : "light"} label={p.main.badge} />}
         {p.cut && (
           <button
             type="button"

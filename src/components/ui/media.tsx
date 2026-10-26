@@ -14,7 +14,7 @@ export function concept(id: string): ImageRef {
 }
 
 /** Pastille discrète signalant un visuel illustré ou une image conceptuelle IA (et non une photographie du produit réel). */
-export function ConceptBadge({ className, tone = "light", ai = false }: { className?: string; tone?: "light" | "dark"; ai?: boolean }) {
+export function ConceptBadge({ className, tone = "light", label }: { className?: string; tone?: "light" | "dark"; label?: string }) {
   return (
     <span
       className={clsx(
@@ -23,7 +23,7 @@ export function ConceptBadge({ className, tone = "light", ai = false }: { classN
         className ?? "bottom-3 right-3"
       )}
     >
-      {ai ? "Image conceptuelle · IA" : "Visuel concept"}
+      {label ?? "Visuel concept"}
     </span>
   );
 }
@@ -55,7 +55,7 @@ export function Media({ image: source, alt, badge = true, badgeClassName, wrappe
   return (
     <div className={wrapperClassName ?? "relative"}>
       {img}
-      {badge && image.concept && <ConceptBadge className={badgeClassName} tone={badge === "dark" ? "dark" : "light"} ai={image.ai} />}
+      {badge && image.concept && <ConceptBadge className={badgeClassName} tone={badge === "dark" ? "dark" : "light"} label={image.badge} />}
     </div>
   );
 }
