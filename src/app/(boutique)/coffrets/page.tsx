@@ -45,7 +45,7 @@ export default async function CoffretsPage() {
               <Breadcrumbs items={[{ href: "/coffrets", label: "Coffrets" }]} tone="dark" />
             </div>
             <h1 className="mt-8 font-display text-[clamp(3rem,7vw,7rem)] leading-[0.92] tracking-[-0.03em]">
-              <span className="block overflow-hidden pb-[0.05em]">
+              <span className="-mt-[0.16em] block overflow-hidden pb-[0.05em] pt-[0.16em]">
                 <span className="anim-rise block [animation-delay:.15s]">Les coffrets</span>
               </span>
             </h1>

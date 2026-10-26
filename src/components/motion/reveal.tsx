@@ -40,7 +40,7 @@ export function RevealLines({ lines, as = "h2", className, delay = 0, id }: { li
   return (
     <Tag id={id} className={className} initial={reduce ? false : "hidden"} whileInView="show" viewport={{ once: true, margin: "-10% 0px" }}>
       {lines.map((l, i) => (
-        <span key={i} className="block overflow-hidden pb-[0.06em]">
+        <span key={i} className="-mt-[0.16em] block overflow-hidden pb-[0.06em] pt-[0.16em]">
           <motion.span
             className="block"
             variants={{ hidden: { y: "105%" }, show: { y: "0%", transition: { duration: 1.1, delay: delay + i * 0.1, ease: EASE } } }}

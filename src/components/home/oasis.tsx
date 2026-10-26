@@ -15,7 +15,7 @@ function Word({ word, i, progress }: { word: string; i: number; progress: Motion
   const y = useTransform(progress, span(a, a + 0.09), ["110%", "0%"]);
   return (
     <>
-      <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
+      <span className="-mt-[0.16em] inline-block overflow-hidden pb-[0.08em] pt-[0.16em] align-bottom">
         <motion.span style={{ y }} className={i === 4 ? "inline-block italic text-[#fff4dc]" : "inline-block"}>
           {word}
         </motion.span>

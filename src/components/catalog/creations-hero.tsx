@@ -26,7 +26,7 @@ export function CreationsHero({ title, subtitle, crumbs, items, children }: { ti
         </div>
         <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-end">
           <h1 className="font-display text-[clamp(3rem,8vw,8.5rem)] leading-[0.92] tracking-[-0.03em] lg:col-span-7">
-            <span className="block overflow-hidden pb-[0.05em]">
+            <span className="-mt-[0.16em] block overflow-hidden pb-[0.05em] pt-[0.16em]">
               <span className="anim-rise block [animation-delay:.15s]">{title}</span>
             </span>
           </h1>

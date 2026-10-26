@@ -92,7 +92,7 @@ export function Hero({ title, subtitle, ctaPrimary, ctaSecondary }: { title: str
       <h1 id="hero-title" className="hero-title mt-5 font-display text-ivory md:mt-7">
         <span className="sr-only">MAISON TAMRĀN, dattes gastronomiques et coffrets : </span>
         {lines.map((l, i) => (
-          <span key={i} className="-mb-[0.1em] block overflow-hidden pb-[0.1em]">
+          <span key={i} className="-mb-[0.1em] -mt-[0.16em] block overflow-hidden pb-[0.1em] pt-[0.16em]">
             <span className={i === 1 && lines.length === 3 ? "anim-rise block italic text-gold-sheen" : "anim-rise block"} style={{ animationDelay: `${1.05 + i * 0.14}s` }}>
               {l}
             </span>
