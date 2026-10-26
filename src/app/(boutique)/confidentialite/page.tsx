@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getSettings } from "@/lib/catalog";
-import { LegalPage, LegalValue } from "@/components/legal/legal";
+import { LegalPage, LegalValue, ContactEmail } from "@/components/legal/legal";
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
@@ -48,7 +48,7 @@ export default async function ConfidentialitePage() {
     <LegalPage title="Politique de confidentialité" href="/confidentialite" toc={TOC} intro={<p>Cette politique explique quelles données personnelles nous traitons, pourquoi, combien de temps, et comment exercer vos droits au titre du Règlement général sur la protection des données (RGPD) et de la loi Informatique et Libertés.</p>}>
       <h2 id="responsable">Responsable de traitement</h2>
       <p>
-        Le responsable de traitement est <LegalValue value={legal.companyName} fallback="Raison sociale" />, <LegalValue value={legal.address} fallback="Adresse du siège" />, exploitant la marque MAISON TAMRĀN. Pour toute question relative à vos données : <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+        Le responsable de traitement est <LegalValue value={legal.companyName} fallback="Raison sociale" />, <LegalValue value={legal.address} fallback="Adresse du siège" />, exploitant la marque MAISON TAMRĀN. Pour toute question relative à vos données : <ContactEmail value={contactEmail} />.
       </p>
 
       <h2 id="traitements">Données, finalités et bases légales</h2>
@@ -96,7 +96,7 @@ export default async function ConfidentialitePage() {
 
       <h2 id="droits">Vos droits</h2>
       <p>
-        Vous disposez d&apos;un droit d&apos;accès, de rectification, d&apos;effacement, de limitation, d&apos;opposition et de portabilité de vos données, ainsi que du droit de retirer votre consentement à tout moment et de définir des directives relatives au sort de vos données après votre décès. Pour les exercer, écrivez à <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. Une pièce justificative pourra vous être demandée en cas de doute sur votre identité.
+        Vous disposez d&apos;un droit d&apos;accès, de rectification, d&apos;effacement, de limitation, d&apos;opposition et de portabilité de vos données, ainsi que du droit de retirer votre consentement à tout moment et de définir des directives relatives au sort de vos données après votre décès. Pour les exercer, écrivez à <ContactEmail value={contactEmail} />. Une pièce justificative pourra vous être demandée en cas de doute sur votre identité.
       </p>
       <p>
         Vous pouvez vous désinscrire de la lettre d&apos;information à tout moment depuis chaque email ou sur la page <Link href="/newsletter/desinscription">désinscription</Link>.

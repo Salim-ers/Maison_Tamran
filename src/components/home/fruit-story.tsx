@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "motion/react";
+import { motion, useScroll, useTransform, type MotionValue } from "motion/react";
+import { useReducedMotion } from "@/components/motion/reduced-motion";
 import { useRef } from "react";
 import { span } from "@/components/motion/scroll";
 import { clsx } from "clsx";

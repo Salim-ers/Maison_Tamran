@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "motion/react";
+import { motion, useScroll, useTransform, type MotionValue } from "motion/react";
+import { useReducedMotion } from "@/components/motion/reduced-motion";
 import { useRef } from "react";
 import { span } from "@/components/motion/scroll";
 import type { ImageRef } from "@/db/schema";
@@ -19,11 +20,12 @@ const POINTS = [
 // position d'un repère une fois le zoom terminé
 const zoomed = (p: { x: number; y: number }) => ({ x: ORIGIN.x + (p.x - ORIGIN.x) * ZOOM, y: ORIGIN.y + (p.y - ORIGIN.y) * ZOOM });
 
-function Annotation({ p, i, progress }: { p: (typeof POINTS)[number]; i: number; progress: MotionValue<number> }) {
+function Annotation({ p, i, progress, still }: { p: (typeof POINTS)[number]; i: number; progress: MotionValue<number>; still: boolean }) {
   const start = 0.32 + i * 0.17;
   const draw = useTransform(progress, span(start, start + 0.1), [0, 1]);
   const opacity = useTransform(progress, span(start, start + 0.06), [0, 1]);
-  const z = zoomed(p);
+  // sans animation (préférence de l'utilisateur) : pas de zoom, repères affichés d'emblée
+  const z = still ? p : zoomed(p);
   return (
     <>
       <svg className="pointer-events-none absolute inset-0 size-full" viewBox="0 0 100 125" preserveAspectRatio="none" aria-hidden>
@@ -33,15 +35,15 @@ function Annotation({ p, i, progress }: { p: (typeof POINTS)[number]; i: number;
           strokeWidth="1"
           vectorEffect="non-scaling-stroke"
           fill="none"
-          style={{ pathLength: draw, opacity }}
+          style={still ? undefined : { pathLength: draw, opacity }}
         />
       </svg>
-      <motion.span style={{ left: `${z.x}%`, top: `${z.y}%`, opacity }} className="absolute size-3 -translate-x-1/2 -translate-y-1/2" aria-hidden>
+      <motion.span style={{ left: `${z.x}%`, top: `${z.y}%`, opacity: still ? 1 : opacity }} className="absolute size-3 -translate-x-1/2 -translate-y-1/2" aria-hidden>
         <span className="absolute inset-0 rounded-full bg-gold" />
         <span className="absolute -inset-2 animate-ping rounded-full border border-gold/60 [animation-duration:2.4s]" />
       </motion.span>
       <motion.span
-        style={{ left: `${p.label.x}%`, top: `${p.label.y}%`, opacity }}
+        style={{ left: `${p.label.x}%`, top: `${p.label.y}%`, opacity: still ? 1 : opacity }}
         className="absolute hidden whitespace-nowrap border border-gold/40 bg-chocolate/75 px-3 py-1.5 t-micro tracking-[0.12em] text-ivory backdrop-blur-sm md:block"
         aria-hidden
       >
@@ -51,14 +53,14 @@ function Annotation({ p, i, progress }: { p: (typeof POINTS)[number]; i: number;
   );
 }
 
-function Legend({ p, i, progress }: { p: (typeof POINTS)[number]; i: number; progress: MotionValue<number> }) {
+function Legend({ p, i, progress, still }: { p: (typeof POINTS)[number]; i: number; progress: MotionValue<number>; still: boolean }) {
   const start = 0.32 + i * 0.17;
   const opacity = useTransform(progress, span(start - 0.04, start + 0.06), [0.3, 1]);
   const line = useTransform(progress, span(start, start + 0.12), ["0%", "100%"]);
   return (
-    <motion.li style={{ opacity }} className="relative pt-5">
+    <motion.li style={{ opacity: still ? 1 : opacity }} className="relative pt-5">
       <span className="absolute left-0 top-0 h-px w-full bg-line-light" aria-hidden />
-      <motion.span style={{ width: line }} className="absolute left-0 top-0 h-px bg-gold" aria-hidden />
+      <motion.span style={{ width: still ? "100%" : line }} className="absolute left-0 top-0 h-px bg-gold" aria-hidden />
       <p className="t-numeral text-lg text-gold">{p.n}</p>
       <h3 className="mt-1 font-display text-2xl">{p.title}</h3>
       <p className="mt-1.5 max-w-[34ch] t-small text-taupe">{p.text}</p>
@@ -84,7 +86,7 @@ export function DateAnatomy({ image }: { image: ImageRef }) {
       </motion.div>
       <motion.div style={{ opacity: vignette }} className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_68%_55%,transparent_35%,rgba(36,23,19,.85)_100%)]" aria-hidden />
       {POINTS.map((p, i) => (
-        <Annotation key={p.n} p={p} i={i} progress={scrollYProgress} />
+        <Annotation key={p.n} p={p} i={i} progress={scrollYProgress} still={reduce} />
       ))}
       {image.concept && <ConceptBadge tone="dark" label={image.badge} className="bottom-3 right-3" />}
     </div>
@@ -102,7 +104,7 @@ export function DateAnatomy({ image }: { image: ImageRef }) {
             </h2>
             <ol className="mt-8 grid gap-5 max-lg:hidden">
               {POINTS.map((p, i) => (
-                <Legend key={p.n} p={p} i={i} progress={scrollYProgress} />
+                <Legend key={p.n} p={p} i={i} progress={scrollYProgress} still={reduce} />
               ))}
             </ol>
             <Link href="/creations/cafe-imperial" className="mt-8 hidden t-small text-gold link-draw lg:inline-block">

@@ -3,7 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
+import { useReducedMotion } from "@/components/motion/reduced-motion";
 import { useCart } from "./cart-context";
 import { euros } from "@/lib/money";
 import { QtyStepper } from "@/components/ui/qty-stepper";

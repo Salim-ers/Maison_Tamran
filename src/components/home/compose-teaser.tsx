@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { clsx } from "clsx";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
+import { useReducedMotion } from "@/components/motion/reduced-motion";
 import { BoxPreview, DateThumb, type FlavorSwatch } from "@/components/configurator/box-preview";
 
 const PIECES = 6;

@@ -16,7 +16,7 @@ Site e-commerce complet de **MAISON TAMRĀN** : identité de marque, boutique, c
 | Compte client, adresses, suivi de commande | Fonctionnel |
 | Devis B2B, export PDF | Fonctionnel |
 | Back-office | Fonctionnel (produits, coffrets, stock, commandes, clients, devis, promos, livraison, contenu, témoignages, emails, newsletter, réglages) |
-| Visuels | **Visuels concept illustrés** (signalés à l'écran), 54 prompts photo prêts dans `docs/PROMPTS-PHOTO.md` |
+| Visuels | **Visuels conceptuels** du pack photo Maison Tamrān pour les dix créations et le coffret Signature (signalés « Visuel conceptuel » à l'écran) ; photographies d'ambiance libres de droits (Unsplash, licences dans `ASSET_LICENSES.md`). Pas encore de photo réelle des coffrets 6 et 24 pièces ni de l'édition limitée : schémas de format légendés à la place |
 | Mentions légales, CGV, données réglementaires (poids, DDM, origine, valeurs nutritionnelles) | **À compléter** : champs vides signalés « à confirmer », modifiables dans le back-office |
 
 Rien n'est inventé : aucune histoire de fondateur, aucun label, aucun avis client, aucune promesse de délai.
@@ -45,8 +45,11 @@ Le compte administrateur est créé avec `ADMIN_EMAIL` / `ADMIN_PASSWORD` (un mo
 | `npm run db:generate` | Génère une migration après modification de `src/db/schema.ts` |
 | `npm run db:migrate` | Applique les migrations |
 | `npm run db:seed` | Données initiales (idempotent) |
-| `npm run brand` | Régénère logotype, monogramme, favicons (`brand/`, `public/brand/`) |
-| `npm run concepts` | Régénère les visuels concept (`public/images/concepts/`) |
+| `npm run logo` | Déclinaisons du logo officiel (détourage, version ivoire, dattier seul, favicons) depuis `brand/source/maison-tamran-logo-original.png` |
+| `npm run pack-photos` | Intègre le pack photo (`brand/source/pack-photos/`) : recadre la zone nette, optimise en WebP, branche les images dans le catalogue (`src/data/photo-manifest.json`) |
+| `npm run stock` | Photographies d'ambiance Unsplash (`brand/source/stock/stock.json` → `public/images/ambiance/`), originaux retéléchargés si absents |
+| `npm run images:generate` / `images:review` / `images:approve` / `images:status` | Pipeline de visuels IA (Cloudflare Workers AI), voir `docs/PROMPTS-PHOTO.md` |
+| `npm run concepts` | Régénère les visuels concept illustrés de repli (`public/images/concepts/`) |
 | `npm run prompts` | Régénère le catalogue de prompts photo |
 
 ## Déploiement sur Vercel
@@ -89,7 +92,7 @@ Tableau de bord (chiffre d'affaires hors démonstration, alertes de stock, devis
 - [ ] Pour chaque recette : composition définitive, allergènes et traces, poids net, conservation, DDM, origine, valeurs nutritionnelles, puis case « informations réglementaires validées » et statut **available**.
 - [ ] Prix des coffrets, étuis et emballage cadeau confirmés ; stock réel saisi (Admin › Stock).
 - [ ] Tarifs de livraison contractualisés (décocher « provisoire »), pays desservis.
-- [ ] Photographies réelles à la place des visuels concept (voir `docs/PROMPTS-PHOTO.md`).
+- [ ] Photographies réelles des créations et des coffrets 6, 12 et 24 pièces à la place des visuels conceptuels (le pack actuel est fait de vignettes agrandies, pas de photos natives haute définition).
 - [ ] Codes promotionnels de démonstration supprimés ou désactivés (`BIENVENUE10`, `LIVRAISON`).
 - [ ] Stripe en clé live, webhook actif, Resend configuré, `NEXT_PUBLIC_SITE_URL` sur le domaine final.
 - [ ] Liens réseaux sociaux renseignés.
@@ -102,6 +105,12 @@ Tableau de bord (chiffre d'affaires hors démonstration, alertes de stock, devis
 | `npm run test:smoke` | Toutes les pages publiques répondent, URL inconnues en 404, back-office protégé |
 | `npm run test:e2e` | Navigateur réel (installez d'abord `npm i -D puppeteer`) : achat complet en mode démonstration (configurateur, étui, code promo, paiement simulé, confirmation, panier vidé), comptes (inscription, mots de passe refusés, adresses, connexion, accès admin refusé), toutes les pages du back-office |
 | `STRIPE_WEBHOOK_SECRET=… node scripts/test-webhook.mjs <url> <id-commande>` | Webhook Stripe : signature invalide refusée, paiement confirmé, événement rejoué ignoré |
+
+## Expérience et animations
+
+- **Accueil** : hero du coffret Signature (entrée en CSS, visible sans JavaScript), puis séquences au défilement natif (sans détournement du scroll) : « Tout commence par un fruit », anatomie d'une datte (zoom et repères), collection Signature, art d'offrir, ingrédients, éditions éphémères, la Maison, composer son coffret, professionnels.
+- **Bibliothèque** : Motion (déjà présente) pour toutes les animations ; aucune bibliothèque supplémentaire.
+- **Accessibilité** : `prefers-reduced-motion` respecté partout (Motion configuré en `reducedMotion="user"`, séquences remplacées par des versions statiques, animations CSS coupées). Aucun contenu ne dépend d'une animation pour être visible.
 
 ## Architecture
 
@@ -116,7 +125,7 @@ src/
   data/recipes.ts      référentiel des recettes (seed et visuels)
   db/                  schéma Drizzle et client PostgreSQL
   lib/                 logique serveur : pricing (pur, testé), cart, orders, stripe, auth, email, storage
-scripts/               identité, visuels concept, prompts, seed
+scripts/               logo, pack photo, photos d'ambiance, pipeline IA, visuels concept, prompts, seed
 brand/                 logotype, monogramme et déclinaisons SVG
 docs/                  direction artistique, conventions, prompts photo
 ```

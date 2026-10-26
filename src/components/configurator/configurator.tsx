@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { clsx } from "clsx";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
+import { useReducedMotion } from "@/components/motion/reduced-motion";
 import { useCart } from "@/components/cart/cart-context";
 import { QtyStepper } from "@/components/ui/qty-stepper";
 import { euros } from "@/lib/money";

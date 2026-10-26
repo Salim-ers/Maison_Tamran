@@ -9,7 +9,8 @@ export function Newsletter({ consentText }: { consentText: string }) {
     <section className="section-pad bg-ivory" aria-labelledby="nl-title">
       <div className="container-luxe grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-end">
         <div>
-          <h2 id="nl-title" className="t-display-m max-w-[16ch]">Être prévenu avant la prochaine édition</h2>
+          <p className="t-eyebrow text-bronze">La lettre de la Maison</p>
+          <h2 id="nl-title" className="mt-4 t-display-m max-w-[16ch]">Être prévenu avant la prochaine édition</h2>
           <p className="mt-5 max-w-[44ch] text-ink-soft">
             Une lettre par saison, pas davantage : les nouvelles recettes, les éditions éphémères avant leur mise en ligne, et les dates à retenir pour offrir.
           </p>
@@ -17,13 +18,13 @@ export function Newsletter({ consentText }: { consentText: string }) {
         {state.status === "ok" ? (
           <p className="border-l-2 border-bronze pl-5 t-lead" role="status">{state.message}</p>
         ) : (
-          <form action={action} className="w-full" noValidate>
+          <form action={action} className="w-full min-w-0" noValidate>
             <input type="hidden" name="source" value="accueil" />
             <div className="hidden" aria-hidden>
               <label>Ne pas remplir <input name="website" tabIndex={-1} autoComplete="off" /></label>
             </div>
             <label htmlFor="nl-email" className="field-label">Adresse email</label>
-            <div className="flex gap-0 border-b border-chocolate focus-within:border-bronze">
+            <div className="flex gap-0 border-b border-chocolate transition-colors duration-500 focus-within:border-bronze">
               <input
                 id="nl-email"
                 name="email"
@@ -32,11 +33,11 @@ export function Newsletter({ consentText }: { consentText: string }) {
                 autoComplete="email"
                 inputMode="email"
                 placeholder="prenom@exemple.fr"
-                className="min-h-14 flex-1 bg-transparent font-display text-2xl outline-none placeholder:text-ink-soft/50"
+                className="min-h-14 min-w-0 flex-1 bg-transparent font-display text-xl outline-none placeholder:text-ink-soft/50 sm:text-2xl"
                 aria-invalid={state.status === "error"}
                 aria-describedby={state.status === "error" ? "nl-error" : undefined}
               />
-              <button className="btn px-4 font-medium" disabled={pending}>{pending ? "Envoi…" : "S'inscrire"}</button>
+              <button className="btn shrink-0 px-4 font-medium transition-colors hover:text-bronze" disabled={pending}>{pending ? "Envoi…" : "S'inscrire"}</button>
             </div>
             <label className="mt-5 flex items-start gap-3 t-small text-ink-soft">
               <input type="checkbox" name="consent" required className="mt-1 size-4 shrink-0 accent-[var(--color-chocolate)]" />

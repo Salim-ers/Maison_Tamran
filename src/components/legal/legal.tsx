@@ -4,6 +4,15 @@ import { PageIntro, Prose, Provisional } from "@/components/layout/page-intro";
 export const isPlaceholder = (v: string | undefined | null) => !v || /^\s*\[.*\]\s*$/.test(v);
 
 /** Valeur issue des réglages légaux : les valeurs non renseignées (entre crochets) restent visibles et signalées. */
+/** Adresse de contact non configurée (domaine d'exemple ou valeur entre crochets). */
+export const isPlaceholderEmail = (v?: string | null) => !v || /\.example$|^\s*\[/i.test(v.trim());
+
+/** Adresse email de contact : lien si elle est configurée, mention « à compléter » sinon (jamais d'adresse inventée). */
+export function ContactEmail({ value, className }: { value?: string | null; className?: string }) {
+  if (isPlaceholderEmail(value)) return <LegalValue value={null} fallback="Adresse email de contact" />;
+  return <a href={`mailto:${value}`} className={className}>{value}</a>;
+}
+
 export function LegalValue({ value, fallback }: { value?: string | null; fallback: string }) {
   if (isPlaceholder(value)) {
     return <mark className="bg-bronze/15 px-1 text-ink">{value?.trim() || `[${fallback} à compléter]`}</mark>;

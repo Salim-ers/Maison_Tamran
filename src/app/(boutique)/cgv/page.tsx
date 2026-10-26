@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getSettings } from "@/lib/catalog";
 import { storeMode } from "@/lib/env";
-import { LegalPage, LegalValue } from "@/components/legal/legal";
+import { LegalPage, LegalValue, ContactEmail } from "@/components/legal/legal";
 
 export const metadata: Metadata = {
   title: "Conditions générales de vente",
@@ -43,7 +43,7 @@ export default async function CgvPage() {
 
       <h2 id="vendeur">2. Vendeur</h2>
       <p>
-        <LegalValue value={legal.companyName} fallback="Raison sociale" />, <LegalValue value={legal.legalForm} fallback="Forme juridique et capital" />, dont le siège est situé <LegalValue value={legal.address} fallback="Adresse du siège" />, immatriculée sous le numéro SIRET <LegalValue value={legal.siret} fallback="SIRET" /> (<LegalValue value={legal.rcs} fallback="RCS" />), TVA intracommunautaire <LegalValue value={legal.vat} fallback="N° TVA" />. Contact : <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+        <LegalValue value={legal.companyName} fallback="Raison sociale" />, <LegalValue value={legal.legalForm} fallback="Forme juridique et capital" />, dont le siège est situé <LegalValue value={legal.address} fallback="Adresse du siège" />, immatriculée sous le numéro SIRET <LegalValue value={legal.siret} fallback="SIRET" /> (<LegalValue value={legal.rcs} fallback="RCS" />), TVA intracommunautaire <LegalValue value={legal.vat} fallback="N° TVA" />. Contact : <ContactEmail value={contactEmail} />.
       </p>
 
       <h2 id="produits">3. Produits</h2>
@@ -86,7 +86,7 @@ export default async function CgvPage() {
 
       <h2 id="garanties">9. Garanties légales</h2>
       <p>
-        Le client bénéficie de la garantie légale de conformité (articles L217-3 et suivants du Code de la consommation) et de la garantie des vices cachés (articles 1641 et suivants du Code civil). En cas de produit non conforme ou défectueux, le client contacte le vendeur à l&apos;adresse <a href={`mailto:${contactEmail}`}>{contactEmail}</a> en précisant son numéro de commande.
+        Le client bénéficie de la garantie légale de conformité (articles L217-3 et suivants du Code de la consommation) et de la garantie des vices cachés (articles 1641 et suivants du Code civil). En cas de produit non conforme ou défectueux, le client contacte le vendeur à l&apos;adresse <ContactEmail value={contactEmail} /> en précisant son numéro de commande.
       </p>
 
       <h2 id="professionnels">10. Clients professionnels</h2>
@@ -99,7 +99,7 @@ export default async function CgvPage() {
 
       <h2 id="litiges">12. Réclamations et médiation</h2>
       <p>
-        Toute réclamation est adressée en priorité au vendeur à <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. À défaut de résolution amiable, et conformément aux articles L612-1 et suivants du Code de la consommation, le client peut recourir gratuitement au médiateur de la consommation suivant : <LegalValue value={legal.mediator} fallback="Médiateur de la consommation" />.
+        Toute réclamation est adressée en priorité au vendeur à <ContactEmail value={contactEmail} />. À défaut de résolution amiable, et conformément aux articles L612-1 et suivants du Code de la consommation, le client peut recourir gratuitement au médiateur de la consommation suivant : <LegalValue value={legal.mediator} fallback="Médiateur de la consommation" />.
       </p>
 
       <h2 id="droit">13. Droit applicable</h2>

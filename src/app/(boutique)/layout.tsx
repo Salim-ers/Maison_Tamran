@@ -7,10 +7,12 @@ import { DemoBanner, bannerHeight } from "@/components/layout/demo-banner";
 import { ConsentBanner, PageViewTracker } from "@/components/consent/consent";
 import { Suspense } from "react";
 import { HeaderFallback } from "@/components/layout/header-fallback";
+import { MotionProvider } from "@/components/motion/reduced-motion";
 
 export default function BoutiqueLayout({ children }: { children: React.ReactNode }) {
   return (
     <CartProvider>
+      <MotionProvider>
       <div style={{ ["--banner-h" as string]: bannerHeight() }} className="flex min-h-dvh flex-col">
         <a href="#contenu" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-cream focus:px-4 focus:py-2">
           Aller au contenu
@@ -30,6 +32,7 @@ export default function BoutiqueLayout({ children }: { children: React.ReactNode
           <PageViewTracker />
         </Suspense>
       </div>
+      </MotionProvider>
     </CartProvider>
   );
 }

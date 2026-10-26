@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion, useScroll } from "motion/react";
+import { AnimatePresence, motion, useScroll } from "motion/react";
+import { useReducedMotion } from "@/components/motion/reduced-motion";
 import { clsx } from "clsx";
 import { BrandLogo } from "@/components/brand";
 import { useCart } from "@/components/cart/cart-context";

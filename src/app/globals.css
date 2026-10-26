@@ -165,7 +165,9 @@
   border-radius: 2px;
   transition: background-color 0.4s var(--ease-luxe), color 0.4s var(--ease-luxe), border-color 0.4s var(--ease-luxe), transform 0.4s var(--ease-luxe);
   cursor: pointer;
-  white-space: nowrap;
+  max-width: 100%;
+  text-align: center;
+  text-wrap: balance; /* un libellé long passe sur deux lignes plutôt que de déborder sur petit écran */
   &:active { transform: translateY(1px); }
   &:disabled, &[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; }
 }

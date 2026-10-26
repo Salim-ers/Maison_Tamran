@@ -4,6 +4,7 @@ import { getSettings } from "@/lib/catalog";
 import { storeMode } from "@/lib/env";
 import { IconInstagram, IconLinkedin, IconPinterest } from "./icons";
 import { CookieSettingsLink } from "@/components/consent/cookie-settings-link";
+import { isPlaceholderEmail } from "@/components/legal/legal";
 
 const COLS = [
   {
@@ -43,9 +44,6 @@ const SOCIAL = [
   { key: "pinterest", label: "Pinterest", Icon: IconPinterest },
   { key: "linkedin", label: "LinkedIn", Icon: IconLinkedin },
 ] as const;
-
-/** Adresse non configurée (domaine d'exemple ou valeur entre crochets) : on ne l'affiche pas, on renvoie vers le formulaire. */
-const isPlaceholderEmail = (v: string | null | undefined) => !v || /\.example$|\[/i.test(v);
 
 export async function SiteFooter() {
   const settings = await getSettings();

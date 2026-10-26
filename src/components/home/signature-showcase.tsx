@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
+import { useReducedMotion } from "@/components/motion/reduced-motion";
 import { useRef, useState } from "react";
 import { clsx } from "clsx";
 import type { ImageRef } from "@/db/schema";

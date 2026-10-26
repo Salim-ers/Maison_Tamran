@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { isPlaceholderEmail } from "@/components/legal/legal";
 import Link from "next/link";
 import { getSettings } from "@/lib/catalog";
 import { storeMode } from "@/lib/env";
@@ -19,6 +20,7 @@ interface QA {
 }
 
 function groups(contactEmail: string): { id: string; title: string; items: QA[] }[] {
+  const reach = isPlaceholderEmail(contactEmail) ? "via le formulaire de contact" : `à ${contactEmail}`;
   return [
     {
       id: "commandes",
@@ -27,7 +29,7 @@ function groups(contactEmail: string): { id: string; title: string; items: QA[] 
         { q: "Comment passer commande ?", a: "Choisissez une création en étui, un coffret prêt à offrir ou composez votre propre coffret, puis validez votre panier. Vous pouvez commander sans créer de compte.", link: { href: "/creations", label: "Voir les créations" } },
         { q: "Quels moyens de paiement acceptez-vous ?", a: "Lorsque la boutique est ouverte à la vente, le paiement s'effectue sur la page sécurisée de notre prestataire Stripe, par carte bancaire et, selon votre appareil, Apple Pay ou Google Pay. Nous n'avons jamais accès à vos données de carte." },
         { q: "Comment suivre ma commande ?", a: "Le lien de suivi figure dans l'email de confirmation. Vous pouvez aussi retrouver vos commandes depuis votre compte, ou sur la page de suivi avec votre numéro de commande.", link: { href: "/suivi-commande", label: "Suivre une commande" } },
-        { q: "Puis-je modifier ou annuler une commande ?", a: `Écrivez-nous au plus vite à ${contactEmail} en indiquant votre numéro de commande. Tant que la commande n'est pas préparée, nous faisons notre possible pour la modifier.`, link: { href: "/contact", label: "Nous écrire" } },
+        { q: "Puis-je modifier ou annuler une commande ?", a: `Écrivez-nous au plus vite ${reach} en indiquant votre numéro de commande. Tant que la commande n'est pas préparée, nous faisons notre possible pour la modifier.`, link: { href: "/contact", label: "Nous écrire" } },
         { q: "Les recettes sont-elles toutes disponibles ?", a: "Certaines recettes portent la mention « Recette en développement » : elles sont encore en cours de mise au point et peuvent évoluer avant leur commercialisation." },
       ],
     },
@@ -47,7 +49,7 @@ function groups(contactEmail: string): { id: string; title: string; items: QA[] 
       items: [
         { q: "Comment conserver mes dattes ?", a: "Les conditions de conservation et la date de durabilité figurent sur l'étiquette de chaque coffret et sur la fiche produit. Reportez-vous à ces indications : elles priment sur toute recommandation générale." },
         { q: "Où trouver la liste des allergènes ?", a: "Chaque fiche produit indique les allergènes de la recette et la liste des ingrédients. L'étiquette du produit reçu fait foi. Nos créations contiennent du chocolat et peuvent contenir du lait, des fruits à coque, du soja, du sésame ou du gluten selon les recettes." },
-        { q: "J'ai une allergie : puis-je déguster vos créations ?", a: `Consultez la fiche de chaque recette et l'étiquette. En cas de doute, écrivez-nous à ${contactEmail} avant de commander : nous vous répondrons avec les informations dont nous disposons.` },
+        { q: "J'ai une allergie : puis-je déguster vos créations ?", a: `Consultez la fiche de chaque recette et l'étiquette. En cas de doute, écrivez-nous ${reach} avant de commander : nous vous répondrons avec les informations dont nous disposons.` },
         { q: "Les valeurs nutritionnelles sont-elles disponibles ?", a: "Elles sont publiées sur la fiche produit dès qu'elles ont été établies et validées pour la recette concernée." },
       ],
     },

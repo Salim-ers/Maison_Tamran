@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { isPlaceholderEmail } from "@/components/legal/legal";
 import Link from "next/link";
 import { getSettings } from "@/lib/catalog";
 import { PageIntro } from "@/components/layout/page-intro";
@@ -32,7 +33,7 @@ export default async function ContactPage() {
           <dl className="mt-10 space-y-8">
             <div>
               <dt className="t-small text-ink-soft">Par email</dt>
-              <dd className="mt-1 font-display text-2xl"><a href={`mailto:${settings.contactEmail}`} className="link-draw break-all">{settings.contactEmail}</a></dd>
+              <dd className="mt-1 font-display text-2xl">{isPlaceholderEmail(settings.contactEmail) ? <span className="text-xl">Par le formulaire ci-contre</span> : <a href={`mailto:${settings.contactEmail}`} className="link-draw break-all">{settings.contactEmail}</a>}</dd>
             </div>
             <div>
               <dt className="t-small text-ink-soft">Un projet professionnel</dt>

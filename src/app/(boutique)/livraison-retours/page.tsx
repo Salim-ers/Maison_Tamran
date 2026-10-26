@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ContactEmail } from "@/components/legal/legal";
 import Link from "next/link";
 import { getContent, getSettings } from "@/lib/catalog";
 import { getActiveShippingRates } from "@/lib/public-data";
@@ -95,7 +96,7 @@ export default async function LivraisonPage() {
                 <li>Vérifiez le colis en présence du livreur lorsque c&apos;est possible.</li>
                 <li>Photographiez l&apos;emballage extérieur, le coffret et son contenu.</li>
                 <li>
-                  Écrivez-nous à <a href={`mailto:${settings.contactEmail}`}>{settings.contactEmail}</a> ou via le <Link href="/contact">formulaire de contact</Link>, avec votre numéro de commande et les photos.
+                  Écrivez-nous à <ContactEmail value={settings.contactEmail} /> ou via le <Link href="/contact">formulaire de contact</Link>, avec votre numéro de commande et les photos.
                 </li>
               </ol>
               <p>

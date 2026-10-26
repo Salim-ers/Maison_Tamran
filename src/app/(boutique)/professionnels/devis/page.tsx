@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { isPlaceholderEmail } from "@/components/legal/legal";
 import { Suspense } from "react";
 import { getBoxes, getCatalog, getSettings } from "@/lib/catalog";
 import { PRO_SEGMENT_VALUES } from "@/lib/segments";
@@ -16,7 +17,7 @@ async function loadOptions() {
   const [{ products }, boxes, settings] = await Promise.all([getCatalog(), getBoxes(), getSettings()]);
   const recipes: QuoteOption[] = products.map((p) => ({ ref: p.slug, name: p.name, detail: `${CHOCOLATE_LABELS[p.chocolate as ChocolateKind] ?? p.chocolate}, ${p.pairing.charAt(0).toLowerCase()}${p.pairing.slice(1)}` }));
   const boxOpts: QuoteOption[] = boxes.map((b) => ({ ref: b.slug, name: b.name, detail: b.pieces ? `${b.pieces} pièces` : "Format sur mesure" }));
-  return { recipes, boxes: boxOpts, contactEmail: settings.contactEmail };
+  return { recipes, boxes: boxOpts, contactEmail: isPlaceholderEmail(settings.contactEmail) ? null : settings.contactEmail };
 }
 
 /** Lit le segment présélectionné dans l'URL (sous Suspense : donnée liée à la requête). */

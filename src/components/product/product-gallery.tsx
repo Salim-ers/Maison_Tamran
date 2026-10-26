@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
+import { useReducedMotion } from "@/components/motion/reduced-motion";
 import { clsx } from "clsx";
 import type { ImageRef } from "@/db/schema";
 import { ConceptBadge } from "@/components/ui/media";

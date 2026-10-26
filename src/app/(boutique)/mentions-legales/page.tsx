@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getSettings } from "@/lib/catalog";
 import { siteUrl } from "@/lib/env";
-import { LegalPage, LegalValue } from "@/components/legal/legal";
+import { LegalPage, LegalValue, ContactEmail } from "@/components/legal/legal";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
@@ -34,7 +34,7 @@ export default async function MentionsLegalesPage() {
           <tr><th scope="row">SIRET</th><td><LegalValue value={legal.siret} fallback="SIRET" /></td></tr>
           <tr><th scope="row">RCS</th><td><LegalValue value={legal.rcs} fallback="RCS" /></td></tr>
           <tr><th scope="row">TVA intracommunautaire</th><td><LegalValue value={legal.vat} fallback="N° TVA intracommunautaire" /></td></tr>
-          <tr><th scope="row">Email</th><td><a href={`mailto:${contactEmail}`}>{contactEmail}</a></td></tr>
+          <tr><th scope="row">Email</th><td><ContactEmail value={contactEmail} /></td></tr>
         </tbody>
       </table>
       <p>MAISON TAMRĀN est la marque commerciale exploitée par l&apos;éditeur.</p>
@@ -58,7 +58,7 @@ export default async function MentionsLegalesPage() {
 
       <h2 id="contact">Contact</h2>
       <p>
-        Pour toute question relative au site, écrivez à <a href={`mailto:${contactEmail}`}>{contactEmail}</a> ou utilisez le <Link href="/contact">formulaire de contact</Link>. Le traitement de vos données personnelles est décrit dans la <Link href="/confidentialite">politique de confidentialité</Link>.
+        Pour toute question relative au site, écrivez à <ContactEmail value={contactEmail} /> ou utilisez le <Link href="/contact">formulaire de contact</Link>. Le traitement de vos données personnelles est décrit dans la <Link href="/confidentialite">politique de confidentialité</Link>.
       </p>
     </LegalPage>
   );

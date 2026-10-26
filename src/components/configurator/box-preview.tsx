@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
+import { useReducedMotion } from "@/components/motion/reduced-motion";
 import { clsx } from "clsx";
 import { BrandLogo } from "@/components/brand";
 

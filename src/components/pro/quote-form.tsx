@@ -37,7 +37,7 @@ function Section({ n, title, children, hint }: { n: number; title: string; child
   );
 }
 
-export function QuoteForm({ recipes, boxes, initialSegment, contactEmail }: { recipes: QuoteOption[]; boxes: QuoteOption[]; initialSegment: string; contactEmail: string }) {
+export function QuoteForm({ recipes, boxes, initialSegment, contactEmail }: { recipes: QuoteOption[]; boxes: QuoteOption[]; initialSegment: string; contactEmail: string | null }) {
   const [state, action, pending] = useActionState<QuoteState, FormData>(submitQuote, { status: "idle" });
   const [qty, setQty] = useState<Record<string, string>>({});
   const [upload, setUpload] = useState<Upload>({ status: "idle" });
@@ -318,7 +318,7 @@ export function QuoteForm({ recipes, boxes, initialSegment, contactEmail }: { re
         <FieldError id={`${uid}-consent-err`} msg={err.consent} />
         <div className="mt-8 flex flex-wrap items-center gap-6">
           <button className="btn btn-primary" disabled={pending || upload.status === "uploading"}>{pending ? "Envoi en cours…" : "Envoyer ma demande"}</button>
-          <p className="t-small text-ink-soft">Une question avant d&apos;envoyer ? <a href={`mailto:${contactEmail}`} className="link-draw text-ink">{contactEmail}</a></p>
+          {contactEmail && <p className="t-small text-ink-soft">Une question avant d&apos;envoyer ? <a href={`mailto:${contactEmail}`} className="link-draw text-ink">{contactEmail}</a></p>}
         </div>
         {state.status === "error" && <p className={clsx("mt-4 t-small text-danger")}>{state.message}</p>}
       </div>
