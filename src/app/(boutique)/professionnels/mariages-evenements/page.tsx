@@ -20,7 +20,7 @@ export default async function MariagesEvenementsPage() {
       href="/professionnels/mariages-evenements"
       segment="mariage"
       ctaLabel="Demander un devis pour mon événement"
-      heroImage="a:art-de-recevoir"
+      heroImage="a:riad-lumiere"
       sideImage="a:rose"
       formats={[
         { name: "Mini-coffret", text: "Deux ou trois pièces, à poser à chaque couvert ou à remettre au départ des invités." },

@@ -110,10 +110,10 @@ export default async function MaisonPage() {
                 </dl>
               </div>
               <div className="relative lg:col-span-8 lg:col-start-5 lg:-mr-[var(--gutter)]">
-                <div className="relative grid aspect-[20/11] grid-cols-3 gap-2 overflow-hidden">
+                <div className="relative grid max-w-[50rem] grid-cols-3 gap-2 overflow-hidden">
                   {hearts.map((h, k) => (
-                    <RevealImage key={h.name} className="h-full" from="bottom" parallax={4 + k * 2}>
-                      <Image src={h.img.url} alt={h.img.alt} fill sizes="(min-width: 1024px) 21vw, 33vw" quality={75} className="object-cover" />
+                    <RevealImage key={h.name} className="aspect-[412/495]" from="bottom" parallax={2 + k}>
+                      <Image src={h.img.url} alt={h.img.alt} fill sizes="(min-width: 1024px) 21vw, 33vw" quality={85} className="object-cover" />
                       <span className="absolute bottom-2 left-3 t-micro text-ivory [text-shadow:0_1px_2px_rgba(0,0,0,.6)]">{h.name}</span>
                     </RevealImage>
                   ))}
@@ -174,7 +174,7 @@ export default async function MaisonPage() {
 
       {/* Histoire à écrire */}
       <section className="on-dark relative overflow-hidden section-pad" aria-labelledby="histoire-title">
-        <BrandLogo variant="mark" tone="light" height={733} alt="" className="pointer-events-none absolute -right-16 top-1/2 h-[115%] -translate-y-1/2 opacity-[0.08] max-lg:hidden" />
+        <BrandLogo variant="mark" tone="light" height={733} alt="" className="pointer-events-none absolute -right-16 top-1/2 h-[min(115%,520px)] -translate-y-1/2 opacity-[0.08] max-lg:hidden" />
         <div className="container-luxe relative grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <h2 id="histoire-title" className="t-display-l">{h.title}</h2>

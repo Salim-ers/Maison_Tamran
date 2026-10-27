@@ -405,7 +405,7 @@
 /* Tirage à sa définition réelle : --nat = largeur native (px) ; jamais plus de ×1,5 en pixels physiques */
 .native-cap { width: min(78%, calc(var(--nat) * 1px)); }
 @media (min-resolution: 1.6dppx) {
-  .native-cap { width: min(78%, calc(var(--nat) * 0.75px)); }
+  .native-cap { width: min(78%, calc(var(--nat) * 0.72px)); }
 }
 @media (min-resolution: 2.6dppx) {
   .native-cap { width: min(78%, calc(var(--nat) * 0.5px)); }

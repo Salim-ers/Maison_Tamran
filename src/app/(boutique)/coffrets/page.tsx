@@ -28,7 +28,8 @@ const STEPS = [
 export default async function CoffretsPage() {
   const [boxes, { products }, settings] = await Promise.all([getBoxes(), getCatalog(), getSettings()]);
   const nameOf = (slug: string) => products.find((p) => p.slug === slug)?.name ?? slug;
-  const thumb = (p: (typeof products)[number]) => (p.images.find((x) => x.role === "cut") ?? p.images[0])?.url;
+  // vue complète (≈ 412 px) : les alvéoles des grands schémas dépassent la définition des recadrages du cœur
+  const thumb = (p: (typeof products)[number]) => (p.images.find((x) => x.role === "main") ?? p.images[0])?.url;
   const thumbs = products.filter((p) => p.collectionSlug === "signature").map(thumb).filter((u): u is string => Boolean(u));
   const ephemeralThumbs = products.filter((p) => p.collectionSlug === "ephemere").map(thumb).filter((u): u is string => Boolean(u));
   const coffret = concept("coffret-1");

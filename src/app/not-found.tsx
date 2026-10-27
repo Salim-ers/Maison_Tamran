@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <main className="on-dark grain relative isolate flex min-h-dvh flex-col overflow-hidden">
-      <BrandLogo variant="mark" tone="light" height={733} alt="" className="pointer-events-none absolute -right-[12vw] top-1/2 -z-10 h-[120vh] -translate-y-1/2 opacity-[0.07] max-md:-right-[40vw]" />
+      <BrandLogo variant="mark" tone="light" height={733} alt="" className="pointer-events-none absolute -right-[12vw] top-1/2 -z-10 h-[min(120vh,540px)] -translate-y-1/2 opacity-[0.07] max-md:-right-[40vw]" />
       <header className="container-luxe flex h-[var(--header-h)] items-center">
         <Link href="/" aria-label="MAISON TAMRĀN, accueil" className="flex items-center gap-3">
           <BrandLogo variant="lockup" tone="light" height={56} alt="" className="h-14" />

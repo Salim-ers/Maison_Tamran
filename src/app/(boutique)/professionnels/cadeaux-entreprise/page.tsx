@@ -20,8 +20,8 @@ export default async function CadeauxEntreprisePage() {
       href="/professionnels/cadeaux-entreprise"
       segment="entreprise"
       ctaLabel="Demander un devis entreprise"
-      heroImage="coffret-1"
-      sideImage="a:art-de-recevoir"
+      heroImage="a:art-de-recevoir"
+      sideImage="coffret-1"
       formats={[
         { name: "Coffret Découverte", text: "Six pièces : l'attention juste pour un large envoi." },
         { name: "Coffret Signature", text: "Douze pièces : le cadeau de fin d'année par excellence." },

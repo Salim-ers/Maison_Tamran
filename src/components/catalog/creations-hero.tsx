@@ -41,14 +41,14 @@ export function CreationsHero({ title, subtitle, crumbs, items, children }: { ti
       <div className="relative mt-[clamp(3rem,6vw,5rem)] overflow-hidden pb-[clamp(3rem,6vw,5rem)]">
         <ul className="anim-marquee flex w-max gap-4 [--marquee-duration:80s] md:gap-6" aria-label="Les créations">
           {loop.map((it, i) => (
-            <li key={`${it.slug}-${i}`} className="anim-fade-up w-[58vw] shrink-0 sm:w-[34vw] lg:w-[21vw]" style={{ animationDelay: `${0.5 + (i % items.length) * 0.07}s` }} aria-hidden={i >= items.length || undefined}>
+            <li key={`${it.slug}-${i}`} className="anim-fade-up w-[46vw] shrink-0 sm:w-[30vw] lg:w-[min(19vw,17.5rem)]" style={{ animationDelay: `${0.5 + (i % items.length) * 0.07}s` }} aria-hidden={i >= items.length || undefined}>
               <Link href={`/creations/${it.slug}`} className="group relative block aspect-[4/5] overflow-hidden" tabIndex={i >= items.length ? -1 : undefined}>
                 {it.image && (
                   <Image
                     src={it.image.url}
                     alt={i >= items.length ? "" : it.image.alt}
                     fill
-                    sizes="(min-width: 1024px) 21vw, (min-width: 640px) 34vw, 58vw"
+                    sizes="(min-width: 1024px) 280px, (min-width: 640px) 30vw, 46vw"
                     quality={75}
                     placeholder={it.image.blur ? "blur" : "empty"}
                     blurDataURL={it.image.blur}
