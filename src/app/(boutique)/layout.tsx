@@ -9,6 +9,7 @@ import { Suspense } from "react";
 import { HeaderFallback } from "@/components/layout/header-fallback";
 import { MotionProvider } from "@/components/motion/reduced-motion";
 import { IntroGate } from "@/components/home/intro-curtain";
+import { ViewTransitionsListener } from "@/components/motion/transition-link";
 
 export default function BoutiqueLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -30,6 +31,9 @@ export default function BoutiqueLayout({ children }: { children: React.ReactNode
         <CartNotice />
         <ConsentBanner />
         <IntroGate />
+        <Suspense fallback={null}>
+          <ViewTransitionsListener />
+        </Suspense>
         <Suspense fallback={null}>
           <PageViewTracker />
         </Suspense>

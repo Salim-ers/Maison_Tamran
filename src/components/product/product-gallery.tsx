@@ -49,7 +49,7 @@ function CreationView({ image, loupe, priority }: { image: ImageRef; loupe: bool
         animate={{ scale: on ? LOUPE : 1 }}
         transition={{ duration: on ? 0.6 : 1.3, ease: EASE }}
       >
-        <Image src={image.url} alt={image.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" quality={85} preload={priority} placeholder={image.blur ? "blur" : "empty"} blurDataURL={image.blur} className="object-cover" />
+        <Image src={image.url} alt={image.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" quality={85} preload={priority} fetchPriority={priority ? "high" : "auto"} loading={priority ? "eager" : "lazy"} placeholder={image.blur ? "blur" : "empty"} blurDataURL={image.blur} className="object-cover" />
       </motion.div>
     </div>
   );
@@ -60,7 +60,7 @@ function CreationView({ image, loupe, priority }: { image: ImageRef; loupe: bool
  * parcourir à la loupe, puis les ingrédients de la recette. Transitions par rideau, glissement au doigt,
  * flèches du clavier.
  */
-export function ProductGallery({ images, name, stages }: { images: ImageRef[]; name: string; stages: StagePhoto[] }) {
+export function ProductGallery({ images, name, stages, slug }: { images: ImageRef[]; name: string; stages: StagePhoto[]; slug?: string }) {
   const reduce = useReducedMotion();
   const main = images.find((i) => i.role === "main") ?? images[0];
   const cut = images.find((i) => i.role === "cut");
@@ -81,8 +81,10 @@ export function ProductGallery({ images, name, stages }: { images: ImageRef[]; n
 
   return (
     <div className="lg:sticky lg:top-[calc(var(--header-h)+var(--banner-h)+1.5rem)]">
+      {/* même nom que la photo de la carte du catalogue : l'image glisse d'une page à l'autre */}
       <div
         className="relative aspect-[4/5] touch-pan-y overflow-hidden bg-chocolate"
+        style={slug && i === 0 ? { viewTransitionName: `creation-${slug}`, ["viewTransitionClass" as string]: "morph" } : undefined}
         onKeyDown={(e) => {
           if (e.key === "ArrowRight") go(i + 1);
           if (e.key === "ArrowLeft") go(i - 1);
@@ -148,8 +150,8 @@ export function ProductGallery({ images, name, stages }: { images: ImageRef[]; n
       {views.length > 1 && (
         <div className="no-scrollbar mt-3 flex gap-3 overflow-x-auto" role="tablist" aria-label={`Vues de ${name}`}>
           {views.map((v, k) => (
-            <button key={v.key} role="tab" aria-selected={k === i} onClick={() => go(k)} className={clsx("group relative w-24 shrink-0 text-left outline-offset-2 transition-opacity", k === i ? "opacity-100" : "opacity-60 hover:opacity-100")}>
-              <span className="relative block aspect-square overflow-hidden bg-chocolate">
+            <button key={v.key} role="tab" aria-selected={k === i} onClick={() => go(k)} className="group relative w-24 shrink-0 text-left outline-offset-2">
+              <span className={clsx("relative block aspect-square overflow-hidden bg-chocolate transition-opacity", k === i ? "opacity-100" : "opacity-60 group-hover:opacity-100")}>
                 <Image src={v.kind === "photo" ? v.photo.url : v.image.url} alt="" fill sizes="96px" quality={75} className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </span>
               <span className="mt-2 block truncate t-micro text-ink-soft">{v.label}</span>

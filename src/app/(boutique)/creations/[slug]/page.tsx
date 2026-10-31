@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { TransitionLink } from "@/components/motion/transition-link";
+
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCatalog, getProduct } from "@/lib/catalog";
@@ -12,7 +14,7 @@ import { ambiance } from "@/lib/ambiance";
 import { FadeIn } from "@/components/motion/reveal";
 import { Breadcrumbs, Provisional } from "@/components/layout/page-intro";
 import { ProductGallery, type StagePhoto } from "@/components/product/product-gallery";
-import { CREATION_STAGE, INGREDIENT_LABEL, INGREDIENT_PHOTO } from "@/lib/creation-visuals";
+import { ACCORDS, CREATION_STAGE, INGREDIENT_LABEL, INGREDIENT_PHOTO } from "@/lib/creation-visuals";
 import { BuyBox } from "@/components/product/buy-box";
 import { ProductCard } from "@/components/product/product-card";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -77,6 +79,16 @@ async function ProductView({ params }: { params: Promise<{ slug: string }> }) {
   const p = products.find((x) => x.slug === slug);
   if (!p) notFound();
   const related = products.filter((x) => x.slug !== p.slug && x.collectionSlug === p.collectionSlug).slice(0, 3);
+  // créations voisines dans l'ordre de la maison (boucle de la dixième à la première)
+  const ordered = [...products].sort((a, b) => a.number - b.number);
+  const at = ordered.findIndex((x) => x.slug === p.slug);
+  const neighbour = (k: number) => {
+    const n = ordered[(at + k + ordered.length) % ordered.length];
+    return n && n.slug !== p.slug ? { slug: n.slug, name: n.name, pairing: n.pairing, main: n.images.find((i) => i.role === "main") ?? null } : null;
+  };
+  const prev = neighbour(-1);
+  const next = neighbour(1);
+  const accords = ACCORDS[p.slug] ?? [];
   // ingrédients de la recette illustrés par les photographies d'ambiance disponibles
   const recipe = RECIPES.find((r) => r.slug === p.slug);
   const ingredientTiles = (recipe?.ingredients ?? []).flatMap((ing: Ingredient) => {
@@ -126,8 +138,9 @@ async function ProductView({ params }: { params: Promise<{ slug: string }> }) {
         <Breadcrumbs items={[{ href: "/creations", label: "Créations" }, { href: `/collections/${p.collectionSlug}`, label: p.collectionName }, { href: `/creations/${p.slug}`, label: p.name }]} />
       </div>
 
+
       <div className="container-luxe mt-8 grid gap-12 pb-[var(--section)] lg:grid-cols-[1.05fr_1fr] lg:gap-20">
-        <ProductGallery images={p.images} name={p.name} stages={stages} />
+        <ProductGallery images={p.images} name={p.name} stages={stages} slug={p.slug} />
 
         <div className="lg:pt-6">
           <p className="flex flex-wrap items-center gap-x-4 gap-y-2 t-small text-ink-soft">
@@ -173,6 +186,20 @@ async function ProductView({ params }: { params: Promise<{ slug: string }> }) {
                 </li>
               ))}
             </ol>
+          )}
+
+          {accords.length > 0 && (
+            <div className="mt-10 flex flex-wrap items-baseline gap-x-6 gap-y-2 border-y hairline py-5">
+              <p className="t-eyebrow text-bronze">Accords suggérés</p>
+              <ul className="flex flex-wrap gap-x-5 gap-y-1 t-small text-ink-soft">
+                {accords.map((a) => (
+                  <li key={a} className="flex items-center gap-2">
+                    <span aria-hidden className="size-1.5 rotate-45" style={{ background: "var(--accent)" }} />
+                    {a}
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
 
           <div className="mt-12 border-t hairline">
@@ -225,6 +252,28 @@ async function ProductView({ params }: { params: Promise<{ slug: string }> }) {
           )}
         </div>
       </div>
+
+      {/* créations voisines : on passe de l'une à l'autre comme on tourne une page */}
+      <nav aria-label="Créations voisines" className="grid border-t hairline sm:grid-cols-2">
+        {([[prev, "Création précédente", "nav-back"], [next, "Création suivante", "nav-forward"]] as const).map(([n, label, type], k) =>
+          n ? (
+            <TransitionLink
+              key={n.slug}
+              href={`/creations/${n.slug}`}
+              direction={type}
+              className={`group relative flex min-h-[15rem] items-end overflow-hidden bg-chocolate p-[var(--gutter)] text-ivory ${k === 1 ? "sm:justify-end sm:text-right" : ""}`}
+            >
+              {n.main && <Image src={n.main.url} alt="" fill sizes="(min-width: 640px) 50vw, 100vw" quality={70} className="object-cover opacity-55 transition-[opacity,transform] duration-[1.2s] ease-[var(--ease-luxe)] group-hover:scale-105 group-hover:opacity-75" />}
+              <span aria-hidden className="absolute inset-0 bg-[linear-gradient(0deg,rgba(20,12,9,.85),transparent_65%)]" />
+              <span className="relative">
+                <span className="block t-micro tracking-[0.16em] text-gold">{k === 0 ? "← " : ""}{label.toUpperCase()}{k === 1 ? " →" : ""}</span>
+                <span className="mt-2 block font-display text-[clamp(1.8rem,3vw,2.8rem)] leading-tight">{n.name}</span>
+                <span className="block t-small text-ivory/70">{n.pairing}</span>
+              </span>
+            </TransitionLink>
+          ) : null,
+        )}
+      </nav>
 
       {ingredientTiles.length > 0 && (
         <section className="on-dark py-[var(--section)]" aria-labelledby="ingredients-title">

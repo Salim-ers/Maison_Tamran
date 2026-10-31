@@ -80,6 +80,8 @@ export function SiteHeader() {
           transparent ? "bg-transparent text-ivory" : menu ? "bg-chocolate text-ivory" : "bg-ivory/92 text-ink shadow-[0_1px_0_var(--color-line)] backdrop-blur-md",
           hidden && !reduce ? "-translate-y-[calc(100%+var(--banner-h,0px))]" : "translate-y-0"
         )}
+        // immobile pendant les transitions de page (voir globals.css)
+        style={{ viewTransitionName: "site-header" }}
       >
         {!transparent && !menu && (
           <motion.span aria-hidden style={{ scaleX: scrollYProgress }} className="pointer-events-none absolute inset-x-0 bottom-0 h-px origin-left bg-gold/70" />

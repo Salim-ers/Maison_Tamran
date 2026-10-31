@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { TransitionLink } from "@/components/motion/transition-link";
 import Image from "next/image";
 import { clsx } from "clsx";
 import type { ImageRef } from "@/db/schema";
@@ -35,7 +35,10 @@ export function ProductCard({ p, tone = "light", className, sizes = "(min-width:
     <article className={clsx("group relative", className)}>
       <div className="relative aspect-[4/5] overflow-hidden bg-chocolate">
         {p.main && (
-          <Image src={p.main.url} alt={p.main.alt} fill sizes={sizes} quality={85} placeholder={p.main.blur ? "blur" : "empty"} blurDataURL={p.main.blur} className="object-cover transition-transform duration-[1.6s] ease-[var(--ease-luxe)] group-hover:scale-[1.06]" />
+          // la photo devient celle de la fiche produit pendant la navigation (nom posé au clic par TransitionLink)
+          <div className="absolute inset-0" data-vt-name={`creation-${p.slug}`} style={{ ["viewTransitionClass" as string]: "morph" }}>
+            <Image src={p.main.url} alt={p.main.alt} fill sizes={sizes} quality={85} placeholder={p.main.blur ? "blur" : "empty"} blurDataURL={p.main.blur} className="object-cover transition-transform duration-[1.6s] ease-[var(--ease-luxe)] group-hover:scale-[1.06]" />
+          </div>
         )}
         {p.cut && (
           <Image src={p.cut.url} alt="" aria-hidden fill sizes={sizes} quality={80} className="scale-[1.12] object-cover opacity-0 transition-[opacity,transform] duration-[1.1s] ease-[var(--ease-luxe)] group-hover:scale-100 group-hover:opacity-100 max-lg:hidden" />
@@ -58,9 +61,9 @@ export function ProductCard({ p, tone = "light", className, sizes = "(min-width:
             {p.collectionName.replace("Collection ", "")} N° {p.number}
           </p>
           <h3 className="mt-1 t-title">
-            <Link href={`/creations/${p.slug}`} className="after:absolute after:inset-0 after:z-[1] focus-visible:outline-none">
+            <TransitionLink href={`/creations/${p.slug}`} className="after:absolute after:inset-0 after:z-[1] focus-visible:outline-none">
               {p.name}
-            </Link>
+            </TransitionLink>
           </h3>
           <p className={clsx("mt-2 t-small max-w-[32ch]", tone === "dark" ? "text-taupe" : "text-ink-soft")}>{p.pairing}</p>
         </div>
