@@ -164,7 +164,8 @@ async function publish(ids: string[]) {
       logoNote = " Logo officiel (public/brand/maison-tamran-logo-ivory.png) composé en perspective, jamais dessiné par le modèle.";
     }
     const src = sharp(original);
-    const resized = v.width > shot.publishWidth ? src.resize({ width: shot.publishWidth, kernel: "lanczos3" }) : src;
+    const sized = v.width > shot.publishWidth ? src.resize({ width: shot.publishWidth, kernel: "lanczos3" }) : src;
+    const resized = shot.sharpen ? sized.sharpen({ sigma: 1, m1: 0.7, m2: 2 }) : sized;
     const buf = await resized.webp({ quality: 86, alphaQuality: 90, effort: 6, smartSubsample: true }).toBuffer();
     const url = `${PUBLIC_DIR}/${shot.group}/${id}-${createHash("sha1").update(buf).digest("hex").slice(0, 8)}.webp`;
     const out = path.join(ROOT, "public", url);

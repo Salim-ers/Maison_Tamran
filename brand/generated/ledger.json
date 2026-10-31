@@ -1,5 +1,5 @@
 {
-  "totalUsd": 15.3411,
+  "totalUsd": 15.4709,
   "lines": [
     {
       "id": "produit-or-de-marrakech",
@@ -1220,6 +1220,16 @@
       "outputTokens": 3912,
       "costUsd": 0.1302,
       "at": "2026-10-31T18:09:11.698Z"
+    },
+    {
+      "id": "amb-palmeraie",
+      "key": "fa9199e7b616",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.1298,
+      "at": "2026-10-31T19:16:48.183Z"
     }
   ]
 }

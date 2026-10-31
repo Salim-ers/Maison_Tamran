@@ -17,6 +17,7 @@ Tous sont des **visuels conceptuels** : ils sont signalés « Visuel conceptuel 
 
 - **Définition native 4K** : chaque image est générée directement à sa taille (jusqu'à 8,3 Mpx : 3840 × 2160, 2448 × 3072, 2880 × 2880, 3264 × 2448, 3504 × 2336) et publiée sans réduction ; `next/image` en sert des déclinaisons AVIF / WebP adaptées à chaque écran. Aucun agrandissement numérique.
 - **Passage en 4K (2026-10-31)** : les visuels validés en définition inférieure (produits, macros, pièces détourées, coffrets vides, formats, étapes) ont été refaits à partir de leur original retenu, envoyé comme dernière image de référence (mêmes cadrage, objets, couleurs et lumière ; détail plus fin). Ces originaux sont gelés dans `scripts/images/openai-shots.ts` (`MASTERS`) et protégés de `prune`. Les grilles d'alvéoles du configurateur ont été vérifiées sur les nouveaux coffrets vides (aucun décalage). Les vingt photographies d'ambiance libres de droits, floues une fois agrandies, sont remplacées par des prises de vue générées (`amb-*`), la photo d'origine n'indiquant que le sujet ; `coffret-1` (photographie de référence 1448 px) est servi par `coffret-signature`. Coût de ce passage : 9,05 $ (59 images).
+- **Palmeraie de la page Maison** : refaite avec une mise au point sur toute la profondeur (palmes nettes jusqu'au fond, demandée explicitement) et légèrement accentuée à la publication (`sharpen` dans `openai-shots.ts`), car elle s'affiche en bandeau plein cadre. La page la sert désormais en 3200 px, qualité 85, avec un effet de parallaxe réduit (agrandissement 1,08 au lieu de 1,18). 0,13 $.
 - **Logo** : jamais demandé au modèle. Sur `coffret-ferme`, le logo officiel est composé en perspective au moment de la publication (`scripts/images/lid.ts`).
 - **Fidélité** : chaque prompt part de la case de la création sur la planche validée et décrit la recette enregistrée. Minuit à Kyoto, Ébène Salé et Rose de Nuit ont été régénérées après une première version qui montrait des fruits à coque absents de leur composition.
 - **Assortiments** (`coffret-ouvert`, formats, univers) : créations reconnaissables de la gamme, sans valeur de composition réelle d'un coffret.
@@ -93,7 +94,7 @@ Tous sont des **visuels conceptuels** : ils sont signalés « Visuel conceptuel 
 | `amb-palmeraie-maroc` | 3504 × 2336 | 3504 × 2336 | Notre Maison |
 | `amb-riad-soleil` | 3504 × 2336 | 3504 × 2336 | Notre Maison |
 
-122 générations facturées, 15.34 USD au total (brand/generated/ledger.json).
+123 générations facturées, 15.47 USD au total (brand/generated/ledger.json).
 
 ## Commandes
 

@@ -533,7 +533,7 @@
     }
   },
   "amb-palmeraie": {
-    "current": "444df6244107",
+    "current": "fa9199e7b616",
     "versions": [
       {
         "key": "444df6244107",
@@ -563,14 +563,43 @@
         "costUsd": 0.1295,
         "ms": 38057,
         "generatedAt": "2026-10-31T18:06:19.841Z"
+      },
+      {
+        "key": "fa9199e7b616",
+        "file": "brand/generated/amb-palmeraie/fa9199e7b616.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "3504x2336",
+        "width": 3504,
+        "height": 2336,
+        "prompt": "Image 1 sets the subject and the mood only: create a new, original photograph, not a copy of it. Wide landscape photograph of a date palm grove rising from golden sand dunes under a clear deep-blue sky, warm late-afternoon light, long soft shadows on the sand, no buildings. Tack-sharp landscape photograph shot at f/11 with a high-resolution full-frame camera: deep depth of field, every palm frond and leaflet crisply defined from foreground to background, fine sand ripples visible, no haze, no motion blur, no painterly or smoothed texture. Editorial photography for a luxury French confectionery house, natural colours, crisp detail, rich warm grade. No people, no hands, no text, no letters, no logo.",
+        "refs": [
+          "brand/source/stock/palmeraie__v9MYNk3HMeM.jpg@1536"
+        ],
+        "usage": {
+          "input_tokens": 1621,
+          "input_tokens_details": {
+            "image_tokens": 1452,
+            "text_tokens": 169
+          },
+          "output_tokens": 3912,
+          "output_tokens_details": {
+            "image_tokens": 3912,
+            "text_tokens": 0
+          },
+          "total_tokens": 5533
+        },
+        "costUsd": 0.1298,
+        "ms": 37069,
+        "generatedAt": "2026-10-31T19:16:48.183Z"
       }
     ],
     "published": {
-      "key": "444df6244107",
-      "url": "/images/generated/ambiance/amb-palmeraie-70d812e7.webp",
+      "key": "fa9199e7b616",
+      "url": "/images/generated/ambiance/amb-palmeraie-5f7586ca.webp",
       "w": 3504,
       "h": 2336,
-      "at": "2026-10-31T18:11:42.270Z"
+      "at": "2026-10-31T19:17:11.595Z"
     }
   },
   "amb-palmeraie-maroc": {

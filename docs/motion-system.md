@@ -24,7 +24,7 @@ Motion 14 (déjà présent) : `useScroll`, `useTransform`, `useSpring`, `Animate
 
 | Séquence | Mouvement |
 | --- | --- |
-| Ouverture | Fond cacao ; le logo officiel se révèle par un masque qui monte (le tronc du T puis les palmes) ; reflet doré masqué à la forme du logo ; le rideau se lève (2,5 s, « Passer » toujours disponible, une fois par session, seulement si la session commence sur l'accueil). |
+| Ouverture | Fond cacao ; le logo officiel se révèle par un masque qui monte (le tronc du T puis les palmes) ; reflet doré masqué à la forme du logo ; le logo s'éloigne et se voile, puis le fond se dissout en fondu sur le coffret qui s'éclaire (2,45 s, « Passer » toujours disponible, une fois par session, seulement si la session commence sur l'accueil). Plus de rideau qui se lève en coupant le logo. |
 | Hero (190 svh) | Lever de soleil sur la table ; titre ligne à ligne, mot clé en or qui s'illumine ; lumière qui dérive (14 s) ; au défilement, le couvercle (polygone mesuré) se soulève, pivote, quitte le cadre ; la photo fermée s'efface sur la photo ouverte (même cadrage) ; la caméra s'approche ×1,7 ; second titre. |
 | En-tête | Aucun mouvement d'une page à l'autre : barre de hauteur constante, sans changement de taille, de couleur ni de position (pas de masquage au défilement) ; seul le soulignement doré de la rubrique active glisse (ressort) vers la nouvelle rubrique ; menus déroulants en fondu et léger glissement (0,28 s) ; filet doré de progression de lecture. |
 | De la palmeraie à la création | Section non épinglée : les quatre étapes montent l'une après l'autre à l'entrée dans l'écran (décalage 0,09 s) ; zoom lent au survol. |
@@ -32,7 +32,7 @@ Motion 14 (déjà présent) : `useScroll`, `useTransform`, `useSpring`, `Animate
 | Configurateur | La pièce détourée quitte la carte et rejoint son alvéole en arc ; anneau doré à l'atterrissage ; pièce sélectionnée auréolée ; reflet doré et badge « Votre coffret est prêt » à la complétion ; prix qui défile. |
 | Cartes produit | Zoom lent ; bascule sur la macro du cœur ; filet doré qui apparaît. |
 | Fiche produit | Rideau entre les vues ; loupe qui suit le pointeur sur la macro (×1,7, dans la définition de l'image). |
-| Transitions de page | Du catalogue à la fiche : la photo de la création cliquée glisse de sa carte au cadre de la fiche (morphose), le reste de la page part vers la gauche, l'en-tête reste immobile. D'une création à la suivante ou à la précédente : glissement dans le sens de la navigation. |
+| Transitions de page | À chaque changement de page par un lien du site (en-tête, menus, pied de page, boutons) : l'ancienne page s'efface en remontant légèrement et se voile, la nouvelle se lève à sa place (0,8 s) ; l'en-tête ne bouge pas. Du catalogue à la fiche : la photo de la création cliquée glisse en plus de sa carte au cadre de la fiche (morphose). D'une création à la suivante ou à la précédente : glissement dans le sens de la navigation. Retour arrière et avancer : la nouvelle page apparaît en fondu. |
 | Ouvertures des pages éditoriales | Maison, Savoir-faire, Professionnels : photographie plein cadre (verticale sur mobile) qui recule et s'éclaire au chargement, puis glisse en parallaxe. |
 | Les coffrets (accueil) | Le coffret du format choisi se redessine ; la pièce détourée vole de sa carte à sa caissette ; compteur et nom du format avec son prix. |
 
@@ -46,6 +46,14 @@ Les transitions utilisent l'API **View Transitions** du navigateur, déclenchée
 - Les photos 3840 px sont servies par `next/image` à la largeur utile ; la photo du coffret fermé est préchargée (LCP), la photo ouverte est chargée en priorité basse.
 - `will-change` limité aux calques réellement transformés (couvercle, rangée des garnitures).
 
+
+## Chargement des pages et des images (2026-10-31)
+
+- **Toutes les navigations** passent par `TransitionLink` (`src/components/motion/transition-link.tsx`), qui remplace `next/link` dans toute la boutique (l'administration garde des liens ordinaires). Pas de transition pour un nouvel onglet, une ancre, un simple changement de paramètres ou avec « réduire les animations ».
+- **Avant le dévoilement**, la transition attend que la nouvelle page soit rendue (pas son squelette) et laisse au plus 0,35 s aux images visibles pour arriver ; les images paresseuses à l'écran sont demandées tout de suite.
+- **Images** : plus d'aperçu flou (`placeholder="blur"` neutralisé en CSS) ; le cadre garde son fond, puis l'image apparaît en fondu (0,9 s) à la fin de son chargement (`ImageReveal`, API Web Animations : aucun attribut ajouté au DOM, donc aucun écart d'hydratation). Les pièces posées dans le coffret (`data-instant`) apparaissent sans fondu.
+- **Menus de l'en-tête** : après un clic, le menu ne se rouvre pas sous la souris tant qu'elle n'a pas quitté la rubrique.
+- Contrôle : `node tests/visual/record.mjs <url> <dossier>` enregistre ce que le navigateur affiche réellement, image par image, pendant l'ouverture et six navigations, et compte les transitions de vue.
 
 ## Resserrement de l'accueil (2026-10-31)
 

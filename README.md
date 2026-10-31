@@ -108,6 +108,7 @@ Tableau de bord (chiffre d'affaires hors démonstration, alertes de stock, devis
 | `node tests/visual/configurator.mjs` | Navigateur réel (Playwright + Chrome installé), ordinateur et mobile : poser, remplacer, revenir, compléter, détail, ajout au panier |
 | `node tests/visual/intro.mjs` | L'ouverture joue une fois, disparaît et ne se rejoue pas au retour sur l'accueil |
 | `node tests/visual/transitions.mjs` | La photo d'une création glisse du catalogue à sa fiche, puis d'une création à la suivante (transitions de vue) |
+| `node tests/visual/record.mjs <url> <dossier>` | Ce que le navigateur affiche réellement, image par image, pendant l'ouverture de l'accueil et six navigations (menu, carte produit, retour arrière, pied de page) ; nombre de transitions de vue par navigation |
 | `node tests/visual/header.mjs` | L'en-tête ne bouge pas d'une page à l'autre : à chaque image affichée pendant six navigations (ordinateur et mobile), position, hauteur et visibilité constantes ; puis logo et panier identiques au pixel près |
 | `node tests/visual/height.mjs <url>` | Longueur d'une page en écrans, et hauteur de chacune de ses sections |
 | `node tests/visual/pages.mjs <url> <dossier> 390x844@3 /chemin…` | Revue de pages : planches de captures, images cassées, débordement horizontal, erreurs JavaScript |
@@ -118,7 +119,7 @@ Tableau de bord (chiffre d'affaires hors démonstration, alertes de stock, devis
 ## Expérience et animations
 
 - **Accueil** (défilement natif, sans détournement du scroll ; détail : `docs/motion-system.md`) :
-  0. ouverture de la Maison, une fois par session : le logo officiel se révèle, puis le rideau se lève (« Passer » toujours disponible) ;
+  0. ouverture de la Maison, une fois par session : le logo officiel se révèle, puis se dissout en fondu sur le coffret (« Passer » toujours disponible) ;
   1. le coffret Maison Tamrān au soleil, logo cuivré sur le couvercle : au défilement, le couvercle se soulève et révèle les douze créations dans la même prise de vue, puis la caméra s'approche ;
   2. les Signatures : la création en grand, son cœur en tirage incliné ;
   3. de la palmeraie à la création, en un écran : palmier, Medjool, cœur, enrobage ;
@@ -129,7 +130,7 @@ Tableau de bord (chiffre d'affaires hors démonstration, alertes de stock, devis
   Environ 10 écrans de défilement sur ordinateur (32 auparavant) : seul le coffret du hero reste épinglé.
 - **En-tête** : barre sombre de hauteur constante, identique sur toutes les pages ; elle ne change ni de taille, ni de couleur, ni de position, au défilement comme d'une page à l'autre (vérifié image par image : `node tests/visual/header.mjs`). Menus déroulants illustrés (Créations, La Maison), bouton « Composer mon coffret », filet doré de progression de lecture.
 - **Configurateur** : coffret vide photographié vu de dessus, créations détourées posées dans les caissettes mesurées ; remplacer une pièce, revenir en arrière, compléter, détail d'une création, brouillon conservé et lien partageable, état final « Votre coffret est prêt ».
-- **Transitions de page** : la photo d'une création glisse de sa carte du catalogue au cadre de sa fiche ; d'une création à la suivante, la page glisse dans le sens de la navigation ; l'en-tête reste immobile. Pages éditoriales (Maison, Savoir-faire, Professionnels) ouvertes en plein cadre, avec une photographie verticale dédiée sur mobile.
+- **Transitions de page** : à chaque changement de page, l'ancienne page s'efface en remontant et la nouvelle se lève à sa place, sous un en-tête immobile ; la photo d'une création glisse de sa carte du catalogue au cadre de sa fiche ; d'une création à la suivante, la page glisse dans le sens de la navigation ; retour arrière en fondu. Les images n'affichent plus d'aperçu flou : elles apparaissent en fondu une fois chargées. Pages éditoriales (Maison, Savoir-faire, Professionnels) ouvertes en plein cadre, avec une photographie verticale dédiée sur mobile.
 - **Netteté** : aucune image n'est affichée au-delà de ×1,5 sa définition réelle (plafonds par densité d'écran : `.native-cap`, `.print-inset`…). Méthode et mesures : `IMAGE_AUDIT.md`.
 - **Bibliothèque** : Motion (déjà présente) pour toutes les animations ; GSAP, Lenis et Three.js étudiés et écartés (raisons dans `docs/motion-system.md`). Playwright en dépendance de développement pour les tests visuels.
 - **Accessibilité** : `prefers-reduced-motion` respecté partout (Motion configuré en `reducedMotion="user"`, séquences remplacées par des versions statiques, animations CSS coupées). Aucun contenu ne dépend d'une animation pour être visible.

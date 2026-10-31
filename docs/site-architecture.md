@@ -49,11 +49,12 @@ Maison, Savoir-faire, Professionnels, Cadeaux d'entreprise et Mariages s'ouvrent
 
 | Page | Mobile (4G lente simulée) : perf. / access. / bonnes pratiques | LCP mobile | Ordinateur : perf. | LCP ordinateur | CLS |
 | --- | --- | --- | --- | --- | --- |
-| Accueil (après resserrement, images 4K) | 78 / 97 / 100 | 5,4 s | 93* | 1,6 s* | 0 |
-| Fiche produit (images 4K) | 77 / 100 / 100 | 6,2 s | 99* | 0,9 s* | 0 |
+| Accueil (resserré, images 4K, transitions) | 77 / 100 / 100 | 6,2 s | 93* | 1,6 s* | 0 |
+| Fiche produit (images 4K, transitions) | 84 / 100 / 100 | 4,6 s | 99* | 0,9 s* | 0 |
 | Configurateur | 77 / 100 / 100 | 6,5 s | — | — | 0 |
+| Notre Maison | 78 / 100 / 100 | 6,2 s | — | — | 0 |
 
-Astérisque : mesure faite avant le passage en 4K, non refaite. Accessibilité de l'accueil (97) : le seul audit en échec est le bouton « Découvrir les créations » mesuré pendant son fondu d'entrée (3,1:1 à mi-fondu) ; une fois affiché, chocolat sur or, son contraste est de 7,2:1. La mention « Visuels conceptuels générés par IA » du savoir-faire, trop pâle au premier passage, a été corrigée.
+Astérisque : mesure faite avant le passage en 4K, non refaite. Mesures mobiles refaites après l'ajout des transitions de page et du fondu des images : la mention « Visuel conceptuel · IA » posée sur une photo claire (fond trop transparent) et celle du savoir-faire de l'accueil ont été corrigées ; un passage antérieur avait mesuré le bouton du hero pendant son fondu d'entrée (contraste final 7,2:1).
 
 SEO 69 : uniquement l'audit « indexable », volontairement bloqué par `robots.txt` tant que la boutique est en démonstration. Le LCP mobile est porté par de grandes photographies (AVIF) sur une connexion simulée à 1,6 Mbit/s ; à mesurer à nouveau sur Vercel (cache d'images et CDN).
 

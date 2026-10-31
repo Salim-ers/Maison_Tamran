@@ -29,6 +29,8 @@ export interface OpenAIShot {
   priority: number;
   /** Logo officiel posé à la publication : filet cuivré du couvercle mesuré sur chaque version (clé → quadrilatère). */
   lidLogo?: Record<string, Quad>;
+  /** Accentuation légère à la publication (paysages aux détails fins, affichés en plein cadre). */
+  sharpen?: boolean;
 }
 
 const PACK = "brand/source/pack-photos";
@@ -543,6 +545,11 @@ const AMBIANCE: [key: string, file: string, size: string, prompt: string, alt: s
     "Sunlit palace courtyard: white arcades with horseshoe arches, green-tiled eaves, a zellige-and-marble floor with a central marble fountain, deep blue sky, crisp architectural photograph.",
     "Cour ensoleillée aux arcades blanches et sol de zellige, fontaine au centre", "Notre Maison"],
 ];
+// Paysages affichés en bandeau plein cadre : mise au point sur toute la profondeur, palmes nettes jusqu'au fond.
+const CRISP = new Set(["palmeraie"]);
+const DEEP_FOCUS =
+  "Tack-sharp landscape photograph shot at f/11 with a high-resolution full-frame camera: deep depth of field, every palm frond and leaflet crisply defined " +
+  "from foreground to background, fine sand ripples visible, no haze, no motion blur, no painterly or smoothed texture.";
 const AMBIANCE_SHOTS: OpenAIShot[] = AMBIANCE.map(([key, file, size, subject, alt, usage]) => ({
   id: `amb-${key}`,
   group: "ambiance",
@@ -551,11 +558,13 @@ const AMBIANCE_SHOTS: OpenAIShot[] = AMBIANCE.map(([key, file, size, subject, al
   refs: [{ file: `brand/source/stock/${file}`, fit: 1536 }],
   prompt:
     `Image 1 sets the subject and the mood only: create a new, original photograph, not a copy of it. ${subject} ` +
+    (CRISP.has(key) ? `${DEEP_FOCUS} ` : "") +
     `Editorial photography for a luxury French confectionery house, natural colours, crisp detail, rich warm grade. No people, no hands, no text, no letters, no logo.`,
   alt,
   usage,
   publishWidth: Number(size.split("x")[0]),
   priority: 30,
+  sharpen: CRISP.has(key),
 }));
 
 /**
