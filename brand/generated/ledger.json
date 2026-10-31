@@ -1,5 +1,5 @@
 {
-  "totalUsd": 5.9485,
+  "totalUsd": 6.2875,
   "lines": [
     {
       "id": "produit-or-de-marrakech",
@@ -600,6 +600,36 @@
       "outputTokens": 3336,
       "costUsd": 0.1253,
       "at": "2026-10-31T14:41:58.677Z"
+    },
+    {
+      "id": "coffrets-ruban-v",
+      "key": "2e54268cf9d5",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2160x3840",
+      "outputTokens": 3336,
+      "costUsd": 0.113,
+      "at": "2026-10-31T15:28:33.725Z"
+    },
+    {
+      "id": "atelier-ingredients-v",
+      "key": "544be9604f9e",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2160x3840",
+      "outputTokens": 3336,
+      "costUsd": 0.1131,
+      "at": "2026-10-31T15:28:50.251Z"
+    },
+    {
+      "id": "maison-palmeraie-v",
+      "key": "08694876b0af",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2160x3840",
+      "outputTokens": 3336,
+      "costUsd": 0.1129,
+      "at": "2026-10-31T15:28:50.869Z"
     }
   ]
 }

@@ -2,6 +2,8 @@ import Link from "next/link";
 import { PageIntro } from "@/components/layout/page-intro";
 import { Media } from "@/components/ui/media";
 import { visual } from "@/lib/visual";
+import { PageHero } from "@/components/layout/page-hero";
+import { photo } from "@/lib/photos";
 
 export interface ProLandingProps {
   title: string;
@@ -13,6 +15,8 @@ export interface ProLandingProps {
   /** Une ligne par usage : « Titre : description ». */
   usages: string;
   heroImage: string;
+  /** version verticale de l'ouverture, pour les écrans portrait */
+  heroMobile?: string;
   sideImage: string;
   formats: { name: string; text: string }[];
   personalization: { name: string; text: string }[];
@@ -34,24 +38,33 @@ function parseUsages(raw: string) {
 export function ProLanding(p: ProLandingProps) {
   const usages = parseUsages(p.usages);
   const devis = `/professionnels/devis?segment=${p.segment}`;
+  const crumbs = [{ href: "/professionnels", label: "Professionnels" }, { href: p.href, label: p.crumbLabel }];
+  // visuel généré de la maison : ouverture plein cadre ; sinon, l'en-tête éditorial et la photo d'ambiance
+  const cover = photo(p.heroImage);
   return (
     <>
-      <PageIntro
-        title={p.title}
-        crumbs={[{ href: "/professionnels", label: "Professionnels" }, { href: p.href, label: p.crumbLabel }]}
-        intro={<p>{p.lead}</p>}
-      >
-        <div className="mt-10 flex flex-wrap gap-3">
-          <Link href={devis} className="btn btn-primary">{p.ctaLabel}</Link>
-          <a href="#formats" className="btn btn-outline">Formats et personnalisation</a>
-        </div>
-      </PageIntro>
-
-      <div className="container-luxe">
-        <div className="relative aspect-[16/9] overflow-hidden max-sm:aspect-[4/3]">
-          <Media image={visual(p.heroImage)} fill preload sizes="100vw" className="object-cover" wrapperClassName="absolute inset-0" />
-        </div>
-      </div>
+      {cover ? (
+        <PageHero title={p.title} intro={<p>{p.lead}</p>} crumbs={crumbs} image={cover} mobile={p.heroMobile ? photo(p.heroMobile) : null}>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Link href={devis} className="btn btn-gold">{p.ctaLabel}</Link>
+            <a href="#formats" className="btn btn-outline-light">Formats et personnalisation</a>
+          </div>
+        </PageHero>
+      ) : (
+        <>
+          <PageIntro title={p.title} crumbs={crumbs} intro={<p>{p.lead}</p>}>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <Link href={devis} className="btn btn-primary">{p.ctaLabel}</Link>
+              <a href="#formats" className="btn btn-outline">Formats et personnalisation</a>
+            </div>
+          </PageIntro>
+          <div className="container-luxe">
+            <div className="relative aspect-[16/9] overflow-hidden max-sm:aspect-[4/3]">
+              <Media image={visual(p.heroImage)} fill preload sizes="100vw" className="object-cover" wrapperClassName="absolute inset-0" />
+            </div>
+          </div>
+        </>
+      )}
 
       {/* Usages */}
       <section className="section-pad" aria-labelledby="usages-title">

@@ -4,7 +4,9 @@ import Image from "next/image";
 import { ambiance } from "@/lib/ambiance";
 import Link from "next/link";
 import { getBoxes, getCatalog } from "@/lib/catalog";
-import { catalogLabels, toBrowsable } from "@/lib/present";
+import { boxPhotos, catalogLabels, toBrowsable, toSwatch } from "@/lib/present";
+import { photo } from "@/lib/photos";
+import { BoxPreview } from "@/components/configurator/box-preview";
 import { concept, ConceptBadge } from "@/components/ui/media";
 import { CatalogBrowser } from "@/components/product/catalog-browser";
 import { CreationsHero } from "@/components/catalog/creations-hero";
@@ -24,6 +26,9 @@ export default async function CreationsPage() {
   const byCollection = (slug: string) => products.filter((p) => p.collectionSlug === slug);
   const main = (p: (typeof products)[number]) => p.images.find((i) => i.role === "main") ?? p.images[0] ?? null;
   const cut = (p: (typeof products)[number]) => (p.images.find((i) => i.role === "cut") ?? p.images[0])?.url;
+  // le coffret 12 pièces photographié, garni des créations de la maison
+  const swatches = products.map(toSwatch);
+  const box12 = boxPhotos()[12];
   const signatureBox = boxes.find((b) => b.kind === "signature");
   const editorial = concept("produit-cafe-imperial");
 
@@ -52,7 +57,8 @@ export default async function CreationsPage() {
               const cover = list[0] ? main(list[0]) : null;
               const dark = c.slug === "ephemere";
               // grande image : une photographie d'ingrédient haute définition ; la création y est posée en tirage, à sa taille nette
-              const stage = ambiance(dark ? "rose" : "pistache");
+              const gen = photo(dark ? "coffret-edition" : "rituel-cafe");
+              const stage = gen ? { url: gen.url, alt: gen.alt, credit: gen.badge } : ambiance(dark ? "rose" : "pistache");
               return (
                 <FadeIn key={c.slug} delay={idx * 0.12} className={idx === 0 ? "lg:col-span-7" : "lg:col-span-5 lg:mt-24"}>
                   <article className={`group relative overflow-hidden ${dark ? "on-dark" : "bg-creme"}`}>
@@ -149,8 +155,12 @@ export default async function CreationsPage() {
             </div>
           </div>
           <FadeIn>
-            <FormatDiagram pieces={12} thumbs={products.map(cut).filter((u): u is string => Boolean(u))} className="mx-auto w-full max-w-lg" />
-            <p className="mt-6 text-center t-micro text-ink-soft">Illustration du format 12 pièces, composé au choix</p>
+            {box12 ? (
+              <BoxPreview pieces={12} slots={Array.from({ length: 12 }, (_, i) => swatches[i % swatches.length].slug)} flavors={new Map(swatches.map((s) => [s.slug, s]))} photo={box12} className="mx-auto w-full max-w-xl" />
+            ) : (
+              <FormatDiagram pieces={12} thumbs={products.map(cut).filter((u): u is string => Boolean(u))} className="mx-auto w-full max-w-lg" />
+            )}
+            <p className="mt-6 text-center t-micro text-ink-soft">Le coffret 12 pièces, composé au choix · visuel conceptuel</p>
           </FadeIn>
         </div>
       </section>

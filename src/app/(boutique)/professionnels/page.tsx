@@ -5,6 +5,8 @@ import { getActivePriceTiers } from "@/lib/public-data";
 import { Breadcrumbs } from "@/components/layout/page-intro";
 import { concept, Media } from "@/components/ui/media";
 import { ambiance } from "@/lib/ambiance";
+import { PageHero } from "@/components/layout/page-hero";
+import { photo } from "@/lib/photos";
 import { proOffre, proOuverture, proRevendeurs } from "@/content/registry/professionnels";
 
 export const metadata: Metadata = {
@@ -37,6 +39,8 @@ export default async function ProfessionnelsPage() {
     [offre.rubansTitle, offre.rubansBody],
     [offre.formatsTitle, offre.formatsBody],
   ];
+  const cover = photo("coffret-entreprise");
+  const coverMobile = photo("coffrets-ruban-v");
   const steps = [
     ["Votre demande", "Vous décrivez le projet dans le formulaire de devis : occasion, quantités, personnalisation, date et lieu de livraison."],
     ["L'échange", "Nous revenons vers vous pour préciser ce qui doit l'être : sélection des créations, formats, contraintes de livraison."],
@@ -48,7 +52,21 @@ export default async function ProfessionnelsPage() {
 
   return (
     <>
-      {/* Ouverture sombre */}
+      {/* Ouverture plein cadre : les coffrets préparés pour un client (empilés sur mobile) */}
+      {cover ? (
+        <PageHero
+          title={o.title}
+          intro={<p>{o.lead}</p>}
+          crumbs={[{ href: "/professionnels", label: "Professionnels" }]}
+          image={cover}
+          mobile={coverMobile}
+        >
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Link href="/professionnels/devis" className="btn btn-gold">{o.cta}</Link>
+            <a href="#collaboration" className="btn btn-outline-light">Comment nous travaillons</a>
+          </div>
+        </PageHero>
+      ) : (
       <section className="on-dark grain relative isolate overflow-hidden" aria-labelledby="pro-title">
         <div className="container-luxe grid gap-12 pb-[clamp(4rem,9vw,8rem)] pt-[calc(var(--header-h)+var(--banner-h)+clamp(2.5rem,6vw,5rem))] lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-6">
@@ -70,6 +88,7 @@ export default async function ProfessionnelsPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Pour qui */}
       <section className="section-pad" aria-labelledby="cibles-title">
@@ -103,7 +122,7 @@ export default async function ProfessionnelsPage() {
           <div className="mt-16 grid gap-12 lg:grid-cols-12">
             <div className="relative lg:col-span-5">
               <div className="relative aspect-[4/5] overflow-hidden lg:sticky lg:top-[calc(var(--header-h)+var(--banner-h)+2rem)]">
-                <Media image={ambiance("riad-lumiere")} fill sizes="(min-width: 1024px) 38vw, 100vw" className="object-cover" wrapperClassName="absolute inset-0" />
+                <Media image={concept("pro-2")} fill sizes="(min-width: 1024px) 38vw, 100vw" className="object-cover" wrapperClassName="absolute inset-0" />
               </div>
             </div>
             <dl className="grid content-start gap-x-10 gap-y-12 sm:grid-cols-2 lg:col-span-6 lg:col-start-7">

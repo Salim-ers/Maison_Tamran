@@ -408,5 +408,54 @@ const UNIVERS: OpenAIShot[] = [
   },
 ];
 
-export const SHOTS: OpenAIShot[] = [...productShots(), ...UNIVERS].sort((a, b) => a.priority - b.priority);
+/** Verticales 9:16 (2160 × 3840) : ouvertures des pages éditoriales sur mobile. */
+const VERTICALES: OpenAIShot[] = [
+  {
+    id: "maison-palmeraie-v",
+    group: "univers",
+    size: "2160x3840",
+    quality: "high",
+    refs: [{ file: "brand/source/stock/dattier-regimes__pBxL6uM3Ezg.jpg" }],
+    prompt:
+      "Vertical 9:16 photograph of a date palm grove at golden hour: tall palm trunks, heavy clusters of ripening amber and brown Medjool dates hanging under the fronds in the foreground, " +
+      "warm low sunlight filtering through the palms, soft haze, deep shadows at the bottom of the frame for text. Image 1 sets the subject and the light only. " +
+      `${PHOTO_STYLE} ${NO_TEXT}`,
+    alt: "Une palmeraie à l'heure dorée, régimes de dattes Medjool sous les palmes",
+    usage: "Notre Maison (ouverture, mobile)",
+    publishWidth: 2160,
+    priority: 30,
+  },
+  {
+    id: "atelier-ingredients-v",
+    group: "univers",
+    size: "2160x3840",
+    quality: "high",
+    refs: [{ shot: "atelier-ingredients" }],
+    prompt:
+      "Image 1 is the house's flat lay of ingredients. Recreate it as a vertical 9:16 top-down flat lay with the same dark stone, the same brass and ceramic bowls and the same ingredients " +
+      "(pistachios, saffron, dried rose petals, cardamom, hazelnuts, black sesame, matcha, coconut, raspberries, pecans, coffee beans, dark chocolate, Medjool dates), arranged along the top " +
+      `and the sides, with calm dark negative space in the lower third for text. Warm raking light. ${PHOTO_STYLE} ${NO_TEXT}`,
+    alt: "Les ingrédients de la maison sur une pierre sombre, vus de dessus",
+    usage: "Le savoir-faire (ouverture, mobile)",
+    publishWidth: 2160,
+    priority: 30,
+  },
+  {
+    id: "coffrets-ruban-v",
+    group: "univers",
+    size: "2160x3840",
+    quality: "high",
+    refs: [{ shot: "coffret-entreprise" }],
+    prompt:
+      "Image 1 shows the Maison Tamran gift boxes tied with champagne ribbon. Vertical 9:16 photograph: a tall elegant stack of four closed cocoa-brown gift boxes of decreasing size, " +
+      "each tied with a fine champagne silk ribbon and bow, blank lids, on a polished dark walnut surface, warm golden window light from the side, deep soft shadows, " +
+      `calm dark space in the lower third for text. ${PHOTO_STYLE} ${NO_LETTERING}`,
+    alt: "Coffrets Maison Tamrān empilés, noués de rubans champagne",
+    usage: "Professionnels (ouverture, mobile)",
+    publishWidth: 2160,
+    priority: 30,
+  },
+];
+
+export const SHOTS: OpenAIShot[] = [...productShots(), ...UNIVERS, ...VERTICALES].sort((a, b) => a.priority - b.priority);
 export const SHOT_BY_ID = new Map(SHOTS.map((s) => [s.id, s]));

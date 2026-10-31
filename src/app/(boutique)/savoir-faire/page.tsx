@@ -3,6 +3,8 @@ import Link from "next/link";
 import { clsx } from "clsx";
 import { getContent } from "@/lib/catalog";
 import { PageIntro, Provisional } from "@/components/layout/page-intro";
+import { PageHero } from "@/components/layout/page-hero";
+import { photo } from "@/lib/photos";
 import { Media } from "@/components/ui/media";
 import { visual } from "@/lib/visual";
 import { savoirFaireEtapes, savoirFaireIntro } from "@/content/registry/savoir-faire";
@@ -21,10 +23,10 @@ export const metadata: Metadata = {
 const VISUALS: { main: string; ratio: string; second?: string }[] = [
   { main: "a:dattier-regimes", ratio: "aspect-square" },
   { main: "a:dattes-naturelles", ratio: "aspect-[20/11]" },
-  { main: "a:pistache", ratio: "aspect-[4/3]", second: "produit-or-de-marrakech" },
-  { main: "a:chocolat", ratio: "aspect-[20/11]", second: "produit-eclipse-noire" },
-  { main: "a:rose", ratio: "aspect-[4/3]", second: "produit-rose-de-nuit" },
-  { main: "coffret-1", ratio: "aspect-[3/2]", second: "a:art-de-recevoir" },
+  { main: "meta-coeur", ratio: "aspect-[4/3]", second: "coupe-or-de-marrakech" },
+  { main: "meta-enrobage", ratio: "aspect-[20/11]", second: "produit-eclipse-noire" },
+  { main: "produit-minuit-a-kyoto", ratio: "aspect-[4/3]", second: "produit-rose-de-nuit" },
+  { main: "coffret-decouverte", ratio: "aspect-[3/2]", second: "coffret-1" },
 ];
 
 export default async function SavoirFairePage() {
@@ -41,23 +43,40 @@ export default async function SavoirFairePage() {
     [e.s6Title, e.s6Body],
   ].map(([title, body], i) => ({ title, body, ...VISUALS[i] }));
 
+  const cover = photo("atelier-ingredients");
+  const coverMobile = photo("atelier-ingredients-v");
+  const stepsNav = (
+    <nav aria-label="Étapes" className="mt-10">
+      <ol className="flex flex-wrap gap-x-7 gap-y-2 t-small">
+        {steps.map((s, i) => (
+          <li key={s.title}>
+            <a href={`#etape-${i + 1}`} className="group inline-flex items-baseline gap-2">
+              <span className="t-numeral text-gold">{i + 1}</span>
+              <span className="link-draw">{s.title}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+
   return (
     <>
-      <PageIntro title={intro.title} crumbs={[{ href: "/savoir-faire", label: "Le savoir-faire" }]} intro={<p>{intro.lead}</p>}>
-        <nav aria-label="Étapes" className="mt-10">
-          <ol className="flex flex-wrap gap-x-7 gap-y-2 t-small">
-            {steps.map((s, i) => (
-              <li key={s.title}>
-                <a href={`#etape-${i + 1}`} className="group inline-flex items-baseline gap-2">
-                  <span className="t-numeral text-bronze">{i + 1}</span>
-                  <span className="link-draw">{s.title}</span>
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
-        <Provisional className="mt-10 max-w-[60ch]">{intro.provisional}</Provisional>
-      </PageIntro>
+      {cover ? (
+        <>
+          <PageHero title={intro.title} crumbs={[{ href: "/savoir-faire", label: "Le savoir-faire" }]} intro={<p>{intro.lead}</p>} image={cover} mobile={coverMobile}>
+            {stepsNav}
+          </PageHero>
+          <div className="container-luxe pt-10">
+            <Provisional className="max-w-[60ch]">{intro.provisional}</Provisional>
+          </div>
+        </>
+      ) : (
+        <PageIntro title={intro.title} crumbs={[{ href: "/savoir-faire", label: "Le savoir-faire" }]} intro={<p>{intro.lead}</p>}>
+          {stepsNav}
+          <Provisional className="mt-10 max-w-[60ch]">{intro.provisional}</Provisional>
+        </PageIntro>
+      )}
 
       <ol className="pb-[var(--section)]" aria-label="Le parcours d'une création">
         {steps.map((s, i) => {

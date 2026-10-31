@@ -6,6 +6,8 @@ import Image from "next/image";
 import { concept, ConceptBadge } from "@/components/ui/media";
 import { ambiance, type AmbianceImage } from "@/lib/ambiance";
 import { RevealImage } from "@/components/motion/reveal";
+import { PageHero } from "@/components/layout/page-hero";
+import { photo } from "@/lib/photos";
 import { BrandLogo } from "@/components/brand";
 import { maisonHistoire, maisonManifeste, maisonOuverture, maisonValeurs } from "@/content/registry/maison";
 
@@ -45,6 +47,8 @@ export default async function MaisonPage() {
   });
   const coffret = concept("coffret-1");
   const riad = ambiance("riad-lumiere");
+  const cover = photo("rituel-cafe");
+  const coverMobile = photo("maison-palmeraie-v");
   const dattes = ambiance("dattes-naturelles");
   const palmeraie = ambiance("palmeraie");
   const recevoir = ambiance("art-de-recevoir");
@@ -57,26 +61,37 @@ export default async function MaisonPage() {
 
   return (
     <>
-      {/* Ouverture sombre, sous l'en-tête transparent */}
-      <section className="on-dark grain relative isolate overflow-hidden pb-[clamp(4rem,10vw,9rem)] pt-[calc(var(--header-h)+var(--banner-h)+clamp(2.5rem,6vw,5rem))]" aria-labelledby="maison-title">
-        <div className="container-luxe grid gap-14 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-7 lg:pt-6">
-            <Breadcrumbs items={[{ href: "/maison", label: "Notre Maison" }]} tone="dark" />
-            <h1 id="maison-title" className="mt-8 t-display-xl">{o.title}</h1>
-            <p className="mt-10 max-w-[48ch] t-lead text-taupe">{o.lead}</p>
+      {/* Ouverture plein cadre : le rituel du café (la palmeraie sur mobile) */}
+      {cover ? (
+        <>
+          <PageHero title={o.title} intro={<p>{o.lead}</p>} crumbs={[{ href: "/maison", label: "Notre Maison" }]} image={cover} mobile={coverMobile} />
+          <section className="on-dark grain relative isolate py-[clamp(3.5rem,8vw,7rem)]" aria-label="Citation">
+            <blockquote className="container-luxe">
+              <p className="mx-auto max-w-[36ch] text-center font-display text-[clamp(1.6rem,2.8vw,2.6rem)] italic leading-snug">{o.quote}</p>
+            </blockquote>
+          </section>
+        </>
+      ) : (
+        <section className="on-dark grain relative isolate overflow-hidden pb-[clamp(4rem,10vw,9rem)] pt-[calc(var(--header-h)+var(--banner-h)+clamp(2.5rem,6vw,5rem))]" aria-labelledby="maison-title">
+          <div className="container-luxe grid gap-14 lg:grid-cols-12 lg:gap-8">
+            <div className="lg:col-span-7 lg:pt-6">
+              <Breadcrumbs items={[{ href: "/maison", label: "Notre Maison" }]} tone="dark" />
+              <h1 id="maison-title" className="mt-8 t-display-xl">{o.title}</h1>
+              <p className="mt-10 max-w-[48ch] t-lead text-taupe">{o.lead}</p>
+            </div>
+            <div className="relative lg:col-span-4 lg:col-start-9">
+              {riad && (
+                <div className="anim-unveil relative aspect-[4/5] overflow-hidden">
+                  <Photo image={riad} sizes="(min-width: 1024px) 30vw, 100vw" preload />
+                </div>
+              )}
+            </div>
+            <blockquote className="border-l border-bronze-light/60 pl-6 lg:col-span-6 lg:col-start-2 lg:-mt-10">
+              <p className="font-display text-[clamp(1.5rem,2.4vw,2.25rem)] italic leading-snug">{o.quote}</p>
+            </blockquote>
           </div>
-          <div className="relative lg:col-span-4 lg:col-start-9">
-            {riad && (
-              <div className="anim-unveil relative aspect-[4/5] overflow-hidden">
-                <Photo image={riad} sizes="(min-width: 1024px) 30vw, 100vw" preload />
-              </div>
-            )}
-          </div>
-          <blockquote className="border-l border-bronze-light/60 pl-6 lg:col-span-6 lg:col-start-2 lg:-mt-10">
-            <p className="font-display text-[clamp(1.5rem,2.4vw,2.25rem)] italic leading-snug">{o.quote}</p>
-          </blockquote>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Manifeste */}
       <section className="section-pad" aria-labelledby="manifeste-title">

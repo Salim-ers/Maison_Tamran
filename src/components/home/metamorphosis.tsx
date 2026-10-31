@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform, type MotionValue } from "motion/react"
 import { useRef } from "react";
 import { useReducedMotion } from "@/components/motion/reduced-motion";
 import { span } from "@/components/motion/scroll";
+import { BOX_GRID } from "@/components/configurator/box-preview";
 
 type Photo = { url: string; w: number; h: number; alt: string; credit?: string; blur?: string; focus?: string };
 export type MetaStep = { key: string; title: string; text: string; photo: Photo | null };
@@ -59,6 +60,25 @@ function Niche({ c, i, p }: { c: MetaCreation; i: number; p: MotionValue<number>
   );
 }
 
+/** Coffret vide vu de dessus et créations détourées qui s'y posent une à une (05 · la création rejoint son coffret). */
+export type MetaBox = { url: string; w: number; h: number; pieces: { slug: string; url: string }[] };
+
+function BoxPiece({ url, i, p }: { url: string; i: number; p: MotionValue<number> }) {
+  const grid = BOX_GRID[12];
+  const a = AT.creation[0] + 0.035 + i * 0.008;
+  const y = useTransform(p, span(a, a + 0.05), ["-90px", "0px"]);
+  const opacity = useTransform(p, span(a, a + 0.03), [0, 1]);
+  const scale = useTransform(p, span(a, a + 0.05), [1.3, 1]);
+  return (
+    <motion.span
+      style={{ left: `${grid.x[i % grid.x.length]}%`, top: `${grid.y[Math.floor(i / grid.x.length)]}%`, width: `${grid.cup * 1.18}%`, y, opacity, scale, rotate: ((i * 37) % 11) - 5 }}
+      className="absolute aspect-square -translate-x-1/2 -translate-y-1/2"
+    >
+      <Image src={url} alt="" fill sizes="(max-width: 767px) 22vw, 110px" quality={75} className="object-contain drop-shadow-[2px_8px_6px_rgba(20,12,9,.6)]" />
+    </motion.span>
+  );
+}
+
 function StepText({ step, i, p }: { step: MetaStep; i: number; p: MotionValue<number> }) {
   const [a, b] = TEXT_WINDOWS[i];
   const last = i === TEXT_WINDOWS.length - 1;
@@ -93,7 +113,7 @@ function Rail({ p, count }: { p: MotionValue<number>; count: number }) {
  * le chocolat monte comme une vague, puis tout se resserre dans un écrin en arc autour de la création
  * (photographie de référence, affichée à une taille où elle reste nette).
  */
-export function Metamorphosis({ steps, creations }: { steps: MetaStep[]; creations: MetaCreation[] }) {
+export function Metamorphosis({ steps, creations, box }: { steps: MetaStep[]; creations: MetaCreation[]; box?: MetaBox | null }) {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress: p } = useScroll({ target: ref, offset: ["start start", "end end"] });
@@ -124,6 +144,8 @@ export function Metamorphosis({ steps, creations }: { steps: MetaStep[]; creatio
   const c = useTransform(p, span(...AT.creation), [0, 1]);
   const dim = useTransform(c, [0, 1], [0, 0.78]);
   const galleryEvents = useTransform(c, (v) => (v > 0.6 ? "auto" : "none"));
+  const boxIn = useTransform(p, span(AT.creation[0], AT.creation[0] + 0.04), [0, 1]);
+  const boxY = useTransform(p, span(AT.creation[0], AT.creation[0] + 0.06), ["50px", "0px"]);
   const cta = useTransform(p, span(0.9, 0.95), [0, 1]);
   const ctaEvents = useTransform(cta, (v) => (v > 0.5 ? "auto" : "none"));
 
@@ -206,11 +228,21 @@ export function Metamorphosis({ steps, creations }: { steps: MetaStep[]; creatio
         {/* 5. la création : les dix recettes dans leurs niches, à leur taille nette */}
         <motion.div aria-hidden style={{ opacity: dim }} className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_66%_50%,rgba(20,12,9,.5),#140c09_72%)]" />
         <motion.div style={{ pointerEvents: galleryEvents }} className="absolute inset-0 flex items-start justify-center pt-[calc(var(--header-h)+var(--banner-h,0px)+3vh)] md:items-center md:justify-end md:pr-[max(var(--gutter),6vw)] md:pt-0">
-          <ul className="meta-niches grid grid-cols-5 gap-x-[clamp(.5rem,1vw,1rem)] gap-y-[clamp(1rem,2.4vh,1.6rem)]" aria-label="Les dix créations">
-            {creations.map((cr, i) => (
-              <Niche key={cr.slug} c={cr} i={i} p={p} />
-            ))}
-          </ul>
+          {box ? (
+            // chaque pièce terminée rejoint sa caissette dans le coffret
+            <motion.div style={{ opacity: boxIn, y: boxY, aspectRatio: `${box.w} / ${box.h}` }} className="meta-niches relative overflow-hidden shadow-[0_50px_90px_-40px_rgba(0,0,0,.9)]" role="img" aria-label="Les créations rejoignent leur coffret">
+              <Image src={box.url} alt="" fill sizes="(max-width: 767px) 92vw, 46vw" quality={80} className="object-cover" />
+              {Array.from({ length: 12 }, (_, i) => box.pieces[i % box.pieces.length]).map((pc, i) => (
+                <BoxPiece key={i} url={pc.url} i={i} p={p} />
+              ))}
+            </motion.div>
+          ) : (
+            <ul className="meta-niches grid grid-cols-5 gap-x-[clamp(.5rem,1vw,1rem)] gap-y-[clamp(1rem,2.4vh,1.6rem)]" aria-label="Les dix créations">
+              {creations.map((cr, i) => (
+                <Niche key={cr.slug} c={cr} i={i} p={p} />
+              ))}
+            </ul>
+          )}
         </motion.div>
 
         {/* textes des étapes */}

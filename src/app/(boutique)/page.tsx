@@ -5,7 +5,7 @@ import { concept } from "@/components/ui/media";
 import { Hero } from "@/components/home/hero";
 import { IntroCurtain } from "@/components/home/intro-curtain";
 import { Oasis } from "@/components/home/oasis";
-import { Metamorphosis, type MetaCreation, type MetaStep } from "@/components/home/metamorphosis";
+import { Metamorphosis, type MetaBox, type MetaCreation, type MetaStep } from "@/components/home/metamorphosis";
 import { scene } from "@/lib/scene";
 import { DateAnatomy } from "@/components/home/date-anatomy";
 import { SignatureStage, type StageCreation } from "@/components/home/signature-stage";
@@ -72,8 +72,15 @@ export default async function HomePage() {
     { key: "datte", title: "La datte", text: "La Medjool : une chair épaisse et fondante, aux notes de miel et de caramel.", photo: ambiance("medjool-macro") ?? ambiance("dattes-naturelles") },
     { key: "coeur", title: "Le cœur", text: "On l'ouvre pour y loger l'idée de la recette : pistache, praliné, fruits, épices.", photo: generated("meta-coeur") ?? ambiance("pistache") },
     { key: "chocolat", title: "L'enrobage", text: "Une coque fine qui craque, puis fond : noir, lait, blanc ou blond selon la création.", photo: generated("meta-enrobage") ?? ambiance("chocolat") },
-    { key: "creation", title: "La création", text: "Dix recettes, dix façons de sublimer la datte : chacune pensée comme une pièce de chocolaterie.", photo: null },
+    { key: "creation", title: "La création", text: "Chaque pièce terminée rejoint sa caissette : dix recettes, pensées comme des pièces de chocolaterie.", photo: null },
   ].map((st) => ({ ...st, photo: st.photo ? { ...st.photo, w: st.photo.w ?? 0, h: st.photo.h ?? 0 } : null }));
+  // 05 : les créations détourées se posent dans le coffret vide, vu de dessus
+  const emptyBox = photo("coffret-vide-12");
+  const metaPieces = products.flatMap((p) => {
+    const pc = photo(`piece-${p.slug}`);
+    return pc ? [{ slug: p.slug, url: pc.url }] : [];
+  });
+  const metaBox: MetaBox | null = emptyBox && metaPieces.length ? { url: emptyBox.url, w: emptyBox.w, h: emptyBox.h, pieces: metaPieces } : null;
   const creations: MetaCreation[] = products.flatMap((p) => {
     const im = p.images.find((i) => i.role === "main") ?? p.images[0];
     return im ? [{ slug: p.slug, name: p.name, url: im.url, w: im.w ?? 412, h: im.h ?? 495 }] : [];
@@ -111,7 +118,7 @@ export default async function HomePage() {
       {oasisLand && oasisDattier && <Oasis landscape={oasisLand} dattier={oasisDattier} foreground={oasisPalme} />}
 
       {/* 03. La métamorphose : palmier → datte → cœur → chocolat → création */}
-      <Metamorphosis steps={metaSteps} creations={creations} />
+      <Metamorphosis steps={metaSteps} creations={creations} box={metaBox} />
 
       {/* 03 bis. Le cœur de la datte : anatomie d'une création */}
       <DateAnatomy image={concept("produit-cafe-imperial")} />

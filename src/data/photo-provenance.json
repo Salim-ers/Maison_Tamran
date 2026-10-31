@@ -12,6 +12,19 @@
     "height": 2160,
     "approvedAt": "2026-10-31T14:42:57.986Z"
   },
+  "atelier-ingredients-v": {
+    "status": "approved",
+    "nature": "Visuel conceptuel · IA — image générée (OpenAI gpt-image-2.5-sunburst, qualité high) à partir des références du projet ; ne représente pas un produit réellement fabriqué ni photographié.",
+    "source": "Génération native 2160×3840 (aucun agrandissement). Références : atelier-ingredients@6496c84a4b8f.",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "Image 1 is the house's flat lay of ingredients. Recreate it as a vertical 9:16 top-down flat lay with the same dark stone, the same brass and ceramic bowls and the same ingredients (pistachios, saffron, dried rose petals, cardamom, hazelnuts, black sesame, matcha, coconut, raspberries, pecans, coffee beans, dark chocolate, Medjool dates), arranged along the top and the sides, with calm dark negative space in the lower third for text. Warm raking light. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+    "generatedAt": "2026-10-31T15:28:50.251Z",
+    "file": "public/images/generated/univers/atelier-ingredients-v-7c55fbfb.webp",
+    "original": "brand/generated/atelier-ingredients-v/544be9604f9e.webp",
+    "width": 2160,
+    "height": 3840,
+    "approvedAt": "2026-10-31T15:28:56.755Z"
+  },
   "cadeau-mariage": {
     "status": "approved",
     "nature": "Visuel conceptuel · IA — image générée (OpenAI gpt-image-2.5-sunburst, qualité high) à partir des références du projet ; ne représente pas un produit réellement fabriqué ni photographié.",
@@ -150,6 +163,19 @@
     "width": 2048,
     "height": 1536,
     "approvedAt": "2026-10-31T14:43:11.375Z"
+  },
+  "coffrets-ruban-v": {
+    "status": "approved",
+    "nature": "Visuel conceptuel · IA — image générée (OpenAI gpt-image-2.5-sunburst, qualité high) à partir des références du projet ; ne représente pas un produit réellement fabriqué ni photographié.",
+    "source": "Génération native 2160×3840 (aucun agrandissement). Références : coffret-entreprise@acf9d8befff6.",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "Image 1 shows the Maison Tamran gift boxes tied with champagne ribbon. Vertical 9:16 photograph: a tall elegant stack of four closed cocoa-brown gift boxes of decreasing size, each tied with a fine champagne silk ribbon and bow, blank lids, on a polished dark walnut surface, warm golden window light from the side, deep soft shadows, calm dark space in the lower third for text. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no emblem on any box or card.",
+    "generatedAt": "2026-10-31T15:28:33.725Z",
+    "file": "public/images/generated/univers/coffrets-ruban-v-27e49dde.webp",
+    "original": "brand/generated/coffrets-ruban-v/2e54268cf9d5.webp",
+    "width": 2160,
+    "height": 3840,
+    "approvedAt": "2026-10-31T15:28:58.177Z"
   },
   "coupe-ambre-fume": {
     "status": "approved",
@@ -298,6 +324,19 @@
     "width": 869,
     "height": 1086,
     "approvedAt": "2026-10-31T14:44:59.618Z"
+  },
+  "maison-palmeraie-v": {
+    "status": "approved",
+    "nature": "Visuel conceptuel · IA — image générée (OpenAI gpt-image-2.5-sunburst, qualité high) à partir des références du projet ; ne représente pas un produit réellement fabriqué ni photographié.",
+    "source": "Génération native 2160×3840 (aucun agrandissement). Références : brand/source/stock/dattier-regimes__pBxL6uM3Ezg.jpg.",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "Vertical 9:16 photograph of a date palm grove at golden hour: tall palm trunks, heavy clusters of ripening amber and brown Medjool dates hanging under the fronds in the foreground, warm low sunlight filtering through the palms, soft haze, deep shadows at the bottom of the frame for text. Image 1 sets the subject and the light only. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+    "generatedAt": "2026-10-31T15:28:50.869Z",
+    "file": "public/images/generated/univers/maison-palmeraie-v-eec2da5d.webp",
+    "original": "brand/generated/maison-palmeraie-v/08694876b0af.webp",
+    "width": 2160,
+    "height": 3840,
+    "approvedAt": "2026-10-31T15:28:54.463Z"
   },
   "meta-coeur": {
     "status": "approved",
