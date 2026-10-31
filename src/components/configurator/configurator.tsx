@@ -275,6 +275,7 @@ export function Configurator({
               slots={slots}
               flavors={flavorMap}
               photo={photo}
+              priority
               onSelect={(i) => setSelected((s) => (s === i ? null : i))}
               selected={selected}
               complete={complete}

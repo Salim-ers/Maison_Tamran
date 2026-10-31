@@ -64,6 +64,7 @@ export function BoxPreview({
   onSelect,
   selected = null,
   complete = false,
+  priority = false,
   className,
   dark = false,
   incoming,
@@ -77,6 +78,8 @@ export function BoxPreview({
   onSelect?: (index: number) => void;
   selected?: number | null;
   complete?: boolean;
+  /** image principale de la page (configurateur) : chargée en priorité */
+  priority?: boolean;
   className?: string;
   dark?: boolean;
   /** alvéoles vers lesquelles une datte est en vol : elle n'y apparaît qu'à l'atterrissage */
@@ -124,7 +127,7 @@ export function BoxPreview({
   if (photo && grid) {
     return (
       <div className={clsx("relative overflow-hidden shadow-[0_40px_70px_-35px_rgba(36,23,19,.75)]", className)} style={{ aspectRatio: `${photo.w} / ${photo.h}` }}>
-        <Image src={photo.url} alt={`Coffret ${pieces} pièces vu de dessus`} fill sizes="(min-width: 1024px) 40vw, 100vw" quality={85} placeholder={photo.blur ? "blur" : "empty"} blurDataURL={photo.blur} className="object-cover" />
+        <Image src={photo.url} alt={`Coffret ${pieces} pièces vu de dessus`} fill sizes="(min-width: 1024px) 40vw, 100vw" quality={85} fetchPriority={priority ? "high" : "auto"} loading={priority ? "eager" : "lazy"} placeholder={photo.blur ? "blur" : "empty"} blurDataURL={photo.blur} className="object-cover" />
         {Array.from({ length: pieces }, (_, i) => {
           const slug = slots[i];
           const f = slug ? flavors.get(slug) : undefined;

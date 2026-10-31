@@ -59,7 +59,8 @@ function Annotation({ p, i, progress, still }: { p: (typeof POINTS)[number]; i: 
 function Legend({ p, i, progress, still }: { p: (typeof POINTS)[number]; i: number; progress: MotionValue<number>; still: boolean }) {
   const [a, b] = STEP(i);
   const last = i === POINTS.length - 1;
-  const opacity = useTransform(progress, span(a - 0.04, a + 0.03, b + 0.1, b + 0.16), [0.28, 1, 1, last ? 1 : 0.45]);
+  // étapes en attente ou passées : estompées mais lisibles (contraste suffisant même atténuées)
+  const opacity = useTransform(progress, span(a - 0.04, a + 0.03, b + 0.1, b + 0.16), [0.62, 1, 1, last ? 1 : 0.68]);
   const line = useTransform(progress, span(a, a + 0.12), ["0%", "100%"]);
   return (
     <motion.li style={{ opacity: still ? 1 : opacity }} className="relative pt-5">

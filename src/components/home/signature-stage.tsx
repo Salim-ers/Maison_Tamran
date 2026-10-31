@@ -117,7 +117,7 @@ export function SignatureStage({ creations, intro }: { creations: StageCreation[
                   Découvrir {c.name}
                 </Link>
                 {c.quick && (
-                  <AddToCartButton variantId={c.quick.id} label={<>Ajouter · {euros(c.quick.priceCents)}</>} className="btn btn-outline" ariaLabel={`Ajouter ${c.name} (${c.quick.label}) au panier`} />
+                  <AddToCartButton variantId={c.quick.id} label={<>Ajouter · {euros(c.quick.priceCents)}</>} className="btn btn-outline" ariaLabel={`Ajouter · ${euros(c.quick.priceCents)} : ${c.name} (${c.quick.label}) au panier`} />
                 )}
                 {!c.quick && c.fromCents !== null && <span className="t-small text-ink-soft">dès {euros(c.fromCents)}</span>}
               </div>
@@ -149,7 +149,7 @@ export function SignatureStage({ creations, intro }: { creations: StageCreation[
       <div className="container-luxe relative z-[3] pb-10 md:pb-14">
         <ul className="no-scrollbar -mx-[var(--gutter)] flex gap-3 overflow-x-auto px-[var(--gutter)] md:mx-0 md:gap-5 md:px-0" role="tablist" aria-label="Choisir une création Signature">
           {creations.map((cr, k) => (
-            <li key={cr.slug} className="shrink-0">
+            <li key={cr.slug} role="presentation" className="shrink-0">
               <button type="button" role="tab" aria-selected={k === i} onClick={() => go(k)} className="group flex items-center gap-3 py-2 text-left">
                 <span className={`relative block h-14 w-12 overflow-hidden rounded-t-[50%_38%] ring-1 transition-all duration-500 ${k === i ? "ring-bronze" : "ring-chocolate/15 opacity-60 group-hover:opacity-100"}`}>
                   <Image src={cr.product.url} alt="" fill sizes="48px" className="object-cover" />

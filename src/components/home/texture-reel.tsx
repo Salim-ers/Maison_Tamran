@@ -69,7 +69,7 @@ export function TextureReel({ items }: { items: TextureItem[] }) {
         <em className="text-gold">une création.</em>
       </h2>
       <p className="mt-6 max-w-[24rem] text-ivory/70">Praliné, ganache, confit, crème de pistache : dix cœurs, dix textures, sous une coque de chocolat.</p>
-      <p className="mt-8 t-micro text-ivory/45">Visuels conceptuels · IA</p>
+      <p className="mt-8 t-micro text-ivory/65">Visuels conceptuels · IA</p>
     </li>
   );
 
