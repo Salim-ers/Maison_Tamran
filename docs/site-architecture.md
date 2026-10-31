@@ -26,7 +26,7 @@ Aucune bibliothèque d'animation ajoutée : Motion (`useScroll`, `useTransform`,
 
 ## Boutique
 
-`/creations` (catalogue, filtres, tri, recherche), `/collections/[slug]`, `/creations/[slug]` (galerie : création, cœur à la loupe, ingrédients ; achat ; composition ; allergènes ; conservation ; accords de dégustation ; créations voisines), `/coffrets`, `/composer-mon-coffret`, `/recherche`, `/panier`, `/paiement` (+ démonstration, confirmation, échec), `/compte/*`, `/suivi-commande`, pages éditoriales et légales, `/professionnels/*` (dont devis). Back-office : `/admin/*`.
+`/creations` (catalogue, filtres, tri, recherche), `/collections/[slug]`, `/creations/[slug]` (galerie : création, cœur à la loupe, ingrédients ; achat ; composition ; allergènes ; conservation ; déroulé de dégustation (attaque, cœur, finale) ; créations voisines), `/coffrets`, `/composer-mon-coffret`, `/recherche`, `/panier`, `/paiement` (+ démonstration, confirmation, échec), `/compte/*`, `/suivi-commande`, pages éditoriales et légales, `/professionnels/*` (dont devis). Back-office : `/admin/*`.
 
 ## Images
 
