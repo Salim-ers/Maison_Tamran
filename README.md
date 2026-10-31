@@ -107,6 +107,8 @@ Tableau de bord (chiffre d'affaires hors démonstration, alertes de stock, devis
 | `npm run test:smoke` | Toutes les pages publiques répondent, URL inconnues en 404, back-office protégé |
 | `node tests/visual/configurator.mjs` | Navigateur réel (Playwright + Chrome installé), ordinateur et mobile : poser, remplacer, revenir, compléter, détail, ajout au panier |
 | `node tests/visual/intro.mjs` | L'ouverture joue une fois, disparaît et ne se rejoue pas au retour sur l'accueil |
+| `node tests/visual/transitions.mjs` | La photo d'une création glisse du catalogue à sa fiche, puis d'une création à la suivante (transitions de vue) |
+| `node tests/visual/pages.mjs <url> <dossier> 390x844@3 /chemin…` | Revue de pages : planches de captures, images cassées, débordement horizontal, erreurs JavaScript |
 | `node tests/visual/scene.mjs <url> <sélecteur> <préfixe>` / `capture.mjs` | Captures d'une scène épinglée à des fractions de son défilement / d'une page entière (débordement horizontal et erreurs JavaScript relevés) |
 | `npm run test:e2e` | Navigateur réel (installez d'abord `npm i -D puppeteer`) : achat complet en mode démonstration (configurateur, étui, code promo, paiement simulé, confirmation, panier vidé), comptes (inscription, mots de passe refusés, adresses, connexion, accès admin refusé), toutes les pages du back-office |
 | `STRIPE_WEBHOOK_SECRET=… node scripts/test-webhook.mjs <url> <id-commande>` | Webhook Stripe : signature invalide refusée, paiement confirmé, événement rejoué ignoré |
@@ -125,6 +127,7 @@ Tableau de bord (chiffre d'affaires hors démonstration, alertes de stock, devis
   8. composer son coffret : la pièce détourée rejoint sa caissette dans le coffret photographié ;
   9. éditions éphémères, l'univers de la maison (rituel du café), professionnels.
 - **Configurateur** : coffret vide photographié vu de dessus, créations détourées posées dans les caissettes mesurées ; remplacer une pièce, revenir en arrière, compléter, détail d'une création, brouillon conservé et lien partageable, état final « Votre coffret est prêt ».
+- **Transitions de page** : la photo d'une création glisse de sa carte du catalogue au cadre de sa fiche ; d'une création à la suivante, la page glisse dans le sens de la navigation ; l'en-tête reste immobile. Pages éditoriales (Maison, Savoir-faire, Professionnels) ouvertes en plein cadre, avec une photographie verticale dédiée sur mobile.
 - **Netteté** : aucune image n'est affichée au-delà de ×1,5 sa définition réelle (plafonds par densité d'écran : `.native-cap`, `.hero-coffret`, `.gift-frame`…). Méthode et mesures : `IMAGE_AUDIT.md`.
 - **Bibliothèque** : Motion (déjà présente) pour toutes les animations ; GSAP, Lenis et Three.js étudiés et écartés (raisons dans `docs/motion-system.md`). Playwright en dépendance de développement pour les tests visuels.
 - **Accessibilité** : `prefers-reduced-motion` respecté partout (Motion configuré en `reducedMotion="user"`, séquences remplacées par des versions statiques, animations CSS coupées). Aucun contenu ne dépend d'une animation pour être visible.

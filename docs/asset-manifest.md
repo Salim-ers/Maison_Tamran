@@ -15,7 +15,7 @@ Origine, définition, licence et usage de chaque image du site. Les photographie
 
 Tous sont des **visuels conceptuels** : ils sont signalés « Visuel conceptuel · IA » à l'écran et ne doivent pas être présentés comme des photographies de produits fabriqués, tant que les créations et les coffrets réels n'ont pas été photographiés.
 
-- **Définition native** : chaque image est générée directement à la taille indiquée, jusqu'à 3840 × 2160. Aucun agrandissement : la version publiée est identique ou réduite.
+- **Définition native** : chaque image est générée directement à la taille indiquée, jusqu'à 3840 × 2160 (et 2160 × 3840 pour les verticales des pages éditoriales sur mobile). Aucun agrandissement : la version publiée est identique ou réduite.
 - **Logo** : jamais demandé au modèle. Sur `coffret-ferme`, le logo officiel est composé en perspective au moment de la publication (`scripts/images/lid.ts`).
 - **Fidélité** : chaque prompt part de la case de la création sur la planche validée et décrit la recette enregistrée. Minuit à Kyoto, Ébène Salé et Rose de Nuit ont été régénérées après une première version qui montrait des fruits à coque absents de leur composition.
 - **Assortiments** (`coffret-ouvert`, formats, univers) : créations reconnaissables de la gamme, sans valeur de composition réelle d'un coffret.
@@ -67,8 +67,11 @@ Tous sont des **visuels conceptuels** : ils sont signalés « Visuel conceptuel 
 | `coffret-edition` | 2304 × 1728 | 2304 × 1728 | Page Coffrets, éditions éphémères |
 | `coffret-entreprise` | 3840 × 2160 | 3840 × 2160 | Professionnels, cadeaux d'entreprise |
 | `cadeau-mariage` | 3840 × 2160 | 3840 × 2160 | Professionnels, mariages et événements, l'art d'offrir |
+| `maison-palmeraie-v` | 2160 × 3840 | 2160 × 3840 | Notre Maison (ouverture, mobile) |
+| `atelier-ingredients-v` | 2160 × 3840 | 2160 × 3840 | Le savoir-faire (ouverture, mobile) |
+| `coffrets-ruban-v` | 2160 × 3840 | 2160 × 3840 | Professionnels (ouverture, mobile) |
 
-60 générations facturées, 5.95 USD au total (brand/generated/ledger.json).
+63 générations facturées, 6.29 USD au total (brand/generated/ledger.json).
 
 ## Commandes
 

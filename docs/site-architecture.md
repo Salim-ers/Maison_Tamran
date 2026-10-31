@@ -26,7 +26,7 @@ Aucune bibliothèque d'animation ajoutée : Motion (`useScroll`, `useTransform`,
 
 ## Boutique
 
-`/creations` (catalogue, filtres, tri, recherche), `/collections/[slug]`, `/creations/[slug]` (galerie : création, cœur à la loupe, ingrédients ; achat ; composition ; allergènes ; conservation ; déroulé de dégustation (attaque, cœur, finale) ; créations voisines), `/coffrets`, `/composer-mon-coffret`, `/recherche`, `/panier`, `/paiement` (+ démonstration, confirmation, échec), `/compte/*`, `/suivi-commande`, pages éditoriales et légales, `/professionnels/*` (dont devis). Back-office : `/admin/*`.
+`/creations` (catalogue, filtres, tri, recherche), `/collections/[slug]`, `/creations/[slug]` (galerie : création, cœur à la loupe, ingrédients ; achat ; composition ; allergènes ; conservation ; déroulé de dégustation (attaque, cœur, finale) ; accords suggérés ; créations précédente et suivante ; créations voisines), `/coffrets`, `/composer-mon-coffret`, `/recherche`, `/panier`, `/paiement` (+ démonstration, confirmation, échec), `/compte/*`, `/suivi-commande`, pages éditoriales et légales, `/professionnels/*` (dont devis). Back-office : `/admin/*`.
 
 ## Images
 
@@ -38,6 +38,20 @@ Aucune bibliothèque d'animation ajoutée : Motion (`useScroll`, `useTransform`,
 ## Pipeline de visuels (OpenAI)
 
 `scripts/generate-tamran-images.mts` (npm run images:openai), `scripts/images/openai.ts` (client), `scripts/images/openai-shots.ts` (prompts et références), `scripts/images/lid.ts` (pose du logo). Détail : `docs/asset-manifest.md`.
+
+## Pages éditoriales
+
+Maison, Savoir-faire, Professionnels, Cadeaux d'entreprise et Mariages s'ouvrent sur `PageHero` (`src/components/layout/page-hero.tsx`) : photographie plein cadre par direction artistique (`<picture>` et `getImageProps` : version paysage sur ordinateur, verticale 2160 × 3840 sur écran portrait ; un téléphone ne télécharge jamais la version paysage).
+
+## Mesures (build de production local, Lighthouse 13.6, 2026-10-31)
+
+| Page | Mobile (4G lente simulée) : perf. / access. / bonnes pratiques | LCP mobile | Ordinateur : perf. | LCP ordinateur | CLS |
+| --- | --- | --- | --- | --- | --- |
+| Accueil | 75 / 100 / 100 | 6,4 s | 93 | 1,6 s | 0 |
+| Fiche produit | 79 / 100 / 100 | 5,7 s | 99 | 0,9 s | 0 |
+| Configurateur | 77 / 100 / 100 | 6,5 s | — | — | 0 |
+
+SEO 69 : uniquement l'audit « indexable », volontairement bloqué par `robots.txt` tant que la boutique est en démonstration. Le LCP mobile est porté par de grandes photographies (AVIF) sur une connexion simulée à 1,6 Mbit/s ; à mesurer à nouveau sur Vercel (cache d'images et CDN).
 
 ## Données et paiement
 

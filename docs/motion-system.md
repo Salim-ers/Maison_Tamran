@@ -34,6 +34,13 @@ Motion 14 (déjà présent) : `useScroll`, `useTransform`, `useSpring`, `Animate
 | Configurateur | La pièce détourée quitte la carte et rejoint son alvéole en arc ; anneau doré à l'atterrissage ; pièce sélectionnée auréolée ; reflet doré et badge « Votre coffret est prêt » à la complétion ; prix qui défile. |
 | Cartes produit | Zoom lent ; bascule sur la macro du cœur ; filet doré qui apparaît. |
 | Fiche produit | Rideau entre les vues ; loupe qui suit le pointeur sur la macro (×1,7, dans la définition de l'image). |
+| Transitions de page | Du catalogue à la fiche : la photo de la création cliquée glisse de sa carte au cadre de la fiche (morphose), le reste de la page part vers la gauche, l'en-tête reste immobile. D'une création à la suivante ou à la précédente : glissement dans le sens de la navigation. |
+| Ouvertures des pages éditoriales | Maison, Savoir-faire, Professionnels : photographie plein cadre (verticale sur mobile) qui recule et s'éclaire au chargement, puis glisse en parallaxe. |
+| La création rejoint son coffret | Étape 05 de la métamorphose : le coffret vide photographié, chaque création détourée tombe dans sa caissette au défilement. |
+
+## Transitions de page : choix technique
+
+Les transitions utilisent l'API **View Transitions** du navigateur, déclenchée par `TransitionLink` (`src/components/motion/transition-link.tsx`) : au clic, la photo de la carte reçoit le nom `creation-<slug>` (le même que le cadre de la fiche produit), puis la navigation se fait dans `document.startViewTransition`, qui attend que la nouvelle page soit rendue. Le composant `<ViewTransition>` de React 19.3 a été essayé d'abord : avec Cache Components, Next 16.4 révèle les pages préchargées sans monter de nouvel élément dans le rendu de navigation, et React ne démarre alors aucune transition. Sans prise en charge du navigateur, avec « réduire les animations » ou un clic modifié (nouvel onglet), le lien reste un lien ordinaire.
 
 ## Performance
 
