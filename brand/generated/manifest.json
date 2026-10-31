@@ -1,0 +1,1886 @@
+{
+  "atelier-ingredients": {
+    "current": "6496c84a4b8f",
+    "versions": [
+      {
+        "key": "6496c84a4b8f",
+        "file": "brand/generated/atelier-ingredients/6496c84a4b8f.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "3840x2160",
+        "width": 3840,
+        "height": 2160,
+        "prompt": "Wide 16:9 top-down flat lay on dark stone of the house's raw ingredients arranged with restraint in small brass and ceramic bowls and loose on the stone: shelled pistachios, saffron threads, dried rose petals, green cardamom pods, roasted hazelnuts, black sesame seeds, matcha powder, toasted coconut flakes, fresh raspberries, pecans, coffee beans, broken pieces of dark chocolate, and a few glossy Medjool dates. Warm raking light from the left, deep soft shadows, generous dark negative space in the centre. Image 1 sets the light and colour only. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "brand/source/pack-photos/references/photo-modele-produit.png"
+        ],
+        "usage": {
+          "input_tokens": 1715,
+          "input_tokens_details": {
+            "image_tokens": 1505,
+            "text_tokens": 210
+          },
+          "output_tokens": 3336,
+          "output_tokens_details": {
+            "image_tokens": 3336,
+            "text_tokens": 0
+          },
+          "total_tokens": 5051
+        },
+        "costUsd": 0.1132,
+        "ms": 37764,
+        "generatedAt": "2026-10-31T14:32:31.473Z"
+      }
+    ],
+    "published": {
+      "key": "6496c84a4b8f",
+      "url": "/images/generated/univers/atelier-ingredients-df1c131b.webp",
+      "w": 3840,
+      "h": 2160,
+      "at": "2026-10-31T14:42:57.987Z"
+    }
+  },
+  "cadeau-mariage": {
+    "current": "1a6c0df84966",
+    "versions": [
+      {
+        "key": "1a6c0df84966",
+        "file": "brand/generated/cadeau-mariage/1a6c0df84966.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "3840x2160",
+        "width": 3840,
+        "height": 2160,
+        "prompt": "Wide 16:9 photograph of an evening wedding reception table: ivory linen tablecloth, tall candles in brass holders, white flowers and dried palm leaves, at each place a small cocoa-brown gift box (same box style as image 1, blank lid) tied with champagne silk ribbon, and in the centre a large hammered brass tray of creations (the house's chocolate-coated filled Medjool dates shown in the reference sheets (black sesame on dark chocolate, pistachio and golden kadaif on milk chocolate, pale matcha-green coating dusted only with matcha and tiny golden yuzu cubes, toasted hazelnuts on dark chocolate, crimson raspberry on dark chocolate, toasted coconut on blond chocolate, pecans on milk chocolate, rose petals and raspberry on white chocolate). Important: unlike the reference sheet, the green matcha piece and the white rose piece carry no pistachio and no nuts; pistachios appear only on the milk chocolate kadaif piece; image 2 is the reference). Warm candlelight, soft bokeh, shallow depth of field. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no emblem on any box or card.",
+        "refs": [
+          "coffret-ferme@abbba38883ae",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#42,117,2366x499"
+        ],
+        "usage": {
+          "input_tokens": 3271,
+          "input_tokens_details": {
+            "image_tokens": 2960,
+            "text_tokens": 311
+          },
+          "output_tokens": 3336,
+          "output_tokens_details": {
+            "image_tokens": 3336,
+            "text_tokens": 0
+          },
+          "total_tokens": 6607
+        },
+        "costUsd": 0.1253,
+        "ms": 40830,
+        "generatedAt": "2026-10-31T14:41:58.677Z"
+      }
+    ],
+    "published": {
+      "key": "1a6c0df84966",
+      "url": "/images/generated/univers/cadeau-mariage-ec24d6e7.webp",
+      "w": 3840,
+      "h": 2160,
+      "at": "2026-10-31T14:42:59.608Z"
+    }
+  },
+  "coffret-decouverte": {
+    "current": "adfcaf4242d7",
+    "versions": [
+      {
+        "key": "adfcaf4242d7",
+        "file": "brand/generated/coffret-decouverte/adfcaf4242d7.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "2304x1728",
+        "width": 2304,
+        "height": 1728,
+        "prompt": "Image 1 shows the Maison Tamran box and setting. Three-quarter view, 4:3, of a small open gift box for six: a rigid luxury gift box in deep cocoa-brown soft-touch paper with a thin champagne-copper inset line, ivory interior, individual dark brown pleated paper cups, its lid leaning against the back. Six whole creations in a 3 × 2 grid of cups (the house's chocolate-coated filled Medjool dates shown in the reference sheets (black sesame on dark chocolate, pistachio and golden kadaif on milk chocolate, pale matcha-green coating dusted only with matcha and tiny golden yuzu cubes, toasted hazelnuts on dark chocolate, crimson raspberry on dark chocolate, toasted coconut on blond chocolate, pecans on milk chocolate, rose petals and raspberry on white chocolate). Important: unlike the reference sheet, the green matcha piece and the white rose piece carry no pistachio and no nuts; pistachios appear only on the milk chocolate kadaif piece; image 2 is the reference for the creations). Warm travertine table, golden late-afternoon light, palm shadows, a handleless ivory coffee cup beside it. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no emblem on any box or card.",
+        "refs": [
+          "coffret-ferme@abbba38883ae",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#42,117,2366x499"
+        ],
+        "usage": {
+          "input_tokens": 3298,
+          "input_tokens_details": {
+            "image_tokens": 2960,
+            "text_tokens": 338
+          },
+          "output_tokens": 2584,
+          "output_tokens_details": {
+            "image_tokens": 2584,
+            "text_tokens": 0
+          },
+          "total_tokens": 5882
+        },
+        "costUsd": 0.1029,
+        "ms": 40411,
+        "generatedAt": "2026-10-31T14:41:44.923Z"
+      }
+    ],
+    "published": {
+      "key": "adfcaf4242d7",
+      "url": "/images/generated/coffret/coffret-decouverte-c236cbd6.webp",
+      "w": 2304,
+      "h": 1728,
+      "at": "2026-10-31T14:43:00.734Z"
+    }
+  },
+  "coffret-edition": {
+    "current": "f9c0cbc12fc5",
+    "versions": [
+      {
+        "key": "f9c0cbc12fc5",
+        "file": "brand/generated/coffret-edition/f9c0cbc12fc5.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "2304x1728",
+        "width": 2304,
+        "height": 1728,
+        "prompt": "Image 1 shows the Maison Tamran box and setting. Three-quarter view, 4:3, of a limited-edition gift box: rigid box in deep olive green soft-touch paper with a thin champagne-copper inset line, ivory interior, lid leaning against the back, twelve whole creations in dark pleated cups in a 4 × 3 grid, the four ephemeral creations of image 2 (buckwheat on dark chocolate, toasted coconut on blond chocolate, pecans on milk chocolate, rose petals on white chocolate). Dusk light, deep shadows, dark walnut table, a single candle. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no emblem on any box or card.",
+        "refs": [
+          "coffret-ferme@abbba38883ae",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#42,738,2366x499"
+        ],
+        "usage": {
+          "input_tokens": 3178,
+          "input_tokens_details": {
+            "image_tokens": 2960,
+            "text_tokens": 218
+          },
+          "output_tokens": 2584,
+          "output_tokens_details": {
+            "image_tokens": 2584,
+            "text_tokens": 0
+          },
+          "total_tokens": 5762
+        },
+        "costUsd": 0.1023,
+        "ms": 38616,
+        "generatedAt": "2026-10-31T14:36:59.751Z"
+      }
+    ],
+    "published": {
+      "key": "f9c0cbc12fc5",
+      "url": "/images/generated/coffret/coffret-edition-5d81ae2d.webp",
+      "w": 2304,
+      "h": 1728,
+      "at": "2026-10-31T14:43:01.650Z"
+    }
+  },
+  "coffret-entreprise": {
+    "current": "acf9d8befff6",
+    "versions": [
+      {
+        "key": "acf9d8befff6",
+        "file": "brand/generated/coffret-entreprise/acf9d8befff6.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "3840x2160",
+        "width": 3840,
+        "height": 2160,
+        "prompt": "Image 1 shows the Maison Tamran box. Wide 16:9 photograph for corporate gifting: on a polished dark walnut desk in a calm, elegant office at golden hour, a neat stack and a row of closed cocoa-brown gift boxes (same box as image 1, blank lids), each tied with a fine champagne silk ribbon, with small blank ivory cards tucked under the ribbons. A brass desk lamp glows softly, large window with warm light, shallow depth of field. Negative space on the left. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no emblem on any box or card.",
+        "refs": [
+          "coffret-ferme@abbba38883ae"
+        ],
+        "usage": {
+          "input_tokens": 1698,
+          "input_tokens_details": {
+            "image_tokens": 1508,
+            "text_tokens": 190
+          },
+          "output_tokens": 3336,
+          "output_tokens_details": {
+            "image_tokens": 3336,
+            "text_tokens": 0
+          },
+          "total_tokens": 5034
+        },
+        "costUsd": 0.1131,
+        "ms": 42789,
+        "generatedAt": "2026-10-31T14:37:23.425Z"
+      }
+    ],
+    "published": {
+      "key": "acf9d8befff6",
+      "url": "/images/generated/univers/coffret-entreprise-40f0bee6.webp",
+      "w": 3840,
+      "h": 2160,
+      "at": "2026-10-31T14:43:03.032Z"
+    }
+  },
+  "coffret-ferme": {
+    "current": "abbba38883ae",
+    "versions": [
+      {
+        "key": "abbba38883ae",
+        "file": "brand/generated/coffret-ferme/abbba38883ae.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "3840x2160",
+        "width": 3840,
+        "height": 2160,
+        "prompt": "Image 1 shows the Maison Tamran gift box style. Wide cinematic 16:9 still life, camera looking straight down at a warm travertine table at golden hour. On the right half of the frame: a closed a rigid luxury gift box in deep cocoa-brown soft-touch paper with a thin champagne-copper inset line, its lid completely blank and smooth (no logo, no emblem, no text: the lid is plain cocoa-brown with only the thin champagne-copper line). Around it, with restraint: a small hammered brass plate with three glossy Medjool dates, a handleless ivory coffee cup, a few pistachios, a sprig of dried date palm. Long soft shadows of palm fronds fall across the table from the left. The left half of the frame stays calm and dark-warm, with negative space for a headline. Rich, warm, editorial. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo.",
+        "refs": [
+          "brand/source/pack-photos/references/photo-modele-coffret.png"
+        ],
+        "usage": {
+          "input_tokens": 1711,
+          "input_tokens_details": {
+            "image_tokens": 1452,
+            "text_tokens": 259
+          },
+          "output_tokens": 3336,
+          "output_tokens_details": {
+            "image_tokens": 3336,
+            "text_tokens": 0
+          },
+          "total_tokens": 5047
+        },
+        "costUsd": 0.113,
+        "ms": 41290,
+        "generatedAt": "2026-10-31T14:27:55.902Z"
+      }
+    ],
+    "published": {
+      "key": "abbba38883ae",
+      "url": "/images/generated/coffret/coffret-ferme-05644cfe.webp",
+      "w": 3840,
+      "h": 2160,
+      "at": "2026-10-31T14:43:06.089Z"
+    }
+  },
+  "coffret-ouvert": {
+    "current": "65e6d777f781",
+    "versions": [
+      {
+        "key": "65e6d777f781",
+        "file": "brand/generated/coffret-ouvert/65e6d777f781.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "3840x2160",
+        "width": 3840,
+        "height": 2160,
+        "prompt": "Image 1 is the hero photograph of the closed Maison Tamran box. Recreate image 1 with exactly the same camera, framing, table, props, palm-frond shadows and golden light, and the box base at exactly the same place and size, but the lid has been removed from the frame: the box is now open. Inside, twelve creations sit in individual dark brown pleated paper cups in a 4 × 3 grid, each whole (not cut), toppings clearly visible: the house's chocolate-coated filled Medjool dates shown in the reference sheets (black sesame on dark chocolate, pistachio and golden kadaif on milk chocolate, pale matcha-green coating dusted only with matcha and tiny golden yuzu cubes, toasted hazelnuts on dark chocolate, crimson raspberry on dark chocolate, toasted coconut on blond chocolate, pecans on milk chocolate, rose petals and raspberry on white chocolate). Important: unlike the reference sheet, the green matcha piece and the white rose piece carry no pistachio and no nuts; pistachios appear only on the milk chocolate kadaif piece. Images 2 and 3 are references for the creations only. The left half of the frame stays calm, with negative space. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no emblem on any box or card.",
+        "refs": [
+          "coffret-ferme@abbba38883ae",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#42,117,2366x499",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#42,738,2366x499"
+        ],
+        "usage": {
+          "input_tokens": 4768,
+          "input_tokens_details": {
+            "image_tokens": 4412,
+            "text_tokens": 356
+          },
+          "output_tokens": 3336,
+          "output_tokens_details": {
+            "image_tokens": 3336,
+            "text_tokens": 0
+          },
+          "total_tokens": 8104
+        },
+        "costUsd": 0.1372,
+        "ms": 43684,
+        "generatedAt": "2026-10-31T14:41:21.530Z"
+      }
+    ],
+    "published": {
+      "key": "65e6d777f781",
+      "url": "/images/generated/coffret/coffret-ouvert-5cd69cfa.webp",
+      "w": 3840,
+      "h": 2160,
+      "at": "2026-10-31T14:43:08.197Z"
+    }
+  },
+  "coffret-prestige": {
+    "current": "c5c97cfa038f",
+    "versions": [
+      {
+        "key": "c5c97cfa038f",
+        "file": "brand/generated/coffret-prestige/c5c97cfa038f.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "2304x1728",
+        "width": 2304,
+        "height": 1728,
+        "prompt": "Image 1 shows the Maison Tamran box and setting. Three-quarter view, 4:3, of a large two-tier gift box for twenty-four: a rigid luxury gift box in deep cocoa-brown soft-touch paper with a thin champagne-copper inset line, ivory interior, individual dark brown pleated paper cups. The upper tray is lifted and set slightly offset on top so both tiers are visible, each holding twelve whole creations in a 4 × 3 grid of cups (the house's chocolate-coated filled Medjool dates shown in the reference sheets (black sesame on dark chocolate, pistachio and golden kadaif on milk chocolate, pale matcha-green coating dusted only with matcha and tiny golden yuzu cubes, toasted hazelnuts on dark chocolate, crimson raspberry on dark chocolate, toasted coconut on blond chocolate, pecans on milk chocolate, rose petals and raspberry on white chocolate). Important: unlike the reference sheet, the green matcha piece and the white rose piece carry no pistachio and no nuts; pistachios appear only on the milk chocolate kadaif piece; images 2 and 3 are the references). The lid rests behind. Warm travertine table, golden light, palm shadows, a brass dallah softly out of focus. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no emblem on any box or card.",
+        "refs": [
+          "coffret-ferme@abbba38883ae",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#42,117,2366x499",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#42,738,2366x499"
+        ],
+        "usage": {
+          "input_tokens": 4776,
+          "input_tokens_details": {
+            "image_tokens": 4412,
+            "text_tokens": 364
+          },
+          "output_tokens": 2584,
+          "output_tokens_details": {
+            "image_tokens": 2584,
+            "text_tokens": 0
+          },
+          "total_tokens": 7360
+        },
+        "costUsd": 0.1146,
+        "ms": 41230,
+        "generatedAt": "2026-10-31T14:41:52.659Z"
+      }
+    ],
+    "published": {
+      "key": "c5c97cfa038f",
+      "url": "/images/generated/coffret/coffret-prestige-be17ac05.webp",
+      "w": 2304,
+      "h": 1728,
+      "at": "2026-10-31T14:43:09.170Z"
+    }
+  },
+  "coffret-vide-12": {
+    "current": "6ad326886314",
+    "versions": [
+      {
+        "key": "6ad326886314",
+        "file": "brand/generated/coffret-vide-12/6ad326886314.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "2048x1536",
+        "width": 2048,
+        "height": 1536,
+        "prompt": "Image 1 shows the Maison Tamran gift box style. Photograph the same kind of box, open and empty, seen from directly above (perfect top-down flat lay, orthographic feel): a rigid luxury gift box in deep cocoa-brown soft-touch paper with a thin champagne-copper inset line, ivory interior, individual dark brown pleated paper cups. The box base is centred, its edges exactly parallel to the frame edges, occupying about 78% of the width. Inside: 12 identical empty pleated paper cups in a perfectly regular grid of 4 columns by 3 rows, evenly spaced, each cup round-oval and seen from straight above. No lid in frame. The box sits on a warm travertine surface. Soft, even warm light from the upper left with a gentle shadow on the right. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no emblem on any box or card.",
+        "refs": [
+          "brand/source/pack-photos/references/photo-modele-coffret.png"
+        ],
+        "usage": {
+          "input_tokens": 1704,
+          "input_tokens_details": {
+            "image_tokens": 1452,
+            "text_tokens": 252
+          },
+          "output_tokens": 2223,
+          "output_tokens_details": {
+            "image_tokens": 2223,
+            "text_tokens": 0
+          },
+          "total_tokens": 3927
+        },
+        "costUsd": 0.0796,
+        "ms": 31965,
+        "generatedAt": "2026-10-31T14:31:46.187Z"
+      }
+    ],
+    "published": {
+      "key": "6ad326886314",
+      "url": "/images/generated/coffret/coffret-vide-12-e9db083c.webp",
+      "w": 2048,
+      "h": 1536,
+      "at": "2026-10-31T14:43:09.982Z"
+    }
+  },
+  "coffret-vide-24": {
+    "current": "fb81dead44e5",
+    "versions": [
+      {
+        "key": "fb81dead44e5",
+        "file": "brand/generated/coffret-vide-24/fb81dead44e5.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "2304x1536",
+        "width": 2304,
+        "height": 1536,
+        "prompt": "Image 1 shows the Maison Tamran gift box style. Photograph the same kind of box, open and empty, seen from directly above (perfect top-down flat lay, orthographic feel): a rigid luxury gift box in deep cocoa-brown soft-touch paper with a thin champagne-copper inset line, ivory interior, individual dark brown pleated paper cups. The box base is centred, its edges exactly parallel to the frame edges, occupying about 78% of the width. Inside: 24 identical empty pleated paper cups in a perfectly regular grid of 6 columns by 4 rows, evenly spaced, each cup round-oval and seen from straight above. No lid in frame. The box sits on a warm travertine surface. Soft, even warm light from the upper left with a gentle shadow on the right. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no emblem on any box or card.",
+        "refs": [
+          "coffret-vide-12@6ad326886314"
+        ],
+        "usage": {
+          "input_tokens": 1704,
+          "input_tokens_details": {
+            "image_tokens": 1452,
+            "text_tokens": 252
+          },
+          "output_tokens": 2127,
+          "output_tokens_details": {
+            "image_tokens": 2127,
+            "text_tokens": 0
+          },
+          "total_tokens": 3831
+        },
+        "costUsd": 0.0767,
+        "ms": 29994,
+        "generatedAt": "2026-10-31T14:36:18.537Z"
+      }
+    ],
+    "published": {
+      "key": "fb81dead44e5",
+      "url": "/images/generated/coffret/coffret-vide-24-1f6356c6.webp",
+      "w": 2048,
+      "h": 1365,
+      "at": "2026-10-31T14:43:10.639Z"
+    }
+  },
+  "coffret-vide-6": {
+    "current": "8015b9b3f581",
+    "versions": [
+      {
+        "key": "8015b9b3f581",
+        "file": "brand/generated/coffret-vide-6/8015b9b3f581.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "2048x1536",
+        "width": 2048,
+        "height": 1536,
+        "prompt": "Image 1 shows the Maison Tamran gift box style. Photograph the same kind of box, open and empty, seen from directly above (perfect top-down flat lay, orthographic feel): a rigid luxury gift box in deep cocoa-brown soft-touch paper with a thin champagne-copper inset line, ivory interior, individual dark brown pleated paper cups. The box base is centred, its edges exactly parallel to the frame edges, occupying about 78% of the width. Inside: 6 identical empty pleated paper cups in a perfectly regular grid of 3 columns by 2 rows, evenly spaced, each cup round-oval and seen from straight above. No lid in frame. The box sits on a warm travertine surface. Soft, even warm light from the upper left with a gentle shadow on the right. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no emblem on any box or card.",
+        "refs": [
+          "coffret-vide-12@6ad326886314"
+        ],
+        "usage": {
+          "input_tokens": 1704,
+          "input_tokens_details": {
+            "image_tokens": 1452,
+            "text_tokens": 252
+          },
+          "output_tokens": 2223,
+          "output_tokens_details": {
+            "image_tokens": 2223,
+            "text_tokens": 0
+          },
+          "total_tokens": 3927
+        },
+        "costUsd": 0.0796,
+        "ms": 34280,
+        "generatedAt": "2026-10-31T14:36:20.311Z"
+      }
+    ],
+    "published": {
+      "key": "8015b9b3f581",
+      "url": "/images/generated/coffret/coffret-vide-6-2dd1f29d.webp",
+      "w": 2048,
+      "h": 1536,
+      "at": "2026-10-31T14:43:11.375Z"
+    }
+  },
+  "coupe-ambre-fume": {
+    "current": "84d777ba185e",
+    "versions": [
+      {
+        "key": "84d777ba185e",
+        "file": "brand/generated/coupe-ambre-fume/84d777ba185e.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1920x1920",
+        "width": 1920,
+        "height": 1920,
+        "prompt": "Image 1 is the reference photograph of \"Ambre Fumé\" (image 2 is the same creation, smaller). Create an extreme macro close-up of the cut half of this same date, square 1:1: the cut face fills most of the frame, seen straight on, showing the glossy dark Medjool flesh ring, an amber maple caramel with pecan pieces and a few crystals of smoked salt, the thin crisp chocolate shell edge and its toppings (milk chocolate shell generously topped with chopped toasted pecans). Same colours, same filling, same shell as image 1. Very shallow depth of field, warm raking light from the left revealing every texture, dark brown blurred background with brass reflections. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-ambre-fume@50e6566b331f",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1507,740,412x495"
+        ],
+        "usage": {
+          "input_tokens": 2507,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 239
+          },
+          "output_tokens": 3276,
+          "output_tokens_details": {
+            "image_tokens": 3276,
+            "text_tokens": 0
+          },
+          "total_tokens": 5783
+        },
+        "costUsd": 0.1176,
+        "ms": 46506,
+        "generatedAt": "2026-10-31T14:35:47.993Z"
+      }
+    ],
+    "published": {
+      "key": "84d777ba185e",
+      "url": "/images/generated/coupe/coupe-ambre-fume-f8a48655.webp",
+      "w": 1920,
+      "h": 1920,
+      "at": "2026-10-31T14:43:12.211Z"
+    }
+  },
+  "coupe-cafe-imperial": {
+    "current": "8b630223f248",
+    "versions": [
+      {
+        "key": "8b630223f248",
+        "file": "brand/generated/coupe-cafe-imperial/8b630223f248.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1920x1920",
+        "width": 1920,
+        "height": 1920,
+        "prompt": "Image 1 is the reference photograph of \"Café Impérial\" (image 2 is the same creation, smaller). Create an extreme macro close-up of the cut half of this same date, square 1:1: the cut face fills most of the frame, seen straight on, showing the glossy dark Medjool flesh ring, a creamy hazelnut and espresso praline with visible hazelnut pieces, the thin crisp chocolate shell edge and its toppings (dark chocolate shell topped with chopped toasted hazelnuts and fine praline crumbs). Same colours, same filling, same shell as image 1. Very shallow depth of field, warm raking light from the left revealing every texture, dark brown blurred background with brass reflections. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-cafe-imperial@7dfddd2cb2ad",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1996,119,410x495"
+        ],
+        "usage": {
+          "input_tokens": 2513,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 245
+          },
+          "output_tokens": 3276,
+          "output_tokens_details": {
+            "image_tokens": 3276,
+            "text_tokens": 0
+          },
+          "total_tokens": 5789
+        },
+        "costUsd": 0.1176,
+        "ms": 43353,
+        "generatedAt": "2026-10-31T14:34:29.836Z"
+      }
+    ],
+    "published": {
+      "key": "8b630223f248",
+      "url": "/images/generated/coupe/coupe-cafe-imperial-12ab1eaa.webp",
+      "w": 1920,
+      "h": 1920,
+      "at": "2026-10-31T14:43:13.058Z"
+    }
+  },
+  "coupe-ebene-sale": {
+    "current": "d1f959e7c1ab",
+    "versions": [
+      {
+        "key": "d1f959e7c1ab",
+        "file": "brand/generated/coupe-ebene-sale/d1f959e7c1ab.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1920x1920",
+        "width": 1920,
+        "height": 1920,
+        "prompt": "Image 1 is the reference photograph of \"Ébène Salé\" (image 2 is the same creation, smaller). Create an extreme macro close-up of the cut half of this same date, square 1:1: the cut face fills most of the frame, seen straight on, showing the glossy dark Medjool flesh ring, an amber miso caramel set with crunchy toasted buckwheat praline, the thin crisp chocolate shell edge and its toppings (dark chocolate shell coated with toasted buckwheat groats and a few flakes of sea salt (no nuts)). Same colours, same filling, same shell as image 1. Unlike image 2, there are NO nuts of any kind (no hazelnuts, no almonds): the crunchy topping is only toasted buckwheat groats. Very shallow depth of field, warm raking light from the left revealing every texture, dark brown blurred background with brass reflections. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-ebene-sale@f5984c1a5573",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#530,740,415x495"
+        ],
+        "usage": {
+          "input_tokens": 2551,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 283
+          },
+          "output_tokens": 3276,
+          "output_tokens_details": {
+            "image_tokens": 3276,
+            "text_tokens": 0
+          },
+          "total_tokens": 5827
+        },
+        "costUsd": 0.1178,
+        "ms": 49394,
+        "generatedAt": "2026-10-31T14:40:36.962Z"
+      }
+    ],
+    "published": {
+      "key": "d1f959e7c1ab",
+      "url": "/images/generated/coupe/coupe-ebene-sale-793eb6a6.webp",
+      "w": 1920,
+      "h": 1920,
+      "at": "2026-10-31T14:43:13.902Z"
+    }
+  },
+  "coupe-eclipse-noire": {
+    "current": "5b9e149e9c53",
+    "versions": [
+      {
+        "key": "5b9e149e9c53",
+        "file": "brand/generated/coupe-eclipse-noire/5b9e149e9c53.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1920x1920",
+        "width": 1920,
+        "height": 1920,
+        "prompt": "Image 1 is the reference photograph of \"Éclipse Noire\" (image 2 is the same creation, smaller). Create an extreme macro close-up of the cut half of this same date, square 1:1: the cut face fills most of the frame, seen straight on, showing the glossy dark Medjool flesh ring, a dark, almost black toasted black-sesame praline core with a small bright yellow yuzu insert, the thin crisp chocolate shell edge and its toppings (glossy dark chocolate shell densely coated with black sesame seeds and a few golden toasted sesame seeds). Same colours, same filling, same shell as image 1. Very shallow depth of field, warm raking light from the left revealing every texture, dark brown blurred background with brass reflections. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-eclipse-noire@cc586d2a83d7",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#44,119,410x495"
+        ],
+        "usage": {
+          "input_tokens": 2522,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 254
+          },
+          "output_tokens": 3276,
+          "output_tokens_details": {
+            "image_tokens": 3276,
+            "text_tokens": 0
+          },
+          "total_tokens": 5798
+        },
+        "costUsd": 0.1177,
+        "ms": 46009,
+        "generatedAt": "2026-10-31T14:33:18.692Z"
+      }
+    ],
+    "published": {
+      "key": "5b9e149e9c53",
+      "url": "/images/generated/coupe/coupe-eclipse-noire-f03ee927.webp",
+      "w": 1920,
+      "h": 1920,
+      "at": "2026-10-31T14:43:14.763Z"
+    }
+  },
+  "coupe-ile-secrete": {
+    "current": "b20b28f3c072",
+    "versions": [
+      {
+        "key": "b20b28f3c072",
+        "file": "brand/generated/coupe-ile-secrete/b20b28f3c072.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1920x1920",
+        "width": 1920,
+        "height": 1920,
+        "prompt": "Image 1 is the reference photograph of \"Île Secrète\" (image 2 is the same creation, smaller). Create an extreme macro close-up of the cut half of this same date, square 1:1: the cut face fills most of the frame, seen straight on, showing the glossy dark Medjool flesh ring, a soft pale green pandan cream mixed with grated coconut, the thin crisp chocolate shell edge and its toppings (pale golden blond chocolate shell (caramelised white chocolate, ivory with a light biscuit tint) topped with toasted coconut flakes). Same colours, same filling, same shell as image 1. Very shallow depth of field, warm raking light from the left revealing every texture, dark brown blurred background with brass reflections. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-ile-secrete@965c11056c8b",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1018,740,415x495"
+        ],
+        "usage": {
+          "input_tokens": 2518,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 250
+          },
+          "output_tokens": 3276,
+          "output_tokens_details": {
+            "image_tokens": 3276,
+            "text_tokens": 0
+          },
+          "total_tokens": 5794
+        },
+        "costUsd": 0.1177,
+        "ms": 45583,
+        "generatedAt": "2026-10-31T14:41:16.986Z"
+      }
+    ],
+    "published": {
+      "key": "b20b28f3c072",
+      "url": "/images/generated/coupe/coupe-ile-secrete-a2210f25.webp",
+      "w": 1920,
+      "h": 1920,
+      "at": "2026-10-31T14:43:15.560Z"
+    }
+  },
+  "coupe-minuit-a-kyoto": {
+    "current": "bfeb2879a6f6",
+    "versions": [
+      {
+        "key": "bfeb2879a6f6",
+        "file": "brand/generated/coupe-minuit-a-kyoto/bfeb2879a6f6.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1920x1920",
+        "width": 1920,
+        "height": 1920,
+        "prompt": "Image 1 is the reference photograph of \"Minuit à Kyoto\" (image 2 is the same creation, smaller). Create an extreme macro close-up of the cut half of this same date, square 1:1: the cut face fills most of the frame, seen straight on, showing the glossy dark Medjool flesh ring, a green matcha ganache with a bright yellow yuzu heart, the thin crisp chocolate shell edge and its toppings (pale matcha-green white chocolate shell, lightly dusted with matcha powder and dotted with tiny golden cubes of candied yuzu zest). Same colours, same filling, same shell as image 1. Unlike image 2, there are NO pistachios and no nuts of any kind anywhere (this recipe contains none): the only toppings are matcha powder and small candied yuzu cubes, and the plate holds only matcha powder and yuzu. Very shallow depth of field, warm raking light from the left revealing every texture, dark brown blurred background with brass reflections. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-minuit-a-kyoto@e940018e61a5",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1018,119,415x495"
+        ],
+        "usage": {
+          "input_tokens": 2574,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 306
+          },
+          "output_tokens": 3276,
+          "output_tokens_details": {
+            "image_tokens": 3276,
+            "text_tokens": 0
+          },
+          "total_tokens": 5850
+        },
+        "costUsd": 0.118,
+        "ms": 43276,
+        "generatedAt": "2026-10-31T14:40:30.818Z"
+      }
+    ],
+    "published": {
+      "key": "bfeb2879a6f6",
+      "url": "/images/generated/coupe/coupe-minuit-a-kyoto-9bc0298d.webp",
+      "w": 1920,
+      "h": 1920,
+      "at": "2026-10-31T14:43:16.405Z"
+    }
+  },
+  "coupe-or-de-marrakech": {
+    "current": "c7926116973b",
+    "versions": [
+      {
+        "key": "c7926116973b",
+        "file": "brand/generated/coupe-or-de-marrakech/c7926116973b.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1920x1920",
+        "width": 1920,
+        "height": 1920,
+        "prompt": "Image 1 is the reference photograph of \"Or de Marrakech\" (image 2 is the same creation, smaller). Create an extreme macro close-up of the cut half of this same date, square 1:1: the cut face fills most of the frame, seen straight on, showing the glossy dark Medjool flesh ring, a pale green pistachio cream laced with crisp golden kadaif threads, the thin crisp chocolate shell edge and its toppings (milk chocolate shell topped with chopped bright green pistachios and a few golden kadaif pastry threads). Same colours, same filling, same shell as image 1. Very shallow depth of field, warm raking light from the left revealing every texture, dark brown blurred background with brass reflections. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-or-de-marrakech@1bcf670f2ea3",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1507,119,412x495"
+        ],
+        "usage": {
+          "input_tokens": 2515,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 247
+          },
+          "output_tokens": 3276,
+          "output_tokens_details": {
+            "image_tokens": 3276,
+            "text_tokens": 0
+          },
+          "total_tokens": 5791
+        },
+        "costUsd": 0.1177,
+        "ms": 50889,
+        "generatedAt": "2026-10-31T14:34:09.873Z"
+      }
+    ],
+    "published": {
+      "key": "c7926116973b",
+      "url": "/images/generated/coupe/coupe-or-de-marrakech-d86ded14.webp",
+      "w": 1920,
+      "h": 1920,
+      "at": "2026-10-31T14:43:17.294Z"
+    }
+  },
+  "coupe-rose-de-nuit": {
+    "current": "49135ce33240",
+    "versions": [
+      {
+        "key": "49135ce33240",
+        "file": "brand/generated/coupe-rose-de-nuit/49135ce33240.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1920x1920",
+        "width": 1920,
+        "height": 1920,
+        "prompt": "Image 1 is the reference photograph of \"Rose de Nuit\" (image 2 is the same creation, smaller). Create an extreme macro close-up of the cut half of this same date, square 1:1: the cut face fills most of the frame, seen straight on, showing the glossy dark Medjool flesh ring, a pale pink lychee and rose ganache speckled with raspberry, the thin crisp chocolate shell edge and its toppings (white chocolate shell sprinkled with dried pink rose petals and crimson freeze-dried raspberry pieces (no nuts)). Same colours, same filling, same shell as image 1. Unlike image 2, there are NO nuts of any kind (no pistachios, no almonds, no hazelnuts): toppings are only dried rose petals and freeze-dried raspberry. Very shallow depth of field, warm raking light from the left revealing every texture, dark brown blurred background with brass reflections. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-rose-de-nuit@329b2bf17ae5",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1996,740,410x495"
+        ],
+        "usage": {
+          "input_tokens": 2552,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 284
+          },
+          "output_tokens": 3276,
+          "output_tokens_details": {
+            "image_tokens": 3276,
+            "text_tokens": 0
+          },
+          "total_tokens": 5828
+        },
+        "costUsd": 0.1178,
+        "ms": 49101,
+        "generatedAt": "2026-10-31T14:41:10.577Z"
+      }
+    ],
+    "published": {
+      "key": "49135ce33240",
+      "url": "/images/generated/coupe/coupe-rose-de-nuit-b219332d.webp",
+      "w": 1920,
+      "h": 1920,
+      "at": "2026-10-31T14:43:18.073Z"
+    }
+  },
+  "coupe-rouge-desir": {
+    "current": "29c6c13a4697",
+    "versions": [
+      {
+        "key": "29c6c13a4697",
+        "file": "brand/generated/coupe-rouge-desir/29c6c13a4697.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1920x1920",
+        "width": 1920,
+        "height": 1920,
+        "prompt": "Image 1 is the reference photograph of \"Rouge Désir\" (image 2 is the same creation, smaller). Create an extreme macro close-up of the cut half of this same date, square 1:1: the cut face fills most of the frame, seen straight on, showing the glossy dark Medjool flesh ring, a glossy deep red raspberry and hibiscus confit, the thin crisp chocolate shell edge and its toppings (dark chocolate shell sprinkled with crimson freeze-dried raspberry pieces and crushed dried hibiscus). Same colours, same filling, same shell as image 1. Very shallow depth of field, warm raking light from the left revealing every texture, dark brown blurred background with brass reflections. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-rouge-desir@247b2c46f2b9",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#44,740,410x495"
+        ],
+        "usage": {
+          "input_tokens": 2508,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 240
+          },
+          "output_tokens": 3276,
+          "output_tokens_details": {
+            "image_tokens": 3276,
+            "text_tokens": 0
+          },
+          "total_tokens": 5784
+        },
+        "costUsd": 0.1176,
+        "ms": 50011,
+        "generatedAt": "2026-10-31T14:34:46.981Z"
+      }
+    ],
+    "published": {
+      "key": "29c6c13a4697",
+      "url": "/images/generated/coupe/coupe-rouge-desir-4e503ce8.webp",
+      "w": 1920,
+      "h": 1920,
+      "at": "2026-10-31T14:43:18.900Z"
+    }
+  },
+  "coupe-velours-persan": {
+    "current": "76d5ddacf6bf",
+    "versions": [
+      {
+        "key": "76d5ddacf6bf",
+        "file": "brand/generated/coupe-velours-persan/76d5ddacf6bf.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1920x1920",
+        "width": 1920,
+        "height": 1920,
+        "prompt": "Image 1 is the reference photograph of \"Velours Persan\" (image 2 is the same creation, smaller). Create an extreme macro close-up of the cut half of this same date, square 1:1: the cut face fills most of the frame, seen straight on, showing the glossy dark Medjool flesh ring, a smooth ivory almond cream around a soft, glossy orange apricot heart, the thin crisp chocolate shell edge and its toppings (milk chocolate shell topped with flaked white almonds and a few fine red saffron threads). Same colours, same filling, same shell as image 1. Very shallow depth of field, warm raking light from the left revealing every texture, dark brown blurred background with brass reflections. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-velours-persan@60a7b1d940a3",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#530,119,415x495"
+        ],
+        "usage": {
+          "input_tokens": 2513,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 245
+          },
+          "output_tokens": 3276,
+          "output_tokens_details": {
+            "image_tokens": 3276,
+            "text_tokens": 0
+          },
+          "total_tokens": 5789
+        },
+        "costUsd": 0.1176,
+        "ms": 45673,
+        "generatedAt": "2026-10-31T14:33:18.379Z"
+      }
+    ],
+    "published": {
+      "key": "76d5ddacf6bf",
+      "url": "/images/generated/coupe/coupe-velours-persan-cb30815e.webp",
+      "w": 1920,
+      "h": 1920,
+      "at": "2026-10-31T14:43:19.736Z"
+    }
+  },
+  "meta-coeur": {
+    "current": "c6c01a8e09b1",
+    "versions": [
+      {
+        "key": "c6c01a8e09b1",
+        "file": "brand/generated/meta-coeur/c6c01a8e09b1.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "2560x1440",
+        "width": 2560,
+        "height": 1440,
+        "prompt": "Macro 16:9 photograph, step 'the heart': a single plain Medjool date (no chocolate yet), slit open lengthwise, pit removed, its two halves gently parted to reveal the glossy amber flesh, with a generous line of smooth pale green pistachio cream nested inside. Beside it, a small brass spoon with a little pistachio cream and a few shelled pistachios. Dark brown stone surface, warm side light from the left, very shallow depth of field. Image 1 sets the light and colour only. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "brand/source/pack-photos/references/photo-modele-produit.png"
+        ],
+        "usage": {
+          "input_tokens": 1701,
+          "input_tokens_details": {
+            "image_tokens": 1505,
+            "text_tokens": 196
+          },
+          "output_tokens": 1843,
+          "output_tokens_details": {
+            "image_tokens": 1843,
+            "text_tokens": 0
+          },
+          "total_tokens": 3544
+        },
+        "costUsd": 0.0683,
+        "ms": 29535,
+        "generatedAt": "2026-10-31T14:32:14.931Z"
+      }
+    ],
+    "published": {
+      "key": "c6c01a8e09b1",
+      "url": "/images/generated/univers/meta-coeur-7244b722.webp",
+      "w": 2560,
+      "h": 1440,
+      "at": "2026-10-31T14:43:20.456Z"
+    }
+  },
+  "meta-enrobage": {
+    "current": "c566241e82e8",
+    "versions": [
+      {
+        "key": "c566241e82e8",
+        "file": "brand/generated/meta-enrobage/c566241e82e8.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "2560x1440",
+        "width": 2560,
+        "height": 1440,
+        "prompt": "Macro 16:9 photograph, step 'the coating': three filled Medjool dates freshly coated in glossy tempered dark chocolate, resting on a chocolate-stained cooling rack, the coating still settling; a slow ribbon of molten chocolate drips from the rack; behind, a bowl of molten dark chocolate with a soft swirl. Dark background, warm rim light making the chocolate shine. Image 1 sets the light and colour only. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "brand/source/pack-photos/references/photo-modele-produit.png"
+        ],
+        "usage": {
+          "input_tokens": 1676,
+          "input_tokens_details": {
+            "image_tokens": 1505,
+            "text_tokens": 171
+          },
+          "output_tokens": 1843,
+          "output_tokens_details": {
+            "image_tokens": 1843,
+            "text_tokens": 0
+          },
+          "total_tokens": 3519
+        },
+        "costUsd": 0.0682,
+        "ms": 28848,
+        "generatedAt": "2026-10-31T14:32:15.413Z"
+      }
+    ],
+    "published": {
+      "key": "c566241e82e8",
+      "url": "/images/generated/univers/meta-enrobage-6d6b4f26.webp",
+      "w": 2560,
+      "h": 1440,
+      "at": "2026-10-31T14:43:21.155Z"
+    }
+  },
+  "piece-ambre-fume": {
+    "current": "6ec2f3bb3c86",
+    "versions": [
+      {
+        "key": "6ec2f3bb3c86",
+        "file": "brand/generated/piece-ambre-fume/6ec2f3bb3c86.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1024x1024",
+        "width": 1024,
+        "height": 1024,
+        "prompt": "Image 1 is the reference photograph of \"Ambre Fumé\". Isolate one single whole coated date of this exact creation (same coating, same toppings), seen from directly above (top-down view), lying horizontally with its long axis left to right, centred, filling about 70% of the width. Fully transparent background: no plate, no surface, no ingredients, no cast shadow. Soft warm light from the upper left. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-ambre-fume@50e6566b331f",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1507,740,412x495"
+        ],
+        "usage": {
+          "input_tokens": 2450,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 182
+          },
+          "output_tokens": 1756,
+          "output_tokens_details": {
+            "image_tokens": 1756,
+            "text_tokens": 0
+          },
+          "total_tokens": 4206
+        },
+        "costUsd": 0.0717,
+        "ms": 34054,
+        "generatedAt": "2026-10-31T14:35:45.477Z"
+      }
+    ],
+    "published": {
+      "key": "6ec2f3bb3c86",
+      "url": "/images/generated/piece/piece-ambre-fume-6049ccfc.webp",
+      "w": 1024,
+      "h": 1024,
+      "at": "2026-10-31T14:43:21.380Z"
+    }
+  },
+  "piece-cafe-imperial": {
+    "current": "aeeaf9323051",
+    "versions": [
+      {
+        "key": "aeeaf9323051",
+        "file": "brand/generated/piece-cafe-imperial/aeeaf9323051.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1024x1024",
+        "width": 1024,
+        "height": 1024,
+        "prompt": "Image 1 is the reference photograph of \"Café Impérial\". Isolate one single whole coated date of this exact creation (same coating, same toppings), seen from directly above (top-down view), lying horizontally with its long axis left to right, centred, filling about 70% of the width. Fully transparent background: no plate, no surface, no ingredients, no cast shadow. Soft warm light from the upper left. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-cafe-imperial@7dfddd2cb2ad",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1996,119,410x495"
+        ],
+        "usage": {
+          "input_tokens": 2451,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 183
+          },
+          "output_tokens": 1756,
+          "output_tokens_details": {
+            "image_tokens": 1756,
+            "text_tokens": 0
+          },
+          "total_tokens": 4207
+        },
+        "costUsd": 0.0717,
+        "ms": 36102,
+        "generatedAt": "2026-10-31T14:34:29.569Z"
+      }
+    ],
+    "published": {
+      "key": "aeeaf9323051",
+      "url": "/images/generated/piece/piece-cafe-imperial-8dcd2788.webp",
+      "w": 1024,
+      "h": 1024,
+      "at": "2026-10-31T14:43:21.628Z"
+    }
+  },
+  "piece-ebene-sale": {
+    "current": "0a2c1539d351",
+    "versions": [
+      {
+        "key": "0a2c1539d351",
+        "file": "brand/generated/piece-ebene-sale/0a2c1539d351.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1024x1024",
+        "width": 1024,
+        "height": 1024,
+        "prompt": "Image 1 is the reference photograph of \"Ébène Salé\". Isolate one single whole coated date of this exact creation (same coating, same toppings), seen from directly above (top-down view), lying horizontally with its long axis left to right, centred, filling about 70% of the width. Unlike image 2, there are NO nuts of any kind (no hazelnuts, no almonds): the crunchy topping is only toasted buckwheat groats. Fully transparent background: no plate, no surface, no ingredients, no cast shadow. Soft warm light from the upper left. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-ebene-sale@f5984c1a5573",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#530,740,415x495"
+        ],
+        "usage": {
+          "input_tokens": 2484,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 216
+          },
+          "output_tokens": 1756,
+          "output_tokens_details": {
+            "image_tokens": 1756,
+            "text_tokens": 0
+          },
+          "total_tokens": 4240
+        },
+        "costUsd": 0.0719,
+        "ms": 38237,
+        "generatedAt": "2026-10-31T14:40:25.834Z"
+      }
+    ],
+    "published": {
+      "key": "0a2c1539d351",
+      "url": "/images/generated/piece/piece-ebene-sale-4a29a274.webp",
+      "w": 1024,
+      "h": 1024,
+      "at": "2026-10-31T14:43:21.878Z"
+    }
+  },
+  "piece-eclipse-noire": {
+    "current": "f9d6e0760b18",
+    "versions": [
+      {
+        "key": "f9d6e0760b18",
+        "file": "brand/generated/piece-eclipse-noire/f9d6e0760b18.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1024x1024",
+        "width": 1024,
+        "height": 1024,
+        "prompt": "Image 1 is the reference photograph of \"Éclipse Noire\". Isolate one single whole coated date of this exact creation (same coating, same toppings), seen from directly above (top-down view), lying horizontally with its long axis left to right, centred, filling about 70% of the width. Fully transparent background: no plate, no surface, no ingredients, no cast shadow. Soft warm light from the upper left. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-eclipse-noire@cc586d2a83d7",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#44,119,410x495"
+        ],
+        "usage": {
+          "input_tokens": 2450,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 182
+          },
+          "output_tokens": 1756,
+          "output_tokens_details": {
+            "image_tokens": 1756,
+            "text_tokens": 0
+          },
+          "total_tokens": 4206
+        },
+        "costUsd": 0.0717,
+        "ms": 37818,
+        "generatedAt": "2026-10-31T14:33:10.510Z"
+      }
+    ],
+    "published": {
+      "key": "f9d6e0760b18",
+      "url": "/images/generated/piece/piece-eclipse-noire-71d8d384.webp",
+      "w": 1024,
+      "h": 1024,
+      "at": "2026-10-31T14:43:22.109Z"
+    }
+  },
+  "piece-ile-secrete": {
+    "current": "a28871e448a1",
+    "versions": [
+      {
+        "key": "a28871e448a1",
+        "file": "brand/generated/piece-ile-secrete/a28871e448a1.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1024x1024",
+        "width": 1024,
+        "height": 1024,
+        "prompt": "Image 1 is the reference photograph of \"Île Secrète\". Isolate one single whole coated date of this exact creation (same coating, same toppings), seen from directly above (top-down view), lying horizontally with its long axis left to right, centred, filling about 70% of the width. Fully transparent background: no plate, no surface, no ingredients, no cast shadow. Soft warm light from the upper left. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-ile-secrete@965c11056c8b",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1018,740,415x495"
+        ],
+        "usage": {
+          "input_tokens": 2451,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 183
+          },
+          "output_tokens": 1756,
+          "output_tokens_details": {
+            "image_tokens": 1756,
+            "text_tokens": 0
+          },
+          "total_tokens": 4207
+        },
+        "costUsd": 0.0717,
+        "ms": 33828,
+        "generatedAt": "2026-10-31T14:35:21.376Z"
+      }
+    ],
+    "published": {
+      "key": "a28871e448a1",
+      "url": "/images/generated/piece/piece-ile-secrete-e8f8fd9f.webp",
+      "w": 1024,
+      "h": 1024,
+      "at": "2026-10-31T14:43:22.340Z"
+    }
+  },
+  "piece-minuit-a-kyoto": {
+    "current": "679fa30a9af8",
+    "versions": [
+      {
+        "key": "679fa30a9af8",
+        "file": "brand/generated/piece-minuit-a-kyoto/679fa30a9af8.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1024x1024",
+        "width": 1024,
+        "height": 1024,
+        "prompt": "Image 1 is the reference photograph of \"Minuit à Kyoto\". Isolate one single whole coated date of this exact creation (same coating, same toppings), seen from directly above (top-down view), lying horizontally with its long axis left to right, centred, filling about 70% of the width. Unlike image 2, there are NO pistachios and no nuts of any kind anywhere (this recipe contains none): the only toppings are matcha powder and small candied yuzu cubes, and the plate holds only matcha powder and yuzu. Fully transparent background: no plate, no surface, no ingredients, no cast shadow. Soft warm light from the upper left. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-minuit-a-kyoto@e940018e61a5",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1018,119,415x495"
+        ],
+        "usage": {
+          "input_tokens": 2501,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 233
+          },
+          "output_tokens": 1756,
+          "output_tokens_details": {
+            "image_tokens": 1756,
+            "text_tokens": 0
+          },
+          "total_tokens": 4257
+        },
+        "costUsd": 0.072,
+        "ms": 33416,
+        "generatedAt": "2026-10-31T14:40:20.969Z"
+      }
+    ],
+    "published": {
+      "key": "679fa30a9af8",
+      "url": "/images/generated/piece/piece-minuit-a-kyoto-9a382146.webp",
+      "w": 1024,
+      "h": 1024,
+      "at": "2026-10-31T14:43:22.583Z"
+    }
+  },
+  "piece-or-de-marrakech": {
+    "current": "9a02a674c1cf",
+    "versions": [
+      {
+        "key": "9a02a674c1cf",
+        "file": "brand/generated/piece-or-de-marrakech/9a02a674c1cf.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1024x1024",
+        "width": 1024,
+        "height": 1024,
+        "prompt": "Image 1 is the reference photograph of \"Or de Marrakech\". Isolate one single whole coated date of this exact creation (same coating, same toppings), seen from directly above (top-down view), lying horizontally with its long axis left to right, centred, filling about 70% of the width. Fully transparent background: no plate, no surface, no ingredients, no cast shadow. Soft warm light from the upper left. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-or-de-marrakech@1bcf670f2ea3",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1507,119,412x495"
+        ],
+        "usage": {
+          "input_tokens": 2449,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 181
+          },
+          "output_tokens": 1756,
+          "output_tokens_details": {
+            "image_tokens": 1756,
+            "text_tokens": 0
+          },
+          "total_tokens": 4205
+        },
+        "costUsd": 0.0717,
+        "ms": 37094,
+        "generatedAt": "2026-10-31T14:33:56.415Z"
+      }
+    ],
+    "published": {
+      "key": "9a02a674c1cf",
+      "url": "/images/generated/piece/piece-or-de-marrakech-f6539925.webp",
+      "w": 1024,
+      "h": 1024,
+      "at": "2026-10-31T14:43:22.830Z"
+    }
+  },
+  "piece-rose-de-nuit": {
+    "current": "7d8f7bffb2ba",
+    "versions": [
+      {
+        "key": "7d8f7bffb2ba",
+        "file": "brand/generated/piece-rose-de-nuit/7d8f7bffb2ba.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1024x1024",
+        "width": 1024,
+        "height": 1024,
+        "prompt": "Image 1 is the reference photograph of \"Rose de Nuit\". Isolate one single whole coated date of this exact creation (same coating, same toppings), seen from directly above (top-down view), lying horizontally with its long axis left to right, centred, filling about 70% of the width. Unlike image 2, there are NO nuts of any kind (no pistachios, no almonds, no hazelnuts): toppings are only dried rose petals and freeze-dried raspberry. Fully transparent background: no plate, no surface, no ingredients, no cast shadow. Soft warm light from the upper left. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-rose-de-nuit@329b2bf17ae5",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1996,740,410x495"
+        ],
+        "usage": {
+          "input_tokens": 2487,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 219
+          },
+          "output_tokens": 1756,
+          "output_tokens_details": {
+            "image_tokens": 1756,
+            "text_tokens": 0
+          },
+          "total_tokens": 4243
+        },
+        "costUsd": 0.0719,
+        "ms": 37332,
+        "generatedAt": "2026-10-31T14:41:03.679Z"
+      }
+    ],
+    "published": {
+      "key": "7d8f7bffb2ba",
+      "url": "/images/generated/piece/piece-rose-de-nuit-6bf791e6.webp",
+      "w": 1024,
+      "h": 1024,
+      "at": "2026-10-31T14:43:23.059Z"
+    }
+  },
+  "piece-rouge-desir": {
+    "current": "c80d300b806a",
+    "versions": [
+      {
+        "key": "c80d300b806a",
+        "file": "brand/generated/piece-rouge-desir/c80d300b806a.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1024x1024",
+        "width": 1024,
+        "height": 1024,
+        "prompt": "Image 1 is the reference photograph of \"Rouge Désir\". Isolate one single whole coated date of this exact creation (same coating, same toppings), seen from directly above (top-down view), lying horizontally with its long axis left to right, centred, filling about 70% of the width. Fully transparent background: no plate, no surface, no ingredients, no cast shadow. Soft warm light from the upper left. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-rouge-desir@247b2c46f2b9",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#44,740,410x495"
+        ],
+        "usage": {
+          "input_tokens": 2450,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 182
+          },
+          "output_tokens": 1756,
+          "output_tokens_details": {
+            "image_tokens": 1756,
+            "text_tokens": 0
+          },
+          "total_tokens": 4206
+        },
+        "costUsd": 0.0717,
+        "ms": 33890,
+        "generatedAt": "2026-10-31T14:34:44.366Z"
+      }
+    ],
+    "published": {
+      "key": "c80d300b806a",
+      "url": "/images/generated/piece/piece-rouge-desir-a1e08edd.webp",
+      "w": 1024,
+      "h": 1024,
+      "at": "2026-10-31T14:43:23.304Z"
+    }
+  },
+  "piece-velours-persan": {
+    "current": "de6825816fdb",
+    "versions": [
+      {
+        "key": "de6825816fdb",
+        "file": "brand/generated/piece-velours-persan/de6825816fdb.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1024x1024",
+        "width": 1024,
+        "height": 1024,
+        "prompt": "Image 1 is the reference photograph of \"Velours Persan\". Isolate one single whole coated date of this exact creation (same coating, same toppings), seen from directly above (top-down view), lying horizontally with its long axis left to right, centred, filling about 70% of the width. Fully transparent background: no plate, no surface, no ingredients, no cast shadow. Soft warm light from the upper left. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "produit-velours-persan@60a7b1d940a3",
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#530,119,415x495"
+        ],
+        "usage": {
+          "input_tokens": 2450,
+          "input_tokens_details": {
+            "image_tokens": 2268,
+            "text_tokens": 182
+          },
+          "output_tokens": 1756,
+          "output_tokens_details": {
+            "image_tokens": 1756,
+            "text_tokens": 0
+          },
+          "total_tokens": 4206
+        },
+        "costUsd": 0.0717,
+        "ms": 34401,
+        "generatedAt": "2026-10-31T14:33:07.123Z"
+      }
+    ],
+    "published": {
+      "key": "de6825816fdb",
+      "url": "/images/generated/piece/piece-velours-persan-866cb4be.webp",
+      "w": 1024,
+      "h": 1024,
+      "at": "2026-10-31T14:43:23.534Z"
+    }
+  },
+  "pro-hotel": {
+    "current": "753543c741b0",
+    "versions": [
+      {
+        "key": "753543c741b0",
+        "file": "brand/generated/pro-hotel/753543c741b0.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "3840x2160",
+        "width": 3840,
+        "height": 2160,
+        "prompt": "Wide 16:9 photograph of the lounge of a luxury hotel at dusk: a polished travertine and walnut counter in the foreground with a brass tray of creations in dark pleated cups (the house's chocolate-coated filled Medjool dates shown in the reference sheets (black sesame on dark chocolate, pistachio and golden kadaif on milk chocolate, pale matcha-green coating dusted only with matcha and tiny golden yuzu cubes, toasted hazelnuts on dark chocolate, crimson raspberry on dark chocolate, toasted coconut on blond chocolate, pecans on milk chocolate, rose petals and raspberry on white chocolate). Important: unlike the reference sheet, the green matcha piece and the white rose piece carry no pistachio and no nuts; pistachios appear only on the milk chocolate kadaif piece; image 1 is the reference), a silver-brass coffee service and two small cups. Behind, softly out of focus: arches, warm lamps, plants, a calm and refined interior. Image 2 sets the materials and mood only. No people. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no emblem on any box or card.",
+        "refs": [
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#42,117,2366x499",
+          "brand/source/pack-photos/references/photo-modele-coffret.png"
+        ],
+        "usage": {
+          "input_tokens": 3214,
+          "input_tokens_details": {
+            "image_tokens": 2904,
+            "text_tokens": 310
+          },
+          "output_tokens": 3336,
+          "output_tokens_details": {
+            "image_tokens": 3336,
+            "text_tokens": 0
+          },
+          "total_tokens": 6550
+        },
+        "costUsd": 0.1249,
+        "ms": 39089,
+        "generatedAt": "2026-10-31T14:39:14.879Z"
+      }
+    ],
+    "published": {
+      "key": "753543c741b0",
+      "url": "/images/generated/univers/pro-hotel-7209939e.webp",
+      "w": 3840,
+      "h": 2160,
+      "at": "2026-10-31T14:43:25.138Z"
+    }
+  },
+  "produit-ambre-fume": {
+    "current": "50e6566b331f",
+    "versions": [
+      {
+        "key": "50e6566b331f",
+        "file": "brand/generated/produit-ambre-fume/50e6566b331f.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1632x2048",
+        "width": 1632,
+        "height": 2048,
+        "prompt": "Image 1 shows the exact creation to photograph, \"Ambre Fumé\" by Maison Tamran: a Medjool date coated in a milk chocolate shell generously topped with chopped toasted pecans. Keep exactly the same coating colour, toppings, filling colours, date size and cut style as image 1. Image 2 sets the photographic direction only: hammered antique brass plate, dark stone surface, warm low-key light, depth of field, framing. Portrait 4:5 composition. On the brass plate: on the left, one whole coated date lying diagonally; on the right, its twin cut crosswise in half, the cut face turned toward the camera, revealing the glossy dark date flesh as a ring around an amber maple caramel with pecan pieces and a few crystals of smoked salt, with the thin chocolate shell around it. On the plate, a few raw ingredients of the recipe: a few pecan halves, two maple caramel cubes and some smoked salt crystals. Background softly out of focus: dark brown and brass tones, a blurred brass vessel. Warm light from the upper left, delicate rim light on the chocolate, crisp detail on the cut face. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1507,740,412x495",
+          "brand/source/pack-photos/references/photo-modele-produit.png"
+        ],
+        "usage": {
+          "input_tokens": 2641,
+          "input_tokens_details": {
+            "image_tokens": 2311,
+            "text_tokens": 330
+          },
+          "output_tokens": 2437,
+          "output_tokens_details": {
+            "image_tokens": 2437,
+            "text_tokens": 0
+          },
+          "total_tokens": 5078
+        },
+        "costUsd": 0.0932,
+        "ms": 32446,
+        "generatedAt": "2026-10-31T14:31:15.441Z"
+      }
+    ],
+    "published": {
+      "key": "50e6566b331f",
+      "url": "/images/generated/produit/produit-ambre-fume-c42dc59b.webp",
+      "w": 1632,
+      "h": 2048,
+      "at": "2026-10-31T14:43:25.760Z"
+    }
+  },
+  "produit-cafe-imperial": {
+    "current": "7dfddd2cb2ad",
+    "versions": [
+      {
+        "key": "7dfddd2cb2ad",
+        "file": "brand/generated/produit-cafe-imperial/7dfddd2cb2ad.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1632x2048",
+        "width": 1632,
+        "height": 2048,
+        "prompt": "Image 1 shows the exact creation to photograph, \"Café Impérial\" by Maison Tamran: a Medjool date coated in a dark chocolate shell topped with chopped toasted hazelnuts and fine praline crumbs. Keep exactly the same coating colour, toppings, filling colours, date size and cut style as image 1. Image 2 sets the photographic direction only: hammered antique brass plate, dark stone surface, warm low-key light, depth of field, framing. Portrait 4:5 composition. On the brass plate: on the left, one whole coated date lying diagonally; on the right, its twin cut crosswise in half, the cut face turned toward the camera, revealing the glossy dark date flesh as a ring around a creamy hazelnut and espresso praline with visible hazelnut pieces, with the thin chocolate shell around it. On the plate, a few raw ingredients of the recipe: a few roasted coffee beans, two green cardamom pods and some halved hazelnuts. Background softly out of focus: dark brown and brass tones, a blurred brass vessel. Warm light from the upper left, delicate rim light on the chocolate, crisp detail on the cut face. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1996,119,410x495",
+          "brand/source/pack-photos/references/photo-modele-produit.png"
+        ],
+        "usage": {
+          "input_tokens": 2651,
+          "input_tokens_details": {
+            "image_tokens": 2311,
+            "text_tokens": 340
+          },
+          "output_tokens": 2437,
+          "output_tokens_details": {
+            "image_tokens": 2437,
+            "text_tokens": 0
+          },
+          "total_tokens": 5088
+        },
+        "costUsd": 0.0933,
+        "ms": 38492,
+        "generatedAt": "2026-10-31T14:30:42.631Z"
+      }
+    ],
+    "published": {
+      "key": "7dfddd2cb2ad",
+      "url": "/images/generated/produit/produit-cafe-imperial-5cdc6913.webp",
+      "w": 1632,
+      "h": 2048,
+      "at": "2026-10-31T14:43:26.432Z"
+    }
+  },
+  "produit-ebene-sale": {
+    "current": "f5984c1a5573",
+    "versions": [
+      {
+        "key": "f5984c1a5573",
+        "file": "brand/generated/produit-ebene-sale/f5984c1a5573.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1632x2048",
+        "width": 1632,
+        "height": 2048,
+        "prompt": "Image 1 shows the exact creation to photograph, \"Ébène Salé\" by Maison Tamran: a Medjool date coated in a dark chocolate shell coated with toasted buckwheat groats and a few flakes of sea salt (no nuts). Keep exactly the same coating colour, toppings, filling colours, date size and cut style as image 1. Unlike image 1, there are NO nuts of any kind (no hazelnuts, no almonds): the crunchy topping is only toasted buckwheat groats. Image 2 sets the photographic direction only: hammered antique brass plate, dark stone surface, warm low-key light, depth of field, framing. Portrait 4:5 composition. On the brass plate: on the left, one whole coated date lying diagonally; on the right, its twin cut crosswise in half, the cut face turned toward the camera, revealing the glossy dark date flesh as a ring around an amber miso caramel set with crunchy toasted buckwheat praline, with the thin chocolate shell around it. On the plate, a few raw ingredients of the recipe: a small heap of toasted buckwheat groats, two soft caramel cubes and a few salt flakes. Background softly out of focus: dark brown and brass tones, a blurred brass vessel. Warm light from the upper left, delicate rim light on the chocolate, crisp detail on the cut face. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#530,740,415x495",
+          "brand/source/pack-photos/references/photo-modele-produit.png"
+        ],
+        "usage": {
+          "input_tokens": 2690,
+          "input_tokens_details": {
+            "image_tokens": 2311,
+            "text_tokens": 379
+          },
+          "output_tokens": 2437,
+          "output_tokens_details": {
+            "image_tokens": 2437,
+            "text_tokens": 0
+          },
+          "total_tokens": 5127
+        },
+        "costUsd": 0.0935,
+        "ms": 38832,
+        "generatedAt": "2026-10-31T14:39:14.615Z"
+      }
+    ],
+    "published": {
+      "key": "f5984c1a5573",
+      "url": "/images/generated/produit/produit-ebene-sale-d39cd264.webp",
+      "w": 1632,
+      "h": 2048,
+      "at": "2026-10-31T14:43:27.105Z"
+    }
+  },
+  "produit-eclipse-noire": {
+    "current": "cc586d2a83d7",
+    "versions": [
+      {
+        "key": "cc586d2a83d7",
+        "file": "brand/generated/produit-eclipse-noire/cc586d2a83d7.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1632x2048",
+        "width": 1632,
+        "height": 2048,
+        "prompt": "Image 1 shows the exact creation to photograph, \"Éclipse Noire\" by Maison Tamran: a Medjool date coated in a glossy dark chocolate shell densely coated with black sesame seeds and a few golden toasted sesame seeds. Keep exactly the same coating colour, toppings, filling colours, date size and cut style as image 1. Image 2 sets the photographic direction only: hammered antique brass plate, dark stone surface, warm low-key light, depth of field, framing. Portrait 4:5 composition. On the brass plate: on the left, one whole coated date lying diagonally; on the right, its twin cut crosswise in half, the cut face turned toward the camera, revealing the glossy dark date flesh as a ring around a dark, almost black toasted black-sesame praline core with a small bright yellow yuzu insert, with the thin chocolate shell around it. On the plate, a few raw ingredients of the recipe: a little heap of black sesame seeds and a few curls of candied yuzu zest. Background softly out of focus: dark brown and brass tones, a blurred brass vessel. Warm light from the upper left, delicate rim light on the chocolate, crisp detail on the cut face. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#44,119,410x495",
+          "brand/source/pack-photos/references/photo-modele-produit.png"
+        ],
+        "usage": {
+          "input_tokens": 2656,
+          "input_tokens_details": {
+            "image_tokens": 2311,
+            "text_tokens": 345
+          },
+          "output_tokens": 2437,
+          "output_tokens_details": {
+            "image_tokens": 2437,
+            "text_tokens": 0
+          },
+          "total_tokens": 5093
+        },
+        "costUsd": 0.0933,
+        "ms": 33496,
+        "generatedAt": "2026-10-31T14:30:37.601Z"
+      }
+    ],
+    "published": {
+      "key": "cc586d2a83d7",
+      "url": "/images/generated/produit/produit-eclipse-noire-75df45e3.webp",
+      "w": 1632,
+      "h": 2048,
+      "at": "2026-10-31T14:43:27.746Z"
+    }
+  },
+  "produit-ile-secrete": {
+    "current": "965c11056c8b",
+    "versions": [
+      {
+        "key": "965c11056c8b",
+        "file": "brand/generated/produit-ile-secrete/965c11056c8b.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1632x2048",
+        "width": 1632,
+        "height": 2048,
+        "prompt": "Image 1 shows the exact creation to photograph, \"Île Secrète\" by Maison Tamran: a Medjool date coated in a pale golden blond chocolate shell (caramelised white chocolate, ivory with a light biscuit tint) topped with toasted coconut flakes. Keep exactly the same coating colour, toppings, filling colours, date size and cut style as image 1. Image 2 sets the photographic direction only: hammered antique brass plate, dark stone surface, warm low-key light, depth of field, framing. Portrait 4:5 composition. On the brass plate: on the left, one whole coated date lying diagonally; on the right, its twin cut crosswise in half, the cut face turned toward the camera, revealing the glossy dark date flesh as a ring around a soft pale green pandan cream mixed with grated coconut, with the thin chocolate shell around it. On the plate, a few raw ingredients of the recipe: a piece of fresh coconut, a little grated coconut and a folded pandan leaf. Background softly out of focus: dark brown and brass tones, a blurred brass vessel. Warm light from the upper left, delicate rim light on the chocolate, crisp detail on the cut face. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1018,740,415x495",
+          "brand/source/pack-photos/references/photo-modele-produit.png"
+        ],
+        "usage": {
+          "input_tokens": 2651,
+          "input_tokens_details": {
+            "image_tokens": 2311,
+            "text_tokens": 340
+          },
+          "output_tokens": 2437,
+          "output_tokens_details": {
+            "image_tokens": 2437,
+            "text_tokens": 0
+          },
+          "total_tokens": 5088
+        },
+        "costUsd": 0.0933,
+        "ms": 35417,
+        "generatedAt": "2026-10-31T14:31:13.903Z"
+      }
+    ],
+    "published": {
+      "key": "965c11056c8b",
+      "url": "/images/generated/produit/produit-ile-secrete-8ce22c5d.webp",
+      "w": 1632,
+      "h": 2048,
+      "at": "2026-10-31T14:43:28.380Z"
+    }
+  },
+  "produit-minuit-a-kyoto": {
+    "current": "e940018e61a5",
+    "versions": [
+      {
+        "key": "e940018e61a5",
+        "file": "brand/generated/produit-minuit-a-kyoto/e940018e61a5.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1632x2048",
+        "width": 1632,
+        "height": 2048,
+        "prompt": "Image 1 shows the exact creation to photograph, \"Minuit à Kyoto\" by Maison Tamran: a Medjool date coated in a pale matcha-green white chocolate shell, lightly dusted with matcha powder and dotted with tiny golden cubes of candied yuzu zest. Keep exactly the same coating colour, toppings, filling colours, date size and cut style as image 1. Unlike image 1, there are NO pistachios and no nuts of any kind anywhere (this recipe contains none): the only toppings are matcha powder and small candied yuzu cubes, and the plate holds only matcha powder and yuzu. Image 2 sets the photographic direction only: hammered antique brass plate, dark stone surface, warm low-key light, depth of field, framing. Portrait 4:5 composition. On the brass plate: on the left, one whole coated date lying diagonally; on the right, its twin cut crosswise in half, the cut face turned toward the camera, revealing the glossy dark date flesh as a ring around a green matcha ganache with a bright yellow yuzu heart, with the thin chocolate shell around it. On the plate, a few raw ingredients of the recipe: a small mound of matcha powder and a thin slice of yuzu. Background softly out of focus: dark brown and brass tones, a blurred brass vessel. Warm light from the upper left, delicate rim light on the chocolate, crisp detail on the cut face. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1018,119,415x495",
+          "brand/source/pack-photos/references/photo-modele-produit.png"
+        ],
+        "usage": {
+          "input_tokens": 2706,
+          "input_tokens_details": {
+            "image_tokens": 2311,
+            "text_tokens": 395
+          },
+          "output_tokens": 2437,
+          "output_tokens_details": {
+            "image_tokens": 2437,
+            "text_tokens": 0
+          },
+          "total_tokens": 5143
+        },
+        "costUsd": 0.0936,
+        "ms": 36113,
+        "generatedAt": "2026-10-31T14:39:11.859Z"
+      }
+    ],
+    "published": {
+      "key": "e940018e61a5",
+      "url": "/images/generated/produit/produit-minuit-a-kyoto-0d9652b2.webp",
+      "w": 1632,
+      "h": 2048,
+      "at": "2026-10-31T14:43:29.036Z"
+    }
+  },
+  "produit-or-de-marrakech": {
+    "current": "1bcf670f2ea3",
+    "versions": [
+      {
+        "key": "1bcf670f2ea3",
+        "file": "brand/generated/produit-or-de-marrakech/1bcf670f2ea3.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1632x2048",
+        "width": 1632,
+        "height": 2048,
+        "prompt": "Image 1 shows the exact creation to photograph, \"Or de Marrakech\" by Maison Tamran: a Medjool date coated in a milk chocolate shell topped with chopped bright green pistachios and a few golden kadaif pastry threads. Keep exactly the same coating colour, toppings, filling colours, date size and cut style as image 1. Image 2 sets the photographic direction only: hammered antique brass plate, dark stone surface, warm low-key light, depth of field, framing. Portrait 4:5 composition. On the brass plate: on the left, one whole coated date lying diagonally; on the right, its twin cut crosswise in half, the cut face turned toward the camera, revealing the glossy dark date flesh as a ring around a pale green pistachio cream laced with crisp golden kadaif threads, with the thin chocolate shell around it. On the plate, a few raw ingredients of the recipe: a few shelled pistachios and a small nest of golden toasted kadaif threads. Background softly out of focus: dark brown and brass tones, a blurred brass vessel. Warm light from the upper left, delicate rim light on the chocolate, crisp detail on the cut face. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1507,119,412x495",
+          "brand/source/pack-photos/references/photo-modele-produit.png"
+        ],
+        "usage": {
+          "input_tokens": 2651,
+          "input_tokens_details": {
+            "image_tokens": 2311,
+            "text_tokens": 340
+          },
+          "output_tokens": 2437,
+          "output_tokens_details": {
+            "image_tokens": 2437,
+            "text_tokens": 0
+          },
+          "total_tokens": 5088
+        },
+        "costUsd": 0.0933,
+        "ms": 35307,
+        "generatedAt": "2026-10-31T14:27:14.262Z"
+      }
+    ],
+    "published": {
+      "key": "1bcf670f2ea3",
+      "url": "/images/generated/produit/produit-or-de-marrakech-2db1058e.webp",
+      "w": 1632,
+      "h": 2048,
+      "at": "2026-10-31T14:43:29.707Z"
+    }
+  },
+  "produit-rose-de-nuit": {
+    "current": "329b2bf17ae5",
+    "versions": [
+      {
+        "key": "329b2bf17ae5",
+        "file": "brand/generated/produit-rose-de-nuit/329b2bf17ae5.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1632x2048",
+        "width": 1632,
+        "height": 2048,
+        "prompt": "Image 1 shows the exact creation to photograph, \"Rose de Nuit\" by Maison Tamran: a Medjool date coated in a white chocolate shell sprinkled with dried pink rose petals and crimson freeze-dried raspberry pieces (no nuts). Keep exactly the same coating colour, toppings, filling colours, date size and cut style as image 1. Unlike image 1, there are NO nuts of any kind (no pistachios, no almonds, no hazelnuts): toppings are only dried rose petals and freeze-dried raspberry. Image 2 sets the photographic direction only: hammered antique brass plate, dark stone surface, warm low-key light, depth of field, framing. Portrait 4:5 composition. On the brass plate: on the left, one whole coated date lying diagonally; on the right, its twin cut crosswise in half, the cut face turned toward the camera, revealing the glossy dark date flesh as a ring around a pale pink lychee and rose ganache speckled with raspberry, with the thin chocolate shell around it. On the plate, a few raw ingredients of the recipe: a peeled lychee, a fresh raspberry and a few dried rose petals. Background softly out of focus: dark brown and brass tones, a blurred brass vessel. Warm light from the upper left, delicate rim light on the chocolate, crisp detail on the cut face. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#1996,740,410x495",
+          "brand/source/pack-photos/references/photo-modele-produit.png"
+        ],
+        "usage": {
+          "input_tokens": 2685,
+          "input_tokens_details": {
+            "image_tokens": 2311,
+            "text_tokens": 374
+          },
+          "output_tokens": 2437,
+          "output_tokens_details": {
+            "image_tokens": 2437,
+            "text_tokens": 0
+          },
+          "total_tokens": 5122
+        },
+        "costUsd": 0.0935,
+        "ms": 33330,
+        "generatedAt": "2026-10-31T14:39:09.110Z"
+      }
+    ],
+    "published": {
+      "key": "329b2bf17ae5",
+      "url": "/images/generated/produit/produit-rose-de-nuit-bd47d69d.webp",
+      "w": 1632,
+      "h": 2048,
+      "at": "2026-10-31T14:43:30.337Z"
+    }
+  },
+  "produit-rouge-desir": {
+    "current": "247b2c46f2b9",
+    "versions": [
+      {
+        "key": "247b2c46f2b9",
+        "file": "brand/generated/produit-rouge-desir/247b2c46f2b9.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1632x2048",
+        "width": 1632,
+        "height": 2048,
+        "prompt": "Image 1 shows the exact creation to photograph, \"Rouge Désir\" by Maison Tamran: a Medjool date coated in a dark chocolate shell sprinkled with crimson freeze-dried raspberry pieces and crushed dried hibiscus. Keep exactly the same coating colour, toppings, filling colours, date size and cut style as image 1. Image 2 sets the photographic direction only: hammered antique brass plate, dark stone surface, warm low-key light, depth of field, framing. Portrait 4:5 composition. On the brass plate: on the left, one whole coated date lying diagonally; on the right, its twin cut crosswise in half, the cut face turned toward the camera, revealing the glossy dark date flesh as a ring around a glossy deep red raspberry and hibiscus confit, with the thin chocolate shell around it. On the plate, a few raw ingredients of the recipe: two fresh raspberries and a few dried hibiscus petals. Background softly out of focus: dark brown and brass tones, a blurred brass vessel. Warm light from the upper left, delicate rim light on the chocolate, crisp detail on the cut face. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#44,740,410x495",
+          "brand/source/pack-photos/references/photo-modele-produit.png"
+        ],
+        "usage": {
+          "input_tokens": 2638,
+          "input_tokens_details": {
+            "image_tokens": 2311,
+            "text_tokens": 327
+          },
+          "output_tokens": 2437,
+          "output_tokens_details": {
+            "image_tokens": 2437,
+            "text_tokens": 0
+          },
+          "total_tokens": 5075
+        },
+        "costUsd": 0.0932,
+        "ms": 33464,
+        "generatedAt": "2026-10-31T14:31:11.462Z"
+      }
+    ],
+    "published": {
+      "key": "247b2c46f2b9",
+      "url": "/images/generated/produit/produit-rouge-desir-1b143d6b.webp",
+      "w": 1632,
+      "h": 2048,
+      "at": "2026-10-31T14:43:31.013Z"
+    }
+  },
+  "produit-velours-persan": {
+    "current": "60a7b1d940a3",
+    "versions": [
+      {
+        "key": "60a7b1d940a3",
+        "file": "brand/generated/produit-velours-persan/60a7b1d940a3.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "1632x2048",
+        "width": 1632,
+        "height": 2048,
+        "prompt": "Image 1 shows the exact creation to photograph, \"Velours Persan\" by Maison Tamran: a Medjool date coated in a milk chocolate shell topped with flaked white almonds and a few fine red saffron threads. Keep exactly the same coating colour, toppings, filling colours, date size and cut style as image 1. Image 2 sets the photographic direction only: hammered antique brass plate, dark stone surface, warm low-key light, depth of field, framing. Portrait 4:5 composition. On the brass plate: on the left, one whole coated date lying diagonally; on the right, its twin cut crosswise in half, the cut face turned toward the camera, revealing the glossy dark date flesh as a ring around a smooth ivory almond cream around a soft, glossy orange apricot heart, with the thin chocolate shell around it. On the plate, a few raw ingredients of the recipe: two dried apricots, two whole almonds and a pinch of saffron threads. Background softly out of focus: dark brown and brass tones, a blurred brass vessel. Warm light from the upper left, delicate rim light on the chocolate, crisp detail on the cut face. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no box or packaging in frame.",
+        "refs": [
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#530,119,415x495",
+          "brand/source/pack-photos/references/photo-modele-produit.png"
+        ],
+        "usage": {
+          "input_tokens": 2648,
+          "input_tokens_details": {
+            "image_tokens": 2311,
+            "text_tokens": 337
+          },
+          "output_tokens": 2437,
+          "output_tokens_details": {
+            "image_tokens": 2437,
+            "text_tokens": 0
+          },
+          "total_tokens": 5085
+        },
+        "costUsd": 0.0933,
+        "ms": 33969,
+        "generatedAt": "2026-10-31T14:30:38.102Z"
+      }
+    ],
+    "published": {
+      "key": "60a7b1d940a3",
+      "url": "/images/generated/produit/produit-velours-persan-b9676f56.webp",
+      "w": 1632,
+      "h": 2048,
+      "at": "2026-10-31T14:43:31.729Z"
+    }
+  },
+  "rituel-cafe": {
+    "current": "303493273428",
+    "versions": [
+      {
+        "key": "303493273428",
+        "file": "brand/generated/rituel-cafe/303493273428.webp",
+        "model": "gpt-image-2.5-sunburst",
+        "quality": "high",
+        "size": "3840x2160",
+        "width": 3840,
+        "height": 2160,
+        "prompt": "Wide 16:9 photograph of a tasting ritual in a contemporary riad salon at golden hour. On a low travertine table: a brass dallah coffee pot, two small handleless ivory cups of Arabic coffee, a hammered brass plate with five creations (the house's chocolate-coated filled Medjool dates shown in the reference sheets (black sesame on dark chocolate, pistachio and golden kadaif on milk chocolate, pale matcha-green coating dusted only with matcha and tiny golden yuzu cubes, toasted hazelnuts on dark chocolate, crimson raspberry on dark chocolate, toasted coconut on blond chocolate, pecans on milk chocolate, rose petals and raspberry on white chocolate). Important: unlike the reference sheet, the green matcha piece and the white rose piece carry no pistachio and no nuts; pistachios appear only on the milk chocolate kadaif piece; image 1 is the reference for the creations), a folded natural linen napkin. Light falls through a carved wooden mashrabiya screen, casting delicate geometric shadows. Image 2 sets the mood and materials only. The right third of the frame stays quiet for text. High-end advertising food photography for a luxury French confectionery house. Real photograph, natural textures, natural chocolate sheen, true-to-life proportions, crisp focus on the product, gentle falloff. Never plastic, never CGI, never illustrated. No hands, no people, no text, no letters, no logo, no emblem on any box or card.",
+        "refs": [
+          "brand/source/pack-photos/APERCU_10_RECETTES.jpg#42,117,2366x499",
+          "brand/source/pack-photos/references/photo-modele-coffret.png"
+        ],
+        "usage": {
+          "input_tokens": 3232,
+          "input_tokens_details": {
+            "image_tokens": 2904,
+            "text_tokens": 328
+          },
+          "output_tokens": 3336,
+          "output_tokens_details": {
+            "image_tokens": 3336,
+            "text_tokens": 0
+          },
+          "total_tokens": 6568
+        },
+        "costUsd": 0.125,
+        "ms": 37006,
+        "generatedAt": "2026-10-31T14:39:46.518Z"
+      }
+    ],
+    "published": {
+      "key": "303493273428",
+      "url": "/images/generated/univers/rituel-cafe-9975484f.webp",
+      "w": 3840,
+      "h": 2160,
+      "at": "2026-10-31T14:43:33.556Z"
+    }
+  }
+}

@@ -110,17 +110,25 @@ const VIEWS = [
   { slot: "scene", suffix: "entier", alt: (n: string) => `${n} : la datte entière`, frame: { left: 0.12, top: 0.26, width: 0.6, height: 0.44 } },
 ] as const;
 
+// Les créations ont désormais des visuels générés en haute définition à partir de cette planche
+// (npm run images:openai) : un emplacement publié par ce pipeline n'est plus republié depuis la planche, qui
+// reste la référence d'aspect. La vue « scene » est alors servie par la pièce détourée (alias de src/lib/photos.ts).
+const GENERATED = readJson<Record<string, { published?: unknown }>>(path.join(root, "brand/generated/manifest.json"), {});
+const superseded = (id: string) => Boolean(GENERATED[id]?.published ?? GENERATED[id.replace(/^scene-/, "piece-")]?.published);
+for (const id of Object.keys(manifest)) if (id.startsWith("scene-") && superseded(id)) delete manifest[id];
+
 for (const r of RECIPES) {
   if (r.slug === "cafe-imperial") continue; // traité depuis la photographie de référence ci-dessous
   const c = cell(r.slug);
   for (const v of VIEWS) {
+    if (superseded(`${v.slot}-${r.slug}`)) continue;
     const region = v.frame ? sub(c, v.frame) : c;
     await publish(`${v.slot}-${r.slug}`, sharp(SHEET).extract(region), `/images/creations/${r.slug}/${r.slug}-${v.suffix}.webp`, v.alt(r.name), `${PACK_SOURCE}, planche APERCU_10_RECETTES.jpg`, SHEET_NOTE);
   }
 }
 
 // Café Impérial : photographie de référence détaillée (1122×1402), recadrages pour le cœur et la datte entière.
-{
+if (!superseded("produit-cafe-imperial")) {
   const ref = path.join(PACK, "references/photo-modele-produit.png");
   const name = "Café Impérial";
   const src = `${PACK_SOURCE}, photographie de référence`;
