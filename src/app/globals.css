@@ -265,6 +265,19 @@ html[data-vt="nav-back"]::view-transition-old(root) { --vt-x: 70px; animation: 1
 html[data-vt="nav-back"]::view-transition-new(root) { --vt-x: -70px; animation: 260ms ease-out 160ms both vt-fade, 460ms cubic-bezier(0.65, 0, 0.35, 1) both vt-slide; }
 @keyframes vt-fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes vt-slide { from { translate: var(--vt-x) 0; } to { translate: 0 0; } }
+/* tout autre changement de page : l'ancienne page s'efface en remontant et se voile, la nouvelle se lève à sa place */
+html[data-vt="page"]::view-transition-old(root) { animation: 360ms cubic-bezier(0.4, 0, 1, 1) both vt-page-out; }
+html[data-vt="page"]::view-transition-new(root) { animation: 780ms cubic-bezier(0.22, 0.8, 0.12, 1) 110ms both vt-page-in; }
+@keyframes vt-page-out { to { opacity: 0; translate: 0 -22px; scale: 0.985; filter: blur(6px); } }
+@keyframes vt-page-in { from { opacity: 0; translate: 0 44px; } to { opacity: 1; translate: 0 0; } }
+/* changement de page sans transition de vue (retour arrière, avancer) : la nouvelle page apparaît en fondu */
+main.page-enter { animation: page-enter 0.7s var(--ease-out-soft) both; }
+@keyframes page-enter { from { opacity: 0; } }
+
+/* ---------- Images en cours de chargement ---------- */
+/* Pas d'aperçu flou (posé en ligne par next/image) : le cadre garde son fond, puis l'image apparaît en fondu
+   à la fin de son chargement (ImageReveal). */
+main img { background-image: none !important; }
 /* l'en-tête reste immobile : c'est le contenu qui bouge. Seule sa nouvelle image est montrée (opaque, sans fondu
    ni mélange « plus-lighter » avec l'ancienne), d'où aucun dédoublement ni éclair d'une page à l'autre. */
 ::view-transition-group(site-header) { animation: none; z-index: 100; }
@@ -282,9 +295,10 @@ html[data-vt="nav-back"]::view-transition-new(root) { --vt-x: -70px; animation: 
 
 /* ---------- Ouverture de la Maison (une fois par session, si elle commence sur l'accueil) ---------- */
 /* intro-play / intro-seen : posées par le script de <head> et IntroGate. --intro décale l'entrée du hero. */
+/* Sortie en fondu : le logo s'éloigne et se voile, puis le fond cacao se dissout sur le coffret qui s'éclaire. */
 .intro-curtain { display: none; }
-html.intro-play:not(.intro-seen) .intro-curtain { display: block; }
-html.intro-play { --intro: 1.85s; }
+html.intro-play:not(.intro-seen) .intro-curtain { display: block; animation: intro-dissolve 0.8s var(--ease-silk) 1.6s both; }
+html.intro-play { --intro: 1.6s; }
 @keyframes intro-grow {
   from { clip-path: inset(100% 0 0 0); transform: translateY(18px) scale(0.97); }
   to { clip-path: inset(0 0 0 0); transform: none; }
@@ -293,18 +307,19 @@ html.intro-play { --intro: 1.85s; }
   from { background-position: 100% 0; }
   to { background-position: 0% 0; }
 }
-@keyframes intro-lift {
-  from { clip-path: inset(0 0 0 0); }
-  to { clip-path: inset(0 0 100% 0); }
+@keyframes intro-logo-out {
+  to { opacity: 0; transform: scale(1.06); filter: blur(6px); }
 }
-.intro-panel { animation: intro-lift 0.8s var(--ease-silk) 1.7s both; }
-.intro-logo { animation: intro-grow 1.3s var(--ease-luxe) 0.15s both; }
+@keyframes intro-dissolve {
+  to { opacity: 0; visibility: hidden; }
+}
+.intro-logo { animation: intro-grow 1.2s var(--ease-luxe) 0.1s both, intro-logo-out 0.55s var(--ease-silk) 1.4s forwards; }
 .intro-sheen {
   background: linear-gradient(100deg, transparent 38%, rgba(255, 224, 168, 0.95) 50%, transparent 62%);
   background-size: 320% 100%;
   -webkit-mask: url("/brand/maison-tamran-logo-mask.webp") center / 100% 100% no-repeat;
   mask: url("/brand/maison-tamran-logo-mask.webp") center / 100% 100% no-repeat;
-  animation: intro-sheen 1.15s var(--ease-silk) 0.95s both;
+  animation: intro-sheen 0.9s var(--ease-silk) 0.6s both;
 }
 .intro-skip { animation: scene-fade 0.6s var(--ease-luxe) 0.4s both; }
 

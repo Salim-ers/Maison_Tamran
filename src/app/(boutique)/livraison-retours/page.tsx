@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ContactEmail } from "@/components/legal/legal";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { getContent, getSettings } from "@/lib/catalog";
 import { getActiveShippingRates } from "@/lib/public-data";
 import { countryName } from "@/lib/countries";

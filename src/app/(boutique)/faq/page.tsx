@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { isPlaceholderEmail } from "@/components/legal/legal";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { getSettings } from "@/lib/catalog";
 import { storeMode } from "@/lib/env";
 import { PageIntro } from "@/components/layout/page-intro";

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { notFound } from "next/navigation";
 import { getCatalog } from "@/lib/catalog";
 import { catalogLabels, toBrowsable } from "@/lib/present";

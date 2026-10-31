@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { getSettings } from "@/lib/catalog";
 import { storeMode } from "@/lib/env";
 import { LegalPage, LegalValue, ContactEmail } from "@/components/legal/legal";

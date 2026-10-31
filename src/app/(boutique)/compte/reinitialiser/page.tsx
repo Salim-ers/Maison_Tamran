@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { Suspense } from "react";
 import { AuthShell } from "@/components/account/auth-shell";
 import { ResetForm } from "@/components/account/forms";

@@ -126,7 +126,7 @@ export function BoxPreview({
   // coffret photographié
   if (photo && grid) {
     return (
-      <div className={clsx("relative overflow-hidden shadow-[0_40px_70px_-35px_rgba(36,23,19,.75)]", className)} style={{ aspectRatio: `${photo.w} / ${photo.h}` }}>
+      <div data-instant className={clsx("relative overflow-hidden shadow-[0_40px_70px_-35px_rgba(36,23,19,.75)]", className)} style={{ aspectRatio: `${photo.w} / ${photo.h}` }}>
         <Image src={photo.url} alt={`Coffret ${pieces} pièces vu de dessus`} fill sizes="(min-width: 1024px) 40vw, 100vw" quality={85} fetchPriority={priority ? "high" : "auto"} loading={priority ? "eager" : "lazy"} placeholder={photo.blur ? "blur" : "empty"} blurDataURL={photo.blur} className="object-cover" />
         {Array.from({ length: pieces }, (_, i) => {
           const slug = slots[i];
@@ -165,7 +165,7 @@ export function BoxPreview({
   // repli : coffret dessiné (si la photographie du format n'est pas publiée)
   const cols = pieces === 6 ? 3 : pieces === 12 ? 4 : 6;
   return (
-    <div className={clsx("relative p-[4%] shadow-[0_30px_60px_-30px_rgba(36,23,19,.6)]", dark ? "bg-chocolate-2" : "bg-chocolate", className)}>
+    <div data-instant className={clsx("relative p-[4%] shadow-[0_30px_60px_-30px_rgba(36,23,19,.6)]", dark ? "bg-chocolate-2" : "bg-chocolate", className)}>
       <div className="pointer-events-none absolute inset-[2.2%] border border-bronze/50" aria-hidden />
       <div className="grid gap-[2.5%]" style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}>
         {Array.from({ length: pieces }, (_, i) => {

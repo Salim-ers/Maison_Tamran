@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import Image from "next/image";
 import { ambiance } from "@/lib/ambiance";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { getBoxes, getCatalog } from "@/lib/catalog";
 import { boxPhotos, catalogLabels, toBrowsable, toSwatch } from "@/lib/present";
 import { photo } from "@/lib/photos";
@@ -63,7 +63,7 @@ export default async function CreationsPage() {
                 <FadeIn key={c.slug} delay={idx * 0.12} className={idx === 0 ? "lg:col-span-7" : "lg:col-span-5 lg:mt-24"}>
                   <article className={`group relative overflow-hidden ${dark ? "on-dark" : "bg-creme"}`}>
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      {stage && <Image src={stage.url} alt="" fill sizes="(min-width: 1024px) 50vw, 100vw" quality={75} className="object-cover transition-transform duration-[1.6s] ease-[var(--ease-luxe)] group-hover:scale-[1.04]" />}
+                      {stage && <Image src={stage.url} alt="" fill sizes="(min-width: 1024px) 50vw, 100vw" quality={85} className="object-cover transition-transform duration-[1.6s] ease-[var(--ease-luxe)] group-hover:scale-[1.04]" />}
                       <span aria-hidden className="absolute inset-0 bg-[linear-gradient(90deg,transparent_40%,rgba(20,12,9,.35))]" />
                       {cover && (
                         <figure className="native-cap absolute bottom-[8%] right-[7%] max-w-[34%] -rotate-3 bg-cream p-[5px] shadow-[0_30px_50px_-20px_rgba(10,6,4,.85)] transition-transform duration-700 group-hover:-translate-y-1 group-hover:-rotate-1" style={{ ["--nat" as string]: cover.w ?? 412 }}>

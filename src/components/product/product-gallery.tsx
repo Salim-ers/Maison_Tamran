@@ -122,7 +122,7 @@ export function ProductGallery({ images, name, stages, slug }: { images: ImageRe
             ) : (
               <>
                 <motion.div className="absolute inset-0" initial={reduce ? false : { scale: 1.08 }} animate={{ scale: 1 }} transition={{ duration: 1.4, ease: EASE }}>
-                  <Image src={cur.photo.url} alt={cur.photo.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" quality={75} placeholder={cur.photo.blur ? "blur" : "empty"} blurDataURL={cur.photo.blur} className="object-cover" />
+                  <Image src={cur.photo.url} alt={cur.photo.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" quality={85} placeholder={cur.photo.blur ? "blur" : "empty"} blurDataURL={cur.photo.blur} className="object-cover" />
                 </motion.div>
                 {cur.photo.credit && <span className="absolute bottom-4 right-4 t-micro text-ivory/75 [text-shadow:0_1px_2px_rgba(0,0,0,.6)]">{cur.photo.credit}</span>}
               </>

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { useActionState, useEffect, useId, useRef } from "react";
 import { sendContactMessage, type ContactState } from "@/app/actions/contact";
 import { CONTACT_SUBJECTS } from "@/lib/segments";

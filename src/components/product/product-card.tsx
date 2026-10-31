@@ -41,7 +41,7 @@ export function ProductCard({ p, tone = "light", className, sizes = "(min-width:
           </div>
         )}
         {p.cut && (
-          <Image src={p.cut.url} alt="" aria-hidden fill sizes={sizes} quality={80} className="scale-[1.12] object-cover opacity-0 transition-[opacity,transform] duration-[1.1s] ease-[var(--ease-luxe)] group-hover:scale-100 group-hover:opacity-100 max-lg:hidden" />
+          <Image src={p.cut.url} alt="" aria-hidden fill sizes={sizes} quality={85} className="scale-[1.12] object-cover opacity-0 transition-[opacity,transform] duration-[1.1s] ease-[var(--ease-luxe)] group-hover:scale-100 group-hover:opacity-100 max-lg:hidden" />
         )}
         {/* halo à la couleur de la recette, et filet doré qui se dessine au survol */}
         <span aria-hidden className="pointer-events-none absolute inset-0 opacity-60 mix-blend-soft-light" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 100%, ${p.accent}, transparent 70%)` }} />

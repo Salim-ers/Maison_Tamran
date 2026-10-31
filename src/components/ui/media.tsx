@@ -19,7 +19,7 @@ export function ConceptBadge({ className, tone = "light", label }: { className?:
     <span
       className={clsx(
         "pointer-events-none absolute z-[2] select-none px-2 py-1 text-[0.68rem] leading-none tracking-[0.03em] backdrop-blur-sm",
-        tone === "light" ? "bg-cream/80 text-ink-soft" : "bg-chocolate/60 text-taupe",
+        tone === "light" ? "bg-cream/85 text-ink-soft" : "bg-chocolate/80 text-ivory/85",
         className ?? "bottom-3 right-3"
       )}
     >

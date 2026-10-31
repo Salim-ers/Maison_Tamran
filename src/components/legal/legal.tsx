@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { PageIntro, Prose, Provisional } from "@/components/layout/page-intro";
 
 export const isPlaceholder = (v: string | undefined | null) => !v || /^\s*\[.*\]\s*$/.test(v);

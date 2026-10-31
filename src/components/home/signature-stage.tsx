@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { AnimatePresence, motion } from "motion/react";
 import { useRef, useState } from "react";
 import { useReducedMotion } from "@/components/motion/reduced-motion";
@@ -77,7 +77,7 @@ export function SignatureStage({ creations, intro }: { creations: StageCreation[
           >
             {c.stage && (
               <motion.div initial={reduce ? false : { scale: 1.1 }} animate={{ scale: 1 }} transition={{ duration: 1.6, ease: EASE }} className="absolute inset-0">
-                <Image src={c.stage.url} alt={c.stage.alt} fill sizes="(max-width: 767px) 100vw, 62vw" quality={75} placeholder={c.stage.blur ? "blur" : "empty"} blurDataURL={c.stage.blur} className="object-cover" />
+                <Image src={c.stage.url} alt={c.stage.alt} fill sizes="(max-width: 767px) 100vw, 62vw" quality={85} placeholder={c.stage.blur ? "blur" : "empty"} blurDataURL={c.stage.blur} className="object-cover" />
               </motion.div>
             )}
             {c.stage?.credit && <span className="absolute bottom-3 right-4 z-[1] t-micro text-ivory/70 [text-shadow:0_1px_2px_rgba(0,0,0,.6)]">{c.stage.credit}</span>}

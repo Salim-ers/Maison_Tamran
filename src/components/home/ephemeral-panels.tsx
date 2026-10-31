@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { motion } from "motion/react";
 import { useState } from "react";
 import { clsx } from "clsx";
@@ -67,7 +67,7 @@ export function EphemeralPanels({ intro, items }: { intro: string; items: Epheme
               >
                 <Link href={`/creations/${it.slug}`} className="group absolute inset-0 block focus-visible:outline-offset-[-6px]">
                   {it.stage && (
-                    <Image src={it.stage.url} alt="" fill sizes="(max-width: 767px) 78vw, 45vw" quality={75} className={clsx("object-cover transition-transform duration-[1.6s] ease-[var(--ease-luxe)]", on ? "scale-100" : "scale-110")} />
+                    <Image src={it.stage.url} alt="" fill sizes="(max-width: 767px) 78vw, 45vw" quality={85} className={clsx("object-cover transition-transform duration-[1.6s] ease-[var(--ease-luxe)]", on ? "scale-100" : "scale-110")} />
                   )}
                   <span aria-hidden className={clsx("absolute inset-0 transition-colors duration-700", on ? "bg-[linear-gradient(180deg,rgba(27,19,32,.15),rgba(27,19,32,.35)_45%,rgba(27,19,32,.94))]" : "bg-[rgba(27,19,32,.62)]")} />
                   <span aria-hidden className="absolute inset-[10px] rounded-t-[50%_22%] border border-[#e6b9b0]/30" />

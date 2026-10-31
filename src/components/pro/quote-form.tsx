@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { useActionState, useEffect, useId, useRef, useState } from "react";
 import { clsx } from "clsx";
 import { submitQuote, type QuoteState } from "@/app/actions/quote";

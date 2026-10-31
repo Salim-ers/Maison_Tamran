@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { FadeIn } from "@/components/motion/reveal";
 
 type Picture = { url: string; alt: string; blur?: string } | null;

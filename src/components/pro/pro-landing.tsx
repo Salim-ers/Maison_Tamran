@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { PageIntro } from "@/components/layout/page-intro";
 import { Media } from "@/components/ui/media";
 import { visual } from "@/lib/visual";

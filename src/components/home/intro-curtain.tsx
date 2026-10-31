@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import dims from "@/data/logo-dimensions.json";
 
 /** Durée totale de l'ouverture (s) : la classe intro-seen la retire du rendu ensuite. */
-const INTRO_S = 2.5;
+const INTRO_S = 2.45;
 
 function done() {
   document.documentElement.classList.add("intro-seen");

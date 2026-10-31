@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { BrandLogo } from "@/components/brand";
 import { getSettings } from "@/lib/catalog";
 import { storeMode } from "@/lib/env";

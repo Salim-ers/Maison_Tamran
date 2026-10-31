@@ -9,6 +9,7 @@ import { headerMenus } from "@/components/layout/header-menus";
 import { MotionProvider } from "@/components/motion/reduced-motion";
 import { IntroGate } from "@/components/home/intro-curtain";
 import { ViewTransitionsListener } from "@/components/motion/transition-link";
+import { ImageReveal } from "@/components/motion/image-reveal";
 
 export default function BoutiqueLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -27,6 +28,7 @@ export default function BoutiqueLayout({ children }: { children: React.ReactNode
         <CartNotice />
         <ConsentBanner />
         <IntroGate />
+        <ImageReveal />
         <Suspense fallback={null}>
           <ViewTransitionsListener />
         </Suspense>

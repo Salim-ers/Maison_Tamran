@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { useActionState } from "react";
 import {
   changePassword, login, lookupOrder, register, requestPasswordReset, resetPassword, saveAddress, updateProfile, type FormState,

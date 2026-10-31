@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { clsx } from "clsx";
 import { getContent } from "@/lib/catalog";
 import { PageIntro, Provisional } from "@/components/layout/page-intro";

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import Image from "next/image";
 import { useActionState, useEffect, useState, useTransition } from "react";
 import { clsx } from "clsx";

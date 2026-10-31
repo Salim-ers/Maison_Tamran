@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { clsx } from "clsx";
 import { AnimatePresence, motion } from "motion/react";

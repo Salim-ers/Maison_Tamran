@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { clsx } from "clsx";
 import { siteUrl } from "@/lib/env";
 import { JsonLd } from "@/components/seo/json-ld";

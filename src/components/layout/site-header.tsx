@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { usePathname } from "next/navigation";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useScroll } from "motion/react";
@@ -85,10 +85,16 @@ export function SiteHeader({ menus }: { menus: HeaderMenus }) {
   const [panel, setPanel] = useState<keyof HeaderMenus | null>(null);
   const [menu, setMenu] = useState(false);
   const closeTimer = useRef(0);
+  // après un changement de page, la souris est encore sur la rubrique cliquée : pas de réouverture du menu
+  // tant qu'elle ne l'a pas quittée
+  const hoverLock = useRef(false);
+  const lastPath = useRef<string | null>(null);
   const { scrollYProgress } = useScroll();
   const count = cart?.itemCount ?? 0;
 
   useEffect(() => {
+    if (lastPath.current !== null) hoverLock.current = true;
+    lastPath.current = path;
     setPanel(null);
     setMenu(false);
   }, [path]);
@@ -110,6 +116,7 @@ export function SiteHeader({ menus }: { menus: HeaderMenus }) {
   }, [menu]);
 
   const open = (p: keyof HeaderMenus | null) => {
+    if (hoverLock.current) return;
     window.clearTimeout(closeTimer.current);
     setPanel(p);
   };
@@ -124,7 +131,11 @@ export function SiteHeader({ menus }: { menus: HeaderMenus }) {
         className="fixed inset-x-0 top-0 z-50 text-ivory"
         // immobile pendant les transitions de page (voir globals.css)
         style={{ viewTransitionName: "site-header" }}
-        onPointerLeave={(e) => e.pointerType === "mouse" && closeSoon()}
+        onPointerLeave={(e) => {
+          if (e.pointerType !== "mouse") return;
+          hoverLock.current = false;
+          closeSoon();
+        }}
         onPointerEnter={() => window.clearTimeout(closeTimer.current)}
       >
         <div className="relative z-[2] border-b border-white/[0.07] bg-[#170f0c]">
@@ -156,7 +167,12 @@ export function SiteHeader({ menus }: { menus: HeaderMenus }) {
                 {NAV.map((it) => {
                   const current = isActive(path, it.match);
                   return (
-                    <li key={it.href} className="flex items-center" onPointerEnter={(e) => e.pointerType === "mouse" && open(it.panel ?? null)}>
+                    <li
+                      key={it.href}
+                      className="flex items-center"
+                      onPointerEnter={(e) => e.pointerType === "mouse" && open(it.panel ?? null)}
+                      onPointerLeave={() => (hoverLock.current = false)}
+                    >
                       <Link
                         href={it.href}
                         aria-current={current ? "page" : undefined}
@@ -197,13 +213,13 @@ export function SiteHeader({ menus }: { menus: HeaderMenus }) {
                               transition={{ duration: 0.28, ease: [0.22, 0.8, 0.12, 1] }}
                               className="absolute inset-x-0 top-full z-[1] border-b border-white/[0.07] bg-[#170f0c] shadow-[0_30px_60px_-30px_rgba(0,0,0,.7)]"
                             >
-                              <div className="container-luxe grid grid-cols-[minmax(15rem,1fr)_2fr] gap-[clamp(2rem,5vw,5rem)] py-10">
-                                <ul className="space-y-1 border-r border-white/[0.07] pr-8">
+                              <div className="container-luxe grid grid-cols-[minmax(17rem,1fr)_2fr] gap-[clamp(2rem,5vw,5rem)] py-10">
+                                <ul className="space-y-0.5 border-r border-white/[0.07] pr-8">
                                   {it.links?.map((l) => (
                                     <li key={l.href}>
-                                      <Link href={l.href} onClick={() => setPanel(null)} className="group flex items-baseline justify-between gap-4 py-2.5">
-                                        <span className="font-display text-[1.45rem] leading-tight transition-colors group-hover:text-gold">{l.label}</span>
-                                        <span className="t-micro text-ivory/45">{l.note}</span>
+                                      <Link href={l.href} onClick={() => setPanel(null)} className="group block py-2.5">
+                                        <span className="block whitespace-nowrap font-display text-[1.4rem] leading-tight transition-colors group-hover:text-gold">{l.label}</span>
+                                        <span className="mt-1 block t-micro text-ivory/55">{l.note}</span>
                                       </Link>
                                     </li>
                                   ))}
@@ -214,7 +230,7 @@ export function SiteHeader({ menus }: { menus: HeaderMenus }) {
                                       <Link href={f.href} onClick={() => setPanel(null)} className="group block">
                                         <span className="relative block aspect-[16/9] overflow-hidden bg-chocolate">
                                           {f.image && (
-                                            <Image src={f.image.url} alt="" fill sizes="30vw" quality={80} placeholder={f.image.blur ? "blur" : "empty"} blurDataURL={f.image.blur} className="object-cover transition-transform duration-[1.2s] ease-[var(--ease-luxe)] group-hover:scale-[1.05]" />
+                                            <Image src={f.image.url} alt="" fill sizes="30vw" quality={85} placeholder={f.image.blur ? "blur" : "empty"} blurDataURL={f.image.blur} className="object-cover transition-transform duration-[1.2s] ease-[var(--ease-luxe)] group-hover:scale-[1.05]" />
                                           )}
                                         </span>
                                         <span className="mt-4 flex items-center justify-between gap-4">

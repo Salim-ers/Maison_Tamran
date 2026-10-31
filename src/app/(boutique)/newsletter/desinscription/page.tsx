@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { PageIntro } from "@/components/layout/page-intro";
 import { UnsubscribeForm } from "@/components/unsubscribe-form";
 

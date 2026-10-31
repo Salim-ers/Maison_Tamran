@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { TransitionLink } from "@/components/motion/transition-link";
 
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { notFound } from "next/navigation";
 import { getCatalog, getProduct } from "@/lib/catalog";
 import { siteUrl } from "@/lib/env";
@@ -289,7 +289,7 @@ async function ProductView({ params }: { params: Promise<{ slug: string }> }) {
                 <li key={t.key}>
                   <FadeIn delay={k * 0.1}>
                     <div className={`relative overflow-hidden ${ingredientTiles.length === 1 ? "aspect-[16/9]" : "aspect-[4/5]"}`}>
-                      <Image src={t.image.url} alt={t.image.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" quality={75} className="object-cover" />
+                      <Image src={t.image.url} alt={t.image.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" quality={85} className="object-cover" />
                       <span className="absolute bottom-2 right-3 text-[0.62rem] text-ivory/70">{t.image.credit}</span>
                     </div>
                     <p className="mt-4 font-display text-2xl">{t.label}</p>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { getCatalog, getContent } from "@/lib/catalog";
 import { Breadcrumbs } from "@/components/layout/page-intro";
 import Image from "next/image";
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 function Photo({ image, sizes, preload }: { image: AmbianceImage; sizes: string; preload?: boolean }) {
   return (
     <>
-      <Image src={image.url} alt={image.alt} fill sizes={sizes} quality={75} preload={preload} placeholder={image.blur ? "blur" : "empty"} blurDataURL={image.blur} className="object-cover" style={{ objectPosition: image.focus }} />
+      <Image src={image.url} alt={image.alt} fill sizes={sizes} quality={85} preload={preload} placeholder={image.blur ? "blur" : "empty"} blurDataURL={image.blur} className="object-cover" style={{ objectPosition: image.focus }} />
       <span className="absolute bottom-2 right-3 t-micro text-ivory/75 [text-shadow:0_1px_2px_rgba(0,0,0,.6)]">{image.credit}</span>
     </>
   );
@@ -163,8 +163,8 @@ export default async function MaisonPage() {
       {/* Respiration : la palmeraie (photographie d'ambiance, sans lien avec un lieu de la maison) */}
       {palmeraie && (
         <section aria-label="Palmeraie" className="relative">
-          <RevealImage className="h-[62svh] min-h-[22rem] w-full" from="bottom" parallax={9}>
-            <Photo image={palmeraie} sizes="100vw" />
+          <RevealImage className="h-[62svh] min-h-[22rem] w-full" from="bottom" parallax={4}>
+            <Photo image={palmeraie} sizes="110vw" />
           </RevealImage>
           <p className="container-luxe mt-4 t-micro text-ink-soft">Tout commence par un fruit : la datte Medjool, cultivée dans les palmeraies.</p>
         </section>

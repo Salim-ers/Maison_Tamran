@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { Suspense } from "react";
 import { getCatalog } from "@/lib/catalog";
 import { findOrderByAccess, orderDetail } from "@/lib/orders";

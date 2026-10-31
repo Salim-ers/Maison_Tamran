@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { clsx } from "clsx";
 import { getBoxes, getCatalog, getSettings } from "@/lib/catalog";
 import { euros } from "@/lib/money";
@@ -111,7 +111,7 @@ export default async function CoffretsPage() {
                     </RevealImage>
                   ) : b.kind === "entreprise" && ambianceImg ? (
                     <RevealImage className="aspect-[4/3]" from={flip ? "left" : "right"} parallax={5}>
-                      <Image src={ambianceImg.url} alt={ambianceImg.alt} fill sizes="(min-width: 1024px) 55vw, 100vw" quality={75} className="object-cover" />
+                      <Image src={ambianceImg.url} alt={ambianceImg.alt} fill sizes="(min-width: 1024px) 55vw, 100vw" quality={85} className="object-cover" />
                       <span className="absolute bottom-2 left-3 t-micro text-ivory/80">{ambianceImg.concept ? ambianceImg.credit : `Photographie d’ambiance · ${ambianceImg.credit}`}</span>
                     </RevealImage>
                   ) : (

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { getContent } from "@/lib/catalog";
 import { getActivePriceTiers } from "@/lib/public-data";
 import { Breadcrumbs } from "@/components/layout/page-intro";

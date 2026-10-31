@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { useEffect } from "react";
 
 export default function BoutiqueError({ error, retry, reset }: { error: unknown; retry?: () => void; reset?: () => void }) {

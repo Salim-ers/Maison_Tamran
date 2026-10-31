@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import { useState } from "react";
 import { clsx } from "clsx";
 import { AddToCartButton } from "@/components/cart/add-button";

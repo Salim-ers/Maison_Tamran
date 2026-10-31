@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/motion/transition-link";
 import type { ImageRef } from "@/db/schema";
 import { Breadcrumbs, type Crumb } from "@/components/layout/page-intro";
 
@@ -49,7 +49,7 @@ export function CreationsHero({ title, subtitle, crumbs, items, children }: { ti
                     alt={i >= items.length ? "" : it.image.alt}
                     fill
                     sizes="(min-width: 1024px) 280px, (min-width: 640px) 30vw, 46vw"
-                    quality={75}
+                    quality={85}
                     placeholder={it.image.blur ? "blur" : "empty"}
                     blurDataURL={it.image.blur}
                     className="object-cover transition-transform duration-[1.4s] ease-[var(--ease-luxe)] group-hover:scale-[1.05]"

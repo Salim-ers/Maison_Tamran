@@ -51,8 +51,10 @@ for (const [name, viewport] of [["desktop", { width: 1440, height: 900 }], ["mob
       window.__frames = [];
       const tick = () => {
         const r = h.getBoundingClientRect();
-        const hit = document.elementFromPoint(innerWidth / 2, r.height / 2);
-        window.__frames.push({ top: r.top, height: r.height, visible: getComputedStyle(h).visibility === "visible", hit: hit?.closest("header") === h, moved: location.pathname !== from, y: scrollY });
+        // pendant une transition de vue, le navigateur ne cible pas les éléments sous le pointeur : vérifié hors transition
+        const vt = Boolean(document.documentElement.dataset.vt);
+        const hit = vt || document.elementFromPoint(innerWidth / 2, r.height / 2)?.closest("header") === h;
+        window.__frames.push({ top: r.top, height: r.height, visible: getComputedStyle(h).visibility === "visible", hit, vt, moved: location.pathname !== from, y: scrollY });
         if (window.__frames.length < 45) requestAnimationFrame(tick);
       };
       requestAnimationFrame(tick);
@@ -64,7 +66,7 @@ for (const [name, viewport] of [["desktop", { width: 1440, height: 900 }], ["mob
     const frames = await page.evaluate(() => window.__frames);
     const bad = frames.filter((f) => Math.abs(f.top) > 0.5 || Math.abs(f.height - frames[0].height) > 0.5 || !f.visible || !f.hit);
     const stale = frames.filter((f) => f.moved && f.y > 0 && f.y === frames[0].y);
-    check(bad.length === 0, `${name} → ${href} : en-tête fixe, visible et de même hauteur sur ${frames.length} images`);
+    check(bad.length === 0, `${name} → ${href} : en-tête fixe, visible et de même hauteur sur ${frames.length} images (${frames.filter((f) => f.vt).length} en transition de vue)`);
     check(stale.length === 0, `${name} → ${href} : la nouvelle page n'apparaît jamais à l'ancienne position de défilement`);
     const now = await crop(await page.screenshot(), zones);
     const d = Math.max(...(await Promise.all(now.map((s, i) => diff(s, ref[i])))));
