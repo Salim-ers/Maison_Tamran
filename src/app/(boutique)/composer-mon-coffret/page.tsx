@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getBoxes, getCatalog, getSettings } from "@/lib/catalog";
 import { PageIntro } from "@/components/layout/page-intro";
-import { toSwatch } from "@/lib/present";
+import { boxPhotos, toSwatch } from "@/lib/present";
+import { ALLERGEN_LABELS, CHOCOLATE_LABELS, type ChocolateKind } from "@/data/recipes";
 import { Configurator, type ConfBox, type ConfFlavor } from "@/components/configurator/configurator";
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ async function ConfiguratorLoader({ searchParams, boxes, flavors, gift }: { sear
     <Configurator
       boxes={boxes}
       flavors={flavors}
+      boxPhotos={boxPhotos()}
       giftWrapCents={gift.cents}
       giftWrapLabel={gift.label}
       initialFormat={[6, 12, 24].includes(format) ? format : null}
@@ -43,25 +45,24 @@ export default async function ComposerPage({ searchParams }: PageProps<"/compose
     .filter((b) => b.configurable && b.pieces && b.priceCents != null)
     .map((b) => ({ id: b.id, slug: b.slug, name: b.name, pieces: b.pieces!, priceCents: b.priceCents!, stock: b.stock, purchasable: b.purchasable }));
   const flavors: ConfFlavor[] = products.map((p) => ({
-    slug: p.slug,
-    name: p.name,
-    coat: p.palette.coat,
-    coatLight: p.palette.coatLight,
-    accent: p.palette.accent,
+    ...toSwatch(p),
     pairing: p.pairing,
+    tagline: p.tagline,
     collection: p.collectionSlug,
+    chocolateLabel: CHOCOLATE_LABELS[p.chocolate as ChocolateKind] ?? p.chocolate,
+    allergens: p.allergens.map((a) => ALLERGEN_LABELS[a] ?? a).join(", ").toLowerCase(),
     stockPieces: p.stockPieces,
     supplementCents: p.boxSupplementCents,
     purchasable: p.purchasable && p.stockPieces > 0,
     image: p.images.find((i) => i.role === "main") ?? null,
-    thumb: toSwatch(p).thumb,
+    macro: p.images.find((i) => i.role === "cut") ?? null,
   }));
   return (
     <>
       <PageIntro
         title="Composer mon coffret"
         crumbs={[{ href: "/coffrets", label: "Coffrets" }, { href: "/composer-mon-coffret", label: "Composer mon coffret" }]}
-        intro={<p>Choisissez un format, placez vos saveurs une à une, ajoutez un mot pour la personne qui l&apos;ouvrira. Touchez une datte dans l&apos;aperçu pour la retirer.</p>}
+        intro={<p>Choisissez un format, posez vos créations une à une, ajoutez un mot pour la personne qui l&apos;ouvrira. Touchez une pièce du coffret pour la remplacer ou la retirer.</p>}
       />
       <section className="container-luxe pb-[var(--section)]">
         <Suspense fallback={<div className="h-[60vh]" aria-busy />}>

@@ -34,6 +34,11 @@ export default async function CoffretsPage() {
   const ephemeralThumbs = products.filter((p) => p.collectionSlug === "ephemere").map(thumb).filter((u): u is string => Boolean(u));
   const coffret = concept("coffret-1");
   const ambianceImg = ambiance("art-de-recevoir");
+  // photographie du coffret (visuel généré, résolu par le manifeste photo), sinon le schéma du format
+  const boxPhoto = (b: (typeof boxes)[number]) => {
+    const main = b.images.find((x) => x.role === "main");
+    return main && !main.url.startsWith("/images/concepts/") ? main : null;
+  };
 
   return (
     <>
@@ -98,6 +103,11 @@ export default async function CoffretsPage() {
                     <RevealImage className="aspect-[4/3]" from={flip ? "left" : "right"} parallax={5}>
                       <Image src={coffret.url} alt={coffret.alt} fill sizes="(min-width: 1024px) 55vw, 100vw" quality={85} className="object-cover" />
                       {coffret.concept && <ConceptBadge tone="dark" label={coffret.badge} className="right-3 top-3" />}
+                    </RevealImage>
+                  ) : boxPhoto(b) ? (
+                    <RevealImage className="aspect-[4/3]" from={flip ? "left" : "right"} parallax={5}>
+                      <Image src={boxPhoto(b)!.url} alt={boxPhoto(b)!.alt} fill sizes="(min-width: 1024px) 55vw, 100vw" quality={85} className="object-cover" />
+                      <ConceptBadge tone="dark" label={boxPhoto(b)!.badge} className="right-3 top-3" />
                     </RevealImage>
                   ) : b.kind === "entreprise" && ambianceImg ? (
                     <RevealImage className="aspect-[4/3]" from={flip ? "left" : "right"} parallax={5}>

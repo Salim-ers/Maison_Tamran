@@ -60,7 +60,7 @@ export function useFlights(reduce: boolean) {
                   transition={{ duration: FLIGHT_S, ease: [0.45, 0, 0.2, 1], times: [0, 0.5, 1] }}
                   onAnimationComplete={() => setFlights((l) => l.filter((x) => x.id !== fl.id))}
                 >
-                  <DateThumb f={fl.f} className="size-full shadow-[0_14px_24px_rgba(0,0,0,.45)] ring-1 ring-[#c7a06a]/50" />
+                  <DateThumb f={fl.f} className={fl.f.piece ? "size-[118%] drop-shadow-[0_18px_18px_rgba(0,0,0,.45)]" : "size-full shadow-[0_14px_24px_rgba(0,0,0,.45)] ring-1 ring-[#c7a06a]/50"} />
                 </motion.div>
               );
             })}

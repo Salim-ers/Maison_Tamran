@@ -26,37 +26,26 @@ export interface CardProduct {
 }
 
 /**
- * Carte produit, en galerie : la création est présentée dans une niche en arc, sur un halo à la couleur de sa
- * recette, à une taille où sa photographie reste nette. Au survol (ou au focus), la niche se soulève, un arc
- * doré se dessine et l'accord apparaît.
+ * Carte produit : la photographie de la création en plein cadre. Au survol (ou au focus), la caméra s'approche
+ * et la vue bascule sur le cœur de la datte (macro de la garniture) ; un filet doré se dessine et l'accord apparaît.
  */
-export function ProductCard({ p, tone = "light", className }: { p: CardProduct; sizes?: string; tone?: "light" | "dark"; className?: string }) {
+export function ProductCard({ p, tone = "light", className, sizes = "(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 92vw" }: { p: CardProduct; sizes?: string; tone?: "light" | "dark"; className?: string }) {
   const dark = tone === "dark";
   return (
     <article className={clsx("group relative", className)}>
-      <div
-        className="relative aspect-[4/5] overflow-hidden"
-        style={{
-          background: `radial-gradient(ellipse 70% 55% at 50% 42%, color-mix(in srgb, ${p.accent} 30%, transparent), transparent 72%), ${dark ? "#2b1c16" : "#efe3d0"}`,
-        }}
-      >
-        <span aria-hidden className={clsx("absolute inset-x-[10%] bottom-[9%] h-px", dark ? "bg-ivory/15" : "bg-chocolate/15")} />
+      <div className="relative aspect-[4/5] overflow-hidden bg-chocolate">
         {p.main && (
-          <div className="absolute inset-0 grid place-items-center pb-[6%]">
-            <div className="native-cap relative transition-transform duration-700 ease-[var(--ease-luxe)] group-hover:-translate-y-2" style={{ ["--nat" as string]: p.main.w ?? 412 }}>
-              <span className="relative block overflow-hidden rounded-t-[50%_32%] shadow-[0_30px_50px_-24px_rgba(36,23,19,.65)]" style={{ aspectRatio: `${p.main.w ?? 412} / ${p.main.h ?? 495}` }}>
-                <Image src={p.main.url} alt={p.main.alt} fill sizes="(min-width: 1024px) 300px, 62vw" quality={85} placeholder={p.main.blur ? "blur" : "empty"} blurDataURL={p.main.blur} className="object-cover transition-transform duration-[1.4s] ease-[var(--ease-luxe)] group-hover:scale-[1.04]" />
-              </span>
-              {/* arc doré qui se dessine au survol */}
-              <svg aria-hidden className="pointer-events-none absolute -inset-[7%] h-[114%] w-[114%]" viewBox="0 0 100 120" preserveAspectRatio="none" fill="none">
-                <path d="M2 120 V42 A48 40 0 0 1 98 42 V120" pathLength={1} stroke="#c7a06a" strokeWidth="1.2" vectorEffect="non-scaling-stroke" className="[stroke-dasharray:1] [stroke-dashoffset:1] transition-[stroke-dashoffset] duration-[1.1s] ease-[var(--ease-luxe)] group-hover:[stroke-dashoffset:0] group-focus-within:[stroke-dashoffset:0]" />
-              </svg>
-            </div>
-          </div>
+          <Image src={p.main.url} alt={p.main.alt} fill sizes={sizes} quality={85} placeholder={p.main.blur ? "blur" : "empty"} blurDataURL={p.main.blur} className="object-cover transition-transform duration-[1.6s] ease-[var(--ease-luxe)] group-hover:scale-[1.06]" />
         )}
-        {p.main?.concept && <ConceptBadge className="left-3 top-3" tone={dark ? "dark" : "light"} label={p.main.badge} />}
+        {p.cut && (
+          <Image src={p.cut.url} alt="" aria-hidden fill sizes={sizes} quality={80} className="scale-[1.12] object-cover opacity-0 transition-[opacity,transform] duration-[1.1s] ease-[var(--ease-luxe)] group-hover:scale-100 group-hover:opacity-100 max-lg:hidden" />
+        )}
+        {/* halo à la couleur de la recette, et filet doré qui se dessine au survol */}
+        <span aria-hidden className="pointer-events-none absolute inset-0 opacity-60 mix-blend-soft-light" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 100%, ${p.accent}, transparent 70%)` }} />
+        <span aria-hidden className="pointer-events-none absolute inset-3 border border-[#e3c38c]/0 transition-colors duration-700 group-hover:border-[#e3c38c]/55 group-focus-within:border-[#e3c38c]/55" />
+        {p.main?.concept && <ConceptBadge className="left-3 top-3" tone="dark" label={p.main.badge} />}
         {/* l'accord, révélé au survol (toujours visible sur écran tactile) */}
-        <div className={clsx("absolute inset-x-0 bottom-0 p-4 transition-[opacity,transform] duration-500 lg:translate-y-2 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100", dark ? "bg-[linear-gradient(0deg,rgba(20,12,9,.85),transparent)] text-ivory" : "bg-[linear-gradient(0deg,rgba(250,246,237,.95),transparent)] text-ink")}>
+        <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(0deg,rgba(20,12,9,.82),transparent)] p-4 pt-10 text-ivory transition-[opacity,transform] duration-500 lg:translate-y-2 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100">
           <p className="flex items-center justify-between gap-3 t-micro tracking-[0.14em]">
             <span className="truncate">ACCORD · {p.chocolateLabel.toUpperCase()}</span>
             <span aria-hidden className="max-lg:hidden">DÉCOUVRIR →</span>

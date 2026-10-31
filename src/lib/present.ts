@@ -1,7 +1,8 @@
 import { CHOCOLATE_LABELS, type ChocolateKind } from "@/data/recipes";
 import type { CatalogProduct } from "./catalog";
 import type { CardProduct } from "@/components/product/product-card";
-import type { FlavorSwatch } from "@/components/configurator/box-preview";
+import type { BoxPhoto, FlavorSwatch } from "@/components/configurator/box-preview";
+import { photo } from "./photos";
 
 export function toCard(p: CatalogProduct): CardProduct {
   const prices = p.variants.map((v) => v.priceCents);
@@ -26,7 +27,26 @@ export function toCard(p: CatalogProduct): CardProduct {
 
 export function toSwatch(p: CatalogProduct): FlavorSwatch {
   const thumb = p.images.find((i) => i.role === "cut") ?? p.images.find((i) => i.role === "main");
-  return { slug: p.slug, name: p.name, coat: p.palette.coat, coatLight: p.palette.coatLight, accent: p.palette.accent, thumb: thumb ? { url: thumb.url, blur: thumb.blur } : null };
+  const piece = photo(`piece-${p.slug}`);
+  return {
+    slug: p.slug,
+    name: p.name,
+    coat: p.palette.coat,
+    coatLight: p.palette.coatLight,
+    accent: p.palette.accent,
+    thumb: thumb ? { url: thumb.url, blur: thumb.blur } : null,
+    piece: piece ? { url: piece.url } : null,
+  };
+}
+
+/** Photographies des coffrets vides vus de dessus, par nombre de pièces (configurateur et accueil). */
+export function boxPhotos(): Record<number, BoxPhoto> {
+  const out: Record<number, BoxPhoto> = {};
+  for (const n of [6, 12, 24]) {
+    const p = photo(`coffret-vide-${n}`);
+    if (p) out[n] = { url: p.url, w: p.w, h: p.h, blur: p.blur };
+  }
+  return out;
 }
 
 export const STATUS_PUBLIC: Record<string, string> = {

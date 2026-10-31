@@ -2,33 +2,71 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { useReducedMotion } from "@/components/motion/reduced-motion";
 import { clsx } from "clsx";
 import type { ImageRef } from "@/db/schema";
+import { ConceptBadge } from "@/components/ui/media";
 
 export type StagePhoto = { key: string; label: string; url: string; alt: string; credit?: string; blur?: string };
 
 type View =
-  | { kind: "print"; key: string; label: string; image: ImageRef; stage: StagePhoto | null }
+  | { kind: "creation"; key: string; label: string; image: ImageRef; loupe: boolean }
   | { kind: "photo"; key: string; label: string; photo: StagePhoto };
 
 const EASE = [0.22, 0.8, 0.12, 1] as const;
+/** Grossissement de la loupe : la macro (1920 px) reste sous ×1,5 de sa définition, même sur écran Retina. */
+const LOUPE = 1.7;
+
+/** Vue plein cadre d'une création ; la macro du cœur se parcourt à la loupe (pointeur fin uniquement). */
+function CreationView({ image, loupe, priority }: { image: ImageRef; loupe: boolean; priority: boolean }) {
+  const reduce = useReducedMotion();
+  const [zoom, setZoom] = useState(false);
+  const ox = useMotionValue(50);
+  const oy = useMotionValue(50);
+  const sx = useSpring(ox, { stiffness: 260, damping: 32 });
+  const sy = useSpring(oy, { stiffness: 260, damping: 32 });
+  // le point visé par la loupe, en fraction de l'image (origine de l'agrandissement)
+  const originX = useTransform(sx, (v) => v / 100);
+  const originY = useTransform(sy, (v) => v / 100);
+  const on = loupe && zoom && !reduce;
+  return (
+    <div
+      className={clsx("absolute inset-0 overflow-hidden", loupe && "lg:cursor-zoom-in", on && "lg:cursor-zoom-out")}
+      onPointerMove={(e) => {
+        if (e.pointerType !== "mouse") return;
+        const r = e.currentTarget.getBoundingClientRect();
+        ox.set(((e.clientX - r.left) / r.width) * 100);
+        oy.set(((e.clientY - r.top) / r.height) * 100);
+      }}
+      onPointerEnter={(e) => loupe && e.pointerType === "mouse" && setZoom(true)}
+      onPointerLeave={() => setZoom(false)}
+    >
+      <motion.div
+        className="absolute inset-0"
+        style={{ originX, originY }}
+        initial={reduce ? false : { scale: 1.08 }}
+        animate={{ scale: on ? LOUPE : 1 }}
+        transition={{ duration: on ? 0.6 : 1.3, ease: EASE }}
+      >
+        <Image src={image.url} alt={image.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" quality={85} preload={priority} placeholder={image.blur ? "blur" : "empty"} blurDataURL={image.blur} className="object-cover" />
+      </motion.div>
+    </div>
+  );
+}
 
 /**
- * Galerie produit en scène. Les photographies des créations n'existent qu'en petite définition : elles sont
- * présentées en tirage, à une taille où elles restent nettes (plafond selon la densité de l'écran), posées sur
- * la grande photographie haute définition d'un ingrédient de la recette. Les autres vues sont ces ingrédients
- * en plein cadre. Aucun zoom ne dépasse la définition réelle d'une image.
+ * Galerie produit : la création en plein cadre (photographie haute définition), puis son cœur en macro, à
+ * parcourir à la loupe, puis les ingrédients de la recette. Transitions par rideau, glissement au doigt,
+ * flèches du clavier.
  */
 export function ProductGallery({ images, name, stages }: { images: ImageRef[]; name: string; stages: StagePhoto[] }) {
   const reduce = useReducedMotion();
   const main = images.find((i) => i.role === "main") ?? images[0];
   const cut = images.find((i) => i.role === "cut");
   const views: View[] = [];
-  if (main) views.push({ kind: "print", key: "creation", label: "La création", image: main, stage: stages[0] ?? null });
-  // le cœur en tirage seulement si sa définition le permet (photographie de référence)
-  if (cut && (cut.w ?? 0) >= 500) views.push({ kind: "print", key: "coeur", label: "Le cœur", image: cut, stage: stages[1] ?? stages[0] ?? null });
+  if (main) views.push({ kind: "creation", key: "creation", label: "La création", image: main, loupe: false });
+  if (cut && (cut.w ?? 0) >= 1200) views.push({ kind: "creation", key: "coeur", label: "Le cœur", image: cut, loupe: true });
   for (const s of stages) views.push({ kind: "photo", key: s.key, label: s.label, photo: s });
 
   const [[i, dir], setView] = useState<[number, number]>([0, 0]);
@@ -39,6 +77,7 @@ export function ProductGallery({ images, name, stages }: { images: ImageRef[]; n
     const n = (k + views.length) % views.length;
     if (n !== i) setView([n, n > i ? 1 : -1]);
   };
+  const concept = cur.kind === "creation" && cur.image.concept;
 
   return (
     <div className="lg:sticky lg:top-[calc(var(--header-h)+var(--banner-h)+1.5rem)]">
@@ -76,41 +115,21 @@ export function ProductGallery({ images, name, stages }: { images: ImageRef[]; n
             transition={{ duration: reduce ? 0.2 : 0.95, ease: EASE }}
             style={{ zIndex: 1 }}
           >
-            {cur.kind === "photo" ? (
+            {cur.kind === "creation" ? (
+              <CreationView image={cur.image} loupe={cur.loupe} priority={i === 0} />
+            ) : (
               <>
                 <motion.div className="absolute inset-0" initial={reduce ? false : { scale: 1.08 }} animate={{ scale: 1 }} transition={{ duration: 1.4, ease: EASE }}>
                   <Image src={cur.photo.url} alt={cur.photo.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" quality={75} placeholder={cur.photo.blur ? "blur" : "empty"} blurDataURL={cur.photo.blur} className="object-cover" />
                 </motion.div>
-                <span className="absolute bottom-4 left-4 bg-ivory/90 px-3 py-1.5 t-micro tracking-[0.14em] text-ink">{cur.label.toUpperCase()}</span>
                 {cur.photo.credit && <span className="absolute bottom-4 right-4 t-micro text-ivory/75 [text-shadow:0_1px_2px_rgba(0,0,0,.6)]">{cur.photo.credit}</span>}
               </>
-            ) : (
-              <>
-                {cur.stage && (
-                  <>
-                    <Image src={cur.stage.url} alt="" fill sizes="(min-width: 1024px) 50vw, 100vw" quality={75} className="object-cover" />
-                    <span aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(20,12,9,.2),rgba(20,12,9,.62))]" />
-                  </>
-                )}
-                <div className="absolute inset-0 grid place-items-center p-[8%]">
-                  <motion.figure
-                    className="native-cap bg-cream p-[6px] shadow-[0_40px_70px_-26px_rgba(10,6,4,.9)]"
-                    style={{ ["--nat" as string]: cur.image.w ?? 412 }}
-                    initial={reduce ? false : { y: 40, rotate: -7, opacity: 0 }}
-                    animate={{ y: 0, rotate: -2.5, opacity: 1 }}
-                    transition={{ duration: 0.9, ease: EASE, delay: reduce ? 0 : 0.2 }}
-                  >
-                    <span className="relative block overflow-hidden" style={{ aspectRatio: `${cur.image.w ?? 412} / ${cur.image.h ?? 495}` }}>
-                      <Image src={cur.image.url} alt={cur.image.alt} fill sizes="(min-width: 1024px) 26rem, 70vw" quality={85} preload={i === 0} className="object-cover" />
-                    </span>
-                    <figcaption className="px-1 pb-0.5 pt-2 text-center text-[0.62rem] tracking-[0.14em] text-ink-soft">VISUEL CONCEPTUEL</figcaption>
-                  </motion.figure>
-                </div>
-                {cur.stage?.credit && <span className="absolute bottom-4 right-4 t-micro text-ivory/70">Fond : {cur.stage.credit}</span>}
-              </>
             )}
+            <span className="pointer-events-none absolute bottom-4 left-4 bg-ivory/90 px-3 py-1.5 t-micro tracking-[0.14em] text-ink">{cur.label.toUpperCase()}</span>
+            {cur.kind === "creation" && cur.loupe && <span className="pointer-events-none absolute bottom-4 right-4 t-micro text-ivory/80 max-lg:hidden">Survolez pour explorer la garniture</span>}
           </motion.div>
         </AnimatePresence>
+        {concept && <ConceptBadge className="left-3 top-3 z-[2]" tone="dark" label={cur.image.badge} />}
         {views.length > 1 && (
           <div className="absolute right-3 top-3 z-[2] flex gap-1">
             {(
