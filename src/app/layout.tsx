@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { siteUrl } from "@/lib/env";
-import { withPhoto } from "@/lib/photos";
+import { photo, withPhoto } from "@/lib/photos";
+import { INTRO_HEAD_SCRIPT } from "@/components/home/intro-script";
 import "./globals.css";
 
 const bodoni = localFont({
@@ -44,8 +45,8 @@ const manropeExt = localFont({
   declarations: [{ prop: "unicode-range", value: "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2C60-2C7F, U+A720-A7FF" }],
 });
 
-// visuel de partage : la photo d'accueil validée si elle existe, sinon le visuel concept
-const heroImage = withPhoto({ url: "/images/concepts/hero.webp", alt: "", role: "extra", w: 3200, h: 1800 });
+// visuel de partage : le coffret du hero (logo officiel), sinon la photo d'accueil historique
+const heroImage = photo("coffret-ferme") ?? withPhoto({ url: "/images/concepts/hero.webp", alt: "", role: "extra", w: 3200, h: 1800 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
@@ -74,7 +75,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${bodoni.variable} ${manrope.variable} ${bodoniExt.variable} ${manropeExt.variable}`}>
+    <html lang="fr" className={`${bodoni.variable} ${manrope.variable} ${bodoniExt.variable} ${manropeExt.variable}`} suppressHydrationWarning>
+      <head>
+        {/* classes intro-play / intro-seen posées avant le premier rendu (voir IntroCurtain) */}
+        <script dangerouslySetInnerHTML={{ __html: INTRO_HEAD_SCRIPT }} />
+      </head>
       <body className="min-h-dvh">{children}</body>
     </html>
   );

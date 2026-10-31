@@ -5,7 +5,7 @@ import { useMemo, useRef, useState } from "react";
 import { clsx } from "clsx";
 import { AnimatePresence, motion } from "motion/react";
 import { useReducedMotion } from "@/components/motion/reduced-motion";
-import { BoxPreview, DateThumb, type FlavorSwatch } from "@/components/configurator/box-preview";
+import { BoxPreview, DateThumb, type BoxPhoto, type FlavorSwatch } from "@/components/configurator/box-preview";
 import { FLIGHT_S, useFlights } from "@/components/configurator/fly";
 
 const FORMATS = [6, 12, 24] as const;
@@ -15,7 +15,7 @@ const FORMATS = [6, 12, 24] as const;
  * création et sa datte rejoint son alvéole ; le compteur suit, puis le configurateur reprend la sélection.
  * L'aperçu est une représentation graphique du coffret (alvéoles), distincte des photographies de produit.
  */
-export function ComposeTeaser({ flavors }: { flavors: FlavorSwatch[] }) {
+export function ComposeTeaser({ flavors, boxPhotos = {} }: { flavors: FlavorSwatch[]; boxPhotos?: Record<number, BoxPhoto> }) {
   const reduce = useReducedMotion();
   const [pieces, setPieces] = useState<(typeof FORMATS)[number]>(6);
   const [slots, setSlots] = useState<string[]>([]);
@@ -120,9 +120,9 @@ export function ComposeTeaser({ flavors }: { flavors: FlavorSwatch[] }) {
         <div className="relative mx-auto w-full max-w-2xl [perspective:1400px]" ref={boxRef}>
           <div aria-hidden className={clsx("pointer-events-none absolute -inset-10 rounded-full bg-[radial-gradient(circle,rgba(199,160,106,.5),transparent_65%)] blur-2xl transition-opacity duration-1000", full ? "opacity-100" : "opacity-0")} />
           <motion.div key={pieces} initial={reduce ? false : { opacity: 0, rotateX: 22, y: 30, scale: 0.94 }} animate={{ opacity: 1, rotateX: 0, y: 0, scale: full && !reduce ? [1, 1.025, 1] : 1 }} transition={{ duration: 0.8, ease: [0.22, 0.8, 0.12, 1] }}>
-            <BoxPreview pieces={pieces} slots={slots} flavors={map} onRemoveAt={(i) => setSlots((s) => s.filter((_, j) => j !== i))} incoming={incoming} landDelay={FLIGHT_S} className="relative w-full" />
+            <BoxPreview pieces={pieces} slots={slots} flavors={map} photo={boxPhotos[pieces]} complete={full} onRemoveAt={(i) => setSlots((s) => s.filter((_, j) => j !== i))} incoming={incoming} landDelay={FLIGHT_S} className="relative w-full" />
           </motion.div>
-          <p className="mt-6 text-center t-micro text-ink-soft">Représentation du format · les vignettes reprennent les visuels conceptuels de chaque création.</p>
+          <p className="mt-6 text-center t-micro text-ink-soft">Visuels conceptuels du coffret et des créations · touchez une pièce pour la retirer.</p>
         </div>
       </div>
       {layer}

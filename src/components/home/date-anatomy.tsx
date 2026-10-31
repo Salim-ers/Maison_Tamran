@@ -9,12 +9,12 @@ import { span } from "@/components/motion/scroll";
 import type { ImageRef } from "@/db/schema";
 import { ConceptBadge } from "@/components/ui/media";
 
-// Repères mesurés sur la photographie de référence Café Impérial (en % de l'image, ratio 4:5).
-const ORIGIN = { x: 68.2, y: 55.6 }; // centre de la face coupée : point fixe du rapprochement
+// Repères mesurés sur la photographie de Café Impérial (visuel généré 1632 × 2048, en % de l'image, ratio 4:5).
+const ORIGIN = { x: 67.5, y: 56.8 }; // centre de la face coupée : point fixe du rapprochement
 const POINTS = [
-  { n: "01", title: "La chair de Medjool", text: "Épaisse et fondante, aux notes naturelles de miel et de caramel.", x: 53.5, y: 49.9, r: 12, label: { x: 5, y: 24 } },
-  { n: "02", title: "Le cœur gourmand", text: "Un praliné noisette relevé d'espresso et de cardamome.", x: 62.4, y: 57, r: 11, label: { x: 5, y: 84 } },
-  { n: "03", title: "L'enrobage", text: "Une fine coque de chocolat qui craque, puis fond.", x: 89.1, y: 53.5, r: 9, label: { x: 50, y: 12 } },
+  { n: "01", title: "La chair de Medjool", text: "Épaisse et fondante, aux notes naturelles de miel et de caramel.", x: 53.1, y: 54.3, r: 11, label: { x: 5, y: 24 } },
+  { n: "02", title: "Le cœur gourmand", text: "Un praliné noisette relevé d'espresso et de cardamome.", x: 69.5, y: 58.5, r: 11, label: { x: 5, y: 84 } },
+  { n: "03", title: "L'enrobage", text: "Une fine coque de chocolat qui craque, puis fond.", x: 91.6, y: 56, r: 8, label: { x: 50, y: 12 } },
 ];
 // fenêtres de défilement : entrée, rapprochement, puis un repère à la fois
 const ENTER: [number, number] = [0, 0.14];

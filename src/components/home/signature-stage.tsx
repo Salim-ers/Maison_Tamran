@@ -24,9 +24,8 @@ export type StageCreation = {
 const EASE = [0.22, 0.8, 0.12, 1] as const;
 
 /**
- * Les Signatures : chaque création à deux échelles. En grand, la photographie haute définition de son
- * ingrédient vedette ; posée dessus, la création elle-même en tirage incliné, affichée à une taille où elle
- * reste nette. Changement de création : la matière glisse par un volet, le tirage se soulève et se repose,
+ * Les Signatures : chaque création à deux échelles. En grand, sa photographie haute définition (ou, à défaut,
+ * celle de son ingrédient vedette) ; posée dessus, en tirage incliné, le cœur de la datte en macro. Changement de création : la matière glisse par un volet, le tirage se soulève et se repose,
  * le nom monte lettre à lettre. Navigation au clic, au clavier (flèches) et au doigt.
  */
 export function SignatureStage({ creations, intro }: { creations: StageCreation[]; intro: string }) {
@@ -137,10 +136,10 @@ export function SignatureStage({ creations, intro }: { creations: StageCreation[
               exit={reduce ? { opacity: 0 } : { opacity: 0, y: -30, rotate: 4 }}
               transition={{ duration: 0.85, ease: EASE, delay: reduce ? 0 : 0.15 }}
             >
-              <span className="relative block aspect-[412/495] overflow-hidden">
+              <span className="relative block overflow-hidden" style={{ aspectRatio: `${c.product.w} / ${c.product.h}` }}>
                 <Image src={c.product.url} alt={c.product.alt} fill sizes="(max-width: 767px) 44vw, 280px" quality={85} className="object-cover" />
               </span>
-              <figcaption className="px-1 pb-0.5 pt-2 text-center text-[0.62rem] tracking-[0.14em] text-ink-soft">VISUEL CONCEPTUEL</figcaption>
+              <figcaption className="px-1 pb-0.5 pt-2 text-center text-[0.62rem] tracking-[0.14em] text-ink-soft">{c.product.w === c.product.h ? "LE CŒUR · VISUEL CONCEPTUEL" : "VISUEL CONCEPTUEL"}</figcaption>
             </motion.figure>
           </AnimatePresence>
         </div>

@@ -13,6 +13,23 @@ import { euros } from "@/lib/money";
 import { ConceptBadge } from "@/components/ui/media";
 
 export type GiftFormat = { slug: string; name: string; pieces: number | null; priceCents: number | null; description: string; kind: string };
+/** Photographie d'un format (vue de trois quarts, 4:3) : visuel conceptuel généré à partir des références du coffret. */
+export type FormatPhoto = { url: string; w: number; h: number; blur?: string; alt: string };
+
+/** Le format en photographie, révélé par un rideau qui monte (`fill` 0 → 1), avec un léger recul de l'objectif. */
+function FormatPhotoCard({ photo, fill, sizes }: { photo: FormatPhoto; fill?: MotionValue<number>; sizes: string }) {
+  const still = useMotionValue(1);
+  const v = fill ?? still;
+  const clipPath = useTransform(v, (k) => `inset(${((1 - k) * 100).toFixed(1)}% 0% 0% 0%)`);
+  const scale = useTransform(v, [0, 1], [1.12, 1]);
+  return (
+    <motion.div style={{ clipPath }} className="relative aspect-[4/3] overflow-hidden shadow-[0_24px_50px_-28px_rgba(0,0,0,.8)]">
+      <motion.div style={{ scale }} className="absolute inset-0">
+        <Image src={photo.url} alt={photo.alt} fill sizes={sizes} quality={80} placeholder={photo.blur ? "blur" : "empty"} blurDataURL={photo.blur} className="object-cover" />
+      </motion.div>
+    </motion.div>
+  );
+}
 
 /**
  * Schéma vu de dessus d'un format de coffret (alvéoles). C'est une illustration du format, distincte de
@@ -59,7 +76,7 @@ function Slot({ i, pieces, thumb, fill }: { i: number; pieces: number; thumb: st
   );
 }
 
-function FormatCard({ f, i, p, thumbs }: { f: GiftFormat & { pieces: number }; i: number; p: MotionValue<number>; thumbs: string[] }) {
+function FormatCard({ f, i, p, thumbs, photo }: { f: GiftFormat & { pieces: number }; i: number; p: MotionValue<number>; thumbs: string[]; photo?: FormatPhoto }) {
   const a = 0.48 + i * 0.05;
   const opacity = useTransform(p, span(a, a + 0.08), [0, 1]);
   const y = useTransform(p, span(a, a + 0.1), ["60px", "0px"]);
@@ -67,8 +84,8 @@ function FormatCard({ f, i, p, thumbs }: { f: GiftFormat & { pieces: number }; i
   const real = f.kind === "signature";
   return (
     <motion.li style={{ opacity, y }} className="flex flex-col">
-      <FormatDiagram pieces={f.pieces} thumbs={thumbs} fill={fill} className="w-full" />
-      <p className="mt-5 t-micro tracking-[0.18em] text-gold/80 max-md:hidden">{real ? "FORMAT DU COFFRET PHOTOGRAPHIÉ" : "ILLUSTRATION DU FORMAT"}</p>
+      {photo ? <FormatPhotoCard photo={photo} fill={fill} sizes="(min-width: 768px) 18vw, 30vw" /> : <FormatDiagram pieces={f.pieces} thumbs={thumbs} fill={fill} className="w-full" />}
+      <p className="mt-5 t-micro tracking-[0.18em] text-gold/80 max-md:hidden">{photo ? "VISUEL CONCEPTUEL" : real ? "FORMAT DU COFFRET PHOTOGRAPHIÉ" : "ILLUSTRATION DU FORMAT"}</p>
       <p className="mt-1 font-display text-[1.7rem] leading-tight max-md:mt-3 max-md:text-[1.1rem]">{f.name.replace("Coffret ", "")}</p>
       <p className="t-small text-ivory/65">
         {f.pieces} pièces · {euros(f.priceCents)}
@@ -84,7 +101,7 @@ function FormatCard({ f, i, p, thumbs }: { f: GiftFormat & { pieces: number }; i
  * 3. il s'efface sur la gauche et les trois formats arrivent, leurs alvéoles se remplissant une à une ;
  * 4. relais vers le configurateur.
  */
-export function GiftShowcase({ coffret, formats, thumbs }: { coffret: ImageRef; formats: GiftFormat[]; thumbs: string[] }) {
+export function GiftShowcase({ coffret, formats, thumbs, formatPhotos = {} }: { coffret: ImageRef; formats: GiftFormat[]; thumbs: string[]; formatPhotos?: Record<number, FormatPhoto> }) {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress: p } = useScroll({ target: ref, offset: ["start start", "end end"] });
@@ -139,7 +156,7 @@ export function GiftShowcase({ coffret, formats, thumbs }: { coffret: ImageRef; 
           <ul className="mt-14 grid gap-10 sm:grid-cols-3">
             {shown.map((f) => (
               <li key={f.slug}>
-                <FormatDiagram pieces={f.pieces} thumbs={thumbs} />
+                {formatPhotos[f.pieces] ? <FormatPhotoCard photo={formatPhotos[f.pieces]} sizes="(min-width: 640px) 30vw, 92vw" /> : <FormatDiagram pieces={f.pieces} thumbs={thumbs} />}
                 <p className="mt-4 font-display text-2xl">{f.name.replace("Coffret ", "")}</p>
                 <p className="t-small text-ivory/65">{f.pieces} pièces · {euros(f.priceCents)}</p>
               </li>
@@ -188,10 +205,10 @@ export function GiftShowcase({ coffret, formats, thumbs }: { coffret: ImageRef; 
           </motion.div>
           <ul className="mt-8 grid grid-cols-3 gap-4 md:gap-8">
             {shown.map((f, i) => (
-              <FormatCard key={f.slug} f={f} i={i} p={p} thumbs={thumbs} />
+              <FormatCard key={f.slug} f={f} i={i} p={p} thumbs={thumbs} photo={formatPhotos[f.pieces]} />
             ))}
           </ul>
-          <motion.p style={{ opacity: t3 }} className="mt-4 t-micro text-ivory/55 md:hidden">Schémas des formats : seul le coffret Signature (12 pièces) est photographié.</motion.p>
+          <motion.p style={{ opacity: t3 }} className="mt-4 t-micro text-ivory/55 md:hidden">Visuels conceptuels des trois formats.</motion.p>
           <motion.div style={{ opacity: cta, pointerEvents: ctaEvents }} className="mt-10 flex flex-wrap gap-3 max-md:mt-6">
             <Link href="/composer-mon-coffret" className="btn btn-gold">Composer mon coffret</Link>
             <Link href="/coffrets" className="btn btn-outline-light">Voir les coffrets</Link>

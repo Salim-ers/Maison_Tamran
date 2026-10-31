@@ -8,6 +8,7 @@ import { ConsentBanner, PageViewTracker } from "@/components/consent/consent";
 import { Suspense } from "react";
 import { HeaderFallback } from "@/components/layout/header-fallback";
 import { MotionProvider } from "@/components/motion/reduced-motion";
+import { IntroGate } from "@/components/home/intro-curtain";
 
 export default function BoutiqueLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -28,6 +29,7 @@ export default function BoutiqueLayout({ children }: { children: React.ReactNode
         <CartDrawer />
         <CartNotice />
         <ConsentBanner />
+        <IntroGate />
         <Suspense fallback={null}>
           <PageViewTracker />
         </Suspense>
