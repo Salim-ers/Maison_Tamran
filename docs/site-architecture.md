@@ -11,7 +11,7 @@ Aucune bibliothèque d'animation ajoutée : Motion (`useScroll`, `useTransform`,
 | # | Séquence | Composant | Images |
 | --- | --- | --- | --- |
 | 00 | Ouverture de la Maison (une fois par session) | `home/intro-curtain.tsx` | logo officiel ivoire |
-| 01 | Le coffret fermé, puis ouvert, puis la caméra s'approche | `home/coffret-hero-scene.tsx` | `coffret-ferme` (logo composé), `coffret-ouvert` |
+| 01 | Le coffret fermé, puis ouvert (sans zoom) | `home/coffret-hero-scene.tsx` | `coffret-ferme` (logo composé), `coffret-ouvert` |
 | 02 | Les Signatures | `home/signature-stage.tsx` | `produit-*` en grand, `coupe-*` en tirage |
 | 03 | De la palmeraie à la création (un écran) | `home/craft-strip.tsx` | `amb-dattier-regimes`, `amb-medjool-macro`, `meta-coeur`, `meta-enrobage` |
 | 04 | Les coffrets : formats, prix, composition en direct | `home/compose-teaser.tsx` | `coffret-vide-*`, `piece-*` |
@@ -19,7 +19,7 @@ Aucune bibliothèque d'animation ajoutée : Motion (`useScroll`, `useTransform`,
 | 06 | La Maison et les professionnels | `home/house-duo.tsx` | `rituel-cafe`, `pro-hotel` |
 | 07 | Lettre d'information, pied de page | `home/newsletter.tsx`, `layout/site-footer.tsx` | — |
 
-Longueur mesurée (`node tests/visual/height.mjs <url>`) : 9,9 écrans en 1440 × 900 (31,7 avant le resserrement), 12 écrans en 390 × 844 (32,6). Seul le hero est épinglé (190 svh).
+Longueur mesurée (`node tests/visual/height.mjs <url>`) : 9,7 écrans en 1440 × 900 (31,7 avant le resserrement), 11,7 écrans en 390 × 844 (32,6). Seul le hero est épinglé (170 svh, sans zoom de caméra).
 
 ## En-tête (`layout/site-header.tsx`)
 

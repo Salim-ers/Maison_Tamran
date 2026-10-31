@@ -44,7 +44,8 @@ function Chapter({ p, range, children, className }: { p: MotionValue<number>; ra
  *  1. au chargement, la lumière se lève sur la table (le coffret porte le logo officiel en marquage cuivré) ;
  *  2. au défilement, le couvercle se soulève et s'efface : les douze créations apparaissent dans la même
  *     photographie (les deux originaux partagent exactement le même cadrage) ;
- *  3. la caméra se rapproche du coffret, un second titre invite à composer le sien.
+ *  3. le coffret ouvert reste à sa taille réelle (aucun agrandissement : la photographie garde toute sa
+ *     netteté), un second titre invite à composer le sien.
  * Section épinglée (CSS sticky), animée uniquement en transform / opacity. Avec « réduire les animations » :
  * une seule image fixe, sans épinglage.
  */
@@ -68,27 +69,25 @@ export function CoffretHeroScene({
   const { scrollYProgress: p } = useScroll({ target: track, offset: ["start start", "end end"] });
 
   // 2. le couvercle : se soulève (vers le haut, vers l'objectif), pivote légèrement et quitte le cadre
-  const lidY = useTransform(p, [0.05, 0.4], ["0%", "-105%"]);
-  const lidX = useTransform(p, [0.05, 0.4], ["0%", "9%"]);
-  const lidRotate = useTransform(p, [0.05, 0.4], [0, -8]);
-  const lidScale = useTransform(p, [0.05, 0.4], [1, 1.16]);
-  const lidOpacity = useTransform(p, [0.34, 0.4], [1, 0]);
-  const lidShadow = useTransform(p, [0.05, 0.3], ["drop-shadow(0px 0px 0px rgba(24,14,10,0))", "drop-shadow(-30px 60px 40px rgba(24,14,10,.45))"]);
-  const restOpacity = useTransform(p, [0.08, 0.3], [1, 0]);
-  // 3. la caméra s'approche du coffret ouvert
-  const camScale = useTransform(p, [0.36, 1], [1, 1.7]);
-  const textOpacity = useTransform(p, [0.1, 0.26], [1, 0]);
-  const textY = useTransform(p, [0.1, 0.26], [0, -48]);
-  const cue = useTransform(p, [0, 0.06], [1, 0]);
+  const lidY = useTransform(p, [0.06, 0.55], ["0%", "-105%"]);
+  const lidX = useTransform(p, [0.06, 0.55], ["0%", "9%"]);
+  const lidRotate = useTransform(p, [0.06, 0.55], [0, -8]);
+  const lidScale = useTransform(p, [0.06, 0.55], [1, 1.08]);
+  const lidOpacity = useTransform(p, [0.47, 0.55], [1, 0]);
+  const lidShadow = useTransform(p, [0.06, 0.4], ["drop-shadow(0px 0px 0px rgba(24,14,10,0))", "drop-shadow(-30px 60px 40px rgba(24,14,10,.45))"]);
+  const restOpacity = useTransform(p, [0.1, 0.42], [1, 0]);
+  const textOpacity = useTransform(p, [0.12, 0.34], [1, 0]);
+  const textY = useTransform(p, [0.12, 0.34], [0, -48]);
+  const cue = useTransform(p, [0, 0.08], [1, 0]);
   const bar = useTransform(p, [0, 1], [0, 1]);
 
   const sizes = "(max-aspect-ratio: 1/1) 210vw, max(100vw, 178vh)";
 
   return (
-    <section ref={track} aria-labelledby="hero-title" className={reduce ? "relative" : "relative h-[190svh]"}>
+    <section ref={track} aria-labelledby="hero-title" className={reduce ? "relative" : "relative h-[170svh]"}>
       <div className="hero-viewport sticky top-0 h-[100svh] overflow-hidden">
         {/* une seule prise de vue : photo ouverte au fond, photo fermée par-dessus (le couvercle à part) */}
-        <motion.div className="hero-frame anim-sunrise" style={reduce ? undefined : { scale: camScale }}>
+        <div className="hero-frame anim-sunrise">
           <Image src={open.url} alt={open.alt} fill sizes={sizes} quality={85} placeholder="blur" blurDataURL={open.blur} className="object-cover" fetchPriority="low" />
           <motion.div aria-hidden className="absolute inset-0" style={reduce ? undefined : { opacity: restOpacity, WebkitMaskImage: REST_MASK, maskImage: REST_MASK, WebkitMaskSize: "100% 100%", maskSize: "100% 100%" }}>
             <Image src={closed.url} alt="" fill sizes={sizes} quality={85} preload fetchPriority="high" placeholder="blur" blurDataURL={closed.blur} className="object-cover" />
@@ -101,7 +100,7 @@ export function CoffretHeroScene({
           </motion.div>
           {/* lumière d'or qui dérive lentement sur la table */}
           <div aria-hidden className="hero-sun pointer-events-none absolute inset-0" />
-        </motion.div>
+        </div>
         {/* lisibilité du titre : les ombres chaudes de la table s'approfondissent à gauche ; sous l'image sur mobile */}
         <div aria-hidden className="pointer-events-none absolute inset-0 hero-shade" />
 
@@ -136,7 +135,7 @@ export function CoffretHeroScene({
 
         {!reduce && (
           <>
-            <Chapter p={p} range={[0.5, 0.62, 0.9, 0.99]} className="hero-chapter pointer-events-none absolute z-[2] text-ivory">
+            <Chapter p={p} range={[0.58, 0.7, 0.92, 1]} className="hero-chapter pointer-events-none absolute z-[2] text-ivory">
               <p className="t-eyebrow text-gold">Le coffret Signature</p>
               <p className="mt-3 font-display text-[clamp(2.2rem,4.4vw,4.4rem)] leading-[1] tracking-[-0.02em]">
                 Douze créations,
@@ -147,7 +146,7 @@ export function CoffretHeroScene({
                 Composer le vôtre
               </Link>
             </Chapter>
-            <motion.a style={{ opacity: cue }} href="#oasis" className="anim-fade-up absolute bottom-6 left-1/2 z-[3] hidden -translate-x-1/2 flex-col items-center gap-3 t-micro text-ivory/75 [animation-delay:calc(var(--intro,0s)+2.2s)] hover:text-ivory md:flex">
+            <motion.a style={{ opacity: cue }} href="#signatures-title" className="anim-fade-up absolute bottom-6 left-1/2 z-[3] hidden -translate-x-1/2 flex-col items-center gap-3 t-micro text-ivory/75 [animation-delay:calc(var(--intro,0s)+2.2s)] hover:text-ivory md:flex">
               Ouvrir le coffret
               <span aria-hidden className="relative block h-12 w-px overflow-hidden bg-ivory/20">
                 <span className="anim-scroll-cue absolute inset-0 bg-gold" />

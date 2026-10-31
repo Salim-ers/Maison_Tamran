@@ -375,7 +375,7 @@ html.intro-play { --intro: 1.6s; }
 }
 /* ---------- Hero : le coffret Maison Tamrān en plein soleil (photographie 3840 × 2160) ---------- */
 /* cadre au format exact de la photo, toujours assez grand pour couvrir l'écran : la silhouette du couvercle,
-   mesurée en % de l'image, reste juste quel que soit l'écran. « translate » se compose avec l'échelle de Motion. */
+   mesurée en % de l'image, reste juste quel que soit l'écran. Jamais agrandi au défilement : pleine netteté. */
 .hero-frame {
   position: absolute;
   left: 50%;
@@ -383,7 +383,6 @@ html.intro-play { --intro: 1.6s; }
   width: max(100vw, calc(100svh * 16 / 9));
   aspect-ratio: 16 / 9;
   translate: -50% -50%;
-  transform-origin: 70% 48%;
 }
 @media (max-aspect-ratio: 3/2) and (min-aspect-ratio: 1/1) {
   .hero-frame { translate: -57% -50%; }

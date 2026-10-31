@@ -120,7 +120,7 @@ Tableau de bord (chiffre d'affaires hors démonstration, alertes de stock, devis
 
 - **Accueil** (défilement natif, sans détournement du scroll ; détail : `docs/motion-system.md`) :
   0. ouverture de la Maison, une fois par session : le logo officiel se révèle, puis se dissout en fondu sur le coffret (« Passer » toujours disponible) ;
-  1. le coffret Maison Tamrān au soleil, logo cuivré sur le couvercle : au défilement, le couvercle se soulève et révèle les douze créations dans la même prise de vue, puis la caméra s'approche ;
+  1. le coffret Maison Tamrān au soleil, logo cuivré sur le couvercle : au défilement, le couvercle se soulève et révèle les douze créations dans la même prise de vue, sans zoom (la photographie reste nette) ;
   2. les Signatures : la création en grand, son cœur en tirage incliné ;
   3. de la palmeraie à la création, en un écran : palmier, Medjool, cœur, enrobage ;
   4. les coffrets : format, nom et prix, et la pièce détourée qui rejoint sa caissette dans le coffret photographié ;
