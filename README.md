@@ -16,7 +16,7 @@ Site e-commerce complet de **MAISON TAMRĀN** : identité de marque, boutique, c
 | Compte client, adresses, suivi de commande | Fonctionnel |
 | Devis B2B, export PDF | Fonctionnel |
 | Back-office | Fonctionnel (produits, coffrets, stock, commandes, clients, devis, promos, livraison, contenu, témoignages, emails, newsletter, réglages) |
-| Visuels | **Visuels conceptuels** du pack photo Maison Tamrān (signalés « Visuel conceptuel ») : les dix créations n'existent qu'en vignettes de ≈ 414 × 496 px et sont présentées en petit format net ; Café Impérial et le coffret Signature ont une photo de référence détaillée. Photographies d'ambiance et ingrédients détourés libres de droits (Unsplash, licences dans `ASSET_LICENSES.md`). Coffrets 6 et 24 pièces : schémas de format légendés. Détail : `IMAGE_AUDIT.md` |
+| Visuels | **Visuels conceptuels générés** (API Images d'OpenAI, définition native jusqu'à 3840 × 2160, signalés « Visuel conceptuel · IA ») à partir du pack photo de la maison : les dix créations (vue produit 1632 × 2048, macro du cœur 1920 × 1920, pièce détourée vue de dessus), le coffret fermé (logo officiel composé, jamais dessiné par l'IA) et ouvert, les coffrets vides des trois formats, les formats et l'univers (rituel, hôtel, mariage, entreprise). Photographies d'ambiance libres de droits (Unsplash). Inventaire : `docs/asset-manifest.md` ; prises de vue réelles à réaliser avant l'ouverture |
 | Mentions légales, CGV, données réglementaires (poids, DDM, origine, valeurs nutritionnelles) | **À compléter** : champs vides signalés « à confirmer », modifiables dans le back-office |
 
 Rien n'est inventé : aucune histoire de fondateur, aucun label, aucun avis client, aucune promesse de délai.
@@ -49,7 +49,8 @@ Le compte administrateur est créé avec `ADMIN_EMAIL` / `ADMIN_PASSWORD` (un mo
 | `npm run pack-photos` | Intègre le pack photo (`brand/source/pack-photos/`) : les dix créations depuis la planche `APERCU_10_RECETTES.jpg`, à leur définition réelle (≈ 414 × 496 px, aucun agrandissement), Café Impérial et le coffret depuis leurs photos de référence (`src/data/photo-manifest.json`) |
 | `npm run stock` | Photographies d'ambiance Unsplash en 4K (`brand/source/stock/stock.json` → `public/images/ambiance/`), originaux retéléchargés si absents ; les sources marquées `"use": "cutout"` servent seulement au détourage |
 | `npm run scene-assets` | Éléments détourés des grandes scènes (`public/images/scene/`, `src/data/scene-manifest.json`) : coffret ouvert, ingrédients sur fond blanc, palmeraie sans ciel, palme de premier plan |
-| `npm run images:generate` / `images:review` / `images:approve` / `images:status` | Pipeline de visuels IA (Cloudflare Workers AI), voir `docs/PROMPTS-PHOTO.md` |
+| `npm run images:openai -- …` | **Visuels de la maison** (API Images d'OpenAI, `OPENAI_API_KEY`) : estimation, génération avec plafond de dépense, publication, logo composé sur le couvercle. Voir `docs/asset-manifest.md` |
+| `npm run images:generate` / `images:review` / `images:approve` / `images:status` | Ancien pipeline (Cloudflare Workers AI), conservé pour mémoire |
 | `npm run concepts` | Régénère les visuels concept illustrés de repli (`public/images/concepts/`) |
 | `npm run prompts` | Régénère le catalogue de prompts photo |
 
@@ -104,23 +105,28 @@ Tableau de bord (chiffre d'affaires hors démonstration, alertes de stock, devis
 | --- | --- |
 | `npm test` | Moteur de prix : compositions, suppléments, stock agrégé, codes promo, livraison, totaux (17 tests) |
 | `npm run test:smoke` | Toutes les pages publiques répondent, URL inconnues en 404, back-office protégé |
+| `node tests/visual/configurator.mjs` | Navigateur réel (Playwright + Chrome installé), ordinateur et mobile : poser, remplacer, revenir, compléter, détail, ajout au panier |
+| `node tests/visual/intro.mjs` | L'ouverture joue une fois, disparaît et ne se rejoue pas au retour sur l'accueil |
+| `node tests/visual/scene.mjs <url> <sélecteur> <préfixe>` / `capture.mjs` | Captures d'une scène épinglée à des fractions de son défilement / d'une page entière (débordement horizontal et erreurs JavaScript relevés) |
 | `npm run test:e2e` | Navigateur réel (installez d'abord `npm i -D puppeteer`) : achat complet en mode démonstration (configurateur, étui, code promo, paiement simulé, confirmation, panier vidé), comptes (inscription, mots de passe refusés, adresses, connexion, accès admin refusé), toutes les pages du back-office |
 | `STRIPE_WEBHOOK_SECRET=… node scripts/test-webhook.mjs <url> <id-commande>` | Webhook Stripe : signature invalide refusée, paiement confirmé, événement rejoué ignoré |
 
 ## Expérience et animations
 
-- **Accueil** (défilement natif, sans détournement du scroll) :
-  1. ouverture en scène autour du coffret Signature détouré (lumière, masque, arc, ingrédients, réaction au pointeur) ;
-  2. l'oasis : travelling à trois plans (ciel, palmeraie, palme de premier plan), lumière dorée, arc qui s'ouvre sur les dattes ;
-  3. la métamorphose : palmier → datte (masque en forme de datte) → cœur (la datte se fend) → chocolat (vague) → les dix créations dans leurs niches ;
-  4. le cœur de la datte : rapprochement borné de la coupe, repères et lumière qui isole chair, cœur, enrobage ;
-  5. les Signatures à deux échelles (grande photo d'ingrédient, tirage net de la création) ;
-  6. l'explosion des saveurs : ingrédients détourés qui s'écartent en profondeur autour d'une datte ;
-  7. l'art d'offrir : le coffret s'ouvre comme deux portes, puis les trois formats se remplissent ;
-  8. composer son coffret : la datte choisie rejoint son alvéole (même animation dans le configurateur) ;
-  9. éditions éphémères (atmosphère de nuit), l'univers de la maison, professionnels.
+- **Accueil** (défilement natif, sans détournement du scroll ; détail : `docs/motion-system.md`) :
+  0. ouverture de la Maison, une fois par session : le logo officiel se révèle, puis le rideau se lève (« Passer » toujours disponible) ;
+  1. le coffret Maison Tamrān au soleil, logo cuivré sur le couvercle : au défilement, le couvercle se soulève et révèle les douze créations dans la même prise de vue, puis la caméra s'approche ;
+  2. l'oasis : travelling à trois plans, lumière dorée ;
+  3. la métamorphose : palmier → Medjool → cœur → enrobage → les dix créations ;
+  4. le cœur de la datte : rapprochement borné de la coupe, repères chair, cœur, enrobage ;
+  5. les Signatures : la création en grand, son cœur en tirage incliné ;
+  6. au cœur de chaque datte : défilement latéral épinglé des dix garnitures en macro ;
+  7. l'art d'offrir : le coffret s'ouvre comme deux portes, puis les trois formats en photographie ;
+  8. composer son coffret : la pièce détourée rejoint sa caissette dans le coffret photographié ;
+  9. éditions éphémères, l'univers de la maison (rituel du café), professionnels.
+- **Configurateur** : coffret vide photographié vu de dessus, créations détourées posées dans les caissettes mesurées ; remplacer une pièce, revenir en arrière, compléter, détail d'une création, brouillon conservé et lien partageable, état final « Votre coffret est prêt ».
 - **Netteté** : aucune image n'est affichée au-delà de ×1,5 sa définition réelle (plafonds par densité d'écran : `.native-cap`, `.hero-coffret`, `.gift-frame`…). Méthode et mesures : `IMAGE_AUDIT.md`.
-- **Bibliothèque** : Motion (déjà présente) pour toutes les animations ; aucune bibliothèque supplémentaire.
+- **Bibliothèque** : Motion (déjà présente) pour toutes les animations ; GSAP, Lenis et Three.js étudiés et écartés (raisons dans `docs/motion-system.md`). Playwright en dépendance de développement pour les tests visuels.
 - **Accessibilité** : `prefers-reduced-motion` respecté partout (Motion configuré en `reducedMotion="user"`, séquences remplacées par des versions statiques, animations CSS coupées). Aucun contenu ne dépend d'une animation pour être visible.
 
 ## Architecture
@@ -156,6 +162,7 @@ docs/                  direction artistique, conventions, prompts photo
 
 ## Documentation
 
+- `docs/brand-direction.md`, `docs/site-architecture.md`, `docs/motion-system.md`, `docs/asset-manifest.md`, `docs/ecommerce-readiness.md` : refonte V3 (identité, architecture, mouvement, visuels, état de la boutique).
 - `docs/DIRECTION.md` : direction artistique, identité, design system, motion, navigation, modèle de données, plan des visuels.
 - `docs/CONVENTIONS.md` : règles de développement et de rédaction.
 - `docs/PROMPTS-PHOTO.md` (+ `docs/photo-prompts.json`) : un prompt photo par emplacement visuel.

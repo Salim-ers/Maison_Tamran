@@ -1,5 +1,7 @@
 # Audit des images — MAISON TAMRĀN
 
+> **Mise à jour V3 (2026-10-31)** : les dix créations, les coffrets et l'univers disposent désormais de visuels conceptuels générés **en définition native** (1632 × 2048 pour les vues produit, 1920 × 1920 pour les macros, jusqu'à 3840 × 2160 pour le hero ; aucun agrandissement). Les vignettes de planche (≈ 414 × 496 px) décrites ci-dessous ne sont plus publiées : la planche reste la référence d'aspect de la génération. Inventaire et règles : `docs/asset-manifest.md`. Le plafond d'affichage ×1,5 reste la règle (macro à la loupe : ×1,7 d'un affichage de ≈ 640 px, soit moins que les 1920 px de l'image).
+
 Audit réalisé le 2026-10-27, avant et après la refonte V2 (branche `refonte-v2`).
 
 ## Méthode

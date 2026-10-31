@@ -88,3 +88,7 @@ La palmeraie (`palmeraie`) fournit aussi un plan sans ciel (`oasis-paysage`) pou
 - **art-de-recevoir** : la photo a été prise dans un riad de Fès. Ne pas la présenter comme un lieu de la marque.
 - **matcha** : le fond rose pâle s'écarte de la palette. Prévoir un recadrage serré ou un étalonnage.
 - **safran** : le titre automatique de la page Unsplash (« red and brown fur on gray concrete floor ») est erroné. La légende et les mots-clés de la photo indiquent bien du safran (« Zafferano in stimmi »).
+
+## Visuels générés (refonte V3)
+
+Les fichiers de `public/images/generated/` (originaux dans `brand/generated/`) ont été générés le 2026-10-31 par l'API Images d'OpenAI (`gpt-image-2.5-sunburst`) avec la clé de la maison, à partir du pack photo fourni (planche des créations, photographies de référence) et des photographies d'ambiance ci-dessus utilisées comme références de lumière. Selon les conditions d'utilisation d'OpenAI, le contenu généré appartient à l'utilisateur ; à faire confirmer par le conseil juridique avant un usage publicitaire. Ce sont des **visuels conceptuels**, signalés comme tels à l'écran. Le logo apposé sur le coffret fermé est le fichier officiel de la maison, composé après génération. Détail par fichier : `docs/asset-manifest.md` et `src/data/photo-provenance.json`.
