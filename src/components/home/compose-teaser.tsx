@@ -7,15 +7,17 @@ import { AnimatePresence, motion } from "motion/react";
 import { useReducedMotion } from "@/components/motion/reduced-motion";
 import { BoxPreview, DateThumb, type BoxPhoto, type FlavorSwatch } from "@/components/configurator/box-preview";
 import { FLIGHT_S, useFlights } from "@/components/configurator/fly";
+import { euros } from "@/lib/money";
 
 const FORMATS = [6, 12, 24] as const;
+export type TeaserFormat = { pieces: number; name: string; priceCents: number | null };
 
 /**
  * Composer son coffret, en direct sur l'accueil : on choisit un format (le coffret se redessine), on touche une
  * création et sa datte rejoint son alvéole ; le compteur suit, puis le configurateur reprend la sélection.
  * L'aperçu est une représentation graphique du coffret (alvéoles), distincte des photographies de produit.
  */
-export function ComposeTeaser({ flavors, boxPhotos = {} }: { flavors: FlavorSwatch[]; boxPhotos?: Record<number, BoxPhoto> }) {
+export function ComposeTeaser({ flavors, boxPhotos = {}, formats = [] }: { flavors: FlavorSwatch[]; boxPhotos?: Record<number, BoxPhoto>; formats?: TeaserFormat[] }) {
   const reduce = useReducedMotion();
   const [pieces, setPieces] = useState<(typeof FORMATS)[number]>(6);
   const [slots, setSlots] = useState<string[]>([]);
@@ -29,6 +31,7 @@ export function ComposeTeaser({ flavors, boxPhotos = {} }: { flavors: FlavorSwat
     .map(([s, q]) => `${s}:${q}`)
     .join(",");
   const last = slots.length ? map.get(slots[slots.length - 1]) : undefined;
+  const format = formats.find((f) => f.pieces === pieces);
 
   const add = (f: FlavorSwatch, source: Element | null) => {
     if (slots.length >= pieces) return;
@@ -45,7 +48,7 @@ export function ComposeTeaser({ flavors, boxPhotos = {} }: { flavors: FlavorSwat
       <div aria-hidden className="pointer-events-none absolute -right-[10vw] top-1/2 size-[70vmin] -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(169,116,68,.22),transparent)]" />
       <div className="container-luxe relative grid items-center gap-14 lg:grid-cols-[1fr_1.15fr]">
         <div>
-          <p className="t-eyebrow text-bronze">Sur mesure</p>
+          <p className="t-eyebrow text-bronze">Les coffrets</p>
           <h2 id="compose-title" className="section-title mt-4 max-w-[10ch]">
             Composez <em className="text-bronze">votre</em> coffret
           </h2>
@@ -69,6 +72,12 @@ export function ComposeTeaser({ flavors, boxPhotos = {} }: { flavors: FlavorSwat
               </button>
             ))}
           </div>
+          {format && (
+            <p className="mt-3 t-small text-ink-soft">
+              {format.name}
+              {format.priceCents != null && <span className="tabular-nums"> · {euros(format.priceCents)}</span>}
+            </p>
+          )}
 
           <ul className="mt-8 grid grid-cols-2 gap-2 sm:grid-cols-3" aria-label="Créations disponibles">
             {flavors.map((f) => (
@@ -110,6 +119,11 @@ export function ComposeTeaser({ flavors, boxPhotos = {} }: { flavors: FlavorSwat
             <Link href={`/composer-mon-coffret?format=${pieces}${selection ? `&selection=${encodeURIComponent(selection)}` : ""}`} className={clsx("btn", full ? "btn-primary" : "btn-outline")}>
               {slots.length ? "Continuer dans le configurateur" : "Ouvrir le configurateur"}
             </Link>
+            {slots.length === 0 && (
+              <Link href="/coffrets" className="btn px-3 link-draw [background-size:0_1px] hover:[background-size:100%_1px]">
+                Tous les coffrets
+              </Link>
+            )}
             {slots.length > 0 && (
               <button className="btn px-3 link-draw [background-size:0_1px] hover:[background-size:100%_1px]" onClick={() => setSlots([])}>
                 Vider

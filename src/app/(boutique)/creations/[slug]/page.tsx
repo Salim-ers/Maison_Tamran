@@ -58,7 +58,7 @@ const pending = <span className="italic">À confirmer</span>;
 
 function ProductSkeleton() {
   return (
-    <div className="container-luxe grid gap-12 pb-[var(--section)] pt-[calc(var(--header-h)+var(--banner-h)+4rem)] lg:grid-cols-[1.05fr_1fr]" aria-busy>
+    <div className="container-luxe grid gap-12 pb-[var(--section)] pt-[calc(var(--header-h)+4rem)] lg:grid-cols-[1.05fr_1fr]" aria-busy>
       <div className="aspect-[4/5] animate-pulse bg-taupe/25" />
       <div className="space-y-4 pt-6"><div className="h-14 w-2/3 bg-taupe/25" /><div className="h-6 w-1/2 bg-taupe/20" /></div>
     </div>
@@ -134,7 +134,7 @@ async function ProductView({ params }: { params: Promise<{ slug: string }> }) {
       <JsonLd data={jsonLd} />
       {/* halo discret à la couleur de la recette */}
       <div aria-hidden className="pointer-events-none absolute -left-[20%] top-0 -z-10 size-[80vw] rounded-full opacity-[0.12] blur-3xl" style={{ background: "var(--accent)" }} />
-      <div className="container-luxe pt-[calc(var(--header-h)+var(--banner-h)+2rem)]">
+      <div className="container-luxe pt-[calc(var(--header-h)+2rem)]">
         <Breadcrumbs items={[{ href: "/creations", label: "Créations" }, { href: `/collections/${p.collectionSlug}`, label: p.collectionName }, { href: `/creations/${p.slug}`, label: p.name }]} />
       </div>
 
@@ -282,7 +282,7 @@ async function ProductView({ params }: { params: Promise<{ slug: string }> }) {
               <p className="t-eyebrow text-gold">Les matières</p>
               <h2 id="ingredients-title" className="mt-4 t-display-m">Au cœur de {p.name}</h2>
               <p className="mt-6 max-w-[38ch] text-taupe">{p.pairing}</p>
-              <p className="mt-8 t-micro text-taupe">Photographies d&apos;ambiance (licence Unsplash) : elles illustrent les ingrédients, pas la création.</p>
+              <p className="mt-8 t-micro text-taupe">Visuels conceptuels générés par IA : ils illustrent les ingrédients, pas la création.</p>
             </div>
             <ul className={`grid gap-6 lg:col-span-8 ${ingredientTiles.length > 1 ? "sm:grid-cols-2" : ""} ${ingredientTiles.length > 2 ? "lg:grid-cols-3" : ""}`}>
               {ingredientTiles.map((t, k) => (

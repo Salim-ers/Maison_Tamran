@@ -7,7 +7,7 @@ import { euros } from "@/lib/money";
 import { ambiance } from "@/lib/ambiance";
 import { Breadcrumbs } from "@/components/layout/page-intro";
 import { concept, ConceptBadge } from "@/components/ui/media";
-import { FormatDiagram } from "@/components/home/gift-showcase";
+import { FormatDiagram } from "@/components/configurator/format-diagram";
 import { FadeIn, RevealImage } from "@/components/motion/reveal";
 import { AddFixedBox } from "@/components/product/add-fixed-box";
 
@@ -43,7 +43,7 @@ export default async function CoffretsPage() {
   return (
     <>
       {/* En-tête : le coffret Signature se dévoile */}
-      <header className="on-dark relative overflow-hidden grain pt-[calc(var(--header-h)+var(--banner-h,0px)+clamp(2rem,5vw,4rem))]">
+      <header className="on-dark relative overflow-hidden grain pt-[calc(var(--header-h)+clamp(2rem,5vw,4rem))]">
         <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[70%] bg-[radial-gradient(ellipse_at_70%_0%,rgba(169,116,68,.25),transparent_65%)]" />
         <div className="container-luxe relative grid gap-10 pb-[clamp(3rem,6vw,5rem)] lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-5">
@@ -112,7 +112,7 @@ export default async function CoffretsPage() {
                   ) : b.kind === "entreprise" && ambianceImg ? (
                     <RevealImage className="aspect-[4/3]" from={flip ? "left" : "right"} parallax={5}>
                       <Image src={ambianceImg.url} alt={ambianceImg.alt} fill sizes="(min-width: 1024px) 55vw, 100vw" quality={75} className="object-cover" />
-                      <span className="absolute bottom-2 left-3 t-micro text-ivory/80">Photographie d&apos;ambiance · {ambianceImg.credit}</span>
+                      <span className="absolute bottom-2 left-3 t-micro text-ivory/80">{ambianceImg.concept ? ambianceImg.credit : `Photographie d’ambiance · ${ambianceImg.credit}`}</span>
                     </RevealImage>
                   ) : (
                     <div className={clsx("relative flex aspect-[4/3] items-center justify-center p-[8%]", dark ? "bg-chocolate-2" : "bg-creme")}>

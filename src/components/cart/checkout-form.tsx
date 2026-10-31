@@ -155,7 +155,7 @@ export function CheckoutForm({ initial, prefill, demo, loggedIn }: { initial: Ca
         </fieldset>
       </form>
 
-      <aside className="lg:sticky lg:top-[calc(var(--header-h)+var(--banner-h)+1.5rem)] lg:self-start">
+      <aside className="lg:sticky lg:top-[calc(var(--header-h)+1.5rem)] lg:self-start">
         <div className="bg-cream p-6 sm:p-8">
           <h2 className="t-title">Récapitulatif</h2>
           <ul className="mt-6 divide-y divide-line">

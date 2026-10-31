@@ -38,7 +38,7 @@ export function LegalPage({ title, href, intro, toc, children }: { title: string
       </PageIntro>
       <div className="container-luxe grid gap-14 pb-[var(--section)] lg:grid-cols-12">
         <nav aria-label="Sommaire" className="min-w-0 lg:col-span-3">
-          <div className="lg:sticky lg:top-[calc(var(--header-h)+var(--banner-h)+2rem)]">
+          <div className="lg:sticky lg:top-[calc(var(--header-h)+2rem)]">
             <p className="t-small font-semibold">Sommaire</p>
             <ol className="mt-4 space-y-2 t-small text-ink-soft">
               {toc.map((t) => (

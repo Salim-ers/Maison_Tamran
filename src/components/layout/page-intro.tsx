@@ -54,7 +54,7 @@ export function PageIntro({
   className?: string;
 }) {
   return (
-    <header className={clsx(tone === "dark" ? "on-dark" : "", "pb-[clamp(3rem,7vw,6rem)] pt-[calc(var(--header-h)+var(--banner-h)+clamp(2.5rem,6vw,5rem))]", className)}>
+    <header className={clsx(tone === "dark" ? "on-dark" : "", "pb-[clamp(3rem,7vw,6rem)] pt-[calc(var(--header-h)+clamp(2.5rem,6vw,5rem))]", className)}>
       <div className={clsx("container-luxe", align === "center" && "text-center")}>
         <div className={clsx(align === "center" && "flex justify-center")}><Breadcrumbs items={crumbs} tone={tone} /></div>
         <h1 className={clsx("mt-6 t-display-l", align === "center" ? "mx-auto max-w-[16ch]" : "max-w-[18ch]")}>{title}</h1>

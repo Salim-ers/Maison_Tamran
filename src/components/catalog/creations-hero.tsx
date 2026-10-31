@@ -18,7 +18,7 @@ export interface StripItem {
 export function CreationsHero({ title, subtitle, crumbs, items, children }: { title: string; subtitle: string; crumbs: Crumb[]; items: StripItem[]; children?: React.ReactNode }) {
   const loop = [...items, ...items];
   return (
-    <header className="on-dark relative overflow-hidden grain pt-[calc(var(--header-h)+var(--banner-h,0px)+clamp(2rem,5vw,4rem))]">
+    <header className="on-dark relative overflow-hidden grain pt-[calc(var(--header-h)+clamp(2rem,5vw,4rem))]">
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[70%] bg-[radial-gradient(ellipse_at_30%_0%,rgba(169,116,68,.25),transparent_65%)]" />
       <div className="container-luxe relative">
         <div className="anim-fade-up">

@@ -80,7 +80,7 @@ export function ProductGallery({ images, name, stages, slug }: { images: ImageRe
   const concept = cur.kind === "creation" && cur.image.concept;
 
   return (
-    <div className="lg:sticky lg:top-[calc(var(--header-h)+var(--banner-h)+1.5rem)]">
+    <div className="lg:sticky lg:top-[calc(var(--header-h)+1.5rem)]">
       {/* même nom que la photo de la carte du catalogue : l'image glisse d'une page à l'autre */}
       <div
         className="relative aspect-[4/5] touch-pan-y overflow-hidden bg-chocolate"

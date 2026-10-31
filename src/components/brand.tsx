@@ -19,6 +19,7 @@ export function BrandLogo({
   alt = "MAISON TAMRĀN",
   className,
   preload,
+  steady,
 }: {
   variant?: Variant;
   tone?: "dark" | "light";
@@ -26,6 +27,8 @@ export function BrandLogo({
   alt?: string;
   className?: string;
   preload?: boolean;
+  /** logo toujours à l'écran (en-tête) : chargé tout de suite et décodé de façon synchrone, jamais d'image vide */
+  steady?: boolean;
 }) {
   const name = `maison-tamran-${variant}${tone === "light" ? "-ivory" : ""}`;
   const d = (dims as Dims)[name];
@@ -37,6 +40,8 @@ export function BrandLogo({
       height={height}
       quality={85}
       preload={preload}
+      loading={steady && !preload ? "eager" : undefined}
+      decoding={steady ? "sync" : undefined}
       className={clsx("w-auto select-none", className)}
       draggable={false}
     />

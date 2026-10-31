@@ -107,7 +107,7 @@ export default async function FaqPage() {
       />
       <div className="container-luxe grid gap-14 pb-[var(--section)] lg:grid-cols-12">
         <nav aria-label="Rubriques" className="lg:col-span-3">
-          <ul className="flex flex-wrap gap-x-6 gap-y-2 t-small lg:sticky lg:top-[calc(var(--header-h)+var(--banner-h)+2rem)] lg:block lg:space-y-3">
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 t-small lg:sticky lg:top-[calc(var(--header-h)+2rem)] lg:block lg:space-y-3">
             {all.map((g) => (
               <li key={g.id}><a href={`#${g.id}`} className="hover:text-bronze">{g.title}</a></li>
             ))}

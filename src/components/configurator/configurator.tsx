@@ -267,7 +267,7 @@ export function Configurator({
   return (
     <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(24rem,0.9fr)] lg:gap-16">
       {/* Aperçu : en tête et épinglé sur mobile, colonne droite épinglée sur ordinateur */}
-      <aside className="sticky top-[calc(var(--header-h)+var(--banner-h,0px)+.5rem)] z-[5] -mx-[var(--gutter)] self-start bg-ivory/95 px-[var(--gutter)] pb-3 pt-2 backdrop-blur-md lg:order-2 lg:mx-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none" aria-label="Aperçu du coffret">
+      <aside className="sticky top-[calc(var(--header-h)+.5rem)] z-[5] -mx-[var(--gutter)] self-start bg-ivory/95 px-[var(--gutter)] pb-3 pt-2 backdrop-blur-md lg:order-2 lg:mx-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none" aria-label="Aperçu du coffret">
         <div className="[perspective:1200px]" ref={boxRef} style={{ ["--box-ratio" as string]: photo ? photo.w / photo.h : 1.6 }}>
           <motion.div key={box.id} initial={reduce ? false : { opacity: 0, y: 24, rotateX: 16, scale: 0.95 }} animate={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }} transition={{ duration: 0.8, ease: EASE }} className="relative">
             <BoxPreview

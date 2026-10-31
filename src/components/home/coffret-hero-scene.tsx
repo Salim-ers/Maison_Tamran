@@ -85,7 +85,7 @@ export function CoffretHeroScene({
   const sizes = "(max-aspect-ratio: 1/1) 210vw, max(100vw, 178vh)";
 
   return (
-    <section ref={track} aria-labelledby="hero-title" className={reduce ? "relative" : "relative h-[250svh]"}>
+    <section ref={track} aria-labelledby="hero-title" className={reduce ? "relative" : "relative h-[190svh]"}>
       <div className="hero-viewport sticky top-0 h-[100svh] overflow-hidden">
         {/* une seule prise de vue : photo ouverte au fond, photo fermée par-dessus (le couvercle à part) */}
         <motion.div className="hero-frame anim-sunrise" style={reduce ? undefined : { scale: camScale }}>

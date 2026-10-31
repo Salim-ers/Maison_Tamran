@@ -72,7 +72,7 @@ export default async function MaisonPage() {
           </section>
         </>
       ) : (
-        <section className="on-dark grain relative isolate overflow-hidden pb-[clamp(4rem,10vw,9rem)] pt-[calc(var(--header-h)+var(--banner-h)+clamp(2.5rem,6vw,5rem))]" aria-labelledby="maison-title">
+        <section className="on-dark grain relative isolate overflow-hidden pb-[clamp(4rem,10vw,9rem)] pt-[calc(var(--header-h)+clamp(2.5rem,6vw,5rem))]" aria-labelledby="maison-title">
           <div className="container-luxe grid gap-14 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-7 lg:pt-6">
               <Breadcrumbs items={[{ href: "/maison", label: "Notre Maison" }]} tone="dark" />
@@ -174,7 +174,7 @@ export default async function MaisonPage() {
       <section className="bg-cream section-pad" aria-labelledby="valeurs-title">
         <div className="container-luxe grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <h2 id="valeurs-title" className="t-display-m max-w-[12ch] lg:sticky lg:top-[calc(var(--header-h)+var(--banner-h)+2rem)]">{v.title}</h2>
+            <h2 id="valeurs-title" className="t-display-m max-w-[12ch] lg:sticky lg:top-[calc(var(--header-h)+2rem)]">{v.title}</h2>
           </div>
           <dl className="lg:col-span-7 lg:col-start-6">
             {values.map(([t, b]) => (

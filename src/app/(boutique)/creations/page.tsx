@@ -11,7 +11,7 @@ import { concept, ConceptBadge } from "@/components/ui/media";
 import { CatalogBrowser } from "@/components/product/catalog-browser";
 import { CreationsHero } from "@/components/catalog/creations-hero";
 import { FadeIn, RevealImage, RevealLines } from "@/components/motion/reveal";
-import { FormatDiagram } from "@/components/home/gift-showcase";
+import { FormatDiagram } from "@/components/configurator/format-diagram";
 import { euros } from "@/lib/money";
 
 export const metadata: Metadata = {

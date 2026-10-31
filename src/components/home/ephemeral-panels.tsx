@@ -99,7 +99,7 @@ export function EphemeralPanels({ intro, items }: { intro: string; items: Epheme
             );
           })}
         </ul>
-        <p className="mt-6 t-micro text-ivory/45">Visuels conceptuels des créations · photographies d&apos;ingrédients Unsplash.</p>
+        <p className="mt-6 t-micro text-ivory/45">Visuels conceptuels générés par IA.</p>
       </div>
     </section>
   );

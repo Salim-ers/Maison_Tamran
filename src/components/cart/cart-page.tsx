@@ -71,7 +71,7 @@ export function CartPage() {
           </li>
         ))}
       </ul>
-      <aside className="lg:sticky lg:top-[calc(var(--header-h)+var(--banner-h)+1.5rem)] lg:self-start">
+      <aside className="lg:sticky lg:top-[calc(var(--header-h)+1.5rem)] lg:self-start">
         <div className="bg-cream p-6 sm:p-8">
           <PromoForm />
           <div className="mt-6">

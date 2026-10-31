@@ -9,7 +9,7 @@ export default function BoutiqueError({ error, retry, reset }: { error: unknown;
   }, [error]);
   const digest = typeof error === "object" && error && "digest" in error ? String((error as { digest?: string }).digest ?? "") : "";
   return (
-    <section className="container-luxe pb-[var(--section)] pt-[calc(var(--header-h)+var(--banner-h)+clamp(2.5rem,6vw,5rem))]" aria-labelledby="error-title">
+    <section className="container-luxe pb-[var(--section)] pt-[calc(var(--header-h)+clamp(2.5rem,6vw,5rem))]" aria-labelledby="error-title">
       <h1 id="error-title" className="t-display-l max-w-[16ch]">Cette page n&apos;a pas pu s&apos;afficher</h1>
       <p className="mt-6 max-w-[50ch] t-lead text-ink-soft">
         Un incident technique a interrompu le chargement. Réessayez dans un instant ; si le problème persiste, écrivez-nous en précisant la page concernée.

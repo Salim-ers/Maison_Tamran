@@ -68,7 +68,7 @@ export default async function ProfessionnelsPage() {
         </PageHero>
       ) : (
       <section className="on-dark grain relative isolate overflow-hidden" aria-labelledby="pro-title">
-        <div className="container-luxe grid gap-12 pb-[clamp(4rem,9vw,8rem)] pt-[calc(var(--header-h)+var(--banner-h)+clamp(2.5rem,6vw,5rem))] lg:grid-cols-12 lg:gap-8">
+        <div className="container-luxe grid gap-12 pb-[clamp(4rem,9vw,8rem)] pt-[calc(var(--header-h)+clamp(2.5rem,6vw,5rem))] lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-6">
             <Breadcrumbs items={[{ href: "/professionnels", label: "Professionnels" }]} tone="dark" />
             <h1 id="pro-title" className="mt-8 t-display-l max-w-[14ch]">{o.title}</h1>
@@ -121,7 +121,7 @@ export default async function ProfessionnelsPage() {
           </div>
           <div className="mt-16 grid gap-12 lg:grid-cols-12">
             <div className="relative lg:col-span-5">
-              <div className="relative aspect-[4/5] overflow-hidden lg:sticky lg:top-[calc(var(--header-h)+var(--banner-h)+2rem)]">
+              <div className="relative aspect-[4/5] overflow-hidden lg:sticky lg:top-[calc(var(--header-h)+2rem)]">
                 <Media image={concept("pro-2")} fill sizes="(min-width: 1024px) 38vw, 100vw" className="object-cover" wrapperClassName="absolute inset-0" />
               </div>
             </div>

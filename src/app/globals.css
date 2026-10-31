@@ -265,10 +265,11 @@ html[data-vt="nav-back"]::view-transition-old(root) { --vt-x: 70px; animation: 1
 html[data-vt="nav-back"]::view-transition-new(root) { --vt-x: -70px; animation: 260ms ease-out 160ms both vt-fade, 460ms cubic-bezier(0.65, 0, 0.35, 1) both vt-slide; }
 @keyframes vt-fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes vt-slide { from { translate: var(--vt-x) 0; } to { translate: 0 0; } }
-/* l'en-tête reste immobile : c'est le contenu qui bouge */
+/* l'en-tête reste immobile : c'est le contenu qui bouge. Seule sa nouvelle image est montrée (opaque, sans fondu
+   ni mélange « plus-lighter » avec l'ancienne), d'où aucun dédoublement ni éclair d'une page à l'autre. */
 ::view-transition-group(site-header) { animation: none; z-index: 100; }
-::view-transition-old(site-header),
-::view-transition-new(site-header) { animation: none; }
+::view-transition-old(site-header) { animation: none; opacity: 0; }
+::view-transition-new(site-header) { animation: none; opacity: 1; mix-blend-mode: normal; }
 ::view-transition { pointer-events: none; }
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-old(*),
@@ -397,7 +398,7 @@ html.intro-play { --intro: 1.85s; }
 /* écran portrait : le coffret en haut, centré ; le titre dessous, sur les ombres de la table */
 @media (max-aspect-ratio: 1/1) {
   .hero-frame {
-    top: calc(var(--header-h) + var(--banner-h, 0px) - 2svh);
+    top: calc(var(--header-h) - 2svh);
     width: 192vw;
     translate: -70.5% 0;
   }
@@ -420,25 +421,6 @@ html.intro-play { --intro: 1.85s; }
 }
 .anim-hero-settle > * { animation: hero-settle 2.2s var(--ease-luxe) both; }
 
-/* ---------- Scène de l'oasis ---------- */
-/* cadre au format de la photo (3840×1951), toujours assez grand pour couvrir l'écran ; « translate » se compose
-   avec la transformation pilotée par Motion (échelle) */
-.oasis-frame {
-  width: max(100vw, calc(100svh * 1.968));
-  aspect-ratio: 3840 / 1951;
-  translate: -50% -50%;
-}
-/* sur écran portrait, le cadrage suit le grand palmier (28 % de la largeur de la photo) */
-@media (max-aspect-ratio: 1/1) {
-  .oasis-frame { translate: -28% -50%; }
-}
-.oasis-title {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 6.6vw, 6.2rem);
-  line-height: 0.98;
-  letter-spacing: -0.028em;
-}
-
 /* Titres des grandes scènes : 65 à 95 px sur ordinateur */
 .section-title {
   font-family: var(--font-display);
@@ -460,55 +442,6 @@ html.intro-play { --intro: 1.85s; }
 }
 @media (min-resolution: 2.6dppx) {
   .native-cap { width: min(78%, calc(var(--nat) * 0.5px)); }
-}
-
-/* ---------- Le cœur de la datte ---------- */
-/* photo de référence 1122×1402, rapprochée jusqu'à ×1,2 : cadre plafonné pour ne jamais dépasser sa définition */
-.anatomy-frame { width: min(100%, 560px, 57svh); }
-@media (min-resolution: 1.6dppx) {
-  .anatomy-frame { width: min(100%, 460px, 57svh); }
-}
-@media (max-width: 1023px) {
-  .anatomy-frame { width: min(86vw, 36svh); }
-}
-
-/* ---------- L'art d'offrir ---------- */
-/* photographie de référence du coffret (1448 px), rapprochée jusqu'à ×1,18 : cadre plafonné selon la densité d'écran */
-.gift-frame { width: min(58vw, 1200px, calc((100svh - 13rem) * 1.333)); }
-@media (min-resolution: 1.6dppx) {
-  .gift-frame { width: min(58vw, 920px, calc((100svh - 13rem) * 1.333)); }
-}
-@media (max-width: 767px) {
-  .gift-frame { width: 92vw; }
-}
-
-/* ---------- Au cœur de chaque datte (défilement latéral des macros) ---------- */
-/* macro 1920 px : jamais affichée au-delà de sa définition, même sur écran Retina (56vh ≤ 960 px en densité 2) */
-.texture-panel { width: min(56vh, 78vw, 640px); }
-.texture-intro { width: min(36rem, 82vw); }
-
-/* ---------- Métamorphose ---------- */
-.meta-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.8rem, 6vw, 5.8rem);
-  line-height: 0.98;
-  letter-spacing: -0.025em;
-}
-/* niches des dix créations : vignettes de ≈ 412 px affichées à 132 px au plus (×2 sur écran Retina = 264 px) */
-.meta-niches { width: min(46vw, 44rem); }
-@media (max-width: 767px) {
-  .meta-niches { width: min(92vw, 26rem); }
-}
-/* vague de chocolat : masque à bord ondulé, qui monte (position verticale) en glissant (position horizontale) */
-.mask-wave {
-  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' preserveAspectRatio='none'><path d='M0 100 Q25 90 50 100 T100 100 T150 100 T200 100 V200 H0 Z' fill='black'/></svg>");
-  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' preserveAspectRatio='none'><path d='M0 100 Q25 90 50 100 T100 100 T150 100 T200 100 V200 H0 Z' fill='black'/></svg>");
-  -webkit-mask-size: 200% 210%;
-  mask-size: 200% 210%;
-  -webkit-mask-repeat: repeat-x;
-  mask-repeat: repeat-x;
-  -webkit-mask-position: 0% 0%;
-  mask-position: 0% 0%;
 }
 
 /* défilement continu d'une frise (liste dupliquée) ; arrêté au survol et si l'utilisateur réduit les animations */

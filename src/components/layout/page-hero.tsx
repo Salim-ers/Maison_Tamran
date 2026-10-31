@@ -43,7 +43,7 @@ export function PageHero({
         </picture>
       </PageHeroMotion>
       <div aria-hidden className="absolute inset-0 bg-[linear-gradient(0deg,rgba(20,12,9,.92)_0%,rgba(20,12,9,.55)_38%,rgba(20,12,9,.12)_70%,rgba(20,12,9,.35)_100%)]" />
-      <div className="container-luxe relative pb-[clamp(2.5rem,7vh,5rem)] pt-[calc(var(--header-h)+var(--banner-h)+3rem)]">
+      <div className="container-luxe relative pb-[clamp(2.5rem,7vh,5rem)] pt-[calc(var(--header-h)+3rem)]">
         <Breadcrumbs items={crumbs} tone="dark" />
         <h1 className="anim-fade-up mt-5 max-w-[16ch] section-title">{title}</h1>
         {intro && <div className="anim-fade-up mt-6 max-w-[54ch] t-lead text-ivory/80 [animation-delay:.15s]">{intro}</div>}
