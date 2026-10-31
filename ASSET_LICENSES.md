@@ -1,5 +1,9 @@
 # Licences des visuels — MAISON TAMRĀN
 
+## Remplacement à l'écran (2026-10-31)
+
+Les vingt photographies libres de droits ci-dessous ne sont plus affichées : chaque emplacement est servi par une prise de vue générée en 4K (`amb-<clé>`, API Images d'OpenAI, signalée « Visuel conceptuel · IA »), voir `docs/asset-manifest.md`. Les photos Unsplash ne servent plus que de secours (`src/lib/ambiance.ts`) et d'indication de sujet pour la génération ; leurs licences et crédits restent consignés ici.
+
 ## Remplacements du 2026-10-26 (passage en 4K)
 
 Quatre photos dont l'original faisait moins de 3840 px ont été remplacées (pages consultées le 2026-10-26 : licence Unsplash gratuite, pas Unsplash+). Les anciennes ne sont plus utilisées sur le site.

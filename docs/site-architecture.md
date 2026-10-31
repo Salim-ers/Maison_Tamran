@@ -12,17 +12,18 @@ Aucune bibliothèque d'animation ajoutée : Motion (`useScroll`, `useTransform`,
 | --- | --- | --- | --- |
 | 00 | Ouverture de la Maison (une fois par session) | `home/intro-curtain.tsx` | logo officiel ivoire |
 | 01 | Le coffret fermé, puis ouvert, puis la caméra s'approche | `home/coffret-hero-scene.tsx` | `coffret-ferme` (logo composé), `coffret-ouvert` |
-| 02 | L'oasis (01 · le palmier) | `home/oasis.tsx` | photos Unsplash 4K |
-| 03 | La métamorphose : palmier → Medjool → cœur → enrobage → création | `home/metamorphosis.tsx` | Unsplash, `meta-coeur`, `meta-enrobage`, produits |
-| 03 bis | Le cœur de la datte (anatomie) | `home/date-anatomy.tsx` | `produit-cafe-imperial` |
-| 04 | Les Signatures | `home/signature-stage.tsx` | `produit-*` en grand, `coupe-*` en tirage |
-| 05 | Au cœur de chaque datte (défilement latéral des macros) | `home/texture-reel.tsx` | `coupe-*` |
-| 06 | L'art d'offrir et les trois formats | `home/gift-showcase.tsx` | `coffret-1`, `coffret-decouverte`, `coffret-prestige` |
-| 07 | Composer son coffret (démonstrateur) | `home/compose-teaser.tsx` | `coffret-vide-*`, `piece-*` |
-| 08 | Éditions éphémères | `home/ephemeral-panels.tsx` | `produit-*`, `coupe-*` |
-| 09 | La Maison | `home/maison-story.tsx` | `rituel-cafe`, Unsplash |
-| 10 | Professionnels | `home/pros-section.tsx` | `pro-hotel` |
-| 11 | Lettre d'information, pied de page | `home/newsletter.tsx`, `layout/site-footer.tsx` | — |
+| 02 | Les Signatures | `home/signature-stage.tsx` | `produit-*` en grand, `coupe-*` en tirage |
+| 03 | De la palmeraie à la création (un écran) | `home/craft-strip.tsx` | `amb-dattier-regimes`, `amb-medjool-macro`, `meta-coeur`, `meta-enrobage` |
+| 04 | Les coffrets : formats, prix, composition en direct | `home/compose-teaser.tsx` | `coffret-vide-*`, `piece-*` |
+| 05 | Éditions éphémères | `home/ephemeral-panels.tsx` | `produit-*`, `coupe-*` |
+| 06 | La Maison et les professionnels | `home/house-duo.tsx` | `rituel-cafe`, `pro-hotel` |
+| 07 | Lettre d'information, pied de page | `home/newsletter.tsx`, `layout/site-footer.tsx` | — |
+
+Longueur mesurée (`node tests/visual/height.mjs <url>`) : 9,9 écrans en 1440 × 900 (31,7 avant le resserrement), 12 écrans en 390 × 844 (32,6). Seul le hero est épinglé (190 svh).
+
+## En-tête (`layout/site-header.tsx`)
+
+Barre sombre opaque de hauteur constante (`--header-h`), la même sur toutes les pages : aucun changement de taille, de couleur ni de position au défilement ou à la navigation. Logo à gauche, rubriques au centre (Créations et La Maison ouvrent un menu illustré, au survol ou par leur bouton dédié au clavier), recherche, compte, panier et « Composer mon coffret » à droite. L'URL (rubrique active) est lue par un petit composant isolé dans sa propre frontière Suspense : l'en-tête n'est jamais remplacé par une version de secours. Pendant une transition de page, seule la nouvelle image de l'en-tête est montrée (pas de fondu entre deux en-têtes). Contrôle : `node tests/visual/header.mjs` (à chaque image affichée : position, hauteur, visibilité ; puis logo et panier au pixel près).
 
 ## Boutique
 
@@ -32,6 +33,7 @@ Aucune bibliothèque d'animation ajoutée : Motion (`useScroll`, `useTransform`,
 
 - `src/data/photo-manifest.json` : photo validée par emplacement (lu par le site). Les emplacements historiques (`/images/concepts/<id>.webp` en base) sont résolus par `withPhoto()` ; `src/lib/photos.ts` porte les alias (formats de coffret, packaging, pros, macros, `scene-*` → `piece-*`).
 - `photo(id)` donne directement une photo publiée (hero, coffrets vides, pièces détourées).
+- `ambiance(clé)` sert la version 4K générée `amb-<clé>` dès qu'elle est publiée, sinon la photographie libre de droits d'origine.
 - `next/image` sert AVIF / WebP aux largeurs `deviceSizes` (420 → 3840) : un mobile ne télécharge jamais l'original 4K.
 - Noms de fichiers avec empreinte de contenu : une image remplacée change d'adresse.
 
@@ -47,9 +49,11 @@ Maison, Savoir-faire, Professionnels, Cadeaux d'entreprise et Mariages s'ouvrent
 
 | Page | Mobile (4G lente simulée) : perf. / access. / bonnes pratiques | LCP mobile | Ordinateur : perf. | LCP ordinateur | CLS |
 | --- | --- | --- | --- | --- | --- |
-| Accueil | 75 / 100 / 100 | 6,4 s | 93 | 1,6 s | 0 |
-| Fiche produit | 79 / 100 / 100 | 5,7 s | 99 | 0,9 s | 0 |
+| Accueil (après resserrement, images 4K) | 78 / 97 / 100 | 5,4 s | 93* | 1,6 s* | 0 |
+| Fiche produit (images 4K) | 77 / 100 / 100 | 6,2 s | 99* | 0,9 s* | 0 |
 | Configurateur | 77 / 100 / 100 | 6,5 s | — | — | 0 |
+
+Astérisque : mesure faite avant le passage en 4K, non refaite. Accessibilité de l'accueil (97) : le seul audit en échec est le bouton « Découvrir les créations » mesuré pendant son fondu d'entrée (3,1:1 à mi-fondu) ; une fois affiché, chocolat sur or, son contraste est de 7,2:1. La mention « Visuels conceptuels générés par IA » du savoir-faire, trop pâle au premier passage, a été corrigée.
 
 SEO 69 : uniquement l'audit « indexable », volontairement bloqué par `robots.txt` tant que la boutique est en démonstration. Le LCP mobile est porté par de grandes photographies (AVIF) sur une connexion simulée à 1,6 Mbit/s ; à mesurer à nouveau sur Vercel (cache d'images et CDN).
 

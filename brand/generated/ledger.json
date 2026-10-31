@@ -1,5 +1,5 @@
 {
-  "totalUsd": 6.2875,
+  "totalUsd": 15.3411,
   "lines": [
     {
       "id": "produit-or-de-marrakech",
@@ -630,6 +630,596 @@
       "outputTokens": 3336,
       "costUsd": 0.1129,
       "at": "2026-10-31T15:28:50.869Z"
+    },
+    {
+      "id": "produit-or-de-marrakech",
+      "key": "36b646c4e89a",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2448x3072",
+      "outputTokens": 4342,
+      "costUsd": 0.1625,
+      "at": "2026-10-31T17:55:41.412Z"
+    },
+    {
+      "id": "piece-or-de-marrakech",
+      "key": "6354a39cc943",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2048x2048",
+      "outputTokens": 3568,
+      "costUsd": 0.1347,
+      "at": "2026-10-31T17:56:23.337Z"
+    },
+    {
+      "id": "amb-medjool-macro",
+      "key": "ea6c6425de14",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.1295,
+      "at": "2026-10-31T17:57:07.328Z"
+    },
+    {
+      "id": "produit-velours-persan",
+      "key": "bffb9dcce825",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2448x3072",
+      "outputTokens": 4342,
+      "costUsd": 0.1625,
+      "at": "2026-10-31T17:59:02.810Z"
+    },
+    {
+      "id": "produit-minuit-a-kyoto",
+      "key": "988336d536a5",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2448x3072",
+      "outputTokens": 4342,
+      "costUsd": 0.1628,
+      "at": "2026-10-31T17:59:04.208Z"
+    },
+    {
+      "id": "produit-cafe-imperial",
+      "key": "410f48977bad",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2448x3072",
+      "outputTokens": 4342,
+      "costUsd": 0.1625,
+      "at": "2026-10-31T17:59:04.534Z"
+    },
+    {
+      "id": "produit-eclipse-noire",
+      "key": "5605931ecca7",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2448x3072",
+      "outputTokens": 4342,
+      "costUsd": 0.1626,
+      "at": "2026-10-31T17:59:04.852Z"
+    },
+    {
+      "id": "produit-ebene-sale",
+      "key": "2e67085a2db2",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2448x3072",
+      "outputTokens": 4342,
+      "costUsd": 0.1627,
+      "at": "2026-10-31T17:59:40.775Z"
+    },
+    {
+      "id": "produit-rouge-desir",
+      "key": "2b5b4391a92f",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2448x3072",
+      "outputTokens": 4342,
+      "costUsd": 0.1625,
+      "at": "2026-10-31T17:59:41.049Z"
+    },
+    {
+      "id": "produit-ambre-fume",
+      "key": "6ca8afe9ca98",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2448x3072",
+      "outputTokens": 4342,
+      "costUsd": 0.1625,
+      "at": "2026-10-31T17:59:46.489Z"
+    },
+    {
+      "id": "produit-ile-secrete",
+      "key": "57a8efb5c2a4",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2448x3072",
+      "outputTokens": 4342,
+      "costUsd": 0.1625,
+      "at": "2026-10-31T17:59:46.626Z"
+    },
+    {
+      "id": "coffret-vide-12",
+      "key": "1c901740a261",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3264x2448",
+      "outputTokens": 4316,
+      "costUsd": 0.1545,
+      "at": "2026-10-31T18:00:19.506Z"
+    },
+    {
+      "id": "produit-rose-de-nuit",
+      "key": "d01421e576ae",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2448x3072",
+      "outputTokens": 4342,
+      "costUsd": 0.1627,
+      "at": "2026-10-31T18:00:20.167Z"
+    },
+    {
+      "id": "meta-enrobage",
+      "key": "144abae2998b",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3840x2160",
+      "outputTokens": 3336,
+      "costUsd": 0.1254,
+      "at": "2026-10-31T18:00:21.730Z"
+    },
+    {
+      "id": "meta-coeur",
+      "key": "62f636bcea63",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3840x2160",
+      "outputTokens": 3336,
+      "costUsd": 0.1256,
+      "at": "2026-10-31T18:00:24.956Z"
+    },
+    {
+      "id": "coupe-eclipse-noire",
+      "key": "14b73b683470",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2880x2880",
+      "outputTokens": 5930,
+      "costUsd": 0.2099,
+      "at": "2026-10-31T18:01:13.080Z"
+    },
+    {
+      "id": "coupe-minuit-a-kyoto",
+      "key": "49082e430cbf",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2880x2880",
+      "outputTokens": 5930,
+      "costUsd": 0.2101,
+      "at": "2026-10-31T18:01:17.826Z"
+    },
+    {
+      "id": "coupe-velours-persan",
+      "key": "7b109226a49c",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2880x2880",
+      "outputTokens": 5930,
+      "costUsd": 0.2098,
+      "at": "2026-10-31T18:01:18.409Z"
+    },
+    {
+      "id": "coupe-or-de-marrakech",
+      "key": "d7876829d24c",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2880x2880",
+      "outputTokens": 5930,
+      "costUsd": 0.2098,
+      "at": "2026-10-31T18:01:19.204Z"
+    },
+    {
+      "id": "coupe-cafe-imperial",
+      "key": "10ad66e644b2",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2880x2880",
+      "outputTokens": 5930,
+      "costUsd": 0.2098,
+      "at": "2026-10-31T18:02:02.225Z"
+    },
+    {
+      "id": "coupe-ile-secrete",
+      "key": "72a2226762c4",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2880x2880",
+      "outputTokens": 5930,
+      "costUsd": 0.2099,
+      "at": "2026-10-31T18:02:06.548Z"
+    },
+    {
+      "id": "coupe-rouge-desir",
+      "key": "e8edc83a16da",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2880x2880",
+      "outputTokens": 5930,
+      "costUsd": 0.2098,
+      "at": "2026-10-31T18:02:08.900Z"
+    },
+    {
+      "id": "coupe-ebene-sale",
+      "key": "0b91f9d8fca5",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2880x2880",
+      "outputTokens": 5930,
+      "costUsd": 0.21,
+      "at": "2026-10-31T18:02:12.220Z"
+    },
+    {
+      "id": "piece-eclipse-noire",
+      "key": "a174454a990a",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2048x2048",
+      "outputTokens": 3568,
+      "costUsd": 0.1347,
+      "at": "2026-10-31T18:02:49.714Z"
+    },
+    {
+      "id": "coupe-ambre-fume",
+      "key": "e5fc51ffb101",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2880x2880",
+      "outputTokens": 5930,
+      "costUsd": 0.2098,
+      "at": "2026-10-31T18:02:53.341Z"
+    },
+    {
+      "id": "piece-velours-persan",
+      "key": "a05809bbb438",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2048x2048",
+      "outputTokens": 3568,
+      "costUsd": 0.1347,
+      "at": "2026-10-31T18:02:53.366Z"
+    },
+    {
+      "id": "coupe-rose-de-nuit",
+      "key": "cc3a7d3b64ba",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2880x2880",
+      "outputTokens": 5930,
+      "costUsd": 0.21,
+      "at": "2026-10-31T18:02:54.289Z"
+    },
+    {
+      "id": "piece-minuit-a-kyoto",
+      "key": "cfcd29a41778",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2048x2048",
+      "outputTokens": 3568,
+      "costUsd": 0.1349,
+      "at": "2026-10-31T18:03:32.210Z"
+    },
+    {
+      "id": "piece-cafe-imperial",
+      "key": "94517d14ebaf",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2048x2048",
+      "outputTokens": 3568,
+      "costUsd": 0.1347,
+      "at": "2026-10-31T18:03:32.673Z"
+    },
+    {
+      "id": "piece-ebene-sale",
+      "key": "8d1ae5f2020e",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2048x2048",
+      "outputTokens": 3568,
+      "costUsd": 0.1348,
+      "at": "2026-10-31T18:03:34.863Z"
+    },
+    {
+      "id": "piece-rouge-desir",
+      "key": "ae7ed4b05745",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2048x2048",
+      "outputTokens": 3568,
+      "costUsd": 0.1347,
+      "at": "2026-10-31T18:03:35.882Z"
+    },
+    {
+      "id": "piece-ile-secrete",
+      "key": "17cc3d8dddfb",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2048x2048",
+      "outputTokens": 3568,
+      "costUsd": 0.1347,
+      "at": "2026-10-31T18:04:10.680Z"
+    },
+    {
+      "id": "piece-rose-de-nuit",
+      "key": "e89ffc4d4dc8",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2048x2048",
+      "outputTokens": 3568,
+      "costUsd": 0.1349,
+      "at": "2026-10-31T18:04:15.285Z"
+    },
+    {
+      "id": "piece-ambre-fume",
+      "key": "8d8329f34e7e",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2048x2048",
+      "outputTokens": 3568,
+      "costUsd": 0.1347,
+      "at": "2026-10-31T18:04:17.562Z"
+    },
+    {
+      "id": "coffret-vide-6",
+      "key": "ad00926edf77",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3264x2448",
+      "outputTokens": 4316,
+      "costUsd": 0.1545,
+      "at": "2026-10-31T18:04:21.511Z"
+    },
+    {
+      "id": "coffret-vide-24",
+      "key": "34bab97835d2",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.143,
+      "at": "2026-10-31T18:04:55.927Z"
+    },
+    {
+      "id": "coffret-decouverte",
+      "key": "ea3f798e42c8",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3264x2448",
+      "outputTokens": 4316,
+      "costUsd": 0.1669,
+      "at": "2026-10-31T18:05:06.423Z"
+    },
+    {
+      "id": "coffret-prestige",
+      "key": "3b3ff77a137c",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3264x2448",
+      "outputTokens": 4316,
+      "costUsd": 0.1786,
+      "at": "2026-10-31T18:05:09.629Z"
+    },
+    {
+      "id": "coffret-edition",
+      "key": "6d58bee048b0",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3264x2448",
+      "outputTokens": 4316,
+      "costUsd": 0.1663,
+      "at": "2026-10-31T18:05:09.647Z"
+    },
+    {
+      "id": "coffret-signature",
+      "key": "48774893f002",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3264x2448",
+      "outputTokens": 4316,
+      "costUsd": 0.1666,
+      "at": "2026-10-31T18:05:40.775Z"
+    },
+    {
+      "id": "amb-palmeraie",
+      "key": "444df6244107",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.1295,
+      "at": "2026-10-31T18:06:19.841Z"
+    },
+    {
+      "id": "amb-dattes-naturelles",
+      "key": "e424611631d0",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.1302,
+      "at": "2026-10-31T18:06:20.558Z"
+    },
+    {
+      "id": "amb-chocolat",
+      "key": "89cbd6c62a56",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.13,
+      "at": "2026-10-31T18:06:23.093Z"
+    },
+    {
+      "id": "amb-dattier-regimes",
+      "key": "19c08df32b59",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2336x3504",
+      "outputTokens": 3912,
+      "costUsd": 0.1302,
+      "at": "2026-10-31T18:06:30.759Z"
+    },
+    {
+      "id": "amb-cafe-oriental",
+      "key": "413782cd6bd5",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.1294,
+      "at": "2026-10-31T18:06:59.238Z"
+    },
+    {
+      "id": "amb-art-de-recevoir",
+      "key": "f67854229778",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.1302,
+      "at": "2026-10-31T18:07:02.952Z"
+    },
+    {
+      "id": "amb-riad-lumiere",
+      "key": "802b611818b6",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2336x3504",
+      "outputTokens": 3912,
+      "costUsd": 0.1303,
+      "at": "2026-10-31T18:07:03.072Z"
+    },
+    {
+      "id": "amb-pistache",
+      "key": "1d7f8ad4254c",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.1302,
+      "at": "2026-10-31T18:07:06.564Z"
+    },
+    {
+      "id": "amb-amande",
+      "key": "303adf17a7bc",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.1295,
+      "at": "2026-10-31T18:07:38.624Z"
+    },
+    {
+      "id": "amb-noisette",
+      "key": "7519518a5150",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2336x3504",
+      "outputTokens": 3912,
+      "costUsd": 0.1302,
+      "at": "2026-10-31T18:07:40.864Z"
+    },
+    {
+      "id": "amb-cardamome",
+      "key": "cac7e8beca40",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.1299,
+      "at": "2026-10-31T18:07:45.674Z"
+    },
+    {
+      "id": "amb-safran",
+      "key": "b63ff6f62059",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2336x3504",
+      "outputTokens": 3912,
+      "costUsd": 0.13,
+      "at": "2026-10-31T18:07:49.409Z"
+    },
+    {
+      "id": "amb-framboise",
+      "key": "ab678477ad18",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.1301,
+      "at": "2026-10-31T18:08:24.431Z"
+    },
+    {
+      "id": "amb-cafe-grains",
+      "key": "754d6c279fb5",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.1301,
+      "at": "2026-10-31T18:08:24.719Z"
+    },
+    {
+      "id": "amb-coco",
+      "key": "b9c63d4b3638",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "2336x3504",
+      "outputTokens": 3912,
+      "costUsd": 0.1299,
+      "at": "2026-10-31T18:08:29.480Z"
+    },
+    {
+      "id": "amb-rose",
+      "key": "e8432eedc550",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.1302,
+      "at": "2026-10-31T18:08:32.627Z"
+    },
+    {
+      "id": "amb-matcha",
+      "key": "6c1fc5638e6b",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.1302,
+      "at": "2026-10-31T18:09:05.519Z"
+    },
+    {
+      "id": "amb-riad-soleil",
+      "key": "c8c3c7723c38",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.1302,
+      "at": "2026-10-31T18:09:08.053Z"
+    },
+    {
+      "id": "amb-palmeraie-maroc",
+      "key": "9de30ea3d374",
+      "model": "gpt-image-2.5-sunburst",
+      "quality": "high",
+      "size": "3504x2336",
+      "outputTokens": 3912,
+      "costUsd": 0.1302,
+      "at": "2026-10-31T18:09:11.698Z"
     }
   ]
 }

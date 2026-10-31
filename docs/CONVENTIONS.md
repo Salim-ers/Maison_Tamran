@@ -44,7 +44,7 @@ Ce document décrit les règles du projet : architecture, design system, rédact
 - Mise en page : `container-luxe`, `section-pad`, `on-dark` (fond chocolat + texte ivoire).
 - Boutons : `btn` + `btn-primary` | `btn-light` | `btn-outline` | `btn-outline-light`. Liens éditoriaux : `link-draw`.
 - Formulaires : `field-label`, `field` ; erreurs `text-danger` avec `role="alert"` ; `aria-invalid` et `aria-describedby`.
-- Espace sous l'en-tête fixe : `pt-[calc(var(--header-h)+var(--banner-h)+…)]` (géré par `PageIntro`).
+- Espace sous l'en-tête fixe : `pt-[calc(var(--header-h)+…)]` (géré par `PageIntro`). L'en-tête a une hauteur constante (`--header-h`) sur toutes les pages.
 - À éviter (signes de gabarit générique) : étiquettes en capitales espacées au-dessus des titres, mot isolé en italique ou en couleur dans un titre, numérotation 01/02/03 hors vraie séquence, flèche « → » dans les boutons, chaînes « A · B · C », apparitions en fondu sur chaque section.
 
 ## Rédaction

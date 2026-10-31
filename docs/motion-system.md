@@ -25,18 +25,16 @@ Motion 14 (déjà présent) : `useScroll`, `useTransform`, `useSpring`, `Animate
 | Séquence | Mouvement |
 | --- | --- |
 | Ouverture | Fond cacao ; le logo officiel se révèle par un masque qui monte (le tronc du T puis les palmes) ; reflet doré masqué à la forme du logo ; le rideau se lève (2,5 s, « Passer » toujours disponible, une fois par session, seulement si la session commence sur l'accueil). |
-| Hero (250 svh) | Lever de soleil sur la table ; titre ligne à ligne, mot clé en or qui s'illumine ; lumière qui dérive (14 s) ; au défilement, le couvercle (polygone mesuré) se soulève, pivote, quitte le cadre ; la photo fermée s'efface sur la photo ouverte (même cadrage) ; la caméra s'approche ×1,7 ; second titre. |
-| Métamorphose | Cinq étapes épinglées ; masques en forme de datte, vague de chocolat, niches des dix créations. |
-| Anatomie | Rapprochement borné ×1,2, repères dessinés un à un. |
+| Hero (190 svh) | Lever de soleil sur la table ; titre ligne à ligne, mot clé en or qui s'illumine ; lumière qui dérive (14 s) ; au défilement, le couvercle (polygone mesuré) se soulève, pivote, quitte le cadre ; la photo fermée s'efface sur la photo ouverte (même cadrage) ; la caméra s'approche ×1,7 ; second titre. |
+| En-tête | Aucun mouvement d'une page à l'autre : barre de hauteur constante, sans changement de taille, de couleur ni de position (pas de masquage au défilement) ; seul le soulignement doré de la rubrique active glisse (ressort) vers la nouvelle rubrique ; menus déroulants en fondu et léger glissement (0,28 s) ; filet doré de progression de lecture. |
+| De la palmeraie à la création | Section non épinglée : les quatre étapes montent l'une après l'autre à l'entrée dans l'écran (décalage 0,09 s) ; zoom lent au survol. |
 | Signatures | Volet sur la photo, tirage qui se soulève et se repose, nom qui monte ; clavier, glissement au doigt. |
-| Garnitures | Section épinglée de hauteur calculée ; la rangée de macros glisse latéralement (ressort), chaque macro se resserre au centre, filet à la couleur de la recette. |
-| Art d'offrir | Portes qui s'ouvrent, lumière sur les dattes, les trois formats révélés par rideau. |
 | Configurateur | La pièce détourée quitte la carte et rejoint son alvéole en arc ; anneau doré à l'atterrissage ; pièce sélectionnée auréolée ; reflet doré et badge « Votre coffret est prêt » à la complétion ; prix qui défile. |
 | Cartes produit | Zoom lent ; bascule sur la macro du cœur ; filet doré qui apparaît. |
 | Fiche produit | Rideau entre les vues ; loupe qui suit le pointeur sur la macro (×1,7, dans la définition de l'image). |
 | Transitions de page | Du catalogue à la fiche : la photo de la création cliquée glisse de sa carte au cadre de la fiche (morphose), le reste de la page part vers la gauche, l'en-tête reste immobile. D'une création à la suivante ou à la précédente : glissement dans le sens de la navigation. |
 | Ouvertures des pages éditoriales | Maison, Savoir-faire, Professionnels : photographie plein cadre (verticale sur mobile) qui recule et s'éclaire au chargement, puis glisse en parallaxe. |
-| La création rejoint son coffret | Étape 05 de la métamorphose : le coffret vide photographié, chaque création détourée tombe dans sa caissette au défilement. |
+| Les coffrets (accueil) | Le coffret du format choisi se redessine ; la pièce détourée vole de sa carte à sa caissette ; compteur et nom du format avec son prix. |
 
 ## Transitions de page : choix technique
 
@@ -47,3 +45,8 @@ Les transitions utilisent l'API **View Transitions** du navigateur, déclenchée
 - Les scènes épinglées n'animent que des calques déjà rendus (pas de layout pendant le défilement).
 - Les photos 3840 px sont servies par `next/image` à la largeur utile ; la photo du coffret fermé est préchargée (LCP), la photo ouverte est chargée en priorité basse.
 - `will-change` limité aux calques réellement transformés (couvercle, rangée des garnitures).
+
+
+## Resserrement de l'accueil (2026-10-31)
+
+L'accueil faisait près de 32 écrans de défilement (cinq scènes épinglées : oasis, métamorphose, anatomie, garnitures, art d'offrir). Il en fait désormais une dizaine : seul le coffret du hero reste épinglé (190 svh au lieu de 250) ; le savoir-faire tient en un écran, les formats et leurs prix ont rejoint le démonstrateur de composition, la Maison et les professionnels partagent un même écran. Les scènes retirées (`oasis`, `metamorphosis`, `date-anatomy`, `texture-reel`, `gift-showcase`, `maison-story`, `pros-section`) restent dans l'historique git.

@@ -1,4 +1,164 @@
 {
+  "amb-amande": {
+    "url": "/images/generated/ambiance/amb-amande-e6d71dcd.webp",
+    "w": 3504,
+    "h": 2336,
+    "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACQAgCdASoQAAsAA4BaJbACdLoAEJcUJL8Y9a40AAD+pYV2EIAWU/rFDk0M2ls7sEmbIE5o6pOqMFU2yDOmCPuBiljQFYSyU32xVGlS0XiRkzSMbTKgMU/Af+hRsZJpjvqTvG5gAAA=",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Amandes entières en macro, texture de la peau"
+  },
+  "amb-art-de-recevoir": {
+    "url": "/images/generated/ambiance/amb-art-de-recevoir-b0f3d3af.webp",
+    "w": 3504,
+    "h": 2336,
+    "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAQAgCdASoQAAsAA4BaJZgCdAED+tr8dowAAP7tWgp2LMh7eLrd02eUvNk7K7I+pErPn9ft595i9MhhgR05E7fbtVtdOVpGjjFg5Z+qjuGtxpcq9XlcAAAA",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Théière marocaine argentée et verres à thé ciselés sur un plateau en laiton"
+  },
+  "amb-cafe-grains": {
+    "url": "/images/generated/ambiance/amb-cafe-grains-e3788420.webp",
+    "w": 3504,
+    "h": 2336,
+    "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoQAAsAA4BaJQBOgMXhrLlUgAAA/uPQjSgNdVKpK4Gs723rLJpTWkf7eeI71PrI7S5yfkTPrEOs7PV1kbOfiT8mjX7YEorarIti25P1kEGW2wQAAAA=",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Grains de café torréfiés en gros plan"
+  },
+  "amb-cafe-oriental": {
+    "url": "/images/generated/ambiance/amb-cafe-oriental-ec5e8d95.webp",
+    "w": 3504,
+    "h": 2336,
+    "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQAgCdASoQAAsAA4BaJZgCdAD2Md0bE8mAAP7dgRnDa57DoBTcY7tF0RoQnNlZFU0eU6QAfQYCQj2aR8I/sWDqWNBrTFQE4mjJaTMGaLVuTgAA",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Dallah en laiton enveloppée de vapeur sur fond sombre"
+  },
+  "amb-cardamome": {
+    "url": "/images/generated/ambiance/amb-cardamome-be914856.webp",
+    "w": 3504,
+    "h": 2336,
+    "blur": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACwAQCdASoQAAsAA4BaJYgC7ADVgFPgAP7myhj7ty10NlXjcRzU6ao+diRypaerbBjkLmwsVjBL2QZUuE76RQa54AA=",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Gousses de cardamome verte sur une ardoise sombre"
+  },
+  "amb-chocolat": {
+    "url": "/images/generated/ambiance/amb-chocolat-90683dd5.webp",
+    "w": 3504,
+    "h": 2336,
+    "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoQAAsAA4BaJYwCdADsmS9QEAD+8YCGt5jhd1GPdRvRIZcWJYSSQbHeA6uJw8Ov/QAAAA==",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Tablette de chocolat noir saupoudrée de cacao sur fond noir, vue du dessus"
+  },
+  "amb-coco": {
+    "url": "/images/generated/ambiance/amb-coco-81f7b2c8.webp",
+    "w": 2336,
+    "h": 3504,
+    "blur": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAACwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JQBOgZYMMEzGKp0rmgKYedZh/qxAAAP6wt10YNxOwnZyWPD8REdyH0Lxheaf2yZkufd/D5Rt3qWSoAbQ3J5wHwM1whi2uDStLn8PArtYnppyur1Iw0Z2TvS+QuDwmMdWeF/tSWTRCe3reeq7zLEi2Zo3f29eb5ylx5eJNRWxaElx2PW14a4Zs59Lok+7XKC4AAA==",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Morceaux de noix de coco ouverte sur un lin naturel froissé"
+  },
+  "amb-dattes-naturelles": {
+    "url": "/images/generated/ambiance/amb-dattes-naturelles-2e3c353c.webp",
+    "w": 3504,
+    "h": 2336,
+    "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoQAAsAA4BaJYgCdADstDeo8AAA/s32EE8COJhsHdtoDrvQtWaP+IcJVNwsAP5NVOFJ6v3UR5jW/OQbn/A3ENXJH7UjZ/ZBQoZgAAAA",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Petit bol en bois rempli de dattes Medjool naturelles sur un lin brun sombre"
+  },
+  "amb-dattier-regimes": {
+    "url": "/images/generated/ambiance/amb-dattier-regimes-42dd8b7d.webp",
+    "w": 2336,
+    "h": 3504,
+    "blur": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAAAQBACdASoQABgAPu1iqU2ppaOiMAgBMB2JagCdMoR4GCHvwOGIvInnaAD+drB/b/avEj/iEod5Z1pQLehwlsBmuGiEK5IjNfsPACMmu3iOmt9s3WqXcaxZES4FknZQXqW1muHCeJ4WJT1oDCiC+TfofTEMZcMKD4csi6L26q1ifxlTd/Qq4eVwW+nO+fIS43FCemxdJh+oj0Qv7oKDiHaegAA=",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Régimes de dattes ambrées et brunes suspendus sous les palmes d'un dattier"
+  },
+  "amb-framboise": {
+    "url": "/images/generated/ambiance/amb-framboise-d0d7548f.webp",
+    "w": 3504,
+    "h": 2336,
+    "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAwAgCdASoQAAsAA4BaJbACdAEf/76cJJOXgAD+8xDeQQaLznvSQWCauE5IGEi5RhC1LtbBR9hXQJYOJPZthI/qdTJaKl+uS9KGDoejQxfQAA==",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Framboises fraîches en macro, lumière sombre"
+  },
+  "amb-matcha": {
+    "url": "/images/generated/ambiance/amb-matcha-a52dd7e2.webp",
+    "w": 3504,
+    "h": 2336,
+    "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoQAAsAA4BaJZgCdACVuKTYCAAA/u2iit/8guC+d7BX0jl9BExxVyvVQ+cXxn0A3jeyw+JmybFnkl5v+SDEBV/+YgGBAAAA",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Poudre de matcha dans une coupelle en céramique ivoire, sur une pierre claire"
+  },
+  "amb-medjool-macro": {
+    "url": "/images/generated/ambiance/amb-medjool-macro-02983624.webp",
+    "w": 3504,
+    "h": 2336,
+    "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQAgCdASoQAAsAA4BaJbACdAYvXSTaP5N6CIAA/vRdeBSgZwtmmdk7EGRRXD2tXS460oAneQrwgLCmNE2FvWmZMi5F9czyiwQ7zUiwPo8CbHQtxmov6+0gUHliCObVm7lnPFV1NAAAAA==",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Gros plan de dattes Medjool brunes, charnues et ridées, en lumière chaude"
+  },
+  "amb-noisette": {
+    "url": "/images/generated/ambiance/amb-noisette-d4339475.webp",
+    "w": 2336,
+    "h": 3504,
+    "blur": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADQAwCdASoQABgAPu1iqU2ppaOiMAgBMB2JYzuCCmDSAchtX6SOFoAA/uzU1a5HgoAWywaAVkuuj1PXjCFqZwf2ZalK1GeLzBUZQL4OX3T3/XV5TLYcrjjqpz67YVrSIQVV/fRfHq0aNfwN8r7ceUsV1sKTn28soarG51oQV1jvryo5Xk7vqICEp50KV4nCn4OYKp4gAAA=",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Noisettes torréfiées en gros plan, vue du dessus"
+  },
+  "amb-palmeraie": {
+    "url": "/images/generated/ambiance/amb-palmeraie-70d812e7.webp",
+    "w": 3504,
+    "h": 2336,
+    "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQAgCdASoQAAsAA4BaJbACdGuAD0PmyB/KgQAA/i+73qJCVkm9/U+Dp5RZY5o1IQT/5yYFthV/FxkbJxh54vtiLVwFwfqf1D7a0pcsGa+DEQe2q/apLYfwAAA=",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Palmeraie de dattiers au milieu des dunes de sable doré, sous un ciel bleu"
+  },
+  "amb-palmeraie-maroc": {
+    "url": "/images/generated/ambiance/amb-palmeraie-maroc-432bcb9e.webp",
+    "w": 3504,
+    "h": 2336,
+    "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoQAAsAA4BaJagCdAEQJF14+AAA/us2cRw3Yp3o04JBvBLFLUsED9wvX0/+bnNerFOKw2xRcHaj/D+w0oUPT+NT8xfRIEAA",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Palmeraie de dattiers dense devant un village de terre et des montagnes"
+  },
+  "amb-pistache": {
+    "url": "/images/generated/ambiance/amb-pistache-f480ffa2.webp",
+    "w": 3504,
+    "h": 2336,
+    "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAACQAgCdASoQAAsAA4BaJbACdLoAEIeSe1XEgNQzwAD93224t3qRHX9Up8Dt6rraj2K819UyayIVqx1z4PCH+AJ2Iamcc79fRScNTJydbWmox9z5qS1ukgmgT+X+KylGohkD8WxKMsAAAA==",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Pistaches entrouvertes laissant voir leur amande verte, en lumière dorée"
+  },
+  "amb-riad-lumiere": {
+    "url": "/images/generated/ambiance/amb-riad-lumiere-fab7c6da.webp",
+    "w": 2336,
+    "h": 3504,
+    "blur": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAABwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JbACdMoRwACmb9SXv7QV08oOW6AD+wWkAvohTWE7+0mKh0lSw9d53K9G4zhnSAcyYPlftO3LzUThycW+oaqOzN79Ne+Ry8AzP4+NN2HZ3YYQv3eUxOsne4+3Cyxjv/lVAdgjXB+PMdhSOJWLEu8JnrY9I47tmYR33OkdwtbbDHMkdBFQ2ZLLm0Qrz4fZrpAOjaRXNQO54ZxbqYAA=",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Patio de riad, porte en bois sculpté éclairée par une lanterne en laiton, bassin de zellige vert"
+  },
+  "amb-riad-soleil": {
+    "url": "/images/generated/ambiance/amb-riad-soleil-253279be.webp",
+    "w": 3504,
+    "h": 2336,
+    "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQAgCdASoQAAsAA4BaJQBOgMXroUeUgRYAAPz+tN3GQ5iJtrtcn0IMZmugLDDvMzk8/EGBmn734d+mu2tbe4Smzw7dpbnS6exWWAxmZ24XVs8jYZnxlIwR2SGfp7r6MclmjkeD8xgAAA==",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Cour ensoleillée aux arcades blanches et sol de zellige, fontaine au centre"
+  },
+  "amb-rose": {
+    "url": "/images/generated/ambiance/amb-rose-49c683ae.webp",
+    "w": 3504,
+    "h": 2336,
+    "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADQAQCdASoQAAsAA4BaJbAAD4lqIKxHVAD+6Pja+ZjkzX2uTj6gJMi7uKsVTvUA0R6qMgknZPoFFR2p6vRdxF5vU6aTDPhirIN24QBW/UbiqNN8tL/+KHNncCoAAA==",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Pétales de rose séchés, texture rose et pourpre"
+  },
+  "amb-safran": {
+    "url": "/images/generated/ambiance/amb-safran-044b5009.webp",
+    "w": 2336,
+    "h": 3504,
+    "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQBACdASoQABgAPu1iqU2ppaOiMAgBMB2JZgCdMoADAXc/2oSPOF6GQAD+y/5NzXHx8gRHKf+HWK1nfUmoHgmzQTXf62uYFK5S86l5EDlY9tCb/8VMNv2ncHlC3Vul1IPgAA==",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Filaments de safran rouge sombre répandus depuis une coupelle en laiton"
+  },
   "atelier-ingredients": {
     "url": "/images/generated/univers/atelier-ingredients-df1c131b.webp",
     "w": 3840,
@@ -32,18 +192,18 @@
     "alt": "Coffret Signature ouvert : douze dattes fourrées dans leurs caissettes, couvercle ivoire orné d'un dattier, café et pistaches sur une table en pierre"
   },
   "coffret-decouverte": {
-    "url": "/images/generated/coffret/coffret-decouverte-c236cbd6.webp",
-    "w": 2304,
-    "h": 1728,
-    "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABQAgCdASoQAAwAA4BaJagCdAYtLq2swYDRSoAA9pgEwZM9P9Dvw2M5efdkvKwyffSjYtMB7iJiQVuCZVl6YxzWlVIY8EzWjnIKfB+l3CZWaBLy9I+ZUUvZVPZri5uQN90dA+uwAAA=",
+    "url": "/images/generated/coffret/coffret-decouverte-400bd49d.webp",
+    "w": 3264,
+    "h": 2448,
+    "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABwAgCdASoQAAwAA4BaJagCdAYr7nBRP+IJvu8QAPaYBLzFO53H2c05qaZfxijfb1ajGm4mBKvFW3IyRal+QgwKY6Sm+HgLciYLMgLuEysXMjzD+60Mnfri5uQ5HAkrbMcAAA==",
     "badge": "Visuel conceptuel · IA",
     "alt": "Coffret Découverte ouvert : six créations dans leurs caissettes"
   },
   "coffret-edition": {
-    "url": "/images/generated/coffret/coffret-edition-5d81ae2d.webp",
-    "w": 2304,
-    "h": 1728,
-    "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADwAQCdASoQAAwAA4BaJZgCdAEUUmPPmcAA/u+ZqdRmppxW+Y7+icIQPo+oOZHWzyZGMRaZgdEB0x201vLcWx2/Jth7DO/XLsXbNodxHDl44TSB5kUhyz9NlA254AAA",
+    "url": "/images/generated/coffret/coffret-edition-71a367ae.webp",
+    "w": 3264,
+    "h": 2448,
+    "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABwAgCdASoQAAwAA4BaJZgCdAYvXyA1rBtJExwAAP7vmanTr+grl0POXOcdI4xxm83OLXlJwP2goRasqcnsbDTZ8ab9Kc0DQycX1KUZfu59EMtcRcMfh4Bp8rgAAA==",
     "badge": "Visuel conceptuel · IA",
     "alt": "Coffret Édition Limitée, vert olive, ouvert sur les quatre créations éphémères"
   },
@@ -72,34 +232,42 @@
     "alt": "Coffret Maison Tamrān ouvert : douze créations dans leurs caissettes, sur une table en travertin, dans la lumière dorée"
   },
   "coffret-prestige": {
-    "url": "/images/generated/coffret/coffret-prestige-be17ac05.webp",
-    "w": 2304,
-    "h": 1728,
-    "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQAgCdASoQAAwAA4BaJaACdAYs3WckJqDwAP6pMPF5kOXSpN1exvChvdIEOblbfTYGEC8zPaY9KDjXxFfLX4CyCsKaRl+Lhxk3np6IkL3C6WKZOeaNx2CBUKMqINPlkYzZ/urEtaKgAA==",
+    "url": "/images/generated/coffret/coffret-prestige-5430e9cb.webp",
+    "w": 3264,
+    "h": 2448,
+    "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAwAgCdASoQAAwAA4BaJagCdAYstWc5Rk4X8AD+gpV26/a2U0kTqA43imDWXvhXb2JDgF54okhlZZ8AYcxtS98U95JXL+Bz7rY5l3Uy41cj4qd0wW398FPUtAQO9ScfyyMatrjViWtFQAAA",
     "badge": "Visuel conceptuel · IA",
     "alt": "Coffret Prestige ouvert sur deux étages : vingt-quatre créations"
   },
+  "coffret-signature": {
+    "url": "/images/generated/coffret/coffret-signature-01e0c6fd.webp",
+    "w": 3264,
+    "h": 2448,
+    "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABQAgCdASoQAAwAA4BaJaACdAYs3nAK9M6uoAAA+vCaR8UDSv2o/CLJEiT19Tp1rHmXJz40MJudUD0AZrzku+CzDC3pbenKQ/7/LyRdVkLg4rCVcGTfmB2Q6/1VT2SSnwJK1X4AAAA=",
+    "badge": "Visuel conceptuel · IA",
+    "alt": "Coffret Signature ouvert : douze créations dans leurs caissettes, sur une table en travertin"
+  },
   "coffret-vide-12": {
-    "url": "/images/generated/coffret/coffret-vide-12-e9db083c.webp",
-    "w": 2048,
-    "h": 1536,
-    "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAQAgCdASoQAAwAA4BaJQBOgO4A9L7eBIAAAP0DOl6TV8TbSS3Pj05ZYdE7iMPaLNbjT5PchIXnWqDPkCw7vDScW0ZASeNz9vrQc2itL+kw4g+jNcm7KoAA",
+    "url": "/images/generated/coffret/coffret-vide-12-705c8455.webp",
+    "w": 3264,
+    "h": 2448,
+    "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAQCdASoQAAwAA4BaJQBOgCHw4IbmAAD9Atjb+0/rJeadZvgJBLpJen3veTac8YU840HeWST/0+X5aZtdNwnLtnvBF2zP4zfYN1I+fzCoRiigItRJKAAA",
     "badge": "Visuel conceptuel · IA",
     "alt": "Coffret ouvert et vide, vu de dessus : 12 alvéoles en papier plissé"
   },
   "coffret-vide-24": {
-    "url": "/images/generated/coffret/coffret-vide-24-1f6356c6.webp",
-    "w": 2048,
-    "h": 1365,
-    "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoQAAsAA4BaJQBOgCHlu6Jc/AAA/QLY5ns30Pp0lyMoy0v0ewoLiNzcUgN8N5i1JMeWVt7/SH23X6TDwgm54f3xIC+NX8Rhrci1EkoAAAA=",
+    "url": "/images/generated/coffret/coffret-vide-24-8a54ddda.webp",
+    "w": 3504,
+    "h": 2336,
+    "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAQCdASoQAAsAA4BaJQBOgCHu0GFdMAD9Atjbwn9ha4FUFdRJ0nDtk2nmadngXWXqseNHwbJXQQl/L2KYODYfQu/LA0BbFhB8ZWvG80QAAA==",
     "badge": "Visuel conceptuel · IA",
     "alt": "Coffret ouvert et vide, vu de dessus : 24 alvéoles en papier plissé"
   },
   "coffret-vide-6": {
-    "url": "/images/generated/coffret/coffret-vide-6-2dd1f29d.webp",
-    "w": 2048,
-    "h": 1536,
-    "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoQAAwAA4BaJYgCdAEN3Vo8kgAA/guXSA8PfTHX4lAPVB9wgkoWUV3wPeyDAmYI5vvgEmnQrVKm7Aks9CMa8qyXqREaAZmj9x3b91ygNXy2WijQAAA=",
+    "url": "/images/generated/coffret/coffret-vide-6-f94960da.webp",
+    "w": 3264,
+    "h": 2448,
+    "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAQCdASoQAAwAA4BaJQBOgCG7q0eSQAAA/guXSA2d9McBvRXxY8CJWqYQHY72QYEzBTCIWS/ouZDTRPtvUsVrUTe5WKHz3WgyoV12bgmPRpkWok24AA==",
     "badge": "Visuel conceptuel · IA",
     "alt": "Coffret ouvert et vide, vu de dessus : 6 alvéoles en papier plissé"
   },
@@ -112,82 +280,82 @@
     "alt": "Coffrets Maison Tamrān empilés, noués de rubans champagne"
   },
   "coupe-ambre-fume": {
-    "url": "/images/generated/coupe/coupe-ambre-fume-f8a48655.webp",
-    "w": 1920,
-    "h": 1920,
-    "blur": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABQAgCdASoQABAAA4BaJbACdAYsP20aKFj6aAAA/sKQl7woX6Ghroci93isbwy9Ul3Ab/5svkGL4fVDh/9uMqU/e8GNOkbBcHb8eU70i20K+3a19B5EhaKplMsj2Dw6YuG6PKtSXcn1kBrux4KdrlkYzkTwk4EmY9QJgA4AAAA=",
+    "url": "/images/generated/coupe/coupe-ambre-fume-f28f5b4b.webp",
+    "w": 2880,
+    "h": 2880,
+    "blur": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABQAgCdASoQABAAA4BaJbACdAYsj20UKq1mBoAA/sKQl7woXurTXfWG/2WmpaGGs11tTzsw2140jIJXw8pV8N0d/LCS6L+N21ZQwfNpa7ZuyhjQ1soDyo706CsQbJRo9OYI14zcMREPHEvm9OTdnRyWV1X2ra59YlduzXnbx5iB8AAA",
     "badge": "Visuel conceptuel · IA",
     "alt": "Ambre Fumé : le cœur de la datte coupée, en macrophotographie"
   },
   "coupe-cafe-imperial": {
-    "url": "/images/generated/coupe/coupe-cafe-imperial-12ab1eaa.webp",
-    "w": 1920,
-    "h": 1920,
-    "blur": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQAgCdASoQABAAA4BaJbACdAYxFVmC+UKc/4AA/kq1o9+arf+SXSRhOy1Gq9EfN9YfZ9eeH9E/D4qwrojFaBCE7P8hfbnEO3xBzlZ4BWFEmxz9dqOjrwmJuTH1afW2EJlPS+PXTyNYUAf6rqB52LuSC4Z2vXZl1lAAAA==",
+    "url": "/images/generated/coupe/coupe-cafe-imperial-ee4f9f24.webp",
+    "w": 2880,
+    "h": 2880,
+    "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABQAgCdASoQABAAA4BaJbACdAYtBi3a9SkWZ4AA/kq1o9+aq/uux0LZSKIVNlO9LO8aM+Hr5HSFyjyTOwCQmzbjhoRPzu7jZEL810eDGTt9qO7S1sO9rehda/oTjKvzIqSW6Dqsvqy8MfqAP9V1A87F3JBcM7Xrsy6ygAAA",
     "badge": "Visuel conceptuel · IA",
     "alt": "Café Impérial : le cœur de la datte coupée, en macrophotographie"
   },
   "coupe-ebene-sale": {
-    "url": "/images/generated/coupe/coupe-ebene-sale-793eb6a6.webp",
-    "w": 1920,
-    "h": 1920,
-    "blur": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAACQAgCdASoQABAAA4BaJbACdAYubq2q4PhCLjh/AAD+qybvu80787B+mpmj3c2j5VuwXcwPz9HCIFJ8u1y2INQtFClH6vUUEvssg2pKMnt1LfOtbnd2wf1vgY0QwCUCnjhni7fNOPXTwWAnUmB456tx1PJc/6D/WAA=",
+    "url": "/images/generated/coupe/coupe-ebene-sale-a13dd053.webp",
+    "w": 2880,
+    "h": 2880,
+    "blur": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQAgCdASoQABAAA4BaJbACdAYtp2/wNGlnxeAA/oWRgO4ZXbib0DBEPDmRVSvp+5mMzLu/BEGYI6HStjMxaW5ouk7/rLtwQ1zZJ/vjdepE/DTb8qrYvDBaJIKVbtm/1XH0RHwVDtr6OEEBi3Xi+yjTO1na9bV8qOAAAA==",
     "badge": "Visuel conceptuel · IA",
     "alt": "Ébène Salé : le cœur de la datte coupée, en macrophotographie"
   },
   "coupe-eclipse-noire": {
-    "url": "/images/generated/coupe/coupe-eclipse-noire-f03ee927.webp",
-    "w": 1920,
-    "h": 1920,
-    "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADwAQCdASoQABAAA4BaJZgCdAYu5VTUSiAA/q2qEu2qkA4Bxw48U2NUG+ukfkcrpbyT0pxa4+VwxDVv05RNIU7zemT94QG2upZ/MmdZdxDsNQgtOjJOBXuK4mnHNkbV3DlWK0AJwH/fngAA",
+    "url": "/images/generated/coupe/coupe-eclipse-noire-3bce72b2.webp",
+    "w": 2880,
+    "h": 2880,
+    "blur": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAABQAgCdASoQABAAA4BaJaACdAYu5lb2vK4Tk8AA/sKN254Hmf49IXKz3p9Ik7byLva+GH1g28EKi/awwD1nRljo28QZ8fq8s1aUZ82gh7oMItaGyxNcVes64AM1aasJQ+tmuE+IRd0c/mkAAAA=",
     "badge": "Visuel conceptuel · IA",
     "alt": "Éclipse Noire : le cœur de la datte coupée, en macrophotographie"
   },
   "coupe-ile-secrete": {
-    "url": "/images/generated/coupe/coupe-ile-secrete-a2210f25.webp",
-    "w": 1920,
-    "h": 1920,
-    "blur": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABwAgCdASoQABAAA4BaJbACdAYsZy/uMvDsClQAAP7PX1kwJPmqGu6JbI8zlp2pRUUBaiKkwwDdz2GgN45VV93inen7q8DOjE+AZYoIT6IewB5VAjVPkYEu0sp4+/hlvdKysN6Wktb+pOgGCIbKsAJYvBnFD+vVnywffuHO1bH12AAA",
+    "url": "/images/generated/coupe/coupe-ile-secrete-74047a00.webp",
+    "w": 2880,
+    "h": 2880,
+    "blur": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABwAgCdASoQABAAA4BaJbACdAYrJgLO7YnE/QT0AP6+YSkFh9mFf9x8voVthi989oLSB1SP4eTUMmMsSqDC9/LJ//kP91Lv47XO/jR+GuLf0MatiAmXjNiwyaOyLsArRVq9WZiNIbduhaq0T90jGpoZ8MN7/Xqz5YPv3Dnatj4cAAAA",
     "badge": "Visuel conceptuel · IA",
     "alt": "Île Secrète : le cœur de la datte coupée, en macrophotographie"
   },
   "coupe-minuit-a-kyoto": {
-    "url": "/images/generated/coupe/coupe-minuit-a-kyoto-9bc0298d.webp",
-    "w": 1920,
-    "h": 1920,
-    "blur": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABwAgCdASoQABAAA4BaJbACdAYvN22jfQj6ATEAAP7xGeNRkY+NdEDd7TN8nG3+1VK0FF9WiSZFmyQQ0hti8GEIZHa+bpc1RN/agNVV+HHG8ySi20NHiWc2v5/yeO/BhKEnapNKOMSe15XtaHIBzp+0Hxv2Tubh8IbXCtrAkrVmEAAA",
+    "url": "/images/generated/coupe/coupe-minuit-a-kyoto-b6e4ffb5.webp",
+    "w": 2880,
+    "h": 2880,
+    "blur": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAABwAgCdASoQABAAA4BaJbACdLoAEJkZfcA6Y0rYAP7u6iHLeI8N9pcGAgK9oK4PBOWlF+ZubjBNfXXvfphYMR4i1/kcMUnZ0uaom/4Sv5eH1TA4WThgPrSqct0i+3/IXTMIPQukf2x3PzrUCp7yHYGl+zph8a8O2DGjGA6yJ6qbFcQAAAA=",
     "badge": "Visuel conceptuel · IA",
     "alt": "Minuit à Kyoto : le cœur de la datte coupée, en macrophotographie"
   },
   "coupe-or-de-marrakech": {
-    "url": "/images/generated/coupe/coupe-or-de-marrakech-d86ded14.webp",
-    "w": 1920,
-    "h": 1920,
-    "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABQAgCdASoQABAAA4BaJbACdAYubOabpPfJ1vAA/sGt1F/FTu/fF7YAOzXLk7XcL8IGj51dKa8EptsGKrrWlrxoor4RS3jQ5Z8eVChU71l3Jhm4iIlcGIBcjy9Yr0iY4bvARHiseC/DfZ1dqlVyBE2cbjR9jfI58mwdAAAA",
+    "url": "/images/generated/coupe/coupe-or-de-marrakech-b490945c.webp",
+    "w": 2880,
+    "h": 2880,
+    "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAwAgCdASoQABAAA4BaJbACdAYtBObQSb6SAAD+wa3T98JWUedfF/fB600NiZKzRyDOxRB4cVBTQMyH5D0DrnxwwLRGp2SxXEoYYWt9uRSpAoNzmXU+dU8Fcc+X/KQdScxaEdr85WYWYt+1Sq5AibONxtMEDyOw+OtIHwAA",
     "badge": "Visuel conceptuel · IA",
     "alt": "Or de Marrakech : le cœur de la datte coupée, en macrophotographie"
   },
   "coupe-rose-de-nuit": {
-    "url": "/images/generated/coupe/coupe-rose-de-nuit-b219332d.webp",
-    "w": 1920,
-    "h": 1920,
-    "blur": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQAgCdASoQABAAA4BaJbACdAYwdj/QTwqUiAAA/q3K47NKp+hsb36T8jHnEzdprLNMJg4/LHucNHxPCmxtsZC7cwzbnFQL0HpR6dF94FwywgkrCymvV8tPSS4KtqogC2bGejSLioZNCrlulm1S4YnfUrD/t7+JjnwAAA==",
+    "url": "/images/generated/coupe/coupe-rose-de-nuit-83a096e3.webp",
+    "w": 2880,
+    "h": 2880,
+    "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAwAgCdASoQABAAA4BaJbACdAYvrj/RTnwAAAD+rcriS7NUK72jjIVXsU6DCe78ldptU4//50GAjnEAsXZGGvtYLn9t+1u9dlI+xjvodqChVebeQkZ0eICH68jBxBwNXisyFfdJggkxTIb8uCblBJ0e3mirkaMaOMAqwAAA",
     "badge": "Visuel conceptuel · IA",
     "alt": "Rose de Nuit : le cœur de la datte coupée, en macrophotographie"
   },
   "coupe-rouge-desir": {
-    "url": "/images/generated/coupe/coupe-rouge-desir-4e503ce8.webp",
-    "w": 1920,
-    "h": 1920,
-    "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACwAQCdASoQABAAA4BaJbACdB2gAL2UAP6sxe2n2rku751rvca1gJ3ADaErbxYiI/o4FFFPx7ExGRXPA29PluEpiv+0eBhj+Dmzs+9kxnA0BV5C4nyeePM6xT/Faa1ZajJHkaOAAAA=",
+    "url": "/images/generated/coupe/coupe-rouge-desir-96318d23.webp",
+    "w": 2880,
+    "h": 2880,
+    "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADQAQCdASoQABAAA4BaJbACdAEfhPRZAAD+rMXumYOEBWpHvdKW2bJIXSq0+t4VbUC88aOVYj4RoiZiNTdUdey42Uysw0QgkTJFUD3T1qXNEwrsQiTUabvgS31oeP6IQfkc72f9BqwAAA==",
     "badge": "Visuel conceptuel · IA",
     "alt": "Rouge Désir : le cœur de la datte coupée, en macrophotographie"
   },
   "coupe-velours-persan": {
-    "url": "/images/generated/coupe/coupe-velours-persan-cb30815e.webp",
-    "w": 1920,
-    "h": 1920,
-    "blur": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABQAgCdASoQABAAA4BaJbACdAYtVObgDNI6aGAA/sDUv8lvo+Z43nNhCF9+xi0QHDwb5vfsYWJquK0Gp+D/28MFZ+AX7/MnDsAepJHJ5F+FlsdI2XLvOEUgW81bG8nycUAs4OOZTMBC58d703RqdlwTyTpkvHLxz7s7h/QpxzyhcAAA",
+    "url": "/images/generated/coupe/coupe-velours-persan-08dbeee1.webp",
+    "w": 2880,
+    "h": 2880,
+    "blur": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAABQAgCdASoQABAAA4BaJbACdAYrxWesjI5kd+AA/sDUv0kST6LslUTRLgwn59Ov567UpWOpiqNa7BkQtQC3iTz4RMa85iB2OC4IJjsYKnR85KRbECS0DnTg42bAJw8ofB/d9kRhvGHiCwxgwc5Fa366eFN3zB3/mcKnI7Ff2ss2t4GAAAA=",
     "badge": "Visuel conceptuel · IA",
     "alt": "Velours Persan : le cœur de la datte coupée, en macrophotographie"
   },
@@ -216,98 +384,98 @@
     "alt": "Une palmeraie à l'heure dorée, régimes de dattes Medjool sous les palmes"
   },
   "meta-coeur": {
-    "url": "/images/generated/univers/meta-coeur-7244b722.webp",
-    "w": 2560,
-    "h": 1440,
-    "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAQCdASoQAAkAA4BaJZACdAD0FIIwAAD+6Y7syaS0hne7tCkODZbQQNAmjJYzxiYH09u+RuERPogzveT8xrlgwPg6UF7l05knB4oMuMZtUAAA",
+    "url": "/images/generated/univers/meta-coeur-9d4ee65b.webp",
+    "w": 3840,
+    "h": 2160,
+    "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAQCdASoQAAkAA4BaJZgCdAD0FIJQYAD+5OUVfpmW9XIELYvHXVJVgNvoDmCDHV5ov3tjjHC9Y79+mhlIi/bBgfB0oOqjyPSTg8UGXGM2qAAA",
     "badge": "Visuel conceptuel · IA",
     "alt": "Une datte Medjool ouverte, dénoyautée, garnie d'une crème de pistache"
   },
   "meta-enrobage": {
-    "url": "/images/generated/univers/meta-enrobage-6d6b4f26.webp",
-    "w": 2560,
-    "h": 1440,
-    "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoQAAkAA4BaJYgCdAEQ/TN4yAAA/vMmQKFVxz54x1hec3tBVzPq177PYBCqz+l6/HT4x1YdIbEsSo13N3tNNlAm/AAAAA==",
+    "url": "/images/generated/univers/meta-enrobage-bdc157e7.webp",
+    "w": 3840,
+    "h": 2160,
+    "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoQAAkAA4BaJYgCdAEQ/Tc3AAAA/vMmQKFVxz54x1hec3tBVzPq177PYBCqz+l6/HRJSTMibBZZcnnJ+aQMttVpAAA=",
     "badge": "Visuel conceptuel · IA",
     "alt": "Dattes garnies fraîchement enrobées de chocolat noir, sur une grille"
   },
   "piece-ambre-fume": {
-    "url": "/images/generated/piece/piece-ambre-fume-6049ccfc.webp",
-    "w": 1024,
-    "h": 1024,
-    "blur": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSF8AAAABcFpt27I8v1umuxOZwHUAEt3do3VdgQHIugGHFZwJXJLbABExAfiHhsp4tpn2Vxn5DdPYXx9e2hLQuT49geX6ot/1Ski2fUGN3nNdgKnvH83LEgBw+mAqXghYzQR+EQBWUDggXgAAAFACAJ0BKhAAEAADgFoloAJ0AQ7usYTF/l0mAAD+b3XSXMgqdfXNlJn9ppd5Xkh6Fac9HNT1dHFzY3mVZ1JbRAB3oUFVZpls3jbw3+CEkOIGypXhWQe+kEZCZ2jMAAA=",
+    "url": "/images/generated/piece/piece-ambre-fume-894b4138.webp",
+    "w": 2048,
+    "h": 2048,
+    "blur": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGIAAAABcFpr29q84bikuAYPgDPgArX1dZmhjK6OqxlcFiijq0T12+ACETEBsKnAaUp0Dt//c/oshikA7h7R2HWCnRPNL1ee6Cw09IyyenLet7arhOhOi+oDICaV1V7dTspKhIYNAVZQOCBeAAAAEAIAnQEqEAAQAAOAWiWwAnQGLm7gm4+2gAD+ucOEl+7YzruJoc3U2VAmFXWEPaIvsMpEKQBkdvzTx24Tkpve7f4xlbH9dTgJdvPHAn8KGz35PqSbfc9j5H7f6hEsAA==",
     "badge": "Visuel conceptuel · IA",
     "alt": "Ambre Fumé, vue de dessus"
   },
   "piece-cafe-imperial": {
-    "url": "/images/generated/piece/piece-cafe-imperial-8dcd2788.webp",
-    "w": 1024,
-    "h": 1024,
-    "blur": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSFoAAAABcFtt2/E8v+0JMk16u0yZBez0Zu9skR08AXt3xgARMQH4h4xjtFxvNtOwdSeyuT08DmQQ/dvTM81zezFWeKUceiWKyXM9CnLj+OAwdhEAYPMmuqWM3y7iJwFWUDggYAAAADACAJ0BKhAAEAADgFolkAJ0Bi6W4V3+3DOAAP4RLn/iXC3kOJxte8LFkkCMGeBXRLuoqLnAmZsAHchQuKfVhvJUFUq9oUf0Akxx2tSB6XoFIPpaakzAWW57Tc+1HvwAAA==",
+    "url": "/images/generated/piece/piece-cafe-imperial-99b29876.webp",
+    "w": 2048,
+    "h": 2048,
+    "blur": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGMAAAABcFpt27K8v/8wgHtnJI3uNgLd3R0q1R02YAGqpt8SDgtExATAnxIojr4gti5uJ4Y/ePR3qP8sPOVmMqBGwstHTVR4s1h7Zxh8J45NXtuLQTLgnjAbFwkAYDDG2tmEzaiCvwQAVlA4IGYAAADQAQCdASoQABAAA4BaJZACdAD6h3/BAAD+nvoF24sm20nvRdnCgUsmfZ+2xZSwnNfkXxhc3n/mvHcbFLJE38dssa5jGRZKKHZF11tB5P7IjJLgv8Ul+/4a4QllACBUxWQdiZM6AAA=",
     "badge": "Visuel conceptuel · IA",
     "alt": "Café Impérial, vue de dessus"
   },
   "piece-ebene-sale": {
-    "url": "/images/generated/piece/piece-ebene-sale-4a29a274.webp",
-    "w": 1024,
-    "h": 1024,
-    "blur": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGAAAAABcFtr25q88bSZQductLpBBnDBS5iAKRxWoGYQLemooI52OAwQEROAf8h7s/PutN+M3TvDW/Ow2qrAqG6e3RFa82KQvtIW8udyCb3qmXwAwJxc7l3XIu6SsmMbusTgJwFWUDggUAAAABACAJ0BKhAAEAADgFolkAJ0AQ7nfhPdKgAA/rkn2DBlFuo6hAI6A4y4llCYdNJb7TCdGB8TKT7mFHSzjTwAIhtihBLKfTyfb8G59qhJAAAA",
+    "url": "/images/generated/piece/piece-ebene-sale-5efb3c84.webp",
+    "w": 2048,
+    "h": 2048,
+    "blur": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGIAAAABcFvbtqK8cSthMvcZPIXoV4NnRETahdMGDXgVRO4auTQQERMAf8pgLIE9E4u9y2q3nTTS2F3teHveNwEr3V6eCvHbm/nkO2np8trZg8JLlzwAoPrs0aprw0MuhFAipjDwl1ZQOCBYAAAA8AEAnQEqEAAQAAOAWiWQAnQBEEvZPCAAAP7ZP2Xav3Ev/6u1hzLGA9ydX3mbtZ1sIfO6+PjogfgFG4LQ4ZEBN4XQYGSTisLLIasAypF3PY+R9S4S2gAAAA==",
     "badge": "Visuel conceptuel · IA",
     "alt": "Ébène Salé, vue de dessus"
   },
   "piece-eclipse-noire": {
-    "url": "/images/generated/piece/piece-eclipse-noire-71d8d384.webp",
-    "w": 1024,
-    "h": 1024,
-    "blur": "data:image/webp;base64,UklGRtQAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGIAAAABcFNt27I8v81uk08/BThsdHBnpAMF+FuQAQo4u24cQri/Gw4BImIC8BeterMVRbUYfyfeu9D9VZ4Dimd6tgEs6OmDKx6foyTazy15SONnxiEAIdtZE9F50k3hIWcHCR0/ClZQOCBMAAAAUAIAnQEqEAAQAAOAWiUATo/gAwMsf/jggCYAAP7Y7SlqSdNaz81d5Pel7FVNAS7eBKjFxFDeoENofcS2pAfC3DXBmT/fI5OYxgAAAA==",
+    "url": "/images/generated/piece/piece-eclipse-noire-12c02703.webp",
+    "w": 2048,
+    "h": 2048,
+    "blur": "data:image/webp;base64,UklGRtQAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGAAAAABcFrbtuLcAUUO7UwNI8OsojiOK2G01AWWkOjUwJIZHEMBETEB+IeUudka9ntVn3LHP789PNUUoHR7ekAw1+duEcftxTS/fO6kw7B4Zp0CoOZGd/azpoC7hObxRm00fhNWUDggTgAAABACAJ0BKhAAEAADgFolAE6P4AMDY92lzVAA/tjtJnFORray3xBFim26PqNlISNQ2i6pSjiud8WvFOAYv6T57qZb6IHgIeD5HMCjdEgwAA==",
     "badge": "Visuel conceptuel · IA",
     "alt": "Éclipse Noire, vue de dessus"
   },
   "piece-ile-secrete": {
-    "url": "/images/generated/piece/piece-ile-secrete-e8f8fd9f.webp",
-    "w": 1024,
-    "h": 1024,
-    "blur": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGAAAAABcFpr29q8sWxzImkHJpkZskQclbmaW9sMUNkBamu7CLNiGiAiJgD/UCy2s+VsOgn4GyI6Xx8eaiQwvj7dhbB67mIol+euNubPnTj4x6cKANzFo02EW0IN252sl3gMfhFWUDggYAAAAFACAJ0BKhAAEAADgFoloAJ0AQqqgRQVb8PUAAD+rrwcRreISqKjavASG+EbUbBj8/Ac8wjp1ddKL1HTSOvi2RtvZ0HfzzqFds4n85PAK5J8crxHvk7x4nydZ3TPecAAAA==",
+    "url": "/images/generated/piece/piece-ile-secrete-739bda05.webp",
+    "w": 2048,
+    "h": 2048,
+    "blur": "data:image/webp;base64,UklGRvQAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGAAAAABcFNt27I8vysSgABOA5eJOO5sbqsHoIBXcEZauDO5FIiICcC/si+Zcq3hajnvhLR3ZOp6e3pMC0Dt9nIFmu1rV4v59qYTo9cuanhPL4UBeBbPNj7cE65wsdquxqwS/hFWUDggbgAAAJACAJ0BKhAAEAADgFoloAJ0a4APQOt5UGX88qgAAP5TPTZR8CYKKzMqq+e8PQy5k2kGEJQFGDHfjfnv4eP0GDeH+NOcg/e95RMDQCO1bzirjepM6v1E6rH28AvLAgavEe+TeGrCEoYGSle9AAAA",
     "badge": "Visuel conceptuel · IA",
     "alt": "Île Secrète, vue de dessus"
   },
   "piece-minuit-a-kyoto": {
-    "url": "/images/generated/piece/piece-minuit-a-kyoto-9a382146.webp",
-    "w": 1024,
-    "h": 1024,
-    "blur": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGAAAAABcFtt23Pcf46d1gRUato8gSEcG2gNkTNVpjaBSqvM1DreTmaAiJgA/qESyxUH9UohatwJr+XhJgIEz/LkIQQleboN8+eWEH8uD0r/9sTCAsh0V1eRy2aSVXjoBnyDHwVWUDggXAAAADACAJ0BKhAAEAADgFolqAJ0fwCChJwKkGgAAOjjQzsS5lPo0nxYeAwQtuZ0XPDYk2YTlH8U3UZvj/7f3YbUaGEat6XcI5BLAROBe4R5UNWMSbUGjaywsmZrgAAA",
+    "url": "/images/generated/piece/piece-minuit-a-kyoto-dc4a29e4.webp",
+    "w": 2048,
+    "h": 2048,
+    "blur": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGcAAAABcFrbtuK8oTAzSKyAKoilGrCDuNTANYwO67QADh0z43fD00BETADIlLCRHMgEvbihz25YTuMA4B0jjgMTaCeIc1+VQTxLTT6dAh9av+T2CUF4xOVeAABlsX9imDd8wEzF4kG/A6QJAFZQOCBoAAAAMAIAnQEqEAAQAAOAWiWwAnQGLkamRY63pAAA7z+yeyHMqFXp7w1WlZ6dZR8+0dnxq5UnFSdekm0eY355u+yM/o0f1DqMgaf6fngrKyaYPg17gsL0gzuf3CPGLXUdhKz0jaVMfSPHMAA=",
     "badge": "Visuel conceptuel · IA",
     "alt": "Minuit à Kyoto, vue de dessus"
   },
   "piece-or-de-marrakech": {
-    "url": "/images/generated/piece/piece-or-de-marrakech-f6539925.webp",
-    "w": 1024,
-    "h": 1024,
-    "blur": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGIAAAABcFtr29J8P26Vj0DFoWUShw0YgBoiS3idPhOk9QyQOqldviouA0TEBMA/lPLBeDHsJp51o/TX+HDbUoG08emRluOLZfVK5ZxfyKD51L5ggfjtzQURt6tlw4G7FOfaBoEfBVZQOCBYAAAAMAIAnQEqEAAQAAOAWiWYAnRrgAJBDT4lcyAA+diGY3NynJSLCEZcS9J9D2tSrJ86gb/Jf8jXDrhZ1RbJqRsbxMVsgxc3ZlyAo7dwsLmZvLHWro/a/iIAAA==",
+    "url": "/images/generated/piece/piece-or-de-marrakech-a5bc3f73.webp",
+    "w": 2048,
+    "h": 2048,
+    "blur": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGEAAAABcFpr29N8NNc7DICvIzACG3BYADQK1wdAokqySfdRkTmRvaneBoiICYB/SIaD0WLcBq56ww3X14ebRgO0vT49V6Lri1X5SmmfX/AhfWobE4B49epmt5wnBtxFaUeXUfhRAFZQOCBeAAAAMAIAnQEqEAAQAAOAWiWYAnRrgAI2SNu3uwAA/R+LP5FPQHaf8w07g/NR0SJ0yRNQDajU9vGUy04raGmsgd3E7IQuBwgv5nCfqyK8r2uALldZ6T8zcoYnn1HIKpIAAA==",
     "badge": "Visuel conceptuel · IA",
     "alt": "Or de Marrakech, vue de dessus"
   },
   "piece-rose-de-nuit": {
-    "url": "/images/generated/piece/piece-rose-de-nuit-6bf791e6.webp",
-    "w": 1024,
-    "h": 1024,
-    "blur": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGQAAAABcFpt27I8v1tyRaZgCc8unUTTCThfgqwTcJiA9DcW8ETmEDW5LBARE4A/pRnxFbvQXRw2Aclwd8rk9nzZUIHZ7eU5E7+9Weu9M6i/03F3r+3DiE6Pz05EBgCl2h8OA5KNmfhHVlA4IGgAAADQAQCdASoQABAAA4BaJbACdAdwLe+G0ADvSzDWmrm8/GxBspoZQBctEn1v+dQrGiSf6O+rF7zv4xHXb/8A4MczfWNO0tZc6AgmHl6BTBMwsG2Z4swZ1URDlPkAyvZONT0RhYAvIAAAAA==",
+    "url": "/images/generated/piece/piece-rose-de-nuit-23d37d50.webp",
+    "w": 2048,
+    "h": 2048,
+    "blur": "data:image/webp;base64,UklGRvgAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGUAAAABcFpt27I8v7vjOgQDMIWzAOnvHFawpFk6M1D/RrQI3f1LOCwQEROAP+UF85WA25vsll4rK9xxnTN5Oq1YQI+8PGbSt9eI2yRvDsrvVJ3Fa6sokqP1s0tNAQCp1OoPvWYmFcI/AgBWUDggbAAAABACAJ0BKhAAEAADgFolsAJ0BizbdUXqogAA/SE+QJF8qbrrPvoudejASwaa1C1g/wbKls6GN1cq3CqEO6fKDuOd1haMmN5LNE7X4BpcNobypWiYAkGlxMvIEj2l87XeNllL3TW4O9RDQAAAAA==",
     "badge": "Visuel conceptuel · IA",
     "alt": "Rose de Nuit, vue de dessus"
   },
   "piece-rouge-desir": {
-    "url": "/images/generated/piece/piece-rouge-desir-a1e08edd.webp",
-    "w": 1024,
-    "h": 1024,
-    "blur": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGAAAAABcFrbtqPcyTkPVIDODocbR8amFnDjaYFesqMBfAaJzfAcGQqIiAnAX/Rz7bDVrUfv5Sc3unuaBgBqF3o2hL2jp89Whl7MGovntiLis2cOAQCl0jvTdb9djDsxPFQY/CxWUDggSgAAANABAJ0BKhAAEAADgFolkAJ0fwAXxKAAAP7LXecbNQ24wzI4Z6NssALJniSc6QA8QJwLKuRcmugV8V3YPYEAtOV2XKgjIBPpPEAA",
+    "url": "/images/generated/piece/piece-rouge-desir-2328a91b.webp",
+    "w": 2048,
+    "h": 2048,
+    "blur": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGAAAAABcFpt27K8v//JDbdhYADNRHZwb5adxiES3XUBRtAJNLkNEBETAP9Q9Gabrfqg5qBvpMbx+vBS1AAzuz69UQPXF0v9V1b5Vwrs+rmDEfj87tFlbAMAIJzRTDrl99n18ItWUDggVAAAAHACAJ0BKhAAEAADgFolmAJ0fwAYGyx3FSBdGAAA/tjtl8DbPSsddYr8/GjI48aDGllrMIgHX9mHK04caTORl0D9KCNFBfKO2u8dj2e4Fjr++MkAAA==",
     "badge": "Visuel conceptuel · IA",
     "alt": "Rouge Désir, vue de dessus"
   },
   "piece-velours-persan": {
-    "url": "/images/generated/piece/piece-velours-persan-866cb4be.webp",
-    "w": 1024,
-    "h": 1024,
-    "blur": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSF8AAAABcFtr25q88QG0ti5lsoB1qdMFd5eOkxKbAjoO2zACNb3b3+EwQERMAP6iGM+G04ar3iuvbuTudh5SQJ88vYB8eo5YDnnR5jcvaOg8twRQvDxaJwIAKF45GWSjwMRPAgBWUDggagAAAFACAJ0BKhAAEAADgFolqAJ0a6APPGz/hDLgAACdZ+87zMiQXkZK15bfAsjd+xO8v/5jhZGnL3lSZnY/+e94RrbCNYvCQcFWgiS7k69MPMZusfqsd0x4FM5EY6zI89Nrt6D3uymth2s8AAA=",
+    "url": "/images/generated/piece/piece-velours-persan-c485c413.webp",
+    "w": 2048,
+    "h": 2048,
+    "blur": "data:image/webp;base64,UklGRgABAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSGUAAAABcGJr26J8Y3WST/SZFQywFCpbIOoCOCSnum2A7hbdaTSH9iccNhAREwB/ihGv4LavcxkMZ9UAf6cN0fN9SQJmi17eySH0ZirzTt79TpRavHazgK+/MnIBAO0J1zqtQjriNeAfAQBWUDggdAAAAFACAJ0BKhAAEAADgFolsAJ0a8APOo1VGa23AAD56pdg/BE3nJR924RPdTpiFcTj88/FIe/vevttuJ+wbZI78ixRRN2fE4uWaXjB3S2A/hViXAKk0mkcK5hhPKrfyjjuYQqRmCrO/D9cSkI1KRd1GQl8FDAA",
     "badge": "Visuel conceptuel · IA",
     "alt": "Velours Persan, vue de dessus"
   },
@@ -320,82 +488,82 @@
     "alt": "Salon d'un hôtel de luxe : plateau de créations Maison Tamrān et service à café"
   },
   "produit-ambre-fume": {
-    "url": "/images/generated/produit/produit-ambre-fume-c42dc59b.webp",
-    "w": 1632,
-    "h": 2048,
-    "blur": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoRwACsKnQnfwMOPZLAA/uxP9570t9yncPfUITFrKLYn7A6fGccOfZA9mcii9Nq8PJA8hn+TRC7Qs3dPToahywuvoviGFU3MoEpx3Uu3LUWp9ghqpPXUa9OWeJ7tN+yGjJm7QcZf1gAAAA==",
+    "url": "/images/generated/produit/produit-ambre-fume-e54f0b65.webp",
+    "w": 2448,
+    "h": 3072,
+    "blur": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAABQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoRwABdlOG7MvGOZklWAAP7sT/ebP1wvdOrn+fSotQgQGW+ggiC29eWkyUUwpMfd6TPJ4kBoO9eKLAAHoCzsFMQVRtiU2UuJGn5BJlAlOO6l4MFJmvt5kPxfligwc4vVepbn//MHFb3wvtOgAAA=",
     "badge": "Visuel conceptuel · IA",
     "alt": "Ambre Fumé : une datte entière et une datte coupée révélant sa garniture, sur une assiette en laiton"
   },
   "produit-cafe-imperial": {
-    "url": "/images/generated/produit/produit-cafe-imperial-5cdc6913.webp",
-    "w": 1632,
-    "h": 2048,
-    "blur": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoRwBtAUcwiVJYPzZGXlJaJAAP7p+ZHIxlk/PpR0XY1Od086HDxpi9yCZcfsUDQL24fp2W+ZL793FCdHrG8/EOTFSOVC4vgRdgYy/dx7S11L3LDSYvKrYdSRP2fVBWnU+N8uptNJ4pcK1x2tigAAAA==",
+    "url": "/images/generated/produit/produit-cafe-imperial-236f31d7.webp",
+    "w": 2448,
+    "h": 3072,
+    "blur": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAACwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoRwAc+w1fPlYnYBsq5mVpogAP7p+ZA09lk/PpNxNHx+uHPUaw2WINqSSOHdbWWpuBkWO/eCGsLtoC+QN0tQvqYQkPehjSLjyvpFHtLXUvcKu+H5qZxnlOOtbwxF9qICkckWDKD34C227IAA",
     "badge": "Visuel conceptuel · IA",
     "alt": "Café Impérial : une datte entière et une datte coupée révélant sa garniture, sur une assiette en laiton"
   },
   "produit-ebene-sale": {
-    "url": "/images/generated/produit/produit-ebene-sale-d39cd264.webp",
-    "w": 1632,
-    "h": 2048,
-    "blur": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoR3ACf8dv7YOz9vUSuRIAD+2tNYbaytL5dmZeptz0w0SOra28c1rwdjcyR02UQgJQdBuw58irQKXzuG0GiKQDLc7RZlSioDe+nJAYAB7hrSFhZmQrWUvRWLv3pX4HwUYP77KAAA",
+    "url": "/images/generated/produit/produit-ebene-sale-78ea2d98.webp",
+    "w": 2448,
+    "h": 3072,
+    "blur": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAABwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoR3ACU2ygn847jqnFe8AAD+zgF1EonWeus6xUnbnphokdVKsg1dwTkGfQDx937nASJL2VEBVTZZ3vIW+mGyAyY77kIsZ7UVNS7lKC/lfxe49YSwvdzBJlYmgogYeQiNMq7wtofaoAA=",
     "badge": "Visuel conceptuel · IA",
     "alt": "Ébène Salé : une datte entière et une datte coupée révélant sa garniture, sur une assiette en laiton"
   },
   "produit-eclipse-noire": {
-    "url": "/images/generated/produit/produit-eclipse-noire-75df45e3.webp",
-    "w": 1632,
-    "h": 2048,
-    "blur": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAABwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JaACdMoR3ACENGLrAE1HT6xCyAAD+6eM72uhzFh1VBdif+6AQWHO/fthd9t+XPNHMvP5bEKSmkl+6SuV/ynXthJOPIHH/7BMPqTk19C56N+taeEvizQpj/63RfS8rAAA=",
+    "url": "/images/generated/produit/produit-eclipse-noire-432aa04d.webp",
+    "w": 2448,
+    "h": 3072,
+    "blur": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAABwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JaACdMoR3AdAE6ohxitxh6pxuQAD+6eOWpbbbmSNW7UQHEIXUHKtWy7xo9RsvlKBgHOQbXvA5q/6gvfAhurle5cerM5vGIh5LbesPIweYuXrhyqD8yBBZzyxLqLObfAA=",
     "badge": "Visuel conceptuel · IA",
     "alt": "Éclipse Noire : une datte entière et une datte coupée révélant sa garniture, sur une assiette en laiton"
   },
   "produit-ile-secrete": {
-    "url": "/images/generated/produit/produit-ile-secrete-8ce22c5d.webp",
-    "w": 1632,
-    "h": 2048,
-    "blur": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAADwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JaACdMoR3AdBw7KwA3ghBCgLQTCgEwQAA/uaIIJ1ZPL7uqQVO3utoV8xtBtVlImYkE0CFH1tRPtV/tZJEmZJtON5pASiTj7vKW7duNYSAEneuj94cZQlNnigMXBWPT+Fq9zJytSiGKR5i0sRIImj7HdTU7WE4rXJKImpf/AAAAA==",
+    "url": "/images/generated/produit/produit-ile-secrete-80acafc5.webp",
+    "w": 2448,
+    "h": 3072,
+    "blur": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAQBQCdASoQABQAPu1iqU2ppaOiMAgBMB2JagCdMoRwA8AVvWyRzj2w+d9IZqVYf8xAAP7mh/Zifi217sP9bhdtXWzbOfOhSqyVDMPGHprYy+B4kijub3A1jLKN0nNhsEsGoWpI3WzR/YNWz92jMyGbhvMHYoocIwLV2/X+kExHztE1PgeRJsBpxkcW7O4ZZCkzaZsAAAA=",
     "badge": "Visuel conceptuel · IA",
     "alt": "Île Secrète : une datte entière et une datte coupée révélant sa garniture, sur une assiette en laiton"
   },
   "produit-minuit-a-kyoto": {
-    "url": "/images/generated/produit/produit-minuit-a-kyoto-0d9652b2.webp",
-    "w": 1632,
-    "h": 2048,
-    "blur": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAACwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoRwA8ABpG5RRfLld+oaaeLQAP7p86YvntxdZL6KWkimkvys7MLVXi0+9RUKoDw8Dunv5lJjRkdYm7fs/ax8AwRF6ntPyrV1o3uaFqx+0HIUMvPxPkoE5Tks9pPJTjEhWxnlCQOM/OYGgAAA",
+    "url": "/images/generated/produit/produit-minuit-a-kyoto-5a68967e.webp",
+    "w": 2448,
+    "h": 3072,
+    "blur": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAABwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoRwACGCOoS1IiTz6R5iQAD+6feL+l51lM/ctNaJQhLMPhppSogbTw0vhaS34kzXqswZszQ7tDUc+lOPxYvs+H15plb0QVCZIbAtl+AHuMoslkThyjVn3DfmM8G8+qcu+gGf2awLSJGKwIVpRykhDqYAAAA=",
     "badge": "Visuel conceptuel · IA",
     "alt": "Minuit à Kyoto : une datte entière et une datte coupée révélant sa garniture, sur une assiette en laiton"
   },
   "produit-or-de-marrakech": {
-    "url": "/images/generated/produit/produit-or-de-marrakech-2db1058e.webp",
-    "w": 1632,
-    "h": 2048,
-    "blur": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAADQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoRwAdC407tzOBa3XeerSAIk4AD+5GBlnU4TbAj6bLIEk8KgbNrMXc/1We+D0wgrJkSIFN1IzKAkWYKwCIsZCXp+1uTR3madiNP/FrXbuaqTEqwNHuIcyREF2abGzy//WXitQfJJNprmAKiE8S1E038EMkNbtgAA",
+    "url": "/images/generated/produit/produit-or-de-marrakech-38bf941f.webp",
+    "w": 2448,
+    "h": 3072,
+    "blur": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoRwAdDQ1F5XzU3dd9efMmdgAP7ayLBREBKnFFhfHunGBqej17bXLHF0Mrlj6jrKGBSJVlIgUSp86ScJvrAyx5dtjvM07E/BSyUx9xA0A4Cfzpw4uZXd53XCXBv60f/lIQGFewN5GmTfxlbiVP3znQAA",
     "badge": "Visuel conceptuel · IA",
     "alt": "Or de Marrakech : une datte entière et une datte coupée révélant sa garniture, sur une assiette en laiton"
   },
   "produit-rose-de-nuit": {
-    "url": "/images/generated/produit/produit-rose-de-nuit-bd47d69d.webp",
-    "w": 1632,
-    "h": 2048,
-    "blur": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAACwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoRwAdD07fT/E7lmsa18cQ9gAP7sT2Fz03CpKgRlAT7X9gIySAUfK53JxYvqBI+npI0jHCKbYXTPWU6HWDPnrk2RANwWdrQ2FX+vmE6eDendyl+aP+/v1DhtIpMW9PJd1/wDVG8UhJMNROmOygxII2XFOS8//EAA",
+    "url": "/images/generated/produit/produit-rose-de-nuit-af9f60f7.webp",
+    "w": 2448,
+    "h": 3072,
+    "blur": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAACQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoRwAdBZDk5z1DJAV1ZqiAwA/un5mLUBM6kHSmR5h1ssaHqsh/ZsIRZ1HfqB/e9e1XrI5teHmJohvXK1xjjTEHwKmdcyRsJFHJH5qFcoo9EcE/xqWc/uJ5UTZsnfGdBpIiE17xDaa6vFaygB9pfJ3lCmjjlgAA==",
     "badge": "Visuel conceptuel · IA",
     "alt": "Rose de Nuit : une datte entière et une datte coupée révélant sa garniture, sur une assiette en laiton"
   },
   "produit-rouge-desir": {
-    "url": "/images/generated/produit/produit-rouge-desir-1b143d6b.webp",
-    "w": 1632,
-    "h": 2048,
-    "blur": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoRwACXZ+pLjBBt7uibAAP7p+dcIWJad4F5p2pHeHhwlZ3LIB5mW9AeI3yuipzlz4n36hLN8bLfO6D0YGLYk/e0r4RQLvNWpZU6a3pFH0Pafg3IQR25/cjhT9ZnDnCLAAAA=",
+    "url": "/images/generated/produit/produit-rouge-desir-3923cdc1.webp",
+    "w": 2448,
+    "h": 3072,
+    "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoRwACXcnycjVJTQoB52PAAA/un544M3f2+Z4NI2g5QHRU5J6GGu8LdKFeBeWPemScCU0YaXNe1QXT9d7un7J/SclRGabm8ByycBxYklIWSwiSCB9VddByDf426cCAAA",
     "badge": "Visuel conceptuel · IA",
     "alt": "Rouge Désir : une datte entière et une datte coupée révélant sa garniture, sur une assiette en laiton"
   },
   "produit-velours-persan": {
-    "url": "/images/generated/produit/produit-velours-persan-b9676f56.webp",
-    "w": 1632,
-    "h": 2048,
-    "blur": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAABwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoRwACIFh5kBQVAjKnD9YAD+7E/4zh64MlaB5ANN4PV2wbs7dTsL6ZsvlIT5cUScfGui82XV6x3g3jrGSXZgmVJEzg+4y2uUWqrn8G6zl5OJ0ymnM4H0jkzP3z0ZyTqRIa6YwxqVfJEyOxBzspZgAA==",
+    "url": "/images/generated/produit/produit-velours-persan-6dce22db.webp",
+    "w": 2448,
+    "h": 3072,
+    "blur": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAACwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoRwAdD0vXiYsm7BEd1U4frAAP7sT2Fz0/BknKUyOZa2d0Yd5OyYkwjjCmxQLlQ0QZ5uCdtam6+ZIij3maKMTsjv+/CB50QuqfWfbKumYcFen2dhRNqi/KczgfSOS75S034wtgda2nNrFQ58mCk5ygPIIoAAAA==",
     "badge": "Visuel conceptuel · IA",
     "alt": "Velours Persan : une datte entière et une datte coupée révélant sa garniture, sur une assiette en laiton"
   },

@@ -3,7 +3,7 @@
 //   npm run images:openai -- status                         état de chaque emplacement, dépense cumulée
 //   npm run images:openai -- produit-or-de-marrakech        estimation seule (aucune dépense sans --yes)
 //   npm run images:openai -- produit-or-de-marrakech --yes  génère (une seule fois : un original existant n'est jamais repayé)
-//   npm run images:openai -- group:produit --yes            par groupe (produit, coupe, piece, coffret, univers)
+//   npm run images:openai -- group:produit --yes            par groupe (produit, coupe, piece, coffret, univers, ambiance)
 //   npm run images:openai -- recipe:rouge-desir --yes       toutes les vues d'une création
 //   npm run images:openai -- --missing --yes                tout ce qui n'a encore aucun original
 //   npm run images:openai -- publish produit-rouge-desir    publie un original validé sur le site (manifeste photo)
@@ -18,7 +18,7 @@ import fs from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
 import { MANIFEST, PROVENANCE, ROOT, readJson, writeJson } from "./images/store";
-import { SHOTS, SHOT_BY_ID, type OpenAIShot, type Ref } from "./images/openai-shots";
+import { MASTER_FILES, SHOTS, SHOT_BY_ID, type OpenAIShot, type Ref } from "./images/openai-shots";
 import { OpenAIError, checkSize, costOf, estimateCost, generate, megapixels, type Quality, type Usage } from "./images/openai";
 import { composeLidLogo } from "./images/lid";
 
@@ -108,6 +108,10 @@ async function refBytes(ref: Ref): Promise<{ name: string; bytes: Buffer; label:
     const bytes = await sharp(file).extract(ref.crop).png().toBuffer();
     const c = ref.crop;
     return { name: `${path.parse(file).name}-crop.png`, bytes, label: `${ref.file}#${c.left},${c.top},${c.width}x${c.height}` };
+  }
+  if ("fit" in ref) {
+    const bytes = await sharp(file).resize({ width: ref.fit, height: ref.fit, fit: "inside", withoutEnlargement: true }).png().toBuffer();
+    return { name: `${path.parse(file).name}.png`, bytes, label: `${ref.file}@${ref.fit}` };
   }
   return { name: path.basename(file), bytes: fs.readFileSync(file), label: ref.file };
 }
@@ -284,11 +288,12 @@ function use([id, key]: string[]) {
   console.log(`${id} → version ${key} (à republier : publish ${id})`);
 }
 
-/** Supprime les originaux écartés (ni retenus ni publiés) ; le registre garde la trace de leur coût. */
+/** Supprime les originaux écartés (ni retenus, ni publiés, ni gelés comme référence 4K) ; le registre garde la trace de leur coût. */
 function prune() {
   let n = 0;
+  const masters = new Set(MASTER_FILES);
   for (const e of Object.values(gen)) {
-    const keep = new Set([e.current, e.published?.key]);
+    const keep = new Set([e.current, e.published?.key, ...e.versions.filter((v) => masters.has(v.file)).map((v) => v.key)]);
     for (const v of e.versions.filter((x) => !keep.has(x.key))) {
       fs.rmSync(path.join(ROOT, v.file), { force: true });
       n++;

@@ -6,7 +6,7 @@
 
 - **Contraste de matières** : le chocolat (fonds `#251C1A`) pour l'émotion et le produit, l'ivoire (`#F7F3EC`) pour la lecture et le choix. Les sections alternent pour rythmer le récit.
 - **Le bronze est une finition** (`#A87455`, `#C4936C` sur fond sombre) : filets, numéros, accents de coffret. Jamais d'aplat, jamais de texte courant.
-- **Le pistache désaturé** (`#77745B`) signale ce qui est hors norme : bandeau de démonstration, éditions éphémères (fond `#2F2E24`).
+- **Le pistache désaturé** (`#77745B`) signale ce qui est hors norme : éditions éphémères (fond `#2F2E24`).
 - **Chaque recette a sa couleur d'accent** (palette dans `src/data/recipes.ts`) : filet de dégustation, pastille dans le panier, liseré des éditions éphémères.
 - **Interdits** : palmiers, couronnes, arabesques génériques, dorures, faux témoignages, faux labels.
 
@@ -42,7 +42,7 @@ Tout respecte `prefers-reduced-motion` (états finaux affichés sans animation).
 
 ## 5. Architecture de navigation
 
-- **En-tête** : Créations, Coffrets, Composer — logo centré — La Maison, Professionnels, recherche, compte, panier. Mobile : menu plein écran.
+- **En-tête** : barre sombre de hauteur constante, la même sur toutes les pages — logo à gauche ; Créations (menu illustré), Coffrets, La Maison (menu illustré), Professionnels ; recherche, compte, panier, « Composer mon coffret ». Mobile : menu, logo centré, panier ; menu plein écran.
 - **Accueil** : hero, l'art de la dégustation, Créations Signature, expérience sensorielle, les coffrets, composez votre sélection, la Maison, éditions éphémères, professionnels, lettre, pied de page.
 - **Boutique** : `/creations`, `/collections/signature`, `/collections/ephemere`, `/creations/[slug]`, `/coffrets`, `/composer-mon-coffret`, `/recherche`, `/panier`, `/paiement`, `/paiement/demo/[n]`, `/paiement/confirmation`, `/paiement/echec`.
 - **Client** : `/compte` (+ connexion, inscription, mot de passe), `/compte/adresses`, `/compte/commandes/[n]`, `/suivi-commande`.

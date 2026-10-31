@@ -21,6 +21,9 @@ export function photo(id: string): PhotoRef | null {
  * professionnels, macros. « scene-<création> » (la datte entière) est servie par la pièce détourée.
  */
 const ALIAS: Record<string, string> = {
+  // la photographie de référence du coffret Signature (1448 px) cède la place à sa version 4K générée
+  "coffret-1": "coffret-signature",
+  hero: "coffret-signature",
   "coffret-2": "coffret-prestige",
   "coffret-3": "coffret-decouverte",
   "coffret-4": "coffret-edition",
@@ -43,7 +46,7 @@ const ALIAS: Record<string, string> = {
   "couche-chocolat": "meta-enrobage",
   "couche-finition": "produit-or-de-marrakech",
 };
-const resolve = (id: string) => PHOTOS[id] ?? PHOTOS[ALIAS[id] ?? id.replace(/^scene-/, "piece-")];
+const resolve = (id: string) => (ALIAS[id] && PHOTOS[ALIAS[id]]) || PHOTOS[id] || PHOTOS[id.replace(/^scene-/, "piece-")];
 
 /** Remplace un visuel concept illustré par sa photo validée, s'il en existe une. */
 export function withPhoto<T extends ImageRef | null | undefined>(image: T): T {

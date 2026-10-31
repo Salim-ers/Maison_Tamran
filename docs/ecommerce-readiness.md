@@ -19,7 +19,7 @@
 
 | Élément | À fournir | Effet tant que c'est absent |
 | --- | --- | --- |
-| Paiement réel | `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, webhook configuré | Mode démonstration : bandeau visible, commandes marquées « démo », **aucun encaissement** |
+| Paiement réel | `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, webhook configuré | Mode démonstration : mention au paiement et en pied de page (le bandeau permanent en haut de page a été retiré à la demande de la maison), commandes marquées « démo », **aucun encaissement** |
 | Emails | `RESEND_API_KEY`, `EMAIL_FROM` (domaine vérifié), `ADMIN_NOTIFY_EMAIL` | Emails journalisés dans Admin › Emails, non envoyés |
 | Images téléversées en production | `BLOB_READ_WRITE_TOKEN` (Vercel Blob) | Téléversement désactivé en production |
 | URL canonique | `NEXT_PUBLIC_SITE_URL` | Liens absolus et données structurées sur l'URL par défaut |

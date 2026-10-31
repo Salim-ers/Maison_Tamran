@@ -1,5 +1,7 @@
 # Audit des images — MAISON TAMRĀN
 
+> **Mise à jour 4K (2026-10-31)** : tous les visuels générés sont désormais en définition native 4K (vues produit 2448 × 3072, macros 2880 × 2880, pièces détourées 2048 × 2048, coffrets 3264 × 2448 et 3504 × 2336, scènes 3840 × 2160), et les vingt photographies d'ambiance Unsplash sont remplacées à l'écran par des prises de vue générées en 3504 × 2336. Les scènes de l'accueil citées plus bas (oasis, métamorphose, anatomie, garnitures, art d'offrir) ont été retirées lors du resserrement de l'accueil. Le relevé détaillé ci-dessous date du 2026-10-27.
+
 > **Mise à jour V3 (2026-10-31)** : les dix créations, les coffrets et l'univers disposent désormais de visuels conceptuels générés **en définition native** (1632 × 2048 pour les vues produit, 1920 × 1920 pour les macros, jusqu'à 3840 × 2160 pour le hero ; aucun agrandissement). Les vignettes de planche (≈ 414 × 496 px) décrites ci-dessous ne sont plus publiées : la planche reste la référence d'aspect de la génération. Inventaire et règles : `docs/asset-manifest.md`. Le plafond d'affichage ×1,5 reste la règle (macro à la loupe : ×1,7 d'un affichage de ≈ 640 px, soit moins que les 1920 px de l'image).
 
 Audit réalisé le 2026-10-27, avant et après la refonte V2 (branche `refonte-v2`).

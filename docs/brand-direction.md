@@ -26,11 +26,11 @@ Une maison de confiserie gastronomique qui traite la datte Medjool comme une mat
 | Crème / écru | `#f4e9d7`, `#fffbf4` | Sections intermédiaires, champs |
 | Or patiné / champagne | `#c7a06a` | Mot clé du titre, filets, chiffres |
 | Bronze cuivré | `#a97444` | Finitions (jamais en aplat ni en texte courant) |
-| Pistache désaturé | `#777c51` | Bandeau de démonstration, éditions éphémères |
+| Pistache désaturé | `#777c51` | Éditions éphémères |
 
 Chaque recette garde sa couleur d'accent (`src/data/recipes.ts`) : liseré des cartes, halo de la fiche produit, filet des macros.
 
-**Rythme** : sombre (hero, garnitures, art d'offrir, éditions) et lumineux (anatomie, Signatures, configurateur, la Maison) alternent. Le hero est volontairement solaire : un coffret posé sur du travertin, dans la lumière dorée et les ombres de palmes.
+**Rythme** : sombre (hero, savoir-faire, éditions) et lumineux (Signatures, coffrets, la Maison et les professionnels) alternent, sous un en-tête sombre constant. Le hero est volontairement solaire : un coffret posé sur du travertin, dans la lumière dorée et les ombres de palmes.
 
 ## Typographie
 

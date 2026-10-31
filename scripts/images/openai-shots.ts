@@ -11,11 +11,12 @@ export type Region = { left: number; top: number; width: number; height: number 
 export type Ref =
   | { file: string } // fichier du dépôt
   | { file: string; crop: Region } // extrait d'un fichier du dépôt
+  | { file: string; fit: number } // fichier du dépôt ramené à `fit` px de côté au plus, envoyé en PNG
   | { shot: string }; // dernier original généré pour un autre emplacement
 
 export interface OpenAIShot {
   id: string; // clé du manifeste photo lu par le site (src/data/photo-manifest.json)
-  group: "produit" | "coupe" | "piece" | "coffret" | "univers";
+  group: "produit" | "coupe" | "piece" | "coffret" | "univers" | "ambiance";
   size: string; // LARGEURxHAUTEUR, multiples de 16
   quality: Quality;
   background?: "transparent" | "opaque";
@@ -155,7 +156,7 @@ function productShots(): OpenAIShot[] {
         "Very shallow depth of field, warm raking light from the left revealing every texture, " +
         `dark brown blurred background with brass reflections. ${PHOTO_STYLE} ${NO_TEXT}`,
       alt: `${r.name} : le cœur de la datte coupée, en macrophotographie`,
-      usage: "Fiche produit (zoom sur la garniture), anatomie, galerie",
+      usage: "Fiche produit (zoom sur la garniture), cartes (survol), Signatures et éditions de l'accueil",
       publishWidth: 1920,
       priority: 20,
     };
@@ -173,7 +174,7 @@ function productShots(): OpenAIShot[] {
         "Fully transparent background: no plate, no surface, no ingredients, no cast shadow. Soft warm light from the upper left. " +
         `${PHOTO_STYLE} ${NO_TEXT}`,
       alt: `${r.name}, vue de dessus`,
-      usage: "Configurateur de coffret (alvéoles), animations de remplissage",
+      usage: "Configurateur et coffrets de l'accueil (pièce posée dans sa caissette)",
       publishWidth: 1024,
       priority: 20,
     };
@@ -245,7 +246,7 @@ const UNIVERS: OpenAIShot[] = [
       `Six whole creations in a 3 × 2 grid of cups (${RANGE}; image 2 is the reference for the creations). Warm travertine table, golden late-afternoon light, palm shadows, ` +
       `a handleless ivory coffee cup beside it. ${PHOTO_STYLE} ${NO_LETTERING}`,
     alt: "Coffret Découverte ouvert : six créations dans leurs caissettes",
-    usage: "Page Coffrets, accueil (formats), configurateur",
+    usage: "Page Coffrets, menus de l'en-tête",
     publishWidth: 2304,
     priority: 20,
   },
@@ -260,7 +261,7 @@ const UNIVERS: OpenAIShot[] = [
       `slightly offset on top so both tiers are visible, each holding twelve whole creations in a 4 × 3 grid of cups (${RANGE}; images 2 and 3 are the references). ` +
       `The lid rests behind. Warm travertine table, golden light, palm shadows, a brass dallah softly out of focus. ${PHOTO_STYLE} ${NO_LETTERING}`,
     alt: "Coffret Prestige ouvert sur deux étages : vingt-quatre créations",
-    usage: "Page Coffrets, accueil (formats)",
+    usage: "Page Coffrets",
     publishWidth: 2304,
     priority: 20,
   },
@@ -307,7 +308,7 @@ const UNIVERS: OpenAIShot[] = [
       "casting delicate geometric shadows. Image 2 sets the mood and materials only. The right third of the frame stays quiet for text. " +
       `${PHOTO_STYLE} ${NO_LETTERING}`,
     alt: "Rituel de dégustation : café, dallah en laiton et créations Maison Tamrān sur une table en travertin",
-    usage: "Accueil (la Maison), savoir-faire, rituel",
+    usage: "Accueil (la Maison), Notre Maison, menus de l'en-tête",
     publishWidth: 3840,
     priority: 10,
   },
@@ -322,7 +323,7 @@ const UNIVERS: OpenAIShot[] = [
       `gift box (same box style as image 1, blank lid) tied with champagne silk ribbon, and in the centre a large hammered brass tray of creations (${RANGE}; image 2 is the reference). ` +
       `Warm candlelight, soft bokeh, shallow depth of field. ${PHOTO_STYLE} ${NO_LETTERING}`,
     alt: "Table de réception de mariage : coffrets noués de rubans et plateau de créations à la lueur des bougies",
-    usage: "Professionnels, mariages et événements, l'art d'offrir",
+    usage: "Professionnels, mariages et événements",
     publishWidth: 3840,
     priority: 20,
   },
@@ -337,7 +338,7 @@ const UNIVERS: OpenAIShot[] = [
       `(${RANGE}; image 1 is the reference), a silver-brass coffee service and two small cups. Behind, softly out of focus: arches, warm lamps, plants, a calm and refined interior. ` +
       `Image 2 sets the materials and mood only. No people. ${PHOTO_STYLE} ${NO_LETTERING}`,
     alt: "Salon d'un hôtel de luxe : plateau de créations Maison Tamrān et service à café",
-    usage: "Professionnels (hôtels, restaurants, épiceries fines)",
+    usage: "Accueil (professionnels), Professionnels",
     publishWidth: 3840,
     priority: 10,
   },
@@ -352,7 +353,7 @@ const UNIVERS: OpenAIShot[] = [
       "with a generous line of smooth pale green pistachio cream nested inside. Beside it, a small brass spoon with a little pistachio cream and a few shelled pistachios. " +
       `Dark brown stone surface, warm side light from the left, very shallow depth of field. Image 1 sets the light and colour only. ${PHOTO_STYLE} ${NO_TEXT}`,
     alt: "Une datte Medjool ouverte, dénoyautée, garnie d'une crème de pistache",
-    usage: "Accueil, la métamorphose (03 · le cœur)",
+    usage: "Accueil, de la palmeraie à la création (le cœur)",
     publishWidth: 2560,
     priority: 10,
   },
@@ -367,7 +368,7 @@ const UNIVERS: OpenAIShot[] = [
       "a slow ribbon of molten chocolate drips from the rack; behind, a bowl of molten dark chocolate with a soft swirl. Dark background, warm rim light making the chocolate shine. " +
       `Image 1 sets the light and colour only. ${PHOTO_STYLE} ${NO_TEXT}`,
     alt: "Dattes garnies fraîchement enrobées de chocolat noir, sur une grille",
-    usage: "Accueil, la métamorphose (04 · l'enrobage), savoir-faire",
+    usage: "Accueil, de la palmeraie à la création (l'enrobage), savoir-faire",
     publishWidth: 2560,
     priority: 10,
   },
@@ -383,7 +384,7 @@ const UNIVERS: OpenAIShot[] = [
       "and a few glossy Medjool dates. Warm raking light from the left, deep soft shadows, generous dark negative space in the centre. Image 1 sets the light and colour only. " +
       `${PHOTO_STYLE} ${NO_TEXT}`,
     alt: "Les ingrédients de la maison : pistache, safran, rose, cardamome, noisette, sésame noir, matcha, coco, framboise, pécan, café, chocolat et dattes Medjool",
-    usage: "Accueil (les saveurs), savoir-faire",
+    usage: "Le savoir-faire, menus de l'en-tête",
     publishWidth: 3840,
     priority: 10,
   },
@@ -457,5 +458,179 @@ const VERTICALES: OpenAIShot[] = [
   },
 ];
 
-export const SHOTS: OpenAIShot[] = [...productShots(), ...UNIVERS, ...VERTICALES].sort((a, b) => a.priority - b.priority);
+/** Coffret Signature 12 pièces en définition 4K : remplace sur le site la photographie de référence (1448 px). */
+const SIGNATURE: OpenAIShot = {
+  id: "coffret-signature",
+  group: "coffret",
+  size: "3264x2448",
+  quality: "high",
+  refs: [{ shot: "coffret-ferme" }, ROW_1, ROW_2],
+  prompt:
+    `Image 1 shows the Maison Tamran box and setting. Three-quarter view, 4:3, of the open twelve-piece gift box: ${BOX_STYLE}, its blank lid leaning against the back. ` +
+    `Twelve whole creations in a 4 × 3 grid of cups (${RANGE}; images 2 and 3 are the references). Warm travertine table, golden late-afternoon light, palm-frond shadows, ` +
+    `a handleless ivory coffee cup and a small brass plate of plain Medjool dates beside it, a brass dallah softly out of focus behind. ${PHOTO_STYLE} ${NO_LETTERING}`,
+  alt: "Coffret Signature ouvert : douze créations dans leurs caissettes, sur une table en travertin",
+  usage: "Coffrets, accueil (format 12 pièces), Maison, Professionnels, Savoir-faire, compte",
+  publishWidth: 3264,
+  priority: 20,
+};
+
+// --- Photographies d'ambiance ----------------------------------------------------------------------------
+// Remplacent les photographies libres de droits (src/data/ambiance-manifest.json), trop peu définies une fois
+// agrandies : même sujet, même orientation, nouvelle prise de vue originale en définition native 4K.
+// La photographie libre de droits ne sert qu'à indiquer le sujet et l'ambiance (image 1).
+const LANDSCAPE = "3504x2336";
+const PORTRAIT = "2336x3504";
+const AMBIANCE: [key: string, file: string, size: string, prompt: string, alt: string, usage: string][] = [
+  ["palmeraie", "palmeraie__v9MYNk3HMeM.jpg", LANDSCAPE,
+    "Wide landscape photograph of a date palm grove rising from golden sand dunes under a clear deep-blue sky, warm late-afternoon light, long soft shadows on the sand, no buildings.",
+    "Palmeraie de dattiers au milieu des dunes de sable doré, sous un ciel bleu", "Notre Maison"],
+  ["dattier-regimes", "dattier-regimes__pBxL6uM3Ezg.jpg", PORTRAIT,
+    "Vertical photograph looking up into a date palm: heavy bunches of ripening amber and dark brown dates hanging on long orange stalks beneath the fronds, golden backlight through the leaves, a small patch of blue sky.",
+    "Régimes de dattes ambrées et brunes suspendus sous les palmes d'un dattier", "Accueil, Le savoir-faire"],
+  ["dattes-naturelles", "dattes-naturelles__Ae6qKztd0Xw.jpg", LANDSCAPE,
+    "Low-key still life: a small turned wooden bowl filled with glossy natural Medjool dates on a slice of walnut wood, dark brown linen, a few loose dates beside it, warm side light from the left.",
+    "Petit bol en bois rempli de dattes Medjool naturelles sur un lin brun sombre", "Notre Maison, Le savoir-faire"],
+  ["chocolat", "chocolat__BqJAbXk2Fuw.jpg", LANDSCAPE,
+    "Top-down photograph of a bar of fine dark chocolate with a broken-off two-square piece, lightly dusted with cocoa powder, on a matte black surface, soft raking light revealing the snap.",
+    "Tablette de chocolat noir saupoudrée de cacao sur fond noir, vue du dessus", "Fiches produit (ingrédients)"],
+  ["riad-lumiere", "riad-lumiere__GtlrYb2cPp4.jpg", PORTRAIT,
+    "Vertical photograph of a riad courtyard at dusk: a tall carved and painted wooden double door under a glowing hanging brass lantern, white walls with carved stucco friezes, an emerald zellige plunge pool, a black-and-white tiled floor, a banana plant, warm lamplight.",
+    "Patio de riad, porte en bois sculpté éclairée par une lanterne en laiton, bassin de zellige vert", "Notre Maison"],
+  ["cafe-oriental", "cafe-oriental__57BCZzL2t8E.jpg", LANDSCAPE,
+    "Close-up of a polished brass Arabic coffee pot (dallah) with a curl of rising steam, on a dark warm brown background, warm rim light on the brass.",
+    "Dallah en laiton enveloppée de vapeur sur fond sombre", "Contact, Professionnels"],
+  ["art-de-recevoir", "art-de-recevoir__pbMf0vDIdO8.jpg", LANDSCAPE,
+    "Photograph of a silver Moroccan teapot on a round engraved brass tray with engraved tea glasses and a small ceramic sugar pot, on a light wooden table on a sunlit riad terrace, soft ivory background, gentle morning light.",
+    "Théière marocaine argentée et verres à thé ciselés sur un plateau en laiton", "Coffrets, Notre Maison, Professionnels"],
+  ["pistache", "pistache__Zo0TZax87Cc.jpg", LANDSCAPE,
+    "Macro photograph of split in-shell pistachios revealing their bright green kernels, on rustic dark wood, warm golden light, very shallow depth of field.",
+    "Pistaches entrouvertes laissant voir leur amande verte, en lumière dorée", "Fiches produit (ingrédients)"],
+  ["noisette", "noisette__SNQfkUNHWlA.jpg", PORTRAIT,
+    "Top-down full-frame texture of roasted shelled hazelnuts with their brown skins, some partly peeled, warm muted dark tones, soft directional light.",
+    "Noisettes torréfiées en gros plan, vue du dessus", "Fiches produit (ingrédients)"],
+  ["amande", "amande__RZ-AHtxLPUE.jpg", LANDSCAPE,
+    "Macro photograph of whole raw almonds filling the frame, showing the ridged skin texture, warm tones, shallow depth of field.",
+    "Amandes entières en macro, texture de la peau", "Fiches produit (ingrédients)"],
+  ["cardamome", "cardamome__dZIs-KaRdu8.jpg", LANDSCAPE,
+    "A small pile of green cardamom pods, one split open showing its dark seeds, on dark grey slate, shallow depth of field, generous negative space on the right.",
+    "Gousses de cardamome verte sur une ardoise sombre", "Fiches produit (ingrédients)"],
+  ["safran", "safran__hTE438DvDgg.jpg", PORTRAIT,
+    "Vertical photograph of a trail of loose deep-red saffron threads with orange tips spilling from a small brass bowl across a dark, warm, weathered surface, low-key light, shallow depth of field.",
+    "Filaments de safran rouge sombre répandus depuis une coupelle en laiton", "Fiches produit (ingrédients)"],
+  ["rose", "rose__FJM3wo0eCGY.jpg", LANDSCAPE,
+    "Full-frame texture of dried rose petals in deep pink, magenta and dusky purple tones, soft warm light, fine detail of the petal veins.",
+    "Pétales de rose séchés, texture rose et pourpre", "Fiches produit (ingrédients)"],
+  ["framboise", "framboise__h-pMChQzbOM.jpg", LANDSCAPE,
+    "Dark, moody macro photograph of fresh red raspberries with tiny water droplets, on a dark surface, warm side light.",
+    "Framboises fraîches en macro, lumière sombre", "Fiches produit (ingrédients)"],
+  ["cafe-grains", "cafe-grains__H80RH1Hhvu8.jpg", LANDSCAPE,
+    "Full-frame close-up of glossy dark roasted coffee beans, warm raking light, shallow depth of field.",
+    "Grains de café torréfiés en gros plan", "Fiches produit (ingrédients)"],
+  ["coco", "coco__nUApCUJ1M6k.jpg", PORTRAIT,
+    "Vertical photograph of two broken pieces of fresh coconut showing thick white flesh and brown fibrous shell, on crumpled natural linen, soft natural light, shallow depth of field.",
+    "Morceaux de noix de coco ouverte sur un lin naturel froissé", "Fiches produit (ingrédients)"],
+  ["matcha", "matcha__DgW9B48pRb4.jpg", LANDSCAPE,
+    "Top-down photograph of vivid green matcha powder in a small handmade ivory ceramic cup, a bamboo whisk beside it, on a pale warm travertine surface, soft daylight.",
+    "Poudre de matcha dans une coupelle en céramique ivoire, sur une pierre claire", "Fiches produit (ingrédients)"],
+  ["medjool-macro", "medjool-macro__kO5ENCZTxoM.jpg", LANDSCAPE,
+    "Macro photograph of a pile of large, glossy, deeply wrinkled reddish-brown Medjool dates in warm side light, very shallow depth of field, dark warm background.",
+    "Gros plan de dattes Medjool brunes, charnues et ridées, en lumière chaude", "Accueil, fiches produit"],
+  ["palmeraie-maroc", "palmeraie-maroc__ttOFPXjGFEA.jpg", LANDSCAPE,
+    "Elevated view over a dense date palm grove on sandy ground, an earth-coloured village along the horizon and distant mountains, warm golden late-afternoon light, pale clear sky.",
+    "Palmeraie de dattiers dense devant un village de terre et des montagnes", "Notre Maison"],
+  ["riad-soleil", "riad-soleil__ClAUVD_88NY.jpg", LANDSCAPE,
+    "Sunlit palace courtyard: white arcades with horseshoe arches, green-tiled eaves, a zellige-and-marble floor with a central marble fountain, deep blue sky, crisp architectural photograph.",
+    "Cour ensoleillée aux arcades blanches et sol de zellige, fontaine au centre", "Notre Maison"],
+];
+const AMBIANCE_SHOTS: OpenAIShot[] = AMBIANCE.map(([key, file, size, subject, alt, usage]) => ({
+  id: `amb-${key}`,
+  group: "ambiance",
+  size,
+  quality: "high",
+  refs: [{ file: `brand/source/stock/${file}`, fit: 1536 }],
+  prompt:
+    `Image 1 sets the subject and the mood only: create a new, original photograph, not a copy of it. ${subject} ` +
+    `Editorial photography for a luxury French confectionery house, natural colours, crisp detail, rich warm grade. No people, no hands, no text, no letters, no logo.`,
+  alt,
+  usage,
+  publishWidth: Number(size.split("x")[0]),
+  priority: 30,
+}));
+
+/**
+ * Définition native 4K des visuels déjà validés : chaque visuel est refait à partir de son original retenu,
+ * gelé ci-dessous et envoyé comme dernière image de référence (mêmes cadrage, objets et lumière ; détail plus fin).
+ * Les originaux gelés restent dans brand/generated/ (prune ne les supprime pas).
+ */
+const MASTERS: Record<string, string> = {
+  "coffret-decouverte": "adfcaf4242d7",
+  "coffret-edition": "f9c0cbc12fc5",
+  "coffret-prestige": "c5c97cfa038f",
+  "coffret-vide-12": "6ad326886314",
+  "coffret-vide-24": "fb81dead44e5",
+  "coffret-vide-6": "8015b9b3f581",
+  "coupe-ambre-fume": "84d777ba185e",
+  "coupe-cafe-imperial": "8b630223f248",
+  "coupe-ebene-sale": "d1f959e7c1ab",
+  "coupe-eclipse-noire": "5b9e149e9c53",
+  "coupe-ile-secrete": "b20b28f3c072",
+  "coupe-minuit-a-kyoto": "bfeb2879a6f6",
+  "coupe-or-de-marrakech": "c7926116973b",
+  "coupe-rose-de-nuit": "49135ce33240",
+  "coupe-rouge-desir": "29c6c13a4697",
+  "coupe-velours-persan": "76d5ddacf6bf",
+  "meta-coeur": "c6c01a8e09b1",
+  "meta-enrobage": "c566241e82e8",
+  "piece-ambre-fume": "6ec2f3bb3c86",
+  "piece-cafe-imperial": "aeeaf9323051",
+  "piece-ebene-sale": "0a2c1539d351",
+  "piece-eclipse-noire": "f9d6e0760b18",
+  "piece-ile-secrete": "a28871e448a1",
+  "piece-minuit-a-kyoto": "679fa30a9af8",
+  "piece-or-de-marrakech": "9a02a674c1cf",
+  "piece-rose-de-nuit": "7d8f7bffb2ba",
+  "piece-rouge-desir": "c80d300b806a",
+  "piece-velours-persan": "de6825816fdb",
+  "produit-ambre-fume": "50e6566b331f",
+  "produit-cafe-imperial": "7dfddd2cb2ad",
+  "produit-ebene-sale": "f5984c1a5573",
+  "produit-eclipse-noire": "cc586d2a83d7",
+  "produit-ile-secrete": "965c11056c8b",
+  "produit-minuit-a-kyoto": "e940018e61a5",
+  "produit-or-de-marrakech": "1bcf670f2ea3",
+  "produit-rose-de-nuit": "329b2bf17ae5",
+  "produit-rouge-desir": "247b2c46f2b9",
+  "produit-velours-persan": "60a7b1d940a3",
+};
+/** Tailles 4K (≤ 8,3 Mpx, multiples de 16), au même rapport que la version validée. */
+function hdSize(s: OpenAIShot): string | undefined {
+  if (s.group === "produit") return "2448x3072";
+  if (s.group === "coupe") return "2880x2880";
+  if (s.group === "piece") return "2048x2048";
+  if (s.id === "coffret-vide-24") return "3504x2336";
+  if (s.id.startsWith("coffret-")) return "3264x2448";
+  if (s.id.startsWith("meta-")) return "3840x2160";
+}
+export const MASTER_FILES = Object.entries(MASTERS).map(([id, key]) => `brand/generated/${id}/${key}.webp`);
+
+function hd(s: OpenAIShot): OpenAIShot {
+  const master = MASTERS[s.id];
+  const size = hdSize(s);
+  if (!master || !size) return s;
+  const n = s.refs.length + 1;
+  const grid = s.id.startsWith("coffret-vide") ? " The box edges and every cup must stay at exactly the same position and size in the frame." : "";
+  return {
+    ...s,
+    size,
+    publishWidth: Number(size.split("x")[0]),
+    refs: [...s.refs, { file: `brand/generated/${s.id}/${master}.webp`, fit: 2560 }],
+    prompt:
+      `${s.prompt} Image ${n} is the approved photograph of this exact shot, at a lower resolution: reproduce it faithfully as a native high-resolution photograph, ` +
+      `same composition and framing, same camera angle, same objects at the same positions and sizes, same colours and light, with finer, crisper detail and texture. ` +
+      `Do not add, remove or move anything.${grid}`,
+  };
+}
+
+export const SHOTS: OpenAIShot[] = [...productShots(), ...UNIVERS, SIGNATURE, ...VERTICALES, ...AMBIANCE_SHOTS].map(hd).sort((a, b) => a.priority - b.priority);
 export const SHOT_BY_ID = new Map(SHOTS.map((s) => [s.id, s]));
